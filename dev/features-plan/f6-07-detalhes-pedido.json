@@ -1,0 +1,113 @@
+{
+  "feature": "detalhes-pedido-cliente",
+  "description": "Visualizacao do pedido com itens, rastreamento e status.",
+  "prd_id": "F6-07",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como cliente logado, quero acessar a pagina de detalhes de um pedido para ver todas as informacoes da compra",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina /minha-conta/pedidos/{id} exibe os detalhes do pedido",
+        "Apenas o proprietario do pedido pode acessar a pagina",
+        "Visitantes sao redirecionados para login",
+        "Clientes que tentam acessar pedido de outro usuario recebem erro 403",
+        "Pedidos inexistentes retornam erro 404",
+        "A pagina exibe o numero do pedido no header"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como cliente, quero ver os itens do meu pedido para conferir o que comprei",
+      "status": "done",
+      "acceptance_criteria": [
+        "A lista de itens exibe: imagem do produto, nome, SKU, variante (se houver), quantidade, preco unitario e subtotal",
+        "Produtos sem imagem exibem placeholder",
+        "O nome do produto e clicavel e leva para a pagina do produto",
+        "Variantes sao exibidas abaixo do nome do produto",
+        "Os precos sao formatados em Reais (R$ X.XXX,XX)"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como cliente, quero ver o resumo financeiro do pedido para entender os valores cobrados",
+      "status": "done",
+      "acceptance_criteria": [
+        "O resumo exibe: subtotal dos itens, valor do frete, desconto (se houver) e total",
+        "Se houver cupom aplicado, o codigo e exibido junto ao desconto",
+        "Os valores sao formatados em Reais",
+        "O total e destacado visualmente"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como cliente, quero ver o status atual do pedido para saber em que etapa esta",
+      "status": "done",
+      "acceptance_criteria": [
+        "O status do pedido e exibido com badge colorido",
+        "O status de pagamento e exibido separadamente",
+        "A data de criacao do pedido e exibida",
+        "Se o pedido foi enviado, a data de envio e exibida",
+        "Se o pedido foi entregue, a data de entrega e exibida"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como cliente, quero ver as informacoes de entrega do pedido para saber onde sera entregue",
+      "status": "done",
+      "acceptance_criteria": [
+        "O endereco de entrega completo e exibido (rua, numero, complemento, bairro, cidade, estado, CEP)",
+        "O nome do destinatario e exibido",
+        "O metodo de envio escolhido e exibido (ex: PAC, SEDEX)",
+        "O valor do frete e exibido",
+        "O prazo estimado de entrega e exibido (X dias uteis)"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como cliente, quero ver o codigo de rastreamento do pedido para acompanhar a entrega",
+      "status": "done",
+      "acceptance_criteria": [
+        "Quando disponivel, o codigo de rastreamento e exibido em destaque",
+        "O codigo pode ser copiado com um clique",
+        "Um link para rastrear o pedido (pagina publica) e exibido",
+        "Se o codigo nao estiver disponivel, uma mensagem informativa e exibida",
+        "Pedidos com status 'Enviado' ou 'Entregue' devem ter secao de rastreamento visivel"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como cliente, quero ver as notas visiveis do pedido para acompanhar comunicacoes importantes",
+      "status": "done",
+      "acceptance_criteria": [
+        "Notas marcadas como visiveis ao cliente sao exibidas",
+        "Cada nota exibe a data e o conteudo",
+        "Notas internas (nao visiveis) nao aparecem para o cliente",
+        "Se nao houver notas, a secao nao e exibida"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como cliente, quero navegar facilmente entre a lista e os detalhes do pedido",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um botao 'Voltar' leva para a lista de pedidos",
+        "O link da lista de pedidos (us-05 de F6-06) leva para a pagina de detalhes",
+        "A navegacao usa wire:navigate para transicao suave",
+        "Breadcrumb exibe: Minha Conta > Pedidos > #NUMERO"
+      ]
+    },
+    {
+      "name": "us-09",
+      "description": "Como cliente, quero uma experiencia responsiva na pagina de detalhes para usar em qualquer dispositivo",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina e otimizada para desktop, tablet e mobile",
+        "Em mobile, o layout se adapta para coluna unica",
+        "As informacoes mais importantes (status, itens) aparecem primeiro em mobile",
+        "A pagina carrega rapidamente com skeleton loading",
+        "Todos os elementos sao tocaveis em dispositivos moveis"
+      ]
+    }
+  ]
+}

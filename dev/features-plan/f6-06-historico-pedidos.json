@@ -1,0 +1,88 @@
+{
+  "feature": "historico-pedidos-cliente",
+  "description": "Listagem de pedidos do cliente com status e detalhes.",
+  "prd_id": "F6-06",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como cliente logado, quero ver uma lista dos meus pedidos para acompanhar minhas compras",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina /cliente/pedidos exibe a lista de pedidos do cliente logado",
+        "Apenas pedidos do usuario autenticado sao exibidos",
+        "A lista mostra: numero do pedido, data, status e valor total",
+        "Os pedidos sao ordenados do mais recente para o mais antigo",
+        "Visitantes sao redirecionados para login ao acessar a pagina",
+        "A pagina usa paginacao com 10 pedidos por pagina"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como cliente, quero ver o status atual de cada pedido para saber em que etapa esta",
+      "status": "done",
+      "acceptance_criteria": [
+        "Cada pedido exibe um badge colorido com o status (Pendente, Processando, Enviado, Entregue, Cancelado, Reembolsado)",
+        "O badge usa cores distintas para cada status",
+        "Um icone acompanha o status para facilitar identificacao visual",
+        "Pedidos enviados exibem link para rastreamento quando disponivel"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como cliente, quero filtrar meus pedidos por status para encontrar pedidos especificos",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um dropdown ou tabs permite filtrar por status",
+        "Opcoes de filtro: Todos, Pendentes, Em andamento, Enviados, Entregues, Cancelados",
+        "O filtro atualiza a lista sem recarregar a pagina",
+        "O contador de pedidos atualiza ao filtrar",
+        "O filtro e refletido na URL para permitir compartilhamento"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como cliente, quero buscar pedidos por numero para encontrar um pedido especifico rapidamente",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um campo de busca permite pesquisar por numero do pedido",
+        "A busca e case-insensitive",
+        "A busca atualiza a lista em tempo real (debounce de 300ms)",
+        "Quando nenhum pedido e encontrado, uma mensagem amigavel e exibida"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como cliente, quero ver um resumo dos itens em cada pedido na listagem para lembrar o que comprei",
+      "status": "done",
+      "acceptance_criteria": [
+        "Cada pedido mostra preview dos primeiros 2-3 produtos (thumbnail e nome)",
+        "Se houver mais itens, exibe '+X itens' indicando a quantidade restante",
+        "Ao clicar no pedido, sou direcionado para a pagina de detalhes"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como cliente, quero acessar o historico de pedidos pelo dashboard para navegar facilmente",
+      "status": "done",
+      "acceptance_criteria": [
+        "O card 'Meus Pedidos' no dashboard mostra os ultimos 3 pedidos",
+        "Cada pedido resumido mostra numero, data e status",
+        "Um link 'Ver todos os pedidos' leva para a pagina completa",
+        "Se nao houver pedidos, exibe mensagem e botao para ir as compras",
+        "O contador total de pedidos e exibido no card"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como cliente, quero uma experiencia responsiva na listagem de pedidos para usar em qualquer dispositivo",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina e otimizada para desktop, tablet e mobile",
+        "Em mobile, as informacoes sao reorganizadas em formato de card",
+        "Os filtros sao acessiveis em mobile via drawer ou accordion",
+        "A paginacao e facil de usar em telas pequenas",
+        "A pagina carrega rapidamente com loading states apropriados"
+      ]
+    }
+  ]
+}

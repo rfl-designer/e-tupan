@@ -1,0 +1,105 @@
+{
+  "feature": "listagem-produtos-storefront",
+  "description": "Pagina de listagem de produtos com filtros por categoria, preco, atributos e ordenacao.",
+  "prd_id": "F2-08",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como visitante, quero ver uma lista de produtos para navegar pelo catalogo da loja",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina /produtos exibe uma grade de produtos ativos",
+        "Cada produto mostra: imagem, nome, preco, desconto (se houver)",
+        "Produtos inativos ou rascunho nao sao exibidos",
+        "A pagina usa paginacao com 12 produtos por pagina",
+        "A paginacao mostra o numero total de produtos encontrados",
+        "A pagina e responsiva para mobile, tablet e desktop"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como visitante, quero filtrar produtos por categoria para encontrar itens especificos",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um sidebar ou dropdown exibe as categorias disponiveis",
+        "Ao selecionar uma categoria, apenas produtos dessa categoria sao exibidos",
+        "Categorias filhas tambem filtram corretamente",
+        "O filtro de categoria e refletido na URL (?categoria=slug)",
+        "O contador de produtos atualiza ao filtrar",
+        "Posso limpar o filtro de categoria"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como visitante, quero filtrar produtos por faixa de preco para encontrar itens no meu orcamento",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um slider ou inputs permitem definir preco minimo e maximo",
+        "O filtro considera o preco atual (promocional se houver)",
+        "O filtro de preco e refletido na URL (?preco_min=X&preco_max=Y)",
+        "O contador de produtos atualiza ao filtrar",
+        "Posso limpar o filtro de preco"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como visitante, quero filtrar produtos por atributos para refinar minha busca",
+      "status": "done",
+      "acceptance_criteria": [
+        "Atributos como cor, tamanho aparecem como opcoes de filtro",
+        "Apenas atributos presentes nos produtos listados sao exibidos",
+        "Posso selecionar multiplos valores do mesmo atributo",
+        "O filtro de atributos e refletido na URL",
+        "O contador de produtos atualiza ao filtrar",
+        "Posso limpar filtros de atributos individualmente"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como visitante, quero ordenar produtos para encontrar o que procuro mais facilmente",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um dropdown permite ordenar por: Mais recentes, Menor preco, Maior preco, Nome A-Z, Mais vendidos",
+        "A ordenacao padrao e 'Mais recentes'",
+        "A ordenacao e refletida na URL (?ordenar=preco-asc)",
+        "A ordenacao e mantida ao aplicar filtros"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como visitante, quero ver produtos em promocao destacados para aproveitar ofertas",
+      "status": "done",
+      "acceptance_criteria": [
+        "Produtos em promocao exibem badge de desconto",
+        "O preco original aparece riscado ao lado do preco promocional",
+        "Posso filtrar apenas produtos em promocao",
+        "O percentual de desconto e exibido corretamente"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como visitante, quero que os filtros sejam combinaveis para refinar minha busca",
+      "status": "done",
+      "acceptance_criteria": [
+        "Posso combinar filtro de categoria + preco + atributos + ordenacao",
+        "Todos os filtros ativos sao exibidos como chips/tags",
+        "Posso remover filtros individualmente clicando no X",
+        "Um botao 'Limpar todos' remove todos os filtros",
+        "A URL reflete todos os filtros aplicados",
+        "Ao compartilhar a URL, os filtros sao aplicados automaticamente"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como visitante, quero uma experiencia fluida ao navegar pelo catalogo",
+      "status": "done",
+      "acceptance_criteria": [
+        "Os filtros atualizam a lista sem recarregar a pagina (Livewire)",
+        "Um indicador de loading aparece durante a filtragem",
+        "A paginacao funciona com os filtros aplicados",
+        "O scroll volta ao topo ao mudar de pagina",
+        "O historico do navegador permite voltar aos filtros anteriores"
+      ]
+    }
+  ]
+}

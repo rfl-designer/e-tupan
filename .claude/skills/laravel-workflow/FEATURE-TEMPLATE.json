@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Laraflow Feature Schema",
+  "description": "Schema para arquivos de feature com user stories",
+  "type": "object",
+  "required": ["feature", "description", "user_stories"],
+  "properties": {
+    "feature": {
+      "type": "string",
+      "description": "Nome da feature em kebab-case",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "examples": ["user-auth", "product-catalog", "shopping-cart"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição da feature extraída do PRD"
+    },
+    "prd_id": {
+      "type": "string",
+      "description": "ID da feature no PRD para referência cruzada"
+    },
+    "user_stories": {
+      "type": "array",
+      "description": "Lista de user stories da feature",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "status", "acceptance_criteria"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Identificador único da story",
+            "pattern": "^us-[0-9]{2}$",
+            "examples": ["us-01", "us-02", "us-10"]
+          },
+          "description": {
+            "type": "string",
+            "description": "Descrição no formato: Como [usuário], quero [ação] para [benefício]"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["todo", "in-progress", "done"],
+            "default": "todo"
+          },
+          "acceptance_criteria": {
+            "type": "array",
+            "description": "Critérios de aceite testáveis",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "notes": {
+            "type": "string",
+            "description": "Notas adicionais ou decisões técnicas"
+          },
+          "pr_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL da PR quando a story for concluída"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "example": {
+    "feature": "user-auth",
+    "description": "Sistema completo de autenticação de usuários",
+    "prd_id": "auth",
+    "user_stories": [
+      {
+        "name": "us-01",
+        "description": "Como visitante, quero me registrar no sistema para acessar as funcionalidades",
+        "status": "todo",
+        "acceptance_criteria": [
+          "Formulário de registro com campos: nome, email, senha, confirmação de senha",
+          "Validação de email único no sistema",
+          "Senha deve ter mínimo 8 caracteres",
+          "Após registro, usuário recebe email de verificação",
+          "Usuário é redirecionado para página de confirmação"
+        ]
+      },
+      {
+        "name": "us-02",
+        "description": "Como usuário registrado, quero fazer login para acessar minha conta",
+        "status": "todo",
+        "acceptance_criteria": [
+          "Formulário de login com email e senha",
+          "Opção 'Lembrar-me' para sessão persistente",
+          "Mensagem de erro genérica para credenciais inválidas",
+          "Redirecionamento para dashboard após login bem-sucedido",
+          "Proteção contra brute force (rate limiting)"
+        ]
+      }
+    ]
+  }
+}

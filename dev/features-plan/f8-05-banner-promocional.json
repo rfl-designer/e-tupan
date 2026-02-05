@@ -1,0 +1,134 @@
+{
+  "feature": "banner-promocional",
+  "description": "Gestao de banners na homepage com link e periodo de exibicao.",
+  "prd_id": "F8-05",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como administrador, quero cadastrar banners promocionais para exibir campanhas na homepage",
+      "status": "done",
+      "acceptance_criteria": [
+        "O formulario de criacao possui campos: titulo, imagem desktop, imagem mobile (opcional), link de destino, texto alternativo (alt)",
+        "O upload de imagem aceita formatos JPG, PNG e WebP com tamanho maximo de 2MB",
+        "A imagem desktop e obrigatoria e a mobile e opcional (usa desktop como fallback)",
+        "O campo link de destino aceita URLs internas (/categoria/exemplo) e externas (https://...)",
+        "O campo titulo e usado internamente para identificacao (nao exibido no storefront)",
+        "Ao salvar, as imagens sao redimensionadas para tamanhos otimizados (large: 1920px, medium: 1024px)"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como administrador, quero definir periodo de exibicao dos banners para controlar campanhas temporarias",
+      "status": "done",
+      "acceptance_criteria": [
+        "O formulario possui campos data_inicio e data_fim opcionais",
+        "Se data_inicio nao for informada, o banner e exibido imediatamente apos ativacao",
+        "Se data_fim nao for informada, o banner permanece ativo indefinidamente",
+        "Banners fora do periodo de exibicao nao aparecem na homepage",
+        "O admin visualiza o status do periodo: 'Agendado', 'Ativo', 'Expirado'",
+        "As datas sao salvas em UTC e exibidas no timezone configurado da loja"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como administrador, quero ativar e desativar banners manualmente para controlar a exibicao",
+      "status": "done",
+      "acceptance_criteria": [
+        "Cada banner possui um campo 'is_active' (boolean)",
+        "O banner so e exibido se is_active = true E dentro do periodo de exibicao",
+        "A listagem exibe toggle para ativar/desativar rapidamente",
+        "Ao desativar, o banner e removido imediatamente da homepage",
+        "O status visual indica claramente: Ativo (verde), Inativo (cinza), Agendado (amarelo), Expirado (vermelho)"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como administrador, quero ordenar os banners para definir a sequencia de exibicao no carousel",
+      "status": "done",
+      "acceptance_criteria": [
+        "Cada banner possui um campo 'position' (integer) para ordenacao",
+        "A listagem permite reordenar via drag-and-drop",
+        "Banners com menor position aparecem primeiro no carousel",
+        "Ao criar um novo banner, ele recebe a ultima posicao automaticamente",
+        "A reordenacao atualiza as posicoes de todos os banners afetados"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como administrador, quero listar e gerenciar todos os banners cadastrados para ter visao geral",
+      "status": "done",
+      "acceptance_criteria": [
+        "A listagem exibe: thumbnail da imagem, titulo, periodo, status e posicao",
+        "E possivel filtrar por status: Todos, Ativos, Inativos, Agendados, Expirados",
+        "E possivel buscar pelo titulo do banner",
+        "Acoes disponiveis: Editar, Duplicar, Excluir",
+        "A exclusao usa soft delete e pede confirmacao",
+        "A paginacao exibe 10 banners por pagina"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como administrador, quero editar banners existentes para atualizar campanhas",
+      "status": "done",
+      "acceptance_criteria": [
+        "Todos os campos do banner sao editaveis",
+        "Ao trocar a imagem, a anterior e mantida ate salvar (para nao perder em caso de cancelamento)",
+        "O formulario exibe preview da imagem atual",
+        "Alteracoes sao refletidas imediatamente na homepage apos salvar",
+        "O historico de alteracoes e registrado no log de atividades"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como visitante, quero ver um carousel de banners na homepage para conhecer promocoes e campanhas",
+      "status": "done",
+      "acceptance_criteria": [
+        "O carousel e exibido no topo da homepage, abaixo do header",
+        "Apenas banners ativos e dentro do periodo de exibicao sao exibidos",
+        "Os banners sao ordenados pelo campo position",
+        "Se nao houver banners ativos, a secao nao e renderizada",
+        "O carousel tem navegacao por setas (anterior/proximo)",
+        "Indicadores (dots) mostram a quantidade e posicao atual do banner"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como visitante, quero que o carousel seja responsivo para visualizar corretamente em qualquer dispositivo",
+      "status": "done",
+      "acceptance_criteria": [
+        "Em desktop (>= 1024px), exibe a imagem desktop com altura maxima de 500px",
+        "Em mobile (< 1024px), exibe a imagem mobile se disponivel, senao usa desktop",
+        "A imagem e carregada com lazy loading apos o primeiro banner",
+        "O carousel usa touch/swipe em dispositivos moveis",
+        "O aspect ratio e mantido para evitar layout shift (CLS)",
+        "As imagens usam srcset para carregar o tamanho adequado ao dispositivo"
+      ]
+    },
+    {
+      "name": "us-09",
+      "description": "Como visitante, quero clicar no banner e ser direcionado para a pagina da campanha",
+      "status": "done",
+      "acceptance_criteria": [
+        "O banner inteiro e clicavel (area de clique cobre toda a imagem)",
+        "Links internos abrem na mesma aba",
+        "Links externos abrem em nova aba com rel='noopener noreferrer'",
+        "O cursor muda para pointer ao passar sobre o banner",
+        "Se nao houver link, o banner nao e clicavel",
+        "O texto alternativo (alt) da imagem e exibido para acessibilidade"
+      ]
+    },
+    {
+      "name": "us-10",
+      "description": "Como visitante, quero que o carousel tenha autoplay para ver todas as promocoes automaticamente",
+      "status": "done",
+      "acceptance_criteria": [
+        "O carousel troca de banner automaticamente a cada 5 segundos",
+        "O autoplay pausa ao passar o mouse sobre o carousel (desktop)",
+        "O autoplay pausa ao tocar no carousel (mobile)",
+        "O autoplay respeita a preferencia 'prefers-reduced-motion' do usuario",
+        "Ao chegar no ultimo banner, volta para o primeiro (loop infinito)",
+        "O intervalo de autoplay e configuravel no admin (futuro)"
+      ]
+    }
+  ]
+}

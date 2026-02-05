@@ -1,0 +1,124 @@
+{
+  "feature": "infraestrutura-emails",
+  "description": "Configuracao de SMTP/Mailgun/SendGrid para emails do sistema.",
+  "prd_id": "F10-04",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como administrador, quero configurar o provedor de email para enviar mensagens transacionais",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "O formulario de configuracao permite selecionar o driver: SMTP, Mailgun, Amazon SES, Postmark ou Resend",
+        "Ao selecionar SMTP, campos especificos sao exibidos: host, porta, usuario, senha, criptografia (TLS/SSL)",
+        "Ao selecionar Mailgun, campos especificos sao exibidos: dominio, secret key, endpoint (US/EU)",
+        "Ao selecionar Amazon SES, campos especificos sao exibidos: key, secret, regiao",
+        "Ao selecionar Postmark, campo especifico e exibido: token",
+        "Ao selecionar Resend, campo especifico e exibido: API key",
+        "As credenciais sao salvas de forma segura (criptografadas no banco)",
+        "O driver padrao continua sendo 'log' ate que uma configuracao valida seja salva"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como administrador, quero testar a configuracao de email para garantir que esta funcionando",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "Um botao 'Enviar Email de Teste' esta disponivel na pagina de configuracoes",
+        "Ao clicar, um modal solicita o email de destino (pre-preenchido com email do admin logado)",
+        "O sistema envia um email de teste com assunto 'Teste de Configuracao - [Nome da Loja]'",
+        "O corpo do email contem: nome da loja, data/hora do teste, driver configurado",
+        "Se o envio for bem-sucedido, uma mensagem de sucesso e exibida",
+        "Se o envio falhar, a mensagem de erro e exibida de forma clara",
+        "O teste usa o driver configurado, nao o driver padrao",
+        "Um log do teste (sucesso ou falha) e registrado no sistema"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como administrador, quero um layout base para emails transacionais com a identidade visual da loja",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "O layout base inclui: header com logo da loja, area de conteudo, footer com dados de contato",
+        "O footer exibe: nome da loja, endereco, telefone, email de contato e link para a loja",
+        "O layout e responsivo e funciona em clientes de email populares (Gmail, Outlook, Apple Mail)",
+        "As cores primarias da loja sao aplicadas (se configuradas)",
+        "O layout usa inline CSS para compatibilidade maxima",
+        "Existe um componente Blade reutilizavel para o layout: components.emails.layout",
+        "O layout inclui preheader text configuravel por email"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como sistema, quero processar emails em fila para nao bloquear requisicoes do usuario",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "Todos os Mailables implementam ShouldQueue por padrao",
+        "Uma fila especifica 'emails' e configurada para processamento de emails",
+        "Emails falhos sao movidos para a fila de falhas apos 3 tentativas",
+        "O intervalo entre tentativas e exponencial: 10s, 60s, 300s",
+        "Jobs de email tem timeout de 30 segundos",
+        "A configuracao de fila e documentada no .env.example",
+        "O comando php artisan queue:work --queue=emails processa a fila"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como administrador, quero visualizar logs de emails enviados para acompanhar o historico",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "Uma tabela email_logs registra todos os emails enviados pelo sistema",
+        "Cada registro contem: destinatario, assunto, tipo (mailable class), status, data/hora, mensagem de erro (se houver)",
+        "A listagem no admin exibe os ultimos 100 emails com paginacao",
+        "E possivel filtrar por: status (enviado/falhou), tipo de email, periodo",
+        "E possivel buscar por email do destinatario",
+        "Detalhes do log podem ser visualizados em um modal",
+        "Logs mais antigos que 90 dias sao automaticamente removidos via scheduled command"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como administrador, quero reenviar emails que falharam para garantir que o cliente receba",
+      "status": "done",
+      "pr_url": "https://github.com/AGD-Dev/rgnt-e-commerce/pull/17",
+      "acceptance_criteria": [
+        "Emails com status 'falhou' exibem botao 'Reenviar' na listagem",
+        "Ao clicar em reenviar, o email e enfileirado novamente",
+        "O log original e atualizado com referencia ao novo envio",
+        "Um novo registro de log e criado para a nova tentativa",
+        "Nao e possivel reenviar emails com mais de 7 dias",
+        "Uma confirmacao e solicitada antes de reenviar"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como sistema, quero validar a configuracao de email antes de salvar para evitar erros",
+      "status": "done",
+      "acceptance_criteria": [
+        "O sistema valida formato do email do remetente",
+        "Para SMTP, valida se host e porta sao validos",
+        "Para Mailgun, valida formato do dominio e secret key",
+        "Campos obrigatorios por driver sao validados no frontend e backend",
+        "Mensagens de erro sao especificas e orientam a correcao",
+        "A configuracao so e salva se todos os campos obrigatorios estiverem preenchidos"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como administrador, quero que as configuracoes de email sejam aplicadas em tempo real sem necessidade de deploy",
+      "status": "done",
+      "acceptance_criteria": [
+        "As configuracoes sao lidas do banco de dados, nao de variaveis de ambiente",
+        "Um service provider configura o mailer dinamicamente baseado nas configuracoes salvas",
+        "Alteracoes nas configuracoes sao aplicadas imediatamente apos salvar",
+        "Se nao houver configuracao no banco, o sistema usa as variaveis de ambiente como fallback",
+        "O cache de configuracao e limpo automaticamente ao salvar novas configuracoes",
+        "A configuracao dinamica e testada para cada driver suportado"
+      ]
+    }
+  ]
+}

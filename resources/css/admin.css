@@ -1,0 +1,447 @@
+/**
+ * Admin Panel Responsive Styles
+ *
+ * This file contains tablet-specific responsive adjustments for the admin panel.
+ * The base responsive styles are handled by Tailwind CSS and Flux UI.
+ * These styles complement them for tablet breakpoint (768px - 1024px).
+ */
+
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Tablet Breakpoint: 768px - 1024px
+   ========================================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* -------------------------------------------------------------------------
+       Touch-Friendly Buttons (minimum 44px touch target)
+       ------------------------------------------------------------------------- */
+
+    /* Ensure all interactive elements have adequate touch targets */
+    .admin-touch-target,
+    [data-flux-button],
+    button:not([data-flux-modal-close]),
+    a[href]:not(.text-link),
+    .flux-btn,
+    [role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Table action buttons */
+    table td button,
+    table td a[href] {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Checkbox and radio touch targets */
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-height: 24px;
+        min-width: 24px;
+    }
+
+    /* Checkbox/radio container touch area */
+    label:has(input[type="checkbox"]),
+    label:has(input[type="radio"]) {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding-block: 0.5rem;
+    }
+
+    /* -------------------------------------------------------------------------
+       Tables with Horizontal Scroll
+       ------------------------------------------------------------------------- */
+
+    /* Ensure tables scroll horizontally on tablet */
+    .admin-table-container,
+    .overflow-x-auto {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    /* Table minimum width to prevent squishing */
+    .admin-table,
+    .overflow-x-auto > table {
+        min-width: 800px;
+    }
+
+    /* Sticky first column for better table navigation */
+    .admin-table-sticky-col th:first-child,
+    .admin-table-sticky-col td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 10;
+        background: inherit;
+    }
+
+    /* Visual scroll indicator shadow */
+    .admin-table-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .admin-table-container:has(::-webkit-scrollbar:horizontal)::after {
+        opacity: 1;
+    }
+
+    /* -------------------------------------------------------------------------
+       Sidebar Adjustments for Tablet
+       ------------------------------------------------------------------------- */
+
+    /* Collapsible sidebar behavior */
+    [data-flux-sidebar] {
+        transition: transform 0.3s ease, width 0.3s ease;
+    }
+
+    /* Sidebar toggle button size */
+    [data-flux-sidebar-toggle] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* -------------------------------------------------------------------------
+       Modal Fullscreen on Tablet
+       ------------------------------------------------------------------------- */
+
+    /* Make modals fullscreen on tablet for better usability */
+    .admin-modal-fullscreen [data-flux-modal],
+    [data-flux-modal].tablet-fullscreen {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    /* Modal content scrollable */
+    .admin-modal-fullscreen [data-flux-modal] > div,
+    [data-flux-modal].tablet-fullscreen > div {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    /* Modal close button larger for touch */
+    [data-flux-modal-close] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* -------------------------------------------------------------------------
+       Form Adjustments
+       ------------------------------------------------------------------------- */
+
+    /* Input fields touch-friendly */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="time"],
+    select,
+    textarea {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Select dropdown */
+    [data-flux-select] {
+        min-height: 44px;
+    }
+
+    /* Form grid adjustments */
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* -------------------------------------------------------------------------
+       Card and Panel Adjustments
+       ------------------------------------------------------------------------- */
+
+    /* Cards with adequate padding for touch */
+    .admin-card,
+    [data-flux-card] {
+        padding: 1rem;
+    }
+
+    /* -------------------------------------------------------------------------
+       Chart Responsiveness
+       ------------------------------------------------------------------------- */
+
+    /* Charts container for responsive behavior */
+    .admin-chart-container {
+        width: 100%;
+        min-height: 250px;
+        max-height: 350px;
+    }
+
+    /* Canvas charts */
+    .admin-chart-container canvas {
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    /* -------------------------------------------------------------------------
+       Navigation Tabs
+       ------------------------------------------------------------------------- */
+
+    /* Scrollable tabs */
+    .admin-tabs,
+    nav[aria-label="Tabs"] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+
+    .admin-tabs::-webkit-scrollbar,
+    nav[aria-label="Tabs"]::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+
+    /* Tab items touch-friendly */
+    .admin-tabs button,
+    .admin-tabs a,
+    nav[aria-label="Tabs"] button,
+    nav[aria-label="Tabs"] a {
+        min-height: 44px;
+        padding-inline: 1rem;
+        white-space: nowrap;
+    }
+
+    /* -------------------------------------------------------------------------
+       Dropdown Menus
+       ------------------------------------------------------------------------- */
+
+    /* Dropdown items touch-friendly */
+    [data-flux-menu] [data-flux-menu-item],
+    [role="menu"] [role="menuitem"] {
+        min-height: 44px;
+        padding-block: 0.75rem;
+    }
+
+    /* -------------------------------------------------------------------------
+       Batch Actions Bar
+       ------------------------------------------------------------------------- */
+
+    /* Make batch actions bar stack on tablet */
+    .admin-batch-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    .admin-batch-actions > * {
+        width: 100%;
+    }
+
+    /* -------------------------------------------------------------------------
+       Filters Panel
+       ------------------------------------------------------------------------- */
+
+    /* Filter inputs full width */
+    .admin-filters {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .admin-filters > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* -------------------------------------------------------------------------
+       Pagination
+       ------------------------------------------------------------------------- */
+
+    /* Touch-friendly pagination */
+    nav[aria-label="Pagination"] a,
+    nav[aria-label="Pagination"] button,
+    nav[aria-label="Pagination"] span {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* -------------------------------------------------------------------------
+       Grid Layouts
+       ------------------------------------------------------------------------- */
+
+    /* Dashboard grid on tablet */
+    .admin-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Two-column grid becomes single column */
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats cards in 2 columns */
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* -------------------------------------------------------------------------
+       Breadcrumbs
+       ------------------------------------------------------------------------- */
+
+    /* Breadcrumb items */
+    [data-flux-breadcrumbs] a,
+    [data-flux-breadcrumbs] span {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Scrollable breadcrumbs */
+    [data-flux-breadcrumbs] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    [data-flux-breadcrumbs]::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Mobile Adjustments (below 768px)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+    /* Modals always fullscreen on mobile */
+    [data-flux-modal] {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    /* Modal content scrollable */
+    [data-flux-modal] > div {
+        max-height: 100vh;
+        overflow-y: auto;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* Safe area padding for notched devices */
+    .admin-safe-area-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* ==========================================================================
+   Utility Classes for Admin
+   ========================================================================== */
+
+/* Touch target helper */
+.touch-target {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Scrollable container */
+.scroll-touch {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Modal fullscreen modifier */
+.modal-tablet-fullscreen {
+    --modal-max-width: 100vw;
+    --modal-max-height: 100vh;
+}
+
+/* Chart responsive container */
+.chart-responsive {
+    width: 100%;
+    position: relative;
+}
+
+.chart-responsive canvas {
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   Dark Mode Adjustments
+   ========================================================================== */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Scroll shadow for dark mode */
+.dark .admin-table-container::after {
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2));
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    /* Hide navigation elements */
+    [data-flux-sidebar],
+    [data-flux-header],
+    .admin-batch-actions,
+    button,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Full width content */
+    [data-flux-main] {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Tables print friendly */
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+}

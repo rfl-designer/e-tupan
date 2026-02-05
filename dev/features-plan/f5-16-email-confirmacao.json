@@ -1,0 +1,109 @@
+{
+  "feature": "email-confirmacao-pedido",
+  "description": "Envio automatico de email com confirmacao e detalhes do pedido.",
+  "status": "done",
+  "prd_id": "F5-16",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como sistema, quero enviar um email de confirmacao automaticamente apos o pedido ser criado para que o cliente tenha um comprovante",
+      "status": "done",
+      "acceptance_criteria": [
+        "O email e enviado automaticamente quando um pedido e criado com sucesso",
+        "O email e enviado para o email do usuario logado ou guest_email para visitantes",
+        "O envio e disparado via evento OrderCreated ou similar",
+        "O email usa a fila 'emails' para nao bloquear a requisicao",
+        "O Mailable implementa a trait QueueableMail para configuracao padrao de retry",
+        "O envio e registrado na tabela email_logs com tipo 'order_confirmation'",
+        "Se o envio falhar, o erro e registrado no log para posterior reenvio"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como cliente, quero receber um email com o numero e resumo do pedido para ter a confirmacao da compra",
+      "status": "done",
+      "acceptance_criteria": [
+        "O assunto do email segue o formato: 'Pedido #{order_number} confirmado - [Nome da Loja]'",
+        "O email exibe o numero do pedido em destaque",
+        "A data e hora do pedido sao exibidas",
+        "O status do pedido e exibido (ex: Aguardando Pagamento, Pago)",
+        "O email usa o layout base de emails (components.emails.layout)",
+        "O preheader text resume a confirmacao: 'Seu pedido #{order_number} foi recebido com sucesso'"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como cliente, quero ver a lista de produtos comprados no email para conferir meu pedido",
+      "status": "done",
+      "acceptance_criteria": [
+        "Cada item exibe: nome do produto, variante (se houver), quantidade, preco unitario e subtotal",
+        "O SKU do produto ou variante e exibido",
+        "Produtos com variante exibem o nome da variante abaixo do nome do produto",
+        "Os precos sao formatados em Reais (R$ X.XXX,XX)",
+        "A lista suporta multiplos itens com layout responsivo"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como cliente, quero ver o resumo financeiro do pedido no email para entender os valores",
+      "status": "done",
+      "acceptance_criteria": [
+        "O resumo exibe: subtotal dos itens, valor do frete, desconto (se houver) e total",
+        "Se houver cupom aplicado, o codigo do cupom e exibido junto ao valor do desconto",
+        "O metodo de pagamento escolhido e exibido (Cartao, PIX, Boleto)",
+        "Para pagamentos parcelados, o numero de parcelas e valor da parcela sao exibidos",
+        "O total e destacado visualmente",
+        "Todos os valores sao formatados em Reais"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como cliente, quero ver o endereco de entrega no email para confirmar onde sera entregue",
+      "status": "done",
+      "acceptance_criteria": [
+        "O endereco completo e exibido: rua, numero, complemento (se houver), bairro, cidade, estado e CEP",
+        "O nome do destinatario (shipping_recipient_name) e exibido",
+        "O metodo de envio e exibido (ex: PAC, SEDEX, Transportadora)",
+        "O prazo estimado de entrega e exibido em dias uteis",
+        "O valor do frete e exibido na secao de entrega"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como cliente, quero ter um link para acompanhar meu pedido no email para facilitar o acesso",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um botao/link 'Acompanhar Pedido' e exibido no email",
+        "Para clientes logados, o link direciona para /minha-conta/pedidos/{id}",
+        "Para visitantes (guest), o link usa token de acesso: /pedido/{order_number}?token={access_token}",
+        "O link e destacado visualmente como call-to-action principal",
+        "O link e absoluto (URL completa) para funcionar em qualquer cliente de email"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como cliente, quero ver informacoes de contato da loja no email para tirar duvidas se necessario",
+      "status": "done",
+      "acceptance_criteria": [
+        "O footer do email exibe o nome da loja",
+        "O email de contato da loja e exibido",
+        "O telefone de contato da loja e exibido (se configurado)",
+        "Um link para a loja e incluido",
+        "As informacoes sao obtidas das configuracoes da loja (StoreSettings)"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como sistema, quero que o email de confirmacao seja responsivo para funcionar em qualquer dispositivo",
+      "status": "done",
+      "acceptance_criteria": [
+        "O email renderiza corretamente em Gmail, Outlook, Apple Mail e Yahoo Mail",
+        "O layout se adapta para dispositivos moveis (max-width: 600px)",
+        "As imagens tem tamanho maximo definido para nao quebrar o layout",
+        "O CSS e inline para compatibilidade maxima",
+        "O email tem versao texto plano (text/plain) como fallback",
+        "Fontes web-safe sao utilizadas (Arial, Helvetica, sans-serif)"
+      ]
+    }
+  ]
+}

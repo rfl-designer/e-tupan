@@ -1,0 +1,109 @@
+{
+  "feature": "busca-produtos-storefront",
+  "description": "Campo de busca com autocomplete e resultados relevantes.",
+  "prd_id": "F2-10",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como visitante, quero ver um campo de busca no header para pesquisar produtos rapidamente",
+      "status": "done",
+      "acceptance_criteria": [
+        "O campo de busca e visivel no header em todas as paginas",
+        "O campo tem placeholder 'Buscar produtos...'",
+        "O campo aceita texto e submete ao pressionar Enter",
+        "Um icone de lupa indica a funcionalidade de busca",
+        "O campo e responsivo e se adapta a mobile",
+        "Em mobile, o campo pode ser expandido ao clicar no icone"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como visitante, quero ver sugestoes enquanto digito para encontrar produtos mais rapido",
+      "status": "done",
+      "acceptance_criteria": [
+        "Apos digitar 2+ caracteres, sugestoes aparecem em dropdown",
+        "As sugestoes mostram ate 5 produtos correspondentes",
+        "Cada sugestao exibe: imagem thumbnail, nome e preco",
+        "As sugestoes atualizam em tempo real (debounce de 300ms)",
+        "Posso navegar pelas sugestoes com teclado (setas e Enter)",
+        "Ao clicar em uma sugestao, vou para a pagina do produto",
+        "Um link 'Ver todos os resultados' leva para pagina de busca completa"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como visitante, quero ver uma pagina de resultados de busca para explorar todos os produtos encontrados",
+      "status": "done",
+      "acceptance_criteria": [
+        "A rota /busca?q=termo exibe os resultados da busca",
+        "O termo buscado e exibido no titulo da pagina",
+        "O numero total de resultados e exibido",
+        "Os produtos sao exibidos em grade usando o mesmo card da listagem",
+        "A paginacao funciona com 12 produtos por pagina",
+        "O termo de busca e mantido na paginacao"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como visitante, quero que a busca encontre produtos relevantes para ter bons resultados",
+      "status": "done",
+      "acceptance_criteria": [
+        "A busca pesquisa no nome do produto",
+        "A busca pesquisa na descricao curta",
+        "A busca pesquisa no SKU do produto",
+        "A busca e case-insensitive (ignora maiusculas/minusculas)",
+        "A busca ignora acentos (cafe encontra café)",
+        "Apenas produtos ativos sao retornados",
+        "Os resultados sao ordenados por relevancia (match no nome primeiro)"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como visitante, quero ver uma mensagem amigavel quando nao houver resultados",
+      "status": "done",
+      "acceptance_criteria": [
+        "Quando nenhum produto e encontrado, uma mensagem amigavel e exibida",
+        "A mensagem sugere verificar a ortografia ou usar termos diferentes",
+        "Produtos em destaque ou categorias populares sao sugeridos",
+        "O campo de busca permite nova pesquisa facilmente"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como visitante, quero filtrar e ordenar os resultados da busca para refinar minha pesquisa",
+      "status": "done",
+      "acceptance_criteria": [
+        "Os filtros da listagem de produtos estao disponiveis na busca",
+        "Posso filtrar por categoria dentro dos resultados",
+        "Posso filtrar por faixa de preco dentro dos resultados",
+        "Posso ordenar resultados por preco, nome ou relevancia",
+        "Os filtros sao combinados com o termo de busca na URL",
+        "Limpar filtros mantem o termo de busca"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como visitante, quero uma experiencia de busca rapida e fluida",
+      "status": "done",
+      "acceptance_criteria": [
+        "O autocomplete usa Livewire para atualizacoes sem reload",
+        "Um indicador de loading aparece durante a busca",
+        "A pagina de resultados carrega rapidamente",
+        "O historico do navegador permite voltar a buscas anteriores",
+        "A busca funciona bem em conexoes lentas (loading states)"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como lojista, quero que a pagina de busca seja otimizada para SEO",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina de busca tem meta title dinamico com o termo buscado",
+        "A pagina tem meta description apropriada",
+        "URLs de busca sao indexaveis quando relevantes",
+        "Canonical URL e definida corretamente",
+        "Paginas sem resultados tem noindex para evitar conteudo duplicado"
+      ]
+    }
+  ]
+}

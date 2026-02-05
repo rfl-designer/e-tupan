@@ -1,0 +1,116 @@
+{
+  "feature": "pagina-produto-storefront",
+  "description": "Pagina de detalhe do produto com galeria, variantes, descricao e botao comprar.",
+  "prd_id": "F2-09",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como visitante, quero ver os detalhes basicos de um produto para entender o que estou comprando",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina /produtos/{slug} exibe o produto correspondente",
+        "Produtos inativos ou rascunho retornam 404",
+        "O nome do produto e exibido como titulo principal",
+        "A descricao curta e exibida abaixo do titulo",
+        "A descricao completa e exibida em uma secao separada",
+        "O SKU do produto e exibido",
+        "As categorias do produto sao exibidas como breadcrumbs ou links",
+        "A pagina tem meta tags para SEO (title, description)"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como visitante, quero ver a galeria de imagens do produto para visualizar o item de diferentes angulos",
+      "status": "done",
+      "acceptance_criteria": [
+        "A imagem principal e exibida em destaque",
+        "Thumbnails das demais imagens sao exibidos abaixo ou ao lado",
+        "Ao clicar em um thumbnail, a imagem principal e atualizada",
+        "Se o produto nao tem imagens, um placeholder e exibido",
+        "As imagens podem ser ampliadas ao clicar (lightbox ou zoom)",
+        "A galeria e navegavel por setas ou swipe em mobile",
+        "A galeria e responsiva para diferentes tamanhos de tela"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como visitante, quero ver o preco do produto com informacoes de promocao para tomar minha decisao de compra",
+      "status": "done",
+      "acceptance_criteria": [
+        "O preco atual e exibido em destaque",
+        "Se em promocao, o preco original aparece riscado",
+        "O percentual de desconto e exibido como badge",
+        "Opcoes de parcelamento sao exibidas (ex: 12x de R$XX)",
+        "O preco e formatado em Real brasileiro (R$)",
+        "O parcelamento considera juros configurados"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como visitante, quero selecionar variantes do produto para escolher cor, tamanho ou outras opcoes",
+      "status": "done",
+      "acceptance_criteria": [
+        "Produtos variaveis exibem seletores de atributos",
+        "Atributos de cor sao exibidos como swatches coloridos",
+        "Atributos de tamanho sao exibidos como botoes",
+        "Ao selecionar uma variante, o preco e atualizado",
+        "Ao selecionar uma variante, o estoque e atualizado",
+        "Ao selecionar uma variante, a imagem pode mudar (se houver)",
+        "Variantes sem estoque aparecem desabilitadas ou riscadas",
+        "O usuario deve selecionar todas as opcoes antes de adicionar ao carrinho",
+        "Produtos simples nao exibem seletores de variantes"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como visitante, quero ver a disponibilidade do produto para saber se posso comprar",
+      "status": "done",
+      "acceptance_criteria": [
+        "Produtos em estoque exibem 'Disponivel' ou 'Em estoque'",
+        "Produtos sem estoque exibem 'Esgotado' ou 'Indisponivel'",
+        "Produtos com estoque baixo podem exibir 'Ultimas unidades'",
+        "O status de estoque atualiza ao selecionar variante",
+        "O botao de comprar e desabilitado para produtos sem estoque"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como visitante, quero adicionar o produto ao carrinho para realizar minha compra",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um botao 'Adicionar ao Carrinho' e exibido em destaque",
+        "Posso selecionar a quantidade antes de adicionar",
+        "A quantidade minima e 1 e maxima e limitada pelo estoque",
+        "Ao adicionar, uma confirmacao visual e exibida (toast ou modal)",
+        "O mini carrinho no header e atualizado em tempo real",
+        "Se produto variavel, devo selecionar variante antes de adicionar",
+        "Botao fica desabilitado durante o processamento (loading)",
+        "Mensagem de erro e exibida se adicao falhar"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como visitante, quero uma experiencia responsiva na pagina de produto",
+      "status": "done",
+      "acceptance_criteria": [
+        "A pagina e otimizada para desktop, tablet e mobile",
+        "Em mobile, a galeria ocupa largura total",
+        "Em mobile, os botoes de acao sao fixos no rodape",
+        "A pagina carrega rapidamente com lazy loading de imagens",
+        "Interacoes sao fluidas sem reload de pagina (Livewire)"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como visitante, quero ver produtos relacionados para descobrir mais opcoes",
+      "status": "done",
+      "acceptance_criteria": [
+        "Uma secao de produtos relacionados e exibida abaixo da descricao",
+        "Os produtos relacionados sao da mesma categoria",
+        "Exibe no maximo 4-6 produtos relacionados",
+        "Os cards de produto seguem o mesmo padrao da listagem",
+        "Se nao houver produtos relacionados, a secao e ocultada"
+      ]
+    }
+  ]
+}

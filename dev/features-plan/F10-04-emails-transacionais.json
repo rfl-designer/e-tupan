@@ -1,0 +1,61 @@
+{
+  "feature": "emails-transacionais",
+  "description": "Configuracao de SMTP/Mailgun/SendGrid para emails do sistema",
+  "prd_id": "F10-04",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como administrador, quero configurar o provider de email (SMTP/Mailgun/Resend) para enviar emails transacionais da loja",
+      "status": "done",
+      "acceptance_criteria": [
+        "Pagina de configuracoes de email permite selecionar provider: SMTP, Mailgun, Resend",
+        "Ao selecionar SMTP, exibe campos: host, porta, usuario, senha, criptografia (TLS/SSL)",
+        "Ao selecionar Mailgun, exibe campos: dominio, secret key, endpoint (US/EU)",
+        "Ao selecionar Resend, exibe campo: API key",
+        "Configuracoes sao salvas na tabela store_settings com grupo 'email'",
+        "Validacao de campos obrigatorios antes de salvar",
+        "Campos sensiveis (senha, API keys) sao criptografados ao salvar"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como administrador, quero testar o envio de email para verificar se a configuracao esta correta",
+      "status": "done",
+      "acceptance_criteria": [
+        "Botao 'Enviar email de teste' na pagina de configuracoes",
+        "Ao clicar, abre modal para informar email de destino",
+        "Email de teste contem: assunto padrao, corpo com informacoes da loja, data/hora do teste",
+        "Exibe feedback de sucesso quando email e enviado",
+        "Exibe mensagem de erro detalhada quando falha (timeout, credenciais invalidas, etc)",
+        "Acao de teste usa fila (queue) para nao bloquear a interface"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como administrador, quero que as configuracoes de email do admin sobrescrevam as do .env para flexibilidade",
+      "status": "done",
+      "acceptance_criteria": [
+        "Service provider aplica configuracoes do banco ao inicializar aplicacao",
+        "Se nao houver configuracao no banco, usa valores do .env como fallback",
+        "Configuracao de 'from' (nome e email do remetente) vem do admin settings",
+        "Alteracoes nas configuracoes tem efeito imediato (limpa cache de config)",
+        "Documentacao no .env.example explica que admin settings tem prioridade"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como desenvolvedor, quero variaveis de ambiente documentadas no .env.example para todos os providers suportados",
+      "status": "done",
+      "acceptance_criteria": [
+        ".env.example contem secao documentada para SMTP com todas variaveis",
+        ".env.example contem secao documentada para Mailgun (MAILGUN_DOMAIN, MAILGUN_SECRET, MAILGUN_ENDPOINT)",
+        ".env.example contem secao documentada para Resend (RESEND_API_KEY)",
+        "config/services.php inclui configuracao para Mailgun",
+        "config/mail.php ja suporta todos os providers (verificar e ajustar se necessario)"
+      ]
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-02-03T00:00:00Z"
+  }
+}

@@ -1,0 +1,20 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+
+    level: 5
+
+    excludePaths:
+        - app/Domain/*/.gitkeep
+        - app/Infrastructure/*/.gitkeep
+
+    # Ignore errors that are expected or false positives
+    ignoreErrors:
+        # Livewire components may have dynamic properties
+        - '#Access to an undefined property Livewire\\Component::\$[a-zA-Z0-9_]+#'
+
+    # Report unmatched ignored errors
+    reportUnmatchedIgnoredErrors: false

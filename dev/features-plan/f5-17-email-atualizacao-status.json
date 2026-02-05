@@ -1,0 +1,106 @@
+{
+  "feature": "email-atualizacao-status",
+  "description": "Notificacao por email quando status do pedido muda.",
+  "prd_id": "F5-17",
+  "user_stories": [
+    {
+      "name": "us-01",
+      "description": "Como sistema, quero enviar um email automaticamente quando o status do pedido mudar para manter o cliente informado",
+      "status": "done",
+      "acceptance_criteria": [
+        "O email e enviado automaticamente quando o status do pedido e alterado",
+        "O envio e disparado via evento OrderStatusChanged ou listener no modelo Order",
+        "O email usa a fila 'emails' para nao bloquear a requisicao",
+        "O Mailable implementa a trait QueueableMail para configuracao padrao de retry",
+        "O envio e registrado na tabela email_logs com tipo 'order_status_update'",
+        "Se o envio falhar, o erro e registrado no log para posterior reenvio",
+        "O email e enviado para o email do usuario logado ou guest_email para visitantes"
+      ]
+    },
+    {
+      "name": "us-02",
+      "description": "Como cliente, quero receber emails diferentes para cada tipo de mudanca de status para entender o que aconteceu",
+      "status": "done",
+      "acceptance_criteria": [
+        "O sistema suporta templates diferentes por status: pagamento_confirmado, em_preparacao, enviado, entregue, cancelado",
+        "O assunto do email varia conforme o status: 'Pedido #{order_number} - Pagamento Confirmado', 'Seu Pedido #{order_number} foi Enviado', etc.",
+        "O preheader text e personalizado para cada status",
+        "O corpo do email tem mensagem contextualizada para cada status",
+        "Um icone ou badge visual indica o novo status no topo do email"
+      ]
+    },
+    {
+      "name": "us-03",
+      "description": "Como cliente, quero ver as informacoes de rastreamento quando o pedido for enviado para acompanhar a entrega",
+      "status": "done",
+      "acceptance_criteria": [
+        "Quando o status mudar para 'enviado', o email inclui o codigo de rastreamento",
+        "O nome da transportadora e exibido (ex: Correios, Jadlog, etc.)",
+        "Um link direto para rastreamento e incluido (URL da transportadora ou pagina publica de rastreamento)",
+        "O prazo estimado de entrega atualizado e exibido",
+        "Se houver multiplos volumes, todos os codigos de rastreamento sao listados"
+      ]
+    },
+    {
+      "name": "us-04",
+      "description": "Como cliente, quero ver um resumo do pedido no email de atualizacao para lembrar do que comprei",
+      "status": "done",
+      "acceptance_criteria": [
+        "O numero do pedido e exibido em destaque",
+        "A data do pedido original e exibida",
+        "Uma lista resumida dos itens e exibida (nome e quantidade, sem precos detalhados)",
+        "O valor total do pedido e exibido",
+        "O endereco de entrega e exibido de forma resumida (cidade/estado)"
+      ]
+    },
+    {
+      "name": "us-05",
+      "description": "Como cliente, quero um link para ver os detalhes completos do pedido para acessar mais informacoes",
+      "status": "done",
+      "acceptance_criteria": [
+        "Um botao/link 'Ver Detalhes do Pedido' e exibido no email",
+        "Para clientes logados, o link direciona para /minha-conta/pedidos/{id}",
+        "Para visitantes (guest), o link usa token de acesso: /pedido/{order_number}?token={access_token}",
+        "O link e absoluto (URL completa) para funcionar em qualquer cliente de email",
+        "O botao e destacado como call-to-action secundario"
+      ]
+    },
+    {
+      "name": "us-06",
+      "description": "Como cliente, quero ser informado quando meu pedido for cancelado com o motivo do cancelamento",
+      "status": "done",
+      "acceptance_criteria": [
+        "O email de cancelamento tem visual diferenciado (tom mais serio)",
+        "O motivo do cancelamento e exibido quando disponivel",
+        "Informacoes sobre reembolso sao incluidas (se aplicavel): valor, metodo, prazo estimado",
+        "Um link/email de contato e destacado para duvidas",
+        "O valor total que sera estornado e claramente indicado"
+      ]
+    },
+    {
+      "name": "us-07",
+      "description": "Como administrador, quero configurar quais mudancas de status disparam emails para controlar a comunicacao",
+      "status": "done",
+      "acceptance_criteria": [
+        "Existe uma configuracao em StoreSettings para habilitar/desabilitar emails por tipo de status",
+        "Por padrao, todos os status principais enviam email: pagamento_confirmado, em_preparacao, enviado, entregue, cancelado",
+        "O admin pode desabilitar notificacoes especificas sem afetar as outras",
+        "A configuracao e acessivel via painel administrativo em Configuracoes > Emails",
+        "Mudancas de status internas/administrativas podem ser configuradas para nao notificar o cliente"
+      ]
+    },
+    {
+      "name": "us-08",
+      "description": "Como sistema, quero que os emails de atualizacao sigam o mesmo padrao visual dos outros emails para manter consistencia",
+      "status": "done",
+      "acceptance_criteria": [
+        "O email usa o layout base de emails (components.emails.layout)",
+        "O footer exibe as informacoes de contato da loja",
+        "O email e responsivo e funciona em Gmail, Outlook, Apple Mail e Yahoo Mail",
+        "O CSS e inline para compatibilidade maxima",
+        "O email tem versao texto plano (text/plain) como fallback",
+        "As cores e fontes seguem a identidade visual configurada na loja"
+      ]
+    }
+  ]
+}
