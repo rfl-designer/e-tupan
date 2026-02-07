@@ -16,7 +16,7 @@
                     <span class="sr-only">TUPAN</span>
                 </div>
                 <p class="text-sm leading-relaxed text-neutral-light">
-                    Ha 16 anos intermediando seguranca, tecnica e cuidado para quem atua em saude. Nascemos no Sertao. Construimos autoridade com estudo, responsabilidade e entrega coerente.
+                    Há 16 anos intermediando segurança, técnica e cuidado para quem atua em saúde. Nascemos no Sertão. Construímos autoridade com estudo, responsabilidade e entrega coerente.
                 </p>
                 <div class="flex gap-4 pt-2">
                     <a href="#" class="text-neutral-light transition-colors hover:text-primary-light" aria-label="Instagram">
@@ -42,7 +42,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-medium">Divisoes Especializadas</h5>
+                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-medium">Divisões Especializadas</h5>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     @foreach($divisions as $division)
                         <li>
@@ -58,10 +58,10 @@
                 <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-medium">Institucional</h5>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Quem Somos</a></li>
-                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa Historia</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="transition-colors hover:text-primary-light">Conhecimento Tecnico</a></li>
+                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa História</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="transition-colors hover:text-primary-light">Conhecimento Técnico</a></li>
                     <li><a href="{{ route('contact') }}" class="transition-colors hover:text-primary-light">Trabalhe Conosco</a></li>
-                    <li><a href="#" class="transition-colors hover:text-primary-light">Politica de Privacidade</a></li>
+                    <li><a href="#" class="transition-colors hover:text-primary-light">Política de Privacidade</a></li>
                 </ul>
             </div>
 
@@ -76,8 +76,8 @@
         </div>
 
         <div class="flex flex-col items-center justify-between gap-4 border-t border-neutral-medium/20 pt-8 text-xs text-neutral-medium md:flex-row">
-            <p>&copy; {{ date('Y') }} TUPAN - Produtos para Sua Saude. Todos os direitos reservados.</p>
-            <p>Conhecimento tecnico aplicado ha 16 anos.</p>
+            <p>&copy; {{ date('Y') }} TUPAN - Produtos para Sua Saúde. Todos os direitos reservados.</p>
+            <p>Conhecimento técnico aplicado há 16 anos.</p>
         </div>
     </div>
 </footer>

@@ -14,8 +14,8 @@ class ContactPage extends Component
         return view('livewire.institutional.contact-page')
             ->layout('components.institutional.layout', [
                 'title'           => 'TUPAN | Contato',
-                'metaTitle'       => 'TUPAN | Fale com nossa equipe tecnica',
-                'metaDescription' => 'Solicite consultoria tecnica e encontre a solucao ideal para sua instituicao de saude.',
+                'metaTitle'       => 'TUPAN | Fale com nossa equipe técnica',
+                'metaDescription' => 'Solicite consultoria técnica e encontre a solução ideal para sua instituição de saúde.',
                 'canonicalUrl'    => url('/contato'),
             ]);
     }

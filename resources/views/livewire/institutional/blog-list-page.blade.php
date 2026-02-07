@@ -9,13 +9,13 @@
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento Tecnico</span>
+                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento Técnico</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
-                    Informacao Confiavel <br />
-                    <span class="text-primary-light">em Saude</span>
+                    Informação Confiável <br />
+                    <span class="text-primary-light">em Saúde</span>
                 </h1>
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">
-                    Conteudo tecnico e atualizado sobre inovacoes em saude, boas praticas e tecnologias que impactam o cuidado ao paciente. Em um mundo onde sobra discurso e falta verdade, oferecemos informacao confiavel.
+                    Conteúdo técnico e atualizado sobre inovações em saúde, boas práticas e tecnologias que impactam o cuidado ao paciente. Em um mundo onde sobra discurso e falta verdade, oferecemos informação confiável.
                 </p>
             </x-institutional.reveal>
         </div>
@@ -66,9 +66,9 @@
                 <div class="relative overflow-hidden rounded-3xl bg-primary p-8 text-center text-white md:p-12">
                     <div class="absolute left-0 top-0 h-full w-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                     <div class="relative z-10 mx-auto max-w-2xl">
-                        <h3 class="mb-4 text-2xl font-bold md:text-3xl">Receba Conhecimento Tecnico da TUPAN</h3>
+                        <h3 class="mb-4 text-2xl font-bold md:text-3xl">Receba Conhecimento Técnico da TUPAN</h3>
                         <p class="mb-8 text-primary-bg">
-                            Inscreva-se para receber conteudo tecnico, novidades sobre produtos e informacoes relevantes para quem atua em saude.
+                            Inscreva-se para receber conteúdo técnico, novidades sobre produtos e informações relevantes para quem atua em saúde.
                         </p>
                         <div class="flex flex-col justify-center gap-4 sm:flex-row">
                             <input

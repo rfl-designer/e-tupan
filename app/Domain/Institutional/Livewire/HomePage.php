@@ -13,9 +13,9 @@ class HomePage extends Component
     {
         return view('livewire.institutional.home-page')
             ->layout('components.institutional.layout', [
-                'title'           => 'TUPAN | Home',
-                'metaTitle'       => 'TUPAN | Solucoes tecnicas em saude',
-                'metaDescription' => 'Distribuicao e tecnologia para saude com suporte tecnico, consultoria especializada e cobertura no Nordeste.',
+                'title'           => 'TUPAN | Início',
+                'metaTitle'       => 'TUPAN | Soluções técnicas em saúde',
+                'metaDescription' => 'Distribuição e tecnologia para saúde com suporte técnico, consultoria especializada e cobertura no Nordeste.',
                 'canonicalUrl'    => url('/'),
             ]);
     }

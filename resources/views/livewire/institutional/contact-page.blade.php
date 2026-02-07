@@ -15,7 +15,7 @@
                     <span class="text-primary-light">sua necessidade.</span>
                 </h1>
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">
-                    Cada demanda em saude e unica. Nossa equipe tecnica e comercial esta preparada para ouvir, entender e propor a solucao mais adequada para sua instituicao.
+                    Cada demanda em saúde é única. Nossa equipe técnica e comercial está preparada para ouvir, entender e propor a solução mais adequada para sua instituição.
                 </p>
             </x-institutional.reveal>
         </div>
@@ -30,7 +30,7 @@
                     </div>
                     <h3 class="mb-2 text-xl font-semibold text-neutral-strong">Central de Atendimento</h3>
                     <p class="text-neutral-medium">{{ $contact['phone'] ?? '(81) 3333-0000' }}</p>
-                    <p class="mt-2 text-sm text-neutral-light">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h as 18h' }}</p>
+                    <p class="mt-2 text-sm text-neutral-light">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h às 18h' }}</p>
                 </div>
             </x-institutional.reveal>
 
@@ -50,9 +50,9 @@
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary">
                         <flux:icon name="map-pin" class="size-6" />
                     </div>
-                    <h3 class="mb-2 text-xl font-semibold text-neutral-strong">Localizacao</h3>
+                    <h3 class="mb-2 text-xl font-semibold text-neutral-strong">Localização</h3>
                     <p class="text-neutral-medium">{{ $contact['city'] ?? 'Recife, Pernambuco' }}</p>
-                    <p class="mt-2 text-sm text-neutral-light">{{ $contact['coverage'] ?? 'Atuacao em todo o Nordeste' }}</p>
+                    <p class="mt-2 text-sm text-neutral-light">{{ $contact['coverage'] ?? 'Atuação em todo o Nordeste' }}</p>
                 </div>
             </x-institutional.reveal>
         </div>

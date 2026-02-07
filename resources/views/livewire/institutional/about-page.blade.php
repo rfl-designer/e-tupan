@@ -5,13 +5,13 @@
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Nossa Historia</span>
+                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Nossa História</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
-                    Autoridade nao se declara, <br />
-                    <span class="text-primary-light">se constroi.</span>
+                    Autoridade não se declara, <br />
+                    <span class="text-primary-light">se constrói.</span>
                 </h1>
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">
-                    Ha 16 anos, nascemos no Sertao com uma certeza: saude nao e lugar para improviso. Construimos nossa reputacao com a mesma seriedade que aprendemos onde palavra vale mais que contrato.
+                    Há 16 anos, nascemos no Sertão com uma certeza: saúde não é lugar para improviso. Construímos nossa reputação com a mesma seriedade que aprendemos onde palavra vale mais que contrato.
                 </p>
             </x-institutional.reveal>
         </div>
@@ -37,13 +37,13 @@
                 <x-institutional.reveal :delay="100">
                     <h2 class="text-3xl font-medium text-neutral-strong">De Onde Viemos, Para Onde Vamos</h2>
                     <p class="mt-4 text-lg leading-relaxed text-neutral-medium">
-                        A TUPAN nasceu no Sertao, em uma terra onde o comercio e construido na confianca, no aperto de mao e no respeito. Nosso fundador e farmaceutico, empresario e apaixonado por conhecimento. Ao lado de profissionais tecnicos e gestores, construiu uma empresa que nao se contenta em fazer mais do mesmo.
+                        A TUPAN nasceu no Sertão, em uma terra onde o comércio é construído na confiança, no aperto de mão e no respeito. Nosso fundador é farmacêutico, empresário e apaixonado por conhecimento. Ao lado de profissionais técnicos e gestores, construiu uma empresa que não se contenta em fazer mais do mesmo.
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-neutral-medium">
-                        Atuamos em segmentos sensiveis: laboratorio, banco de sangue, diagnostico por imagem, curativos especiais, equipamentos hospitalares. Cada produto entregue pode impactar a vida de alguem, mesmo que indiretamente. Por isso, buscamos produtos com qualificacao tecnica, processos organizados e relacionamentos construidos no longo prazo.
+                        Atuamos em segmentos sensíveis: laboratório, banco de sangue, diagnóstico por imagem, curativos especiais, equipamentos hospitalares. Cada produto entregue pode impactar a vida de alguém, mesmo que indiretamente. Por isso, buscamos produtos com qualificação técnica, processos organizados e relacionamentos construídos no longo prazo.
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-neutral-medium">
-                        Mais do que vender, intermediamos seguranca, tecnica e cuidado. Queremos ser referencia nao apenas em produtos, mas em informacao confiavel, em um mundo onde sobra discurso e falta verdade.
+                        Mais do que vender, intermediamos segurança, técnica e cuidado. Queremos ser referência não apenas em produtos, mas em informação confiável, em um mundo onde sobra discurso e falta verdade.
                     </p>
                 </x-institutional.reveal>
 
@@ -53,21 +53,21 @@
                             <flux:icon name="building-office" class="size-6 text-primary" />
                             <div>
                                 <h4 class="font-bold text-neutral-strong">Sede em Recife</h4>
-                                <p class="text-sm text-neutral-medium">Hub logistico estrategico para todo o Nordeste</p>
+                                <p class="text-sm text-neutral-medium">Hub logístico estratégico para todo o Nordeste</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="map" class="size-6 text-primary" />
                             <div>
-                                <h4 class="font-bold text-neutral-strong">16 Anos de Atuacao</h4>
+                                <h4 class="font-bold text-neutral-strong">16 Anos de Atuação</h4>
                                 <p class="text-sm text-neutral-medium">Construindo autoridade com estudo e entrega</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="sparkles" class="size-6 text-primary" />
                             <div>
-                                <h4 class="font-bold text-neutral-strong">Raizes Sertanejas</h4>
-                                <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relacao</p>
+                                <h4 class="font-bold text-neutral-strong">Raízes Sertanejas</h4>
+                                <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relação</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
             <x-institutional.reveal>
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong">O Que Nos Diferencia</h2>
                 <p class="text-neutral-medium">
-                    Nao entregamos apenas caixas. Entregamos conhecimento tecnico aplicado, suporte consultivo e a seguranca de quem entende a responsabilidade de atuar em saude.
+                    Não entregamos apenas caixas. Entregamos conhecimento técnico aplicado, suporte consultivo e a segurança de quem entende a responsabilidade de atuar em saúde.
                 </p>
             </x-institutional.reveal>
         </div>
@@ -96,9 +96,9 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary">
                         <flux:icon name="book-open" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Conhecimento Tecnico Aplicado</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Conhecimento Técnico Aplicado</h3>
                     <p class="text-neutral-medium">
-                        Nosso CEO e farmaceutico. Nossa equipe estuda, testa e valida antes de padronizar. Nao fazemos mais do mesmo: buscamos produtos com real qualificacao tecnica.
+                        Nosso CEO é farmacêutico. Nossa equipe estuda, testa e valida antes de padronizar. Não fazemos mais do mesmo: buscamos produtos com real qualificação técnica.
                     </p>
                 </x-institutional.card>
             </x-institutional.reveal>
@@ -108,9 +108,9 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="hand-thumb-up" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Consultoria, Nao Apenas Venda</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Consultoria, Não Apenas Venda</h3>
                     <p class="text-neutral-medium">
-                        Assumimos papel de consultor, nao apenas de fornecedor. Explicamos o porque das escolhas tecnicas, apoiamos decisoes e construimos parcerias de longo prazo.
+                        Assumimos papel de consultor, não apenas de fornecedor. Explicamos o porquê das escolhas técnicas, apoiamos decisões e construímos parcerias de longo prazo.
                     </p>
                 </x-institutional.card>
             </x-institutional.reveal>
@@ -122,7 +122,7 @@
                     </div>
                     <h3 class="mb-3 text-xl font-semibold">Compromisso com Vidas</h3>
                     <p class="text-neutral-medium">
-                        Saude nao e faturamento. E responsabilidade. Cada curativo, reagente, equipamento ou seringa precisa estar no lugar certo, na hora certa, com o suporte certo.
+                        Saúde não é faturamento. É responsabilidade. Cada curativo, reagente, equipamento ou seringa precisa estar no lugar certo, na hora certa, com o suporte certo.
                     </p>
                 </x-institutional.card>
             </x-institutional.reveal>
@@ -134,7 +134,7 @@
                     </div>
                     <h3 class="mb-3 text-xl font-semibold">Parcerias com Multinacionais</h3>
                     <p class="text-neutral-medium">
-                        Representamos fabricantes de referencia mundial, como Fresenius e Inbras. Nossa credibilidade e validada por quem exige o mais alto padrao de qualidade.
+                        Representamos fabricantes de referência mundial, como Fresenius e Inbras. Nossa credibilidade é validada por quem exige o mais alto padrão de qualidade.
                     </p>
                 </x-institutional.card>
             </x-institutional.reveal>

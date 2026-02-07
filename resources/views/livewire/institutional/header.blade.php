@@ -33,7 +33,7 @@
                 class="text-sm font-medium transition-colors"
                 x-bind:class="useLightText ? 'text-white hover:text-primary-light' : 'text-neutral-strong hover:text-primary'"
             >
-                Inicio
+                Início
             </a>
             <a
                 href="{{ route('about') }}"
@@ -49,7 +49,7 @@
                     class="flex cursor-pointer items-center gap-1 py-4 text-sm font-medium transition-colors"
                     x-bind:class="useLightText ? 'text-white hover:text-primary-light' : 'text-neutral-strong hover:text-primary'"
                 >
-                    Solucoes
+                    Soluções
                     <flux:icon name="chevron-down" class="size-3.5 transition-transform duration-200 group-hover:rotate-180" x-bind:class="useLightText ? 'text-white group-hover:text-primary-light' : ''" />
                 </a>
 
@@ -57,12 +57,12 @@
                     <div class="container mx-auto max-w-7xl px-6 py-12">
                         <div class="grid grid-cols-4 gap-8">
                             <div class="col-span-1">
-                                <h6 class="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-medium">Nossas Divisoes Especializadas</h6>
+                                <h6 class="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-medium">Nossas Divisões Especializadas</h6>
                                 <p class="mb-6 text-sm text-neutral-light">
-                                    Conhecimento tecnico aplicado em cada segmento. Do laboratorio ao centro cirurgico, intermediamos seguranca, tecnica e cuidado.
+                                    Conhecimento técnico aplicado em cada segmento. Do laboratório ao centro cirúrgico, intermediamos segurança, técnica e cuidado.
                                 </p>
                                 <a href="{{ route('institutional.home') }}#solucoes" class="inline-flex items-center rounded-[999px] border-2 border-primary px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary-bg hover:text-primary-hover">
-                                    Conhecer todas as solucoes
+                                    Conhecer todas as soluções
                                 </a>
                             </div>
                             <div class="col-span-3 grid grid-cols-3 gap-6">
@@ -89,7 +89,7 @@
                                     </div>
                                     <div>
                                         <h5 class="font-semibold text-white">EquipaHosp</h5>
-                                        <p class="mt-1 text-xs text-neutral-light">Engenharia Clinica e Assistencia Tecnica Especializada</p>
+                                        <p class="mt-1 text-xs text-neutral-light">Engenharia Clínica e Assistência Técnica Especializada</p>
                                     </div>
                                 </a>
                             </div>
@@ -123,7 +123,7 @@
         class="absolute left-0 top-0 flex h-screen w-full animate-in flex-col gap-2 overflow-y-auto bg-white p-6 pt-24 shadow-lg md:hidden"
     >
         <a href="{{ route('institutional.home') }}" class="border-b border-neutral-light/20 py-3 text-lg font-medium text-neutral-strong hover:text-primary">
-            Inicio
+            Início
         </a>
         <a href="{{ route('about') }}" class="border-b border-neutral-light/20 py-3 text-lg font-medium text-neutral-strong hover:text-primary">
             Quem Somos
@@ -131,7 +131,7 @@
 
         <div class="border-b border-neutral-light/20">
             <button class="flex w-full items-center justify-between py-3 text-lg font-medium text-neutral-strong hover:text-primary" x-on:click="mobileSolutionsOpen = !mobileSolutionsOpen">
-                Solucoes
+                Soluções
                 <flux:icon name="chevron-down" class="size-5 transition-transform duration-200" x-bind:class="mobileSolutionsOpen ? 'rotate-180' : ''" />
             </button>
             <div x-show="mobileSolutionsOpen" x-transition class="mb-2 space-y-3 rounded-lg bg-bg-light/50 pb-4 pl-4">

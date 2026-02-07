@@ -1,10 +1,10 @@
 <x-institutional.section id="sobre" variant="white">
     <div class="mx-auto mb-16 max-w-3xl text-center">
         <x-institutional.reveal>
-            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Nossa Essencia</span>
-            <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Feita do Sal da Terra do Sertao</h2>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Nossa Essência</span>
+            <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Feita do Sal da Terra do Sertão</h2>
             <p class="text-lg text-neutral-medium">
-                Ha 16 anos, construimos nossa reputacao com a mesma seriedade que aprendemos no Sertao: onde palavra vale mais que contrato e o compromisso e honrado no aperto de mao. Cada produto que entregamos pode impactar a vida de alguem. E assim que trabalhamos.
+                Há 16 anos, construímos nossa reputação com a mesma seriedade que aprendemos no Sertão: onde palavra vale mais que contrato e o compromisso é honrado no aperto de mão. Cada produto que entregamos pode impactar a vida de alguém. É assim que trabalhamos.
             </p>
         </x-institutional.reveal>
     </div>
@@ -17,7 +17,7 @@
                 </div>
                 <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Missao</h3>
                 <p class="text-neutral-medium">
-                    Prover solucoes tecnicas em saude com conhecimento aplicado, garantindo que cada decisao de compra seja uma decisao mais segura para o paciente, o profissional e a instituicao.
+                    Prover soluções técnicas em saúde com conhecimento aplicado, garantindo que cada decisão de compra seja uma decisão mais segura para o paciente, o profissional e a instituição.
                 </p>
             </x-institutional.card>
         </x-institutional.reveal>
@@ -29,7 +29,7 @@
                 </div>
                 <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Visao</h3>
                 <p class="text-neutral-medium">
-                    Ser referencia em solucoes tecnicas de saude em Pernambuco e no Nordeste, reconhecida pela autoridade construida com estudo, responsabilidade e entrega consistente.
+                    Ser referência em soluções técnicas de saúde em Pernambuco e no Nordeste, reconhecida pela autoridade construída com estudo, responsabilidade e entrega consistente.
                 </p>
             </x-institutional.card>
         </x-institutional.reveal>
@@ -41,7 +41,7 @@
                 </div>
                 <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossos Valores</h3>
                 <p class="text-neutral-medium">
-                    Confianca, sobriedade, solidez, modernidade e tradicao em harmonia. Colocamos pessoas acima de numeros, porque saude nao e lugar para improviso.
+                    Confiança, sobriedade, solidez, modernidade e tradição em harmonia. Colocamos pessoas acima de números, porque saúde não é lugar para improviso.
                 </p>
             </x-institutional.card>
         </x-institutional.reveal>

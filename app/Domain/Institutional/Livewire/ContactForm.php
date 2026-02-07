@@ -16,7 +16,7 @@ class ContactForm extends Component
 
     public string $email = '';
 
-    public string $topic = 'Consultoria Tecnica em Produtos';
+    public string $topic = 'Consultoria Técnica em Produtos';
 
     public string $message = '';
 
@@ -43,9 +43,9 @@ class ContactForm extends Component
     {
         return [
             'name.required'    => 'Informe seu nome completo.',
-            'email.required'   => 'Informe um email valido para contato.',
-            'email.email'      => 'Informe um email valido para contato.',
-            'topic.required'   => 'Selecione o tipo de solicitacao.',
+            'email.required'   => 'Informe um e-mail válido para contato.',
+            'email.email'      => 'Informe um e-mail válido para contato.',
+            'topic.required'   => 'Selecione o tipo de solicitação.',
             'message.required' => 'Descreva sua necessidade para nossa equipe.',
         ];
     }
@@ -57,8 +57,8 @@ class ContactForm extends Component
         app(SendContactEmailAction::class)->execute($payload);
 
         $this->reset(['name', 'company', 'email', 'message']);
-        $this->topic          = 'Consultoria Tecnica em Produtos';
-        $this->successMessage = 'Mensagem enviada. Nossa equipe entrara em contato em breve.';
+        $this->topic          = 'Consultoria Técnica em Produtos';
+        $this->successMessage = 'Mensagem enviada. Nossa equipe entrará em contato em breve.';
     }
 
     public function render(): View

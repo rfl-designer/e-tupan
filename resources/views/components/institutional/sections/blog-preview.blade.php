@@ -5,12 +5,12 @@
 <x-institutional.section variant="light">
     <div class="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row">
         <x-institutional.reveal>
-            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Conhecimento Tecnico</span>
-            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Informacao Confiavel em Saude</h2>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Conhecimento Técnico</span>
+            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Informação Confiável em Saúde</h2>
         </x-institutional.reveal>
         <x-institutional.reveal :delay="100">
             <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary bg-transparent px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary-bg hover:text-primary-hover">
-                Acessar todo o conteudo
+                Acessar todo o conteúdo
             </a>
         </x-institutional.reveal>
     </div>

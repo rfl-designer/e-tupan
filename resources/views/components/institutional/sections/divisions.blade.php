@@ -17,8 +17,8 @@
     <div class="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
         <div class="max-w-2xl">
             <x-institutional.reveal>
-                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Divisoes Especializadas</span>
-                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Conhecimento Tecnico em Cada Segmento</h2>
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Divisões Especializadas</span>
+                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Conhecimento Técnico em Cada Segmento</h2>
             </x-institutional.reveal>
         </div>
         <x-institutional.reveal :delay="100">
@@ -63,16 +63,16 @@
 
                     <div class="relative z-10 flex flex-col items-center gap-10 p-8 lg:flex-row lg:p-12">
                         <div class="flex-1 space-y-6">
-                            <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
-                                <flux:icon name="wrench" class="size-4 text-secondary-light" />
-                                <span class="text-xs font-bold uppercase tracking-wide text-white">Engenharia Clinica Especializada</span>
-                            </div>
-                            <h3 class="text-3xl font-medium text-white lg:text-4xl">
-                                Divisao <span class="text-primary-light">EquipaHosp</span>
-                            </h3>
-                            <p class="text-lg leading-relaxed text-neutral-light">
-                                Saude nao e lugar para improviso. Cada equipamento precisa estar no lugar certo, na hora certa, com o suporte certo. Oferecemos engenharia clinica, manutencao e assistencia tecnica para equipamentos hospitalares em UTIs, centros cirurgicos e ambulatorios. E assim que honramos quem esta na ponta: o paciente.
-                            </p>
+                        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
+                            <flux:icon name="wrench" class="size-4 text-secondary-light" />
+                            <span class="text-xs font-bold uppercase tracking-wide text-white">Engenharia Clínica Especializada</span>
+                        </div>
+                        <h3 class="text-3xl font-medium text-white lg:text-4xl">
+                            Divisão <span class="text-primary-light">EquipaHosp</span>
+                        </h3>
+                        <p class="text-lg leading-relaxed text-neutral-light">
+                            Saúde não é lugar para improviso. Cada equipamento precisa estar no lugar certo, na hora certa, com o suporte certo. Oferecemos engenharia clínica, manutenção e assistência técnica para equipamentos hospitalares em UTIs, centros cirúrgicos e ambulatórios. É assim que honramos quem está na ponta: o paciente.
+                        </p>
                             <div class="flex gap-4 pt-4">
                                 <a href="{{ route('solutions.show', 'equipahosp') }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover hover:shadow-md">
                                     Conhecer a EquipaHosp
@@ -83,19 +83,19 @@
                             <div class="grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                                 <div class="rounded-xl bg-white/5 p-4">
                                     <h4 class="mb-1 text-lg font-bold text-primary-light">Preventiva</h4>
-                                    <p class="text-sm text-neutral-light">Antecipamos problemas. Prolongamos a vida util dos equipamentos.</p>
+                                    <p class="text-sm text-neutral-light">Antecipamos problemas. Prolongamos a vida útil dos equipamentos.</p>
                                 </div>
                                 <div class="rounded-xl bg-white/5 p-4">
                                     <h4 class="mb-1 text-lg font-bold text-primary-light">Corretiva</h4>
-                                    <p class="text-sm text-neutral-light">Resposta tecnica agil para restabelecer a operacao.</p>
+                                    <p class="text-sm text-neutral-light">Resposta técnica ágil para restabelecer a operação.</p>
                                 </div>
                                 <div class="rounded-xl bg-white/5 p-4">
-                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Calibracao</h4>
-                                    <p class="text-sm text-neutral-light">Precisao conforme normas tecnicas e regulatorias.</p>
+                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Calibração</h4>
+                                    <p class="text-sm text-neutral-light">Precisão conforme normas técnicas e regulatórias.</p>
                                 </div>
                                 <div class="rounded-xl bg-white/5 p-4">
-                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Eng. Clinica</h4>
-                                    <p class="text-sm text-neutral-light">Gestao completa do parque tecnologico hospitalar.</p>
+                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Eng. Clínica</h4>
+                                    <p class="text-sm text-neutral-light">Gestão completa do parque tecnológico hospitalar.</p>
                                 </div>
                             </div>
                         </div>

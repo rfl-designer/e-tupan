@@ -23,8 +23,8 @@ class BlogListPage extends Component
             'posts' => $this->getPosts(),
         ])->layout('components.institutional.layout', [
             'title'           => 'TUPAN | Blog',
-            'metaTitle'       => 'TUPAN | Conteudos tecnicos em saude',
-            'metaDescription' => 'Artigos e insights tecnicos para apoiar decisoes seguras em saude.',
+            'metaTitle'       => 'TUPAN | Conteúdos técnicos em saúde',
+            'metaDescription' => 'Artigos e insights técnicos para apoiar decisões seguras em saúde.',
             'canonicalUrl'    => url('/blog'),
         ]);
     }

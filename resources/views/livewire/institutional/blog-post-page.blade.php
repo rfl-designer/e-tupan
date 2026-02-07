@@ -82,10 +82,10 @@
                     <div class="mt-16 border-t border-neutral-border pt-8">
                         <h4 class="mb-4 font-bold text-neutral-strong">Tags Relacionadas</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Saude</span>
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Conhecimento Tecnico</span>
+                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Saúde</span>
+                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Conhecimento Técnico</span>
                             <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Hospitalar</span>
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">{{ $post['category'] ?? 'Saude' }}</span>
+                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">{{ $post['category'] ?? 'Saúde' }}</span>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
         <div class="mb-8 flex items-center justify-between">
             <h3 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h3>
             <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary bg-transparent px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary-bg hover:text-primary-hover">
-                Acessar todo o conteudo
+                Acessar todo o conteúdo
             </a>
         </div>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -19,12 +19,12 @@
             @enderror
         </div>
         <div class="space-y-2">
-            <label class="text-sm font-medium text-neutral-strong">Instituicao</label>
+            <label class="text-sm font-medium text-neutral-strong">Instituição</label>
             <input
                 type="text"
                 wire:model="company"
                 class="h-12 w-full rounded-lg border border-neutral-light px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary-bg"
-                placeholder="Hospital, Laboratorio ou Clinica"
+                placeholder="Hospital, Laboratório ou Clínica"
             />
             @error('company')
                 <p class="text-xs text-secondary">{{ $message }}</p>
@@ -46,14 +46,14 @@
     </div>
 
     <div class="space-y-2">
-        <label class="text-sm font-medium text-neutral-strong">Tipo de Solicitacao</label>
+        <label class="text-sm font-medium text-neutral-strong">Tipo de Solicitação</label>
         <select
             wire:model="topic"
             class="h-12 w-full rounded-lg border border-neutral-light bg-white px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary-bg"
         >
-            <option>Consultoria Tecnica em Produtos</option>
-            <option>Engenharia Clinica (EquipaHosp)</option>
-            <option>Cotacao para Licitacao</option>
+            <option>Consultoria Técnica em Produtos</option>
+            <option>Engenharia Clínica (EquipaHosp)</option>
+            <option>Cotação para Licitação</option>
             <option>Parceria Comercial</option>
             <option>Outros Assuntos</option>
         </select>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="space-y-2">
-        <label class="text-sm font-medium text-neutral-strong">Detalhes da Solicitacao</label>
+        <label class="text-sm font-medium text-neutral-strong">Detalhes da Solicitação</label>
         <textarea
             wire:model="message"
             class="h-32 w-full resize-none rounded-lg border border-neutral-light p-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary-bg"

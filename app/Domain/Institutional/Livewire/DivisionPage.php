@@ -30,9 +30,9 @@ class DivisionPage extends Component
     {
         return view('livewire.institutional.division-page')
             ->layout('components.institutional.layout', [
-                'title'           => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisao'),
-                'metaTitle'       => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisao'),
-                'metaDescription' => Arr::get($this->division, 'description', 'Solucao tecnica em saude.'),
+                'title'           => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisão'),
+                'metaTitle'       => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisão'),
+                'metaDescription' => Arr::get($this->division, 'description', 'Solução técnica em saúde.'),
                 'canonicalUrl'    => url()->current(),
             ]);
     }

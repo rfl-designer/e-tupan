@@ -32,7 +32,7 @@ class BlogPostPage extends Component
             ->layout('components.institutional.layout', [
                 'title'           => 'TUPAN | ' . Arr::get($this->post, 'title', 'Blog'),
                 'metaTitle'       => 'TUPAN | ' . Arr::get($this->post, 'title', 'Blog'),
-                'metaDescription' => Arr::get($this->post, 'excerpt', 'Conteudo tecnico em saude.'),
+                'metaDescription' => Arr::get($this->post, 'excerpt', 'Conteúdo técnico em saúde.'),
                 'canonicalUrl'    => url()->current(),
             ]);
     }

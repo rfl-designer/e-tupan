@@ -33,14 +33,14 @@ it('sends contact email', function () {
         ->set('name', 'Maria Oliveira')
         ->set('company', 'Hospital Santa Maria')
         ->set('email', 'maria@hospital.com')
-        ->set('topic', 'Consultoria Tecnica em Produtos')
-        ->set('message', 'Precisamos de suporte para nossa equipe tecnica.')
+        ->set('topic', 'Consultoria Técnica em Produtos')
+        ->set('message', 'Precisamos de suporte para nossa equipe técnica.')
         ->call('submit')
-        ->assertSet('successMessage', 'Mensagem enviada. Nossa equipe entrara em contato em breve.');
+        ->assertSet('successMessage', 'Mensagem enviada. Nossa equipe entrará em contato em breve.');
 
     Mail::assertSent(ContactFormMail::class, function (ContactFormMail $mail) {
         return $mail->name === 'Maria Oliveira'
             && $mail->email === 'maria@hospital.com'
-            && $mail->topic === 'Consultoria Tecnica em Produtos';
+            && $mail->topic === 'Consultoria Técnica em Produtos';
     });
 });

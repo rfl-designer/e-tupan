@@ -8,10 +8,10 @@
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Fale Conosco</span>
                 <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">
-                    Consultoria tecnica para sua necessidade especifica.
+                    Consultoria técnica para sua necessidade específica.
                 </h2>
                 <p class="text-lg text-neutral-medium">
-                    Nossa equipe tecnica e comercial esta preparada para entender sua demanda e propor a solucao mais adequada. Nao vendemos apenas produtos. Intermediamos seguranca.
+                    Nossa equipe técnica e comercial está preparada para entender sua demanda e propor a solução mais adequada. Não vendemos apenas produtos. Intermediamos segurança.
                 </p>
             </x-institutional.reveal>
 
@@ -24,7 +24,7 @@
                         <div>
                             <h4 class="font-semibold text-neutral-strong">Sede TUPAN</h4>
                             <p class="text-neutral-medium">{{ $contact['city'] ?? 'Recife, Pernambuco' }}</p>
-                            <p class="mt-1 text-sm text-neutral-light">{{ $contact['coverage'] ?? 'Atuacao em todo o Nordeste' }}</p>
+                            <p class="mt-1 text-sm text-neutral-light">{{ $contact['coverage'] ?? 'Atuação em todo o Nordeste' }}</p>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@
                         <div>
                             <h4 class="font-semibold text-neutral-strong">Central de Atendimento</h4>
                             <p class="text-neutral-medium">{{ $contact['phone'] ?? '(81) 3333-0000' }}</p>
-                            <p class="mt-1 text-sm text-neutral-light">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h as 18h' }}</p>
+                            <p class="mt-1 text-sm text-neutral-light">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h às 18h' }}</p>
                         </div>
                     </div>
 

@@ -1,9 +1,9 @@
 @php
     $stats = [
         ['value' => '16', 'label' => 'Anos de Conhecimento Aplicado'],
-        ['value' => '5k+', 'label' => 'Solucoes em Catalogo'],
+        ['value' => '5k+', 'label' => 'Soluções em Catálogo'],
         ['value' => '9', 'label' => 'Estados Atendidos no Nordeste'],
-        ['value' => '24h', 'label' => 'Suporte Tecnico Especializado'],
+        ['value' => '24h', 'label' => 'Suporte Técnico Especializado'],
     ];
 @endphp
 
