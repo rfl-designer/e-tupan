@@ -148,7 +148,7 @@ return [
         ],
         [
             'id'               => 'proprios',
-            'title'            => 'Marcas Próprias & Importação',
+            'title'            => 'Tupan Care',
             'subtitle'         => 'Inovação onde o mercado precisa',
             'description'      => 'Produtos exclusivos com rigoroso controle técnico.',
             'full_description' => 'Desenvolvemos e importamos produtos que levam a marca TUPAN e AiTE, focando em preencher lacunas de mercado com qualidade técnica superior e custo-benefício real. Não fazemos mais do mesmo. Estudamos, validamos e só então padronizamos. Nossa linha própria é sinônimo de segurança e conformidade regulatória, construída com a mesma seriedade que marca toda nossa trajetória de 16 anos.',

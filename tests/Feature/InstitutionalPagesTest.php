@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
 
 it('renders institutional pages', function () {
-    $this->get('/')->assertSuccessful();
+    $this->get('/')
+        ->assertSuccessful()
+        ->assertSee('Tupan Care')
+        ->assertDontSee('Marcas Próprias & Importação');
     $this->get('/sobre')->assertSuccessful();
     $this->get('/contato')->assertSuccessful();
     $this->get('/blog')->assertSuccessful();
@@ -17,6 +20,22 @@ it('renders institutional pages', function () {
 it('renders blog and division details', function () {
     $this->get('/blog/engenharia-clinica-seguranca')->assertSuccessful();
     $this->get('/solucoes/cirurgica')->assertSuccessful();
+});
+
+it('renders the equipahosp division with the logo and an sr-only title', function () {
+    $this->get('/solucoes/equipahosp')
+        ->assertSuccessful()
+        ->assertSee('<h1 class="sr-only">EquipaHosp</h1>', false)
+        ->assertSee('<svg', false)
+        ->assertDontSee('rounded-xl p-3 text-white', false);
+});
+
+it('does not render icons for division items in the solutions mega menu', function () {
+    $html = view('livewire.institutional.header')->render();
+
+    expect($html)->toContain('Tupan Care');
+    expect($html)->not->toContain('<flux:icon name="sparkles"');
+    expect($html)->not->toContain('<flux:icon name="wrench"');
 });
 
 it('returns not found for invalid slugs', function () {

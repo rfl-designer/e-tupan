@@ -65,34 +65,28 @@
                                     Conhecer todas as soluções
                                 </a>
                             </div>
-                            <div class="col-span-3 grid grid-cols-3 gap-6">
-                                @foreach(collect($divisions)->where('id', '!=', 'equipahosp') as $division)
-                                    <a
-                                        href="{{ route('solutions.show', $division['id']) }}"
-                                        class="group/item flex items-start gap-4 rounded-xl p-4 transition-colors hover:bg-bg-light"
-                                    >
-                                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-bg-light text-primary transition-all group-hover/item:bg-white group-hover/item:shadow-sm">
-                                            <flux:icon name="sparkles" class="size-5" />
-                                        </div>
-                                        <div>
-                                            <h5 class="font-semibold text-neutral-strong transition-colors group-hover/item:text-primary">{{ $division['title'] }}</h5>
-                                            <p class="mt-1 line-clamp-2 text-xs text-neutral-medium">{{ $division['description'] }}</p>
-                                        </div>
-                                    </a>
-                                @endforeach
-                                <a
-                                    href="{{ route('solutions.show', 'equipahosp') }}"
-                                    class="group/item flex items-start gap-4 rounded-xl bg-neutral-strong p-4 text-white transition-colors hover:bg-[#263354]"
-                                >
-                                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-primary-light">
-                                        <flux:icon name="wrench" class="size-5" />
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white">EquipaHosp</h5>
-                                        <p class="mt-1 text-xs text-neutral-light">Engenharia Clínica e Assistência Técnica Especializada</p>
-                                    </div>
-                                </a>
-                            </div>
+	                            <div class="col-span-3 grid grid-cols-3 gap-6">
+	                                @foreach(collect($divisions)->where('id', '!=', 'equipahosp') as $division)
+	                                    <a
+	                                        href="{{ route('solutions.show', $division['id']) }}"
+	                                        class="group/item rounded-xl p-4 transition-colors hover:bg-bg-light"
+	                                    >
+	                                        <div>
+	                                            <h5 class="font-semibold text-neutral-strong transition-colors group-hover/item:text-primary">{{ $division['title'] }}</h5>
+	                                            <p class="mt-1 line-clamp-2 text-xs text-neutral-medium">{{ $division['description'] }}</p>
+	                                        </div>
+	                                    </a>
+	                                @endforeach
+	                                <a
+	                                    href="{{ route('solutions.show', 'equipahosp') }}"
+	                                    class="group/item rounded-xl bg-neutral-strong p-4 text-white transition-colors hover:bg-[#263354]"
+	                                >
+	                                    <div>
+	                                        <h5 class="font-semibold text-white">EquipaHosp</h5>
+	                                        <p class="mt-1 text-xs text-neutral-light">Engenharia Clínica e Assistência Técnica Especializada</p>
+	                                    </div>
+	                                </a>
+	                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,24 +123,22 @@
             Quem Somos
         </a>
 
-        <div class="border-b border-neutral-light/20">
-            <button class="flex w-full items-center justify-between py-3 text-lg font-medium text-neutral-strong hover:text-primary" x-on:click="mobileSolutionsOpen = !mobileSolutionsOpen">
-                Soluções
-                <flux:icon name="chevron-down" class="size-5 transition-transform duration-200" x-bind:class="mobileSolutionsOpen ? 'rotate-180' : ''" />
-            </button>
-            <div x-show="mobileSolutionsOpen" x-transition class="mb-2 space-y-3 rounded-lg bg-bg-light/50 pb-4 pl-4">
-                @foreach(collect($divisions)->where('id', '!=', 'equipahosp') as $division)
-                    <a href="{{ route('solutions.show', $division['id']) }}" class="flex items-center gap-3 py-2 text-sm text-neutral-medium hover:text-primary">
-                        <flux:icon name="sparkles" class="size-4" />
-                        {{ $division['title'] }}
-                    </a>
-                @endforeach
-                <a href="{{ route('solutions.show', 'equipahosp') }}" class="flex items-center gap-3 py-2 text-sm font-semibold text-primary">
-                    <flux:icon name="wrench" class="size-4" />
-                    EquipaHosp
-                </a>
-            </div>
-        </div>
+	            <div class="border-b border-neutral-light/20">
+	            <button class="flex w-full items-center justify-between py-3 text-lg font-medium text-neutral-strong hover:text-primary" x-on:click="mobileSolutionsOpen = !mobileSolutionsOpen">
+	                Soluções
+	                <flux:icon name="chevron-down" class="size-5 transition-transform duration-200" x-bind:class="mobileSolutionsOpen ? 'rotate-180' : ''" />
+	            </button>
+	            <div x-show="mobileSolutionsOpen" x-transition class="mb-2 space-y-3 rounded-lg bg-bg-light/50 pb-4 pl-4">
+	                @foreach(collect($divisions)->where('id', '!=', 'equipahosp') as $division)
+	                    <a href="{{ route('solutions.show', $division['id']) }}" class="block py-2 text-sm text-neutral-medium hover:text-primary">
+	                        {{ $division['title'] }}
+	                    </a>
+	                @endforeach
+	                <a href="{{ route('solutions.show', 'equipahosp') }}" class="block py-2 text-sm font-semibold text-primary">
+	                    EquipaHosp
+	                </a>
+	            </div>
+	        </div>
 
         <a href="{{ route('blog.index') }}" class="border-b border-neutral-light/20 py-3 text-lg font-medium text-neutral-strong hover:text-primary">
             Conhecimento

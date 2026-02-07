@@ -18,16 +18,20 @@
                     Voltar para Soluções
                 </a>
 
-                <div class="mb-4 flex items-center gap-3">
-                    <div class="rounded-xl p-3 text-white {{ $isEquipaHosp ? 'bg-secondary' : 'bg-primary' }}">
-                        <flux:icon name="{{ $isEquipaHosp ? 'wrench' : 'sparkles' }}" class="size-8" />
-                    </div>
+                <div class="mb-4">
                     <span class="text-xs font-bold uppercase tracking-wider text-primary-light">
                         {{ $isEquipaHosp ? 'Engenharia Clínica e Equipamentos' : 'Divisão Especializada' }}
                     </span>
                 </div>
 
-                <h1 class="mb-6 max-w-4xl text-4xl font-medium text-white md:text-5xl lg:text-6xl">{{ $division['title'] ?? 'Divisão' }}</h1>
+                @if($isEquipaHosp)
+                    <h1 class="sr-only">{{ $division['title'] ?? 'Divisão' }}</h1>
+                    <div class="mb-6 w-full max-w-sm drop-shadow-lg sm:max-w-md md:max-w-lg lg:max-w-xl [&_svg]:h-auto [&_svg]:w-full">
+                        <x-assets.logo-equipahosp />
+                    </div>
+                @else
+                    <h1 class="mb-6 max-w-4xl text-4xl font-medium text-white md:text-5xl lg:text-6xl">{{ $division['title'] ?? 'Divisão' }}</h1>
+                @endif
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
             </x-institutional.reveal>
         </div>
