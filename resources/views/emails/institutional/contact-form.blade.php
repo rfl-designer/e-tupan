@@ -22,9 +22,24 @@
                         {{ $company }}
                     </p>
                 @endif
+                @if(!empty($role))
+                    <p style="margin:4px 0 0;font-family:{{ $fontStack }};font-size:14px;color:#4b5563;">
+                        Cargo: {{ $role }}
+                    </p>
+                @endif
+                @if(!empty($location))
+                    <p style="margin:4px 0 0;font-family:{{ $fontStack }};font-size:14px;color:#4b5563;">
+                        Cidade/Estado: {{ $location }}
+                    </p>
+                @endif
                 <p style="margin:8px 0 0;font-family:{{ $fontStack }};font-size:14px;color:#4b5563;">
                     {{ $email }}
                 </p>
+                @if(!empty($phone))
+                    <p style="margin:4px 0 0;font-family:{{ $fontStack }};font-size:14px;color:#4b5563;">
+                        WhatsApp: {{ $phone }}
+                    </p>
+                @endif
             </td>
         </tr>
     </table>
@@ -38,6 +53,11 @@
                 <p style="margin:0;font-family:{{ $fontStack }};font-size:15px;font-weight:600;color:{{ $primaryColor }};">
                     {{ $topic }}
                 </p>
+                @if(!empty($origin))
+                    <p style="margin:8px 0 0;font-family:{{ $fontStack }};font-size:13px;color:#6b7280;">
+                        origem={{ $origin }}
+                    </p>
+                @endif
             </td>
         </tr>
     </table>

@@ -28,11 +28,13 @@ class DivisionPage extends Component
 
     public function render(): View
     {
-        return view('livewire.institutional.division-page')
+        $title = Arr::get($this->division, 'seo.title', 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisão'));
+
+        return view(Arr::get($this->division, 'view', 'livewire.institutional.division-page'))
             ->layout('components.institutional.layout', [
-                'title'           => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisão'),
-                'metaTitle'       => 'TUPAN | ' . Arr::get($this->division, 'title', 'Divisão'),
-                'metaDescription' => Arr::get($this->division, 'description', 'Solução técnica em saúde.'),
+                'title'           => $title,
+                'metaTitle'       => $title,
+                'metaDescription' => Arr::get($this->division, 'seo.description', Arr::get($this->division, 'description', 'Solução técnica em saúde.')),
                 'canonicalUrl'    => url()->current(),
             ]);
     }

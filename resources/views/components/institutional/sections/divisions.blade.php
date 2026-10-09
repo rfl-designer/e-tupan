@@ -8,7 +8,7 @@
         'curativos' => 'heart',
         'lab' => 'beaker',
         'imagem' => 'building-office-2',
-        'proprios' => 'archive-box',
+        'tupan-care' => 'heart',
         'equipahosp' => 'wrench',
     ];
 @endphp
@@ -49,6 +49,12 @@
                                 </div>
                             @endforeach
                         </div>
+                        @if(!empty($division['cta_label']))
+                            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                                {{ $division['cta_label'] }}
+                                <flux:icon name="arrow-right" class="size-4" />
+                            </span>
+                        @endif
                     </x-institutional.card>
                 </a>
             </x-institutional.reveal>
@@ -63,19 +69,19 @@
 
                     <div class="relative z-10 flex flex-col items-center gap-10 p-8 lg:flex-row lg:p-12">
                         <div class="flex-1 space-y-6">
-                        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
-                            <flux:icon name="wrench" class="size-4 text-secondary-light" />
-                            <span class="text-xs font-bold uppercase tracking-wide text-white">Engenharia Clínica Especializada</span>
-                        </div>
-                        <h3 class="text-3xl font-medium text-white lg:text-4xl">
-                            Divisão <span class="text-primary-light">EquipaHosp</span>
-                        </h3>
-                        <p class="text-lg leading-relaxed text-neutral-light">
-                            Saúde não é lugar para improviso. Cada equipamento precisa estar no lugar certo, na hora certa, com o suporte certo. Oferecemos engenharia clínica, manutenção e assistência técnica para equipamentos hospitalares em UTIs, centros cirúrgicos e ambulatórios. É assim que honramos quem está na ponta: o paciente.
-                        </p>
+                            <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
+                                <flux:icon name="wrench" class="size-4 text-secondary-light" />
+                                <span class="text-xs font-bold uppercase tracking-wide text-white">Hub de Soluções em Saúde</span>
+                            </div>
+                            <h3 class="text-3xl font-medium text-white lg:text-4xl">
+                                <span class="text-primary-light">EquipaHosp</span>
+                            </h3>
+                            <p class="text-lg leading-relaxed text-neutral-light">
+                                {{ $equipahosp['description'] }}
+                            </p>
                             <div class="flex gap-4 pt-4">
                                 <a href="{{ route('solutions.show', 'equipahosp') }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover hover:shadow-md">
-                                    Conhecer a EquipaHosp
+                                    {{ $equipahosp['cta_label'] ?? 'Conhecer a EquipaHosp' }}
                                 </a>
                             </div>
                         </div>

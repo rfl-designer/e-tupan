@@ -10,7 +10,18 @@ use Illuminate\Support\Facades\Mail;
 class SendContactEmailAction
 {
     /**
-     * @param array{name: string, company: string|null, email: string, topic: string, message: string} $payload
+     * @param array{
+     *     name: string,
+     *     company: string|null,
+     *     email: string,
+     *     topic: string,
+     *     message: string,
+     *     role?: string|null,
+     *     location?: string|null,
+     *     phone?: string|null,
+     *     origin?: string|null,
+     *     subject?: string|null,
+     * } $payload
      */
     public function execute(array $payload): void
     {
@@ -26,6 +37,11 @@ class SendContactEmailAction
             email: $payload['email'],
             topic: $payload['topic'],
             message: $payload['message'],
+            role: $payload['role'] ?? null,
+            location: $payload['location'] ?? null,
+            phone: $payload['phone'] ?? null,
+            origin: $payload['origin'] ?? null,
+            subjectLine: $payload['subject'] ?? null,
         ));
     }
 }
