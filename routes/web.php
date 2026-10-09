@@ -14,6 +14,7 @@ Route::get('/sobre', AboutPage::class)->name('about');
 Route::get('/contato', ContactPage::class)->name('contact');
 Route::get('/blog', BlogListPage::class)->name('blog.index');
 Route::get('/blog/{slug}', BlogPostPage::class)->name('blog.show');
+Route::permanentRedirect('/solucoes/proprios', '/solucoes/tupan-care');
 Route::get('/solucoes/{slug}', DivisionPage::class)->name('solutions.show');
 
 Route::get('/loja', StorefrontHomepage::class)->name('home');

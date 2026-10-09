@@ -73,7 +73,7 @@
 	                                    >
 	                                        <div>
 	                                            <h5 class="font-semibold text-neutral-strong transition-colors group-hover/item:text-primary">{{ $division['title'] }}</h5>
-	                                            <p class="mt-1 line-clamp-2 text-xs text-neutral-medium">{{ $division['description'] }}</p>
+	                                            <p class="mt-1 line-clamp-2 text-xs text-neutral-medium">{{ $division['menu_description'] ?? $division['description'] }}</p>
 	                                        </div>
 	                                    </a>
 	                                @endforeach
@@ -83,7 +83,7 @@
 	                                >
 	                                    <div>
 	                                        <h5 class="font-semibold text-white">EquipaHosp</h5>
-	                                        <p class="mt-1 text-xs text-neutral-light">Engenharia Clínica e Assistência Técnica Especializada</p>
+	                                        <p class="mt-1 text-xs text-neutral-light">{{ collect($divisions)->firstWhere('id', 'equipahosp')['menu_description'] ?? 'Engenharia Clínica, Equipamentos e Operações Técnicas' }}</p>
 	                                    </div>
 	                                </a>
 	                            </div>
