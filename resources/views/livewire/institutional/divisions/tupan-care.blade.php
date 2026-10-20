@@ -25,7 +25,7 @@
                 <div class="mb-6 inline-flex flex-col items-start gap-2 rounded-2xl bg-white px-6 py-4 shadow-xl">
                     @if(!empty($page['logo']))
                         <h1 class="sr-only">{{ $division['title'] ?? 'Tupan Care' }}</h1>
-                        <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-14 w-auto md:h-16" />
+                        <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-20 w-auto md:h-24" />
                     @else
                         <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
                             <span class="text-primary">TUPAN</span> <span class="font-medium text-secondary">Care</span>

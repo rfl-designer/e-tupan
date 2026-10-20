@@ -7,12 +7,22 @@
     $name = $partner['name'] ?? '';
     $initials = collect(preg_split('/\s+/', $name))->filter()->take(2)->map(fn (string $word): string => mb_substr($word, 0, 1))->implode('');
     $ctaPrefix = $origin ? $origin . '-parceiro-' : 'parceiro-';
+    $logos = array_values(array_filter((array) ($partner['logo'] ?? [])));
+    $logoAlt = count($logos) > 1 ? 'Logos ' . $name : 'Logo ' . $name;
 @endphp
 
 <x-institutional.card {{ $attributes->merge(['class' => 'flex h-full flex-col']) }}>
     <div class="mb-6 flex h-16 items-center">
-        @if(!empty($partner['logo']))
-            <img src="{{ asset($partner['logo']) }}" alt="Logo {{ $name }}" class="max-h-12 w-auto max-w-[180px] object-contain" loading="lazy" />
+        @if($logos !== [])
+            <div class="flex items-center gap-4" role="img" aria-label="{{ $logoAlt }}">
+                @foreach($logos as $logo)
+                    <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
+                        'w-auto object-contain',
+                        'max-h-14 max-w-[180px]' => count($logos) === 1,
+                        'max-h-10 max-w-[120px]' => count($logos) > 1,
+                    ]) loading="lazy" />
+                @endforeach
+            </div>
         @else
             <div class="flex items-center gap-3" role="img" aria-label="{{ $name }}">
                 <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-bg-cream text-sm font-bold uppercase text-primary">{{ $initials }}</span>
