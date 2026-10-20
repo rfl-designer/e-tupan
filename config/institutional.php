@@ -214,7 +214,7 @@ return [
             ],
             'contact_form' => 'tupan-care',
             'page'         => [
-                'logo'        => null,
+                'logo'        => 'images/parceiros/tupan-care.png',
                 'endorsement' => 'Uma operação Tupan Saúde',
                 'intro'       => [
                     'A Tupan Care é a operação da Tupan Saúde dedicada à promoção, representação e comercialização de soluções para cuidados de feridas e estomias.',
@@ -302,14 +302,17 @@ return [
                         'role'        => 'Operação local e atendimento',
                         'description' => 'Atendimento comercial, padronização, treinamento e apoio técnico próximos às instituições e aos profissionais da região.',
                         'url'         => null,
-                        'logo'        => null,
+                        'logo'        => 'images/parceiros/tupan-care.png',
                     ],
                     [
                         'name'        => 'Gentell Casex',
                         'role'        => 'Parceiro representado',
                         'description' => 'A Gentell Casex reúne soluções para cuidados de feridas e estomias, com produtos, conhecimento e suporte voltados à melhoria do cuidado e da qualidade de vida dos pacientes.',
                         'url'         => 'https://gentell.com.br/',
-                        'logo'        => null,
+                        'logo'        => [
+                            'images/parceiros/gentell.png',
+                            'images/parceiros/casex.png',
+                        ],
                         'links'       => [
                             ['label' => 'Loja Gentell', 'url' => 'https://loja.gentell.com.br/'],
                             ['label' => 'Linha para estomizados', 'url' => 'https://casex.lojaintegrada.com.br/ostomia'],
@@ -426,14 +429,14 @@ return [
                         'role'        => 'Locação e tecnologia médica',
                         'description' => 'Soluções de locação, venda e suporte técnico para equipamentos de diagnóstico por imagem, diagnóstico in vitro e suporte à vida, conectadas às necessidades das instituições atendidas pela EquipaHosp.',
                         'url'         => 'https://bluehealthglobal.com/',
-                        'logo'        => null,
+                        'logo'        => 'images/parceiros/blue-health.png',
                     ],
                     [
                         'name'        => 'Fresenius Kabi',
                         'role'        => 'Soluções em saúde',
                         'description' => 'Soluções e tecnologias voltadas à saúde, incluindo medicamentos, nutrição e equipamentos para ambientes de cuidado crítico e crônico, conforme as linhas e condições comerciais aplicáveis à parceria.',
                         'url'         => 'https://www.fresenius-kabi.com/br',
-                        'logo'        => null,
+                        'logo'        => 'images/parceiros/fresenius-kabi.png',
                     ],
                     [
                         'name'        => 'Cerne',
