@@ -23,7 +23,7 @@
 
     <x-institutional.section variant="light">
         <h2 class="sr-only">Artigos</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             @foreach($posts as $index => $post)
                 <x-institutional.reveal :delay="$index * 100">
                     <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">

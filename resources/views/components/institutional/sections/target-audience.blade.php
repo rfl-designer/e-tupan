@@ -28,7 +28,7 @@
         </x-institutional.reveal>
     </div>
 
-    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
         @foreach($audiences as $index => $audience)
             @php
                 $colors = $colorMap[$audience['color']] ?? $colorMap['primary'];

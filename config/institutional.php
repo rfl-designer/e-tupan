@@ -218,7 +218,7 @@ return [
             ],
             'contact_form' => 'tupan-care',
             'page'         => [
-                'logo'        => 'images/parceiros/tupan-care.png',
+                'logo'        => 'images/parceiros/tupan-care.webp',
                 'endorsement' => 'Uma operação Tupan Saúde',
                 'intro'       => [
                     'A Tupan Care é a operação da Tupan Saúde dedicada à promoção, representação e comercialização de soluções para cuidados de feridas e estomias.',
@@ -306,7 +306,8 @@ return [
                         'role'        => 'Operação local e atendimento',
                         'description' => 'Atendimento comercial, padronização, treinamento e apoio técnico próximos às instituições e aos profissionais da região.',
                         'url'         => null,
-                        'logo'        => 'images/parceiros/tupan-care.png',
+                        'logo'        => 'images/parceiros/tupan-care.webp',
+                        'logo_size'   => 'square',
                     ],
                     [
                         'name'        => 'Gentell Casex',
@@ -314,8 +315,8 @@ return [
                         'description' => 'A Gentell Casex reúne soluções para cuidados de feridas e estomias, com produtos, conhecimento e suporte voltados à melhoria do cuidado e da qualidade de vida dos pacientes.',
                         'url'         => 'https://gentell.com.br/',
                         'logo'        => [
-                            'images/parceiros/gentell.png',
-                            'images/parceiros/casex.png',
+                            'images/parceiros/gentell.webp',
+                            'images/parceiros/casex.webp',
                         ],
                         'links' => [
                             ['label' => 'Loja Gentell', 'url' => 'https://loja.gentell.com.br/'],
@@ -328,7 +329,8 @@ return [
                         'role'        => 'Grupo responsável pela operação',
                         'description' => 'A Tupan Care integra o ecossistema Tupan Saúde, com experiência técnica e presença regional.',
                         'url'         => 'https://tupansaude.com.br',
-                        'logo'        => 'images/logo-tupan.png',
+                        'logo'        => 'images/parceiros/logo-tupan.webp',
+                        'logo_size'   => 'compact',
                     ],
                 ],
                 'cta' => [
@@ -433,14 +435,14 @@ return [
                         'role'        => 'Locação e tecnologia médica',
                         'description' => 'Soluções de locação, venda e suporte técnico para equipamentos de diagnóstico por imagem, diagnóstico in vitro e suporte à vida, conectadas às necessidades das instituições atendidas pela EquipaHosp.',
                         'url'         => 'https://bluehealthglobal.com/',
-                        'logo'        => 'images/parceiros/blue-health.png',
+                        'logo'        => 'images/parceiros/blue-health.webp',
                     ],
                     [
                         'name'        => 'Fresenius Kabi',
                         'role'        => 'Soluções em saúde',
                         'description' => 'Soluções e tecnologias voltadas à saúde, incluindo medicamentos, nutrição e equipamentos para ambientes de cuidado crítico e crônico, conforme as linhas e condições comerciais aplicáveis à parceria.',
                         'url'         => 'https://www.fresenius-kabi.com/br',
-                        'logo'        => 'images/parceiros/fresenius-kabi.png',
+                        'logo'        => 'images/parceiros/fresenius-kabi.webp',
                     ],
                     [
                         'name'        => 'Cerne',
@@ -454,7 +456,8 @@ return [
                         'role'        => 'Grupo e operação regional',
                         'description' => 'A EquipaHosp integra o ecossistema Tupan Saúde, aproveitando a experiência técnica, a atuação regional e a rede de soluções do grupo.',
                         'url'         => 'https://tupansaude.com.br',
-                        'logo'        => 'images/logo-tupan.png',
+                        'logo'        => 'images/parceiros/logo-tupan.webp',
+                        'logo_size'   => 'compact',
                     ],
                 ],
                 'reasons' => [

@@ -23,7 +23,7 @@
 
     <x-institutional.section variant="light" class="pb-0">
         <h2 class="sr-only">Canais de atendimento</h2>
-        <div class="relative z-20 -mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="relative z-20 -mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             <x-institutional.reveal :delay="100">
                 <div class="h-full min-w-0 rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary-strong">

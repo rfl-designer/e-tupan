@@ -16,7 +16,7 @@
 
             <x-institutional.reveal :delay="160">
                 <p class="max-w-xl text-lg leading-relaxed text-neutral-medium md:text-xl">
-                    Somos uma distribuidora técnica de produtos e serviços para saúde, com sede em Recife e atuação em todo o Nordeste. Há 16 anos, intermediamos segurança, técnica e cuidado para hospitais, laboratórios e profissionais de saúde. Nascemos no Sertão. Construímos nossa autoridade com estudo, responsabilidade e entrega coerente.
+                    Distribuidora técnica de produtos e serviços para hospitais, laboratórios e profissionais de saúde. Sede em Recife, atuação em todo o Nordeste há 16 anos.
                 </p>
             </x-institutional.reveal>
 

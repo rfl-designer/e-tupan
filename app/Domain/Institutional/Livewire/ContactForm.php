@@ -6,7 +6,7 @@ namespace App\Domain\Institutional\Livewire;
 
 use App\Domain\Institutional\Actions\SendContactEmailAction;
 use Illuminate\Contracts\View\View;
-use Illuminate\Validation\Rule;
+use Illuminate\Validation\{Rule, ValidationException};
 use Livewire\Attributes\{Computed, Locked};
 use Livewire\Component;
 
@@ -91,7 +91,13 @@ class ContactForm extends Component
 
     public function submit(): void
     {
-        $payload = $this->validate();
+        try {
+            $payload = $this->validate();
+        } catch (ValidationException $exception) {
+            $this->js("setTimeout(() => \$wire.\$el.querySelector('[aria-invalid=\"true\"]')?.focus(), 50)");
+
+            throw $exception;
+        }
 
         app(SendContactEmailAction::class)->execute([
             ...$payload,

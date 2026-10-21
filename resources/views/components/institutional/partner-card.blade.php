@@ -8,6 +8,7 @@
     $initials = collect(preg_split('/\s+/', $name))->filter()->take(2)->map(fn (string $word): string => mb_substr($word, 0, 1))->implode('');
     $ctaPrefix = $origin ? $origin . '-parceiro-' : 'parceiro-';
     $logos = array_values(array_filter((array) ($partner['logo'] ?? [])));
+    $logoSize = $partner['logo_size'] ?? null;
     $logoAlt = count($logos) > 1 ? 'Logos ' . $name : 'Logo ' . $name;
 @endphp
 
@@ -18,7 +19,9 @@
                 @foreach($logos as $logo)
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
                         'w-auto max-w-full object-contain',
-                        'max-h-14 max-w-[180px]' => count($logos) === 1,
+                        'max-h-14 max-w-[180px]' => count($logos) === 1 && $logoSize === null,
+                        'max-h-12 max-w-[180px]' => count($logos) === 1 && $logoSize === 'square',
+                        'max-h-10 max-w-[180px]' => count($logos) === 1 && $logoSize === 'compact',
                         'h-10 max-w-[160px]' => count($logos) > 1,
                     ]) loading="lazy" />
                 @endforeach

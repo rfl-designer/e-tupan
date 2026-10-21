@@ -65,6 +65,8 @@ it('sends contact email', function () {
 });
 
 it('renders the equipahosp page with hub content, partners and seo', function () {
+    config(['institutional.contact.whatsapp' => 'https://wa.me/5500000000000']);
+
     $this->get('/solucoes/equipahosp')
         ->assertSuccessful()
         ->assertSee('<title>EquipaHosp | Engenharia Clínica e Equipamentos Hospitalares</title>', false)
@@ -78,8 +80,8 @@ it('renders the equipahosp page with hub content, partners and seo', function ()
         ->assertSee('Fale com a Tupan Saúde')
         ->assertSee('href="https://bluehealthglobal.com/" target="_blank" rel="noopener noreferrer"', false)
         ->assertSee('https://www.fresenius-kabi.com/br', false)
-        ->assertSee('images/parceiros/blue-health.png', false)
-        ->assertSee('images/parceiros/fresenius-kabi.png', false)
+        ->assertSee('images/parceiros/blue-health.webp', false)
+        ->assertSee('images/parceiros/fresenius-kabi.webp', false)
         ->assertSee('aria-label="Logo Blue Health"', false)
         ->assertSee('https://cerne.tec.br', false)
         ->assertSee('Conhecer parceiro')
@@ -88,15 +90,17 @@ it('renders the equipahosp page with hub content, partners and seo', function ()
 });
 
 it('renders the tupan care page with its own brand, partnership and seo', function () {
+    config(['institutional.contact.whatsapp' => 'https://wa.me/5500000000000']);
+
     $this->get('/solucoes/tupan-care')
         ->assertSuccessful()
         ->assertSee('<title>Tupan Care | Soluções em Curativos e Estomias</title>', false)
         ->assertSee('Uma operação Tupan Saúde')
         ->assertSee('<h1 class="sr-only">Tupan Care</h1>', false)
         ->assertSee('alt="Logo Tupan Care"', false)
-        ->assertSee('images/parceiros/tupan-care.png', false)
-        ->assertSee('images/parceiros/gentell.png', false)
-        ->assertSee('images/parceiros/casex.png', false)
+        ->assertSee('images/parceiros/tupan-care.webp', false)
+        ->assertSee('images/parceiros/gentell.webp', false)
+        ->assertSee('images/parceiros/casex.webp', false)
         ->assertSee('aria-label="Logos Gentell Casex"', false)
         ->assertSee('Tupan Care + Gentell Casex')
         ->assertSee('Como atuamos')
@@ -110,6 +114,13 @@ it('renders the tupan care page with its own brand, partnership and seo', functi
         ->assertSee('data-origem="tupan-care"', false)
         ->assertSee('text=' . rawurlencode('Olá, gostaria de solicitar informações sobre treinamento, padronização ou soluções Gentell Casex pela Tupan Care.'), false);
 });
+
+it('hides the whatsapp links on the special pages while no number is configured', function (string $path) {
+    $this->get($path)
+        ->assertSuccessful()
+        ->assertDontSee('https://wa.me/?', false)
+        ->assertSee('href="#fale-conosco"', false);
+})->with(['/solucoes/tupan-care', '/solucoes/equipahosp']);
 
 it('redirects the legacy tupan care slug permanently', function () {
     $this->get('/solucoes/proprios')->assertMovedPermanently()->assertRedirect('/solucoes/tupan-care');

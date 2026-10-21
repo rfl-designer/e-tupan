@@ -3,7 +3,8 @@
     $cta = $page['cta'] ?? [];
     $partnership = $page['partnership'] ?? [];
     $origin = $division['contact_form'] ?? 'tupan-care';
-    $whatsappUrl = \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null);
+    $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
+    $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null) : '#fale-conosco';
     $gentell = collect($page['partners'] ?? [])->firstWhere('name', 'Gentell Casex');
 @endphp
 
@@ -42,7 +43,7 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-treinamento" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $whatsappUrl }}" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-hero-treinamento" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="academic-cap" class="size-4" />
                         {{ $cta['secondary_label'] ?? 'Solicitar treinamento' }}
                     </a>
@@ -202,7 +203,7 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-cta-contato" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-treinamento" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $whatsappUrl }}" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-cta-treinamento" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         {{ $cta['secondary_label'] ?? 'Solicitar treinamento' }}
                     </a>
                 </div>

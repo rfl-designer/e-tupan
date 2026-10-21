@@ -9,7 +9,7 @@
         </x-institutional.reveal>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
         <x-institutional.reveal :delay="100">
             <x-institutional.card variant="feature" class="h-full">
                 <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">

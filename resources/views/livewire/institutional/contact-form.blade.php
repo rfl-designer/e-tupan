@@ -14,17 +14,18 @@
 
     <div class="grid gap-6 md:grid-cols-2">
         <div class="space-y-2">
-            <label for="{{ $fieldId('name') }}" class="text-sm font-medium text-neutral-strong">Nome Completo</label>
+            <label for="{{ $fieldId('name') }}" class="text-sm font-medium text-neutral-strong">Nome Completo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
             <input
                 id="{{ $fieldId('name') }}"
                 type="text"
                 wire:model="name"
                 class="{{ $inputClass('name') }}"
                 {!! $ariaAttributes('name') !!}
+                aria-required="true"
                 placeholder="Seu nome"
             />
             @error('name')
-                <p id="{{ $fieldId('name') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                <p id="{{ $fieldId('name') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
             @enderror
         </div>
         <div class="space-y-2">
@@ -38,7 +39,7 @@
                 placeholder="Hospital, laboratório…"
             />
             @error('company')
-                <p id="{{ $fieldId('company') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                <p id="{{ $fieldId('company') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
             @enderror
         </div>
     </div>
@@ -53,10 +54,10 @@
                     wire:model="role"
                     class="{{ $inputClass('role') }}"
                     {!! $ariaAttributes('role') !!}
-                    placeholder="Ex.: Engenheiro clínico, Coordenador de enfermagem"
+                    placeholder="Ex.: Enfermeiro(a)"
                 />
                 @error('role')
-                    <p id="{{ $fieldId('role') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                    <p id="{{ $fieldId('role') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
                 @enderror
             </div>
             <div class="space-y-2">
@@ -70,7 +71,7 @@
                     placeholder="Recife/PE"
                 />
                 @error('location')
-                    <p id="{{ $fieldId('location') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                    <p id="{{ $fieldId('location') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
                 @enderror
             </div>
         </div>
@@ -78,17 +79,18 @@
 
     <div @class(['grid gap-6 md:grid-cols-2' => $this->hasExtendedFields, 'space-y-2' => ! $this->hasExtendedFields])>
         <div class="space-y-2">
-            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">E-mail Corporativo</label>
+            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">E-mail Corporativo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
             <input
                 id="{{ $fieldId('email') }}"
                 type="email"
                 wire:model="email"
                 class="{{ $inputClass('email') }}"
                 {!! $ariaAttributes('email') !!}
+                aria-required="true"
                 placeholder="seu@email.com.br"
             />
             @error('email')
-                <p id="{{ $fieldId('email') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                <p id="{{ $fieldId('email') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
             @enderror
         </div>
 
@@ -104,7 +106,7 @@
                     placeholder="(81) 90000-0000"
                 />
                 @error('phone')
-                    <p id="{{ $fieldId('phone') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+                    <p id="{{ $fieldId('phone') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
                 @enderror
             </div>
         @endif
@@ -123,21 +125,22 @@
             @endforeach
         </select>
         @error('topic')
-            <p id="{{ $fieldId('topic') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+            <p id="{{ $fieldId('topic') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
         @enderror
     </div>
 
     <div class="space-y-2">
-        <label for="{{ $fieldId('message') }}" class="text-sm font-medium text-neutral-strong">Mensagem</label>
+        <label for="{{ $fieldId('message') }}" class="text-sm font-medium text-neutral-strong">Mensagem <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
         <textarea
             id="{{ $fieldId('message') }}"
             wire:model="message"
             class="h-32 w-full resize-none rounded-lg border p-4 {{ $focusClass }} {{ $errors->has('message') ? 'border-secondary' : 'border-[#7b8da3]' }}"
             {!! $ariaAttributes('message') !!}
+                aria-required="true"
             placeholder="Descreva sua necessidade para direcionarmos ao consultor adequado"
         ></textarea>
         @error('message')
-            <p id="{{ $fieldId('message') }}-error" class="text-xs text-secondary">{{ $message }}</p>
+            <p id="{{ $fieldId('message') }}-error" class="flex items-start gap-1.5 text-sm text-secondary"><flux:icon name="exclamation-circle" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
         @enderror
     </div>
 

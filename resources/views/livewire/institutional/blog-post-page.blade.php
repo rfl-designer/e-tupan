@@ -118,13 +118,13 @@
     </article>
 
     <x-institutional.section variant="light" class="py-16">
-        <div class="mb-8 flex items-center justify-between">
+        <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h2>
-            <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
+            <a href="{{ route('blog.index') }}" class="inline-flex w-fit items-center justify-center whitespace-nowrap rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Acessar todo o conteúdo
             </a>
         </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             @foreach($related as $relatedPost)
                 <a href="{{ route('blog.show', $relatedPost['id']) }}" class="group cursor-pointer">
                     <div class="mb-4 h-48 overflow-hidden rounded-xl">

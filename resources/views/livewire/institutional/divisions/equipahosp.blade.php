@@ -2,7 +2,8 @@
     $page = $division['page'] ?? [];
     $cta = $page['cta'] ?? [];
     $origin = $division['contact_form'] ?? 'equipa-hosp';
-    $whatsappUrl = \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null);
+    $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
+    $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null) : null;
 @endphp
 
 <div>
@@ -36,10 +37,12 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
+                    @if($whatsappReady)
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-consultor" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="chat-bubble-left-right" class="size-4" />
                         {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
+                    @endif
                 </div>
             </x-institutional.reveal>
         </div>
@@ -162,9 +165,11 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
+                    @if($whatsappReady)
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
+                    @endif
                 </div>
             </x-institutional.reveal>
         </div>

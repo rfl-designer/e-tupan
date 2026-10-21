@@ -15,7 +15,7 @@
         </x-institutional.reveal>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
         @foreach($posts as $index => $post)
             <x-institutional.reveal :delay="$index * 100">
                 <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
