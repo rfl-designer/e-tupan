@@ -62,28 +62,25 @@
             <div class="grid gap-12 lg:grid-cols-12">
                 <div class="sticky top-32 hidden h-fit flex-col items-center gap-4 lg:col-span-2 lg:flex">
                     <span class="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-medium">Compartilhar</span>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="group flex flex-col items-center gap-1">
-                        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="share" class="size-4" /></span>
-                        <span class="text-xs text-neutral-medium">LinkedIn</span>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                        <flux:icon name="share" class="size-4" />
                     </a>
-                    <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="group flex flex-col items-center gap-1">
-                        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="chat-bubble-left" class="size-4" /></span>
-                        <span class="text-xs text-neutral-medium">WhatsApp</span>
+                    <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                        <flux:icon name="chat-bubble-left" class="size-4" />
                     </a>
                     <button
                         type="button"
                         x-data="{ copied: false }"
                         x-on:click="navigator.clipboard.writeText(@js($shareUrl)).then(() => { copied = true; setTimeout(() => copied = false, 2500); })"
                         aria-label="Copiar link do artigo"
-                        class="group relative flex flex-col items-center gap-1 focus-visible:outline-none"
+                        class="relative flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-strong focus-visible:ring-offset-2"
                     >
-                        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="link" class="size-4" /></span>
-                        <span class="text-xs text-neutral-medium" x-text="copied ? 'Copiado' : 'Copiar link'">Copiar link</span>
+                        <flux:icon name="link" class="size-4" />
                         <span class="sr-only" role="status" aria-live="polite" x-text="copied ? 'Link copiado' : ''"></span>
+                        <span x-show="copied" x-cloak class="absolute left-full top-1/2 ml-2 -translate-y-1/2 whitespace-nowrap rounded bg-neutral-strong px-2 py-1 text-xs text-white" aria-hidden="true">Link copiado</span>
                     </button>
-                    <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="group flex flex-col items-center gap-1">
-                        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="paper-airplane" class="size-4" /></span>
-                        <span class="text-xs text-neutral-medium">E-mail</span>
+                    <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                        <flux:icon name="paper-airplane" class="size-4" />
                     </a>
                 </div>
 
@@ -115,30 +112,27 @@
                         </div>
                     </aside>
 
-                    <div class="mt-8 flex items-start gap-5 border-t border-neutral-border pt-6 lg:hidden">
+                    <div class="mt-8 flex items-center gap-3 border-t border-neutral-border pt-6 lg:hidden">
                         <span class="mr-1 text-xs font-bold uppercase tracking-wider text-neutral-medium">Compartilhar</span>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="group flex flex-col items-center gap-1">
-                            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="share" class="size-5" /></span>
-                            <span class="text-xs text-neutral-medium">LinkedIn</span>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="share" class="size-5" />
                         </a>
-                        <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="group flex flex-col items-center gap-1">
-                            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="chat-bubble-left" class="size-5" /></span>
-                            <span class="text-xs text-neutral-medium">WhatsApp</span>
+                        <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="chat-bubble-left" class="size-5" />
                         </a>
                         <button
                             type="button"
                             x-data="{ copied: false }"
                             x-on:click="navigator.clipboard.writeText(@js($shareUrl)).then(() => { copied = true; setTimeout(() => copied = false, 2500); })"
                             aria-label="Copiar link do artigo"
-                            class="group relative flex flex-col items-center gap-1 focus-visible:outline-none"
+                            class="relative flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-strong focus-visible:ring-offset-2"
                         >
-                            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="link" class="size-5" /></span>
-                            <span class="text-xs text-neutral-medium" x-text="copied ? 'Copiado' : 'Copiar link'">Copiar link</span>
+                            <flux:icon name="link" class="size-5" />
                             <span class="sr-only" role="status" aria-live="polite" x-text="copied ? 'Link copiado' : ''"></span>
+                            <span x-show="copied" x-cloak class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-neutral-strong px-2 py-1 text-xs text-white" aria-hidden="true">Link copiado</span>
                         </button>
-                        <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="group flex flex-col items-center gap-1">
-                            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors group-hover:border-primary-strong group-hover:bg-primary-strong group-hover:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-strong group-focus-visible:ring-offset-2"><flux:icon name="paper-airplane" class="size-5" /></span>
-                            <span class="text-xs text-neutral-medium">E-mail</span>
+                        <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="paper-airplane" class="size-5" />
                         </a>
                     </div>
                 </div>
@@ -150,7 +144,7 @@
 
     <x-institutional.section variant="light" class="py-16">
         <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Continue lendo</h2>
+            <h2 class="text-2xl font-bold text-neutral-strong">Continue lendo</h2>
             <a href="{{ route('blog.index') }}" class="inline-flex w-fit items-center justify-center whitespace-nowrap rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Acessar todo o conteúdo
             </a>

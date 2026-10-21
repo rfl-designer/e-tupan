@@ -1,6 +1,6 @@
 @php
     $focusClass = fn (string $field): string => 'transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' . ($errors->has($field) ? 'focus-visible:outline-secondary focus-visible:outline-none! focus-visible:ring-secondary focus-visible:border-secondary' : 'focus-visible:ring-primary-strong focus-visible:border-primary-strong');
-    $inputClass = fn (string $field): string => 'h-12 w-full rounded-lg border px-4 ' . $focusClass($field) . ($errors->has($field) ? ' border-secondary' : ' border-neutral-border-strong');
+    $inputClass = fn (string $field): string => 'h-12 w-full rounded-lg border px-4 ' . $focusClass($field) . ($errors->has($field) ? ' border-secondary' : ' border-[#7b8da3]');
     $ariaAttributes = fn (string $field): string => $errors->has($field) ? 'aria-invalid="true" aria-describedby="' . 'contact-' . ($origin ?? 'default') . '-' . $field . '-error"' : '';
     $fieldId = fn (string $field): string => 'contact-' . ($origin ?? 'default') . '-' . $field;
 @endphp
@@ -19,7 +19,6 @@
                 id="{{ $fieldId('name') }}"
                 type="text"
                 wire:model="name"
-                autocomplete="name"
                 class="{{ $inputClass('name') }}"
                 {!! $ariaAttributes('name') !!}
                 aria-required="true"
@@ -35,7 +34,6 @@
                 id="{{ $fieldId('company') }}"
                 type="text"
                 wire:model="company"
-                autocomplete="organization"
                 class="{{ $inputClass('company') }}"
                 {!! $ariaAttributes('company') !!}
                 placeholder="Hospital, laboratório…"
@@ -54,7 +52,6 @@
                     id="{{ $fieldId('role') }}"
                     type="text"
                     wire:model="role"
-                    autocomplete="organization-title"
                     class="{{ $inputClass('role') }}"
                     {!! $ariaAttributes('role') !!}
                     placeholder="Ex.: Enfermeiro(a)"
@@ -69,7 +66,6 @@
                     id="{{ $fieldId('location') }}"
                     type="text"
                     wire:model="location"
-                    autocomplete="address-level2"
                     class="{{ $inputClass('location') }}"
                     {!! $ariaAttributes('location') !!}
                     placeholder="Recife/PE"
@@ -88,7 +84,6 @@
                 id="{{ $fieldId('email') }}"
                 type="email"
                 wire:model="email"
-                autocomplete="email"
                 class="{{ $inputClass('email') }}"
                 {!! $ariaAttributes('email') !!}
                 aria-required="true"
@@ -106,7 +101,6 @@
                     id="{{ $fieldId('phone') }}"
                     type="tel"
                     wire:model="phone"
-                    autocomplete="tel"
                     class="{{ $inputClass('phone') }}"
                     {!! $ariaAttributes('phone') !!}
                     placeholder="(81) 90000-0000"
@@ -143,7 +137,7 @@
         <textarea
             id="{{ $fieldId('message') }}"
             wire:model="message"
-            class="h-32 w-full resize-none rounded-lg border p-4 {{ $focusClass('message') }} {{ $errors->has('message') ? 'border-secondary' : 'border-neutral-border-strong' }}"
+            class="h-32 w-full resize-none rounded-lg border p-4 {{ $focusClass('message') }} {{ $errors->has('message') ? 'border-secondary' : 'border-[#7b8da3]' }}"
             {!! $ariaAttributes('message') !!}
                 aria-required="true"
             placeholder="Descreva sua necessidade para direcionarmos ao consultor adequado"
