@@ -192,3 +192,15 @@ it('ignores unknown origins and falls back to the default form', function () {
         ->assertSet('topic', 'Consultoria técnica em produtos')
         ->assertDontSee('Cidade/Estado');
 });
+
+it('preselects the topic sent by the contact-topic event', function () {
+    Livewire::test(ContactForm::class, ['origin' => 'tupan-care'])
+        ->dispatch('contact-topic', topic: 'Treinamento')
+        ->assertSet('topic', 'Treinamento');
+});
+
+it('keeps the current topic when the contact-topic event sends one outside the configured list', function () {
+    Livewire::test(ContactForm::class, ['origin' => 'tupan-care'])
+        ->dispatch('contact-topic', topic: 'Locação de equipamento')
+        ->assertSet('topic', 'Compra de produtos');
+});

@@ -10,6 +10,10 @@ use Illuminate\Validation\{Rule, ValidationException};
 use Livewire\Attributes\{Computed, Locked, On};
 use Livewire\Component;
 
+/**
+ * @property-read array<int, string> $topics
+ * @property-read bool $hasExtendedFields
+ */
 class ContactForm extends Component
 {
     #[Locked]
