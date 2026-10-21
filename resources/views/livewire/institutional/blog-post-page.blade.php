@@ -22,8 +22,8 @@
                         Voltar para o blog
                     </a>
 
-                    <div class="mb-6 flex flex-wrap gap-4 text-sm font-medium text-primary-strong">
-                        <span class="rounded-full border border-primary-light bg-primary-bg px-3 py-1">
+                    <div class="mb-6 flex flex-wrap gap-4">
+                        <span class="whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong ring-1 ring-neutral-border">
                             {{ $post['category'] ?? 'Blog' }}
                         </span>
                     </div>
@@ -154,23 +154,7 @@
             'lg:grid-cols-3' => $related->count() > 2,
         ])>
             @foreach($related as $relatedPost)
-                <a href="{{ route('blog.show', $relatedPost['id']) }}" class="group block h-full">
-                    <x-institutional.card class="flex h-full flex-col overflow-hidden border-transparent hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)]" padding="none" variant="standard">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="{{ $relatedPost['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $relatedPost['image']) }} 480w, {{ $relatedPost['image'] }} 800w" sizes="(min-width: 1024px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                        </div>
-                        <div class="flex flex-1 flex-col p-6">
-                            <div class="mb-3 flex items-center gap-4 text-xs text-neutral-medium">
-                                <span class="font-bold uppercase text-primary-strong">{{ $relatedPost['category'] }}</span>
-                                <div class="flex items-center gap-1">
-                                    <flux:icon name="calendar" class="size-4 text-primary-strong" />
-                                    {{ $relatedPost['date'] }}
-                                </div>
-                            </div>
-                            <h3 class="line-clamp-3 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h3>
-                        </div>
-                    </x-institutional.card>
-                </a>
+                <x-institutional.article-card :post="$relatedPost" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             @endforeach
         </div>
     </x-institutional.section>

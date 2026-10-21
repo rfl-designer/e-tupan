@@ -64,17 +64,19 @@ return [
     'divisions' => [
         [
             'id'               => 'cirurgica',
+            'cta_title'        => 'Seu centro cirúrgico precisa de reposição com pronta entrega?',
+            'need_area'        => 'materiais cirúrgicos',
             'title'            => 'Loja Cirúrgica',
             'subtitle'         => 'Instrumental cirúrgico, descartáveis hospitalares e equipamentos de centro cirúrgico para hospitais e clínicas cirúrgicas, com pronta entrega no Nordeste.',
             'about_title'      => 'Materiais cirúrgicos com respaldo técnico',
             'description'      => 'Materiais cirúrgicos com respaldo técnico e consultoria especializada.',
-            'full_description' => 'Nossa divisão cirúrgica vai além do fornecimento de materiais. Entendemos que cada instrumento, cada descartável, pode impactar diretamente o resultado de um procedimento e a segurança do paciente. Atuamos com um portfólio tecnicamente qualificado, desde instrumentais de precisão até descartáveis de alto giro, sempre com pronta entrega para não comprometer o fluxo hospitalar. Não vendemos apenas produtos. Intermediamos segurança.',
+            'full_description' => 'Nossa divisão cirúrgica vai além do fornecimento de materiais. Entendemos que cada instrumento, cada descartável, pode impactar diretamente o resultado de um procedimento e a segurança do paciente. Atuamos com um portfólio tecnicamente qualificado, desde instrumentais de precisão até descartáveis de alto giro, sempre com pronta entrega para não comprometer o fluxo hospitalar.',
             'icon'             => 'stethoscope',
             'features'         => [
-                'Instrumental cirúrgico qualificado',
-                'Descartáveis hospitalares',
-                'Equipamentos de centro cirúrgico',
-                'Material de proteção certificado',
+                ['title' => 'Instrumental cirúrgico qualificado', 'text' => 'Instrumentais de precisão para procedimentos que não admitem falha.', 'icon' => 'scissors'],
+                ['title' => 'Descartáveis hospitalares', 'text' => 'Itens de alto giro com pronta entrega para o fluxo hospitalar.', 'icon' => 'archive-box'],
+                ['title' => 'Equipamentos de centro cirúrgico', 'text' => 'Apoio técnico na escolha de equipamentos para a sala cirúrgica.', 'icon' => 'cpu-chip'],
+                ['title' => 'Material de proteção certificado', 'text' => 'Proteção para equipes e pacientes, com conformidade ANVISA.', 'icon' => 'shield-check'],
             ],
             'target_audience' => [
                 'Hospitais',
@@ -92,6 +94,8 @@ return [
         ],
         [
             'id'               => 'farma',
+            'cta_title'        => 'Sua farmácia hospitalar precisa de fornecimento com rastreabilidade?',
+            'need_area'        => 'medicamentos e nutrição clínica',
             'title'            => 'Medicamentos & Nutrição',
             'subtitle'         => 'Medicamentos hospitalares, nutrição clínica e insumos farmacêuticos para farmácias hospitalares e gestores de suprimentos, com logística de cadeia fria.',
             'about_title'      => 'Fármacos e nutrição com logística controlada',
@@ -99,10 +103,10 @@ return [
             'full_description' => 'Através da Tupan Farma, atuamos como elo vital entre a indústria farmacêutica e as instituições de saúde. Entendemos que medicamentos e produtos nutricionais exigem cuidado absoluto em toda a cadeia. Nossa logística controlada garante a integridade de cada produto, desde a demanda hospitalar básica até necessidades específicas de nutrição clínica. Com 16 anos de experiência, construímos processos que honram a responsabilidade de lidar com o que sustenta vidas.',
             'icon'             => 'pill',
             'features'         => [
-                'Medicamentos hospitalares',
-                'Nutrição clínica especializada',
-                'Insumos farmacêuticos',
-                'Logística com cadeia fria',
+                ['title' => 'Medicamentos hospitalares', 'text' => 'Fármacos para a demanda hospitalar, com rastreabilidade na cadeia.', 'icon' => 'beaker'],
+                ['title' => 'Nutrição clínica especializada', 'text' => 'Produtos nutricionais para necessidades clínicas específicas.', 'icon' => 'heart'],
+                ['title' => 'Insumos farmacêuticos', 'text' => 'Elo entre a indústria e as instituições de saúde.', 'icon' => 'archive-box'],
+                ['title' => 'Logística com cadeia fria', 'text' => 'Logística controlada que preserva a integridade de cada produto.', 'icon' => 'truck'],
             ],
             'target_audience' => [
                 'Farmácias hospitalares',
@@ -114,6 +118,8 @@ return [
         ],
         [
             'id'               => 'curativos',
+            'cta_title'        => 'Seus pacientes com feridas precisam de uma cobertura mais adequada?',
+            'need_area'        => 'curativos e cuidado de feridas',
             'title'            => 'Curativos Especiais',
             'subtitle'         => 'Coberturas de última geração, tratamento de feridas crônicas e insumos para estomaterapia para enfermeiros estomaterapeutas, hospitais e home care.',
             'about_title'      => 'Cuidado avançado de feridas com suporte consultivo',
@@ -121,10 +127,10 @@ return [
             'full_description' => 'A divisão AiTE é dedicada ao cuidado avançado de feridas. Não oferecemos apenas coberturas: oferecemos tecnologia, conhecimento e suporte consultivo. Trabalhamos com enfermeiras especialistas que entendem a prática assistencial e podem orientar sobre o produto mais adequado para cada caso. Nossas soluções aceleram a cicatrização e devolvem qualidade de vida ao paciente. Porque reduzir o tempo de tratamento é, em última instância, devolver a pessoa à sua rotina.',
             'icon'             => 'bandage',
             'features'         => [
-                'Coberturas de última geração',
-                'Tratamento de feridas crônicas',
-                'Tecnologia de cicatrização avançada',
-                'Insumos para estomaterapia',
+                ['title' => 'Coberturas de última geração', 'text' => 'Coberturas avançadas indicadas por enfermeiras especialistas.', 'icon' => 'square-3-stack-3d'],
+                ['title' => 'Tratamento de feridas crônicas', 'text' => 'Orientação consultiva sobre o produto adequado a cada caso.', 'icon' => 'hand-raised'],
+                ['title' => 'Tecnologia de cicatrização avançada', 'text' => 'Tecnologia que acelera a cicatrização e reduz o tempo de tratamento.', 'icon' => 'sparkles'],
+                ['title' => 'Insumos para estomaterapia', 'text' => 'Suporte à prática assistencial de estomaterapeutas e equipes.', 'icon' => 'clipboard-document-check'],
             ],
             'target_audience' => [
                 'Enfermeiros estomaterapeutas',
@@ -141,6 +147,8 @@ return [
         ],
         [
             'id'               => 'lab',
+            'cta_title'        => 'Seu laboratório ou banco de sangue não pode ficar sem insumos?',
+            'need_area'        => 'reagentes e insumos de laboratório',
             'title'            => 'Laboratório e Hemoterapia',
             'subtitle'         => 'Reagentes químicos, insumos para banco de sangue e consumíveis para coleta para laboratórios de análises clínicas e bancos de sangue.',
             'about_title'      => 'Diagnóstico preciso e hemoterapia segura',
@@ -148,10 +156,10 @@ return [
             'full_description' => 'Fornecemos a base para diagnósticos precisos e hemoterapia segura. Atendemos laboratórios de análises clínicas e bancos de sangue em todo o Nordeste com exclusividade de fabricantes relevantes como Inbras e Fresenius. Entendemos a criticidade do que fazemos: um reagente ou bolsa de sangue não pode faltar, não pode falhar. Com 16 anos de experiência e parcerias sólidas com multinacionais, garantimos que o resultado final chegue com segurança ao paciente.',
             'icon'             => 'microscope',
             'features'         => [
-                'Reagentes químicos certificados',
-                'Insumos para banco de sangue',
-                'Automação laboratorial',
-                'Consumíveis para coleta',
+                ['title' => 'Reagentes químicos certificados', 'text' => 'Base para diagnósticos precisos, de fabricantes de referência.', 'icon' => 'beaker'],
+                ['title' => 'Insumos para banco de sangue', 'text' => 'Bolsas e insumos para hemoterapia segura, sem risco de falta.', 'icon' => 'eye-dropper'],
+                ['title' => 'Automação laboratorial', 'text' => 'Equipamentos que dão escala e confiabilidade à rotina do laboratório.', 'icon' => 'cpu-chip'],
+                ['title' => 'Consumíveis para coleta', 'text' => 'Itens de coleta para laboratórios de análises clínicas.', 'icon' => 'archive-box'],
             ],
             'target_audience' => [
                 'Laboratórios de análises clínicas',
@@ -168,6 +176,8 @@ return [
         ],
         [
             'id'               => 'imagem',
+            'cta_title'        => 'Sua clínica de imagem precisa de contrastes e filmes sem interrupção?',
+            'need_area'        => 'diagnóstico por imagem',
             'title'            => 'Diagnóstico por Imagem',
             'subtitle'         => 'Contrastes radiológicos, filmes para impressão e seringas para contraste de marca própria para clínicas de diagnóstico por imagem e hospitais.',
             'about_title'      => 'Imagem diagnóstica com atuação nacional',
@@ -175,10 +185,10 @@ return [
             'full_description' => 'Nossa divisão MT ultrapassa fronteiras regionais, atendendo empresas de diagnóstico por imagem em todo o Brasil. Trabalhamos com filmes, contrastes e acessórios que garantem a melhor resolução para laudos médicos assertivos. Desenvolvemos inclusive nosso primeiro produto de marca própria: seringas para inserção de contraste. É a prova de que não nos contentamos em fazer mais do mesmo, mas buscamos preencher lacunas de mercado com qualidade técnica superior.',
             'icon'             => 'scan',
             'features'         => [
-                'Contrastes radiológicos',
-                'Filmes para impressão',
-                'Seringas para contraste (marca própria)',
-                'Acessórios para exames de imagem',
+                ['title' => 'Contrastes radiológicos', 'text' => 'Contrastes para laudos médicos assertivos.', 'icon' => 'viewfinder-circle'],
+                ['title' => 'Filmes para impressão', 'text' => 'Filmes que garantem a melhor resolução de imagem.', 'icon' => 'photo'],
+                ['title' => 'Seringas para contraste (marca própria)', 'text' => 'Nosso primeiro produto de marca própria, criado para uma lacuna do mercado.', 'icon' => 'beaker'],
+                ['title' => 'Acessórios para exames de imagem', 'text' => 'Acessórios para clínicas e hospitais de diagnóstico por imagem.', 'icon' => 'puzzle-piece'],
             ],
             'target_audience' => [
                 'Clínicas de diagnóstico por imagem',
@@ -196,6 +206,8 @@ return [
         ],
         [
             'id'               => 'tupan-care',
+            'cta_title'        => 'Sua instituição precisa padronizar curativos ou soluções para estomias?',
+            'need_area'        => 'cuidados de feridas e estomias',
             'title'            => 'Tupan Care',
             'subtitle'         => 'Soluções avançadas em cuidados de feridas, estomias e padronização assistencial.',
             'description'      => 'Soluções Gentell Casex, padronização, treinamento e apoio técnico para cuidados de feridas e estomias.',
@@ -350,6 +362,8 @@ return [
         ],
         [
             'id'               => 'equipahosp',
+            'cta_title'        => 'Seus equipamentos precisam de manutenção, calibração ou reposição?',
+            'need_area'        => 'engenharia clínica e equipamentos',
             'title'            => 'EquipaHosp',
             'subtitle'         => 'Engenharia clínica, venda e locação de equipamentos, manutenção e calibração para hospitais, clínicas e laboratórios do Nordeste.',
             'description'      => 'Engenharia clínica, equipamentos e suporte técnico para aumentar a segurança e a disponibilidade da operação de saúde.',

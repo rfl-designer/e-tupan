@@ -2,7 +2,7 @@
     'origin' => null,
     'eyebrow' => 'Fale conosco',
     'title' => 'Consultoria técnica para sua necessidade específica.',
-    'text' => 'Nossa equipe técnica e comercial está preparada para entender sua demanda e propor a solução mais adequada. Não vendemos apenas produtos. Intermediamos segurança.',
+    'text' => 'Nossa equipe técnica e comercial está preparada para entender sua demanda e propor a solução mais adequada.',
     'whatsappMessage' => null,
     'showChannels' => true,
     'background' => 'white',
