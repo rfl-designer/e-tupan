@@ -40,7 +40,7 @@ Uma rodada que baixa a nota é revertida com `git revert`, e o Iterador tenta ou
 
 ### Rodada 0: avaliação da base (`818a081`)
 
-Screenshots: `shots/round-0`.
+Screenshots locais, não versionados: `shots/round-0`.
 
 | Critério | Peso | Nota |
 |---|---|---|
@@ -87,7 +87,7 @@ Dependências novas: nenhuma.
 
 Placeholders criados: config/institutional.php: contact.phone = [PREENCHER: telefone da central de atendimento]; config/institutional.php: contact.address = [PREENCHER: endereço completo da sede]; config/institutional.php: contact.social.instagram, linkedin e facebook = null (ícones ocultos até haver URL); config/institutional.php: contact.privacy_url = null (link da Política de Privacidade oculto); config/institutional.php: contact.whatsapp continua 'https://wa.me/' (sem número). O botão fica oculto na CTA da home e na seção de contato até haver número; config/institutional.php: testimonials = 1 entrada com [PREENCHER: depoimento real autorizado], [PREENCHER: nome], [PREENCHER: cargo] e [PREENCHER: instituição]. A seção fica oculta enquanto houver só placeholder; resources/views/components/institutional/sections/stats.blade.php: [PREENCHER: nº de soluções em catálogo], [PREENCHER: nº de estados atendidos] e [PREENCHER: janela de suporte técnico] (filtrados da exibição); resources/views/components/institutional/sections/stats.blade.php: comentário [PREENCHER: certificações reais (ex.: ISO) quando confirmadas] no lugar do selo ISO 9001.
 
-Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration: 10.89s. Screenshots: `shots/round-1` (Juiz: 390/768/1440 com auditoria) e `shots/round-1-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration: 10.89s. Screenshots locais, não versionados: `shots/round-1` (Juiz: 390/768/1440 com auditoria) e `shots/round-1-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 0):
 
@@ -140,7 +140,7 @@ Mudanças do segundo Iterador que também estão em `4885e9b`:
 
 Base independente: o segundo run avaliou a base `818a081` por conta própria e deu 6,05. A primeira avaliação tinha dado 6,10, então o Juiz está consistente. Para comparar, a re-medição usou essa avaliação independente como referência.
 
-Re-medição: a captura com auditoria (390, 768 e 1440) reflete exatamente o commit `4885e9b` e está em `shots/round-1`. A captura `round-1-pre` estava contaminada e foi ignorada. Testes: 334 passed (701 assertions), Duration 11.05s.
+Re-medição: a captura com auditoria (390, 768 e 1440) reflete exatamente o commit `4885e9b` e está em `shots/round-1` (screenshots locais, não versionados). A captura `round-1-pre` estava contaminada e foi ignorada. Testes: 334 passed (701 assertions), Duration 11.05s.
 
 | Critério | Peso | Rodada 0 (registro) | Base independente | Rodada 1 original | Rodada 1 re-medida |
 |---|---|---|---|---|---|
@@ -191,7 +191,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration 10.63s. Screenshots: `shots/round-2` (Juiz: 390/768/1440 com auditoria) e `shots/round-2-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration 10.63s. Screenshots locais, não versionados: `shots/round-2` (Juiz: 390/768/1440 com auditoria) e `shots/round-2-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 1):
 
@@ -244,7 +244,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration 10.62s. Screenshots: `shots/round-3` (Juiz: 390/768/1440 com auditoria) e `shots/round-3-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 334 passed (701 assertions), Duration 10.62s. Screenshots locais, não versionados: `shots/round-3` (Juiz: 390/768/1440 com auditoria) e `shots/round-3-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 2):
 
@@ -296,7 +296,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (707 assertions), Duration: 10.73s. Screenshots: `shots/round-4` (Juiz: 390/768/1440 com auditoria) e `shots/round-4-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (707 assertions), Duration: 10.73s. Screenshots locais, não versionados: `shots/round-4` (Juiz: 390/768/1440 com auditoria) e `shots/round-4-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 3):
 
@@ -348,7 +348,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (707 assertions), Duration: 10.89s. Screenshots: `shots/round-5` (Juiz: 390/768/1440 com auditoria) e `shots/round-5-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (707 assertions), Duration: 10.89s. Screenshots locais, não versionados: `shots/round-5` (Juiz: 390/768/1440 com auditoria) e `shots/round-5-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 4):
 
@@ -400,7 +400,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.71s. Screenshots: `shots/round-6` (Juiz: 390/768/1440 com auditoria) e `shots/round-6-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.71s. Screenshots locais, não versionados: `shots/round-6` (Juiz: 390/768/1440 com auditoria) e `shots/round-6-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 5):
 
@@ -454,7 +454,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.62s. Screenshots: `shots/round-7` (Juiz: 390/768/1440 com auditoria) e `shots/round-7-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.62s. Screenshots locais, não versionados: `shots/round-7` (Juiz: 390/768/1440 com auditoria) e `shots/round-7-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 6):
 
@@ -510,7 +510,7 @@ Dependências novas: nenhuma.
 
 Placeholders criados: [PREENCHER: prazo de resposta] em resources/views/livewire/institutional/contact-page.blade.php (texto do bloco do formulário em /contato).
 
-Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.85s. Screenshots: `shots/round-8` (Juiz: 390/768/1440 com auditoria) e `shots/round-8-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 10.85s. Screenshots locais, não versionados: `shots/round-8` (Juiz: 390/768/1440 com auditoria) e `shots/round-8-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 7):
 
@@ -597,7 +597,7 @@ Na continuação, o limite passou de 8 para 18 rodadas, e os demais critérios d
 
 Sobraram 7 das 10 rodadas da continuação. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida.
 
-O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits seguintes (`2d741e2`, revert da rodada 11, e os de documentação) só mudam o `design-log.md`, então o `HEAD` tem o código da rodada 10.
+O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits seguintes do ciclo (`2d741e2`, revert da rodada 11, e os de documentação) só mudam o `design-log.md`. Depois do ciclo, o `677e12b` declarou as propriedades computed do `ContactForm` para o PHPStan e testou o evento `contact-topic`, sem mudar o comportamento. Assim, o `HEAD` roda o código da rodada 10.
 
 ### Bloqueio relatado
 
@@ -628,7 +628,7 @@ Dois runs do ciclo rodaram ao mesmo tempo sobre a mesma árvore. O commit `4885e
 
 ### Verificação final
 
-Sobre o código da rodada 10, o mesmo do `HEAD`: `npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). No servidor local, os `[PREENCHER]` renderizados batem com a lista de pendências acima. Screenshots do estado final: `shots/round-10`.
+Sobre o código da rodada 10 (`bfd4f1f`): `npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). No servidor local, os `[PREENCHER]` renderizados batem com a lista de pendências acima. Screenshots do estado final (locais, não versionados): `shots/round-10`.
 
 ## Continuação: rodadas 9 a 18
 
@@ -648,7 +648,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: 336 passed (708 assertions), duração 10.98s. Screenshots: `shots/round-9` (Juiz: 390/768/1440 com auditoria) e `shots/round-9-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: 336 passed (708 assertions), duração 10.98s. Screenshots locais, não versionados: `shots/round-9` (Juiz: 390/768/1440 com auditoria) e `shots/round-9-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 8):
 
@@ -704,7 +704,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration: 11.76s. Screenshots: `shots/round-10` (Juiz: 390/768/1440 com auditoria) e `shots/round-10-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration: 11.76s. Screenshots locais, não versionados: `shots/round-10` (Juiz: 390/768/1440 com auditoria) e `shots/round-10-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 8):
 
@@ -756,7 +756,7 @@ Mudanças feitas pelo Iterador:
 
 Dependências novas: nenhuma.
 
-Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 11.21s. Screenshots: `shots/round-11` (Juiz: 390/768/1440 com auditoria) e `shots/round-11-iterador` (Iterador: 390/1440).
+Verificação: build ok; testes: Tests: 336 passed (708 assertions), Duration 11.21s. Screenshots locais, não versionados: `shots/round-11` (Juiz: 390/768/1440 com auditoria) e `shots/round-11-iterador` (Iterador: 390/1440).
 
 Avaliação do Juiz depois da iteração (Δ em relação à rodada 10):
 
