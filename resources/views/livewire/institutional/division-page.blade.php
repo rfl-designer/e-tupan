@@ -100,27 +100,12 @@
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             @foreach($division['features'] ?? [] as $feature)
-                @php
-                    $featureTitle = is_array($feature) ? ($feature['title'] ?? '') : $feature;
-                    $featureText = is_array($feature) ? ($feature['text'] ?? '') : '';
-                    $featureIcon = is_array($feature) ? ($feature['icon'] ?? 'check-badge') : 'check-badge';
-                @endphp
                 <x-institutional.reveal :delay="($loop->index % 4) * 100" wire:key="division-feature-{{ $loop->index }}">
                     <x-institutional.card variant="feature" class="h-full" :hover-effect="false">
-                        @if($featureText !== '')
-                            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark">
-                                <flux:icon :name="$featureIcon" class="size-6" />
-                            </div>
-                            <h3 class="mb-2 text-base font-semibold text-neutral-strong">{{ $featureTitle }}</h3>
-                            <p class="text-base leading-relaxed text-neutral-medium">{{ $featureText }}</p>
-                        @else
-                            <div class="flex items-center gap-4">
-                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark">
-                                    <flux:icon :name="$featureIcon" class="size-6" />
-                                </div>
-                                <h3 class="text-base font-semibold text-neutral-strong">{{ $featureTitle }}</h3>
-                            </div>
-                        @endif
+                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark">
+                            <flux:icon name="check-badge" class="size-6" />
+                        </div>
+                        <h3 class="text-base font-semibold text-neutral-strong">{{ $feature }}</h3>
                     </x-institutional.card>
                 </x-institutional.reveal>
             @endforeach
@@ -132,11 +117,8 @@
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Público</span>
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">Para quem atuamos</h2>
-                @if(! empty($division['description']))
-                    <p class="text-base leading-relaxed text-neutral-medium">{{ $division['description'] }}</p>
-                @endif
                 @if(($division['id'] ?? '') === 'imagem')
-                    <p class="mt-4 text-base leading-relaxed text-neutral-medium">Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.</p>
+                    <p class="text-lg text-neutral-medium">Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.</p>
                 @endif
             </x-institutional.reveal>
 
@@ -159,7 +141,7 @@
 
         <div class="container relative z-10 mx-auto max-w-4xl px-6 text-center">
             <x-institutional.reveal>
-                <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">{{ $division['cta_title'] ?? 'Vamos conversar sobre a necessidade da sua instituição?' }}</h2>
+                <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">{{ $divisionTitle }}</h2>
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-white">{{ $division['description'] ?? '' }}</p>
                 <div class="flex flex-col justify-center gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="divisao-{{ $divisionId }}-cta-contato" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
@@ -180,8 +162,6 @@
         background="cream"
         :eyebrow="$divisionTitle"
         :title="'Fale com a equipe '.$divisionTitle"
-        :text="! empty($division['need_area'])
-            ? 'Conte o que sua instituição precisa em '.$division['need_area'].' e indicamos o caminho mais adequado.'
-            : 'Conte o que sua instituição precisa e indicamos o caminho mais adequado.'"
+        :text="'Conte o que sua instituição precisa em '.$divisionTitle.' e indicamos o caminho mais adequado.'"
     />
 </div>

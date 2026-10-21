@@ -71,7 +71,7 @@
                 <ul class="text-sm text-neutral-light">
                     <li><a href="{{ route('about') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Quem somos</a></li>
                     <li><a href="{{ route('about') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Nossa história</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Blog</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Conhecimento técnico</a></li>
                     <li><a href="{{ route('contact') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Trabalhe conosco</a></li>
                     @if(! empty($contact['privacy_url']))
                         <li><a href="{{ $contact['privacy_url'] }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Política de Privacidade</a></li>
