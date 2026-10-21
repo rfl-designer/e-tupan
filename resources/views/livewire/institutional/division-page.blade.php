@@ -21,8 +21,9 @@
                     <span class="text-xs font-bold uppercase tracking-wider text-primary-light">Divisão especializada</span>
                 </div>
 
-                <h1 class="mb-6 max-w-4xl text-4xl font-medium text-white md:text-5xl lg:text-6xl">{{ $division['title'] ?? 'Divisão' }}</h1>
-                <p class="max-w-2xl text-xl leading-relaxed text-neutral-light md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
+                <h1 class="mb-4 max-w-3xl text-4xl font-medium text-white lg:text-5xl">{{ $division['title'] ?? 'Divisão' }}</h1>
+                <p class="max-w-3xl text-xl leading-relaxed text-neutral-100 md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
+                <p class="mt-4 text-sm text-white/70">Uma operação Tupan Saúde</p>
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="#contato" data-cta="divisao-{{ $division['id'] ?? 'divisao' }}-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
@@ -63,7 +64,7 @@
         <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <x-institutional.reveal class="lg:col-span-3">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a divisão</span>
-                <h2 class="mb-6 text-3xl font-medium text-neutral-strong">{{ $division['about_title'] ?? ($division['description'] ?? 'Sobre a divisão') }}</h2>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">{{ $division['about_title'] ?? ($division['description'] ?? 'Sobre a divisão') }}</h2>
                 <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
                     @foreach($aboutParagraphs as $paragraph)
                         <p wire:key="division-about-{{ $loop->index }}">{{ $paragraph }}</p>
@@ -125,8 +126,8 @@
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Público</span>
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">Para quem atuamos</h2>
-                @if(! empty($division['description']))
-                    <p class="mb-4 text-base leading-relaxed text-neutral-medium">{{ $division['description'] }}</p>
+                @if(! empty($division['audience_text']))
+                    <p class="mb-4 text-lg text-neutral-medium">{{ $division['audience_text'] }}</p>
                 @endif
                 @if(($division['id'] ?? '') === 'imagem')
                     <p class="text-lg text-neutral-medium">Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.</p>

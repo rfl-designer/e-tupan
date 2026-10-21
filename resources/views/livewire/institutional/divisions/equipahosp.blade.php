@@ -25,13 +25,13 @@
                     <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Divisão de equipamentos' }}</span>
                 </div>
 
-                <h1 class="sr-only">{{ $division['title'] ?? 'EquipaHosp' }}</h1>
-                <div class="mb-6 w-full max-w-sm drop-shadow-lg sm:max-w-md md:max-w-lg lg:max-w-xl [&_svg]:h-auto [&_svg]:w-full">
+                <div class="mb-5 w-fit max-w-[220px] drop-shadow-lg [&_svg]:h-auto [&_svg]:max-h-[56px] [&_svg]:w-full">
                     <x-assets.logo-equipahosp />
                 </div>
 
-                <p class="max-w-3xl text-xl leading-relaxed text-neutral-light md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
-                <p class="mt-4 text-sm font-medium uppercase tracking-wider text-white/70">Uma operação Tupan Saúde</p>
+                <h1 class="mb-4 max-w-3xl text-4xl font-medium text-white lg:text-5xl">{{ $page['headline'] ?? ($division['title'] ?? 'EquipaHosp') }}</h1>
+                <p class="max-w-3xl text-xl leading-relaxed text-neutral-100 md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
+                <p class="mt-4 text-sm text-white/70">Uma operação Tupan Saúde</p>
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">

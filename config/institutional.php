@@ -78,6 +78,7 @@ return [
                 ['title' => 'Equipamentos de centro cirúrgico', 'text' => 'Apoio técnico na escolha de equipamentos para a sala cirúrgica.', 'icon' => 'cpu-chip'],
                 ['title' => 'Material de proteção certificado', 'text' => 'Proteção para equipes e pacientes, com conformidade ANVISA.', 'icon' => 'shield-check'],
             ],
+            'audience_text'   => 'Centros cirúrgicos, CMEs e equipes que não podem esperar por reposição.',
             'target_audience' => [
                 'Hospitais',
                 'Clínicas cirúrgicas',
@@ -108,6 +109,7 @@ return [
                 ['title' => 'Insumos farmacêuticos', 'text' => 'Elo entre a indústria e as instituições de saúde.', 'icon' => 'archive-box'],
                 ['title' => 'Logística com cadeia fria', 'text' => 'Logística controlada que preserva a integridade de cada produto.', 'icon' => 'truck'],
             ],
+            'audience_text'   => 'Farmácias hospitalares e gestores que precisam de fornecimento rastreável e contínuo.',
             'target_audience' => [
                 'Farmácias hospitalares',
                 'Farmacêuticos',
@@ -132,6 +134,7 @@ return [
                 ['title' => 'Tecnologia de cicatrização avançada', 'text' => 'Tecnologia que acelera a cicatrização e reduz o tempo de tratamento.', 'icon' => 'sparkles'],
                 ['title' => 'Insumos para estomaterapia', 'text' => 'Suporte à prática assistencial de estomaterapeutas e equipes.', 'icon' => 'clipboard-document-check'],
             ],
+            'audience_text'   => 'Enfermeiros, hospitais e home care que acompanham feridas de perto.',
             'target_audience' => [
                 'Enfermeiros estomaterapeutas',
                 'Hospitais',
@@ -161,6 +164,7 @@ return [
                 ['title' => 'Automação laboratorial', 'text' => 'Equipamentos que dão escala e confiabilidade à rotina do laboratório.', 'icon' => 'cpu-chip'],
                 ['title' => 'Consumíveis para coleta', 'text' => 'Itens de coleta para laboratórios de análises clínicas.', 'icon' => 'archive-box'],
             ],
+            'audience_text'   => 'Laboratórios e bancos de sangue que dependem de insumos e equipamentos confiáveis.',
             'target_audience' => [
                 'Laboratórios de análises clínicas',
                 'Bancos de sangue',
@@ -190,6 +194,7 @@ return [
                 ['title' => 'Seringas para contraste (marca própria)', 'text' => 'Nosso primeiro produto de marca própria, criado para uma lacuna do mercado.', 'icon' => 'beaker'],
                 ['title' => 'Acessórios para exames de imagem', 'text' => 'Acessórios para clínicas e hospitais de diagnóstico por imagem.', 'icon' => 'puzzle-piece'],
             ],
+            'audience_text'   => 'Empresas de diagnóstico por imagem que precisam de insumos com entrega previsível.',
             'target_audience' => [
                 'Clínicas de diagnóstico por imagem',
                 'Hospitais',
@@ -235,20 +240,17 @@ return [
             ],
             'contact_form' => 'tupan-care',
             'page'         => [
+                'eyebrow'     => 'Divisão de cuidados de feridas',
                 'logo'        => 'images/parceiros/tupan-care-wordmark.webp',
                 'endorsement' => 'Uma operação Tupan Saúde',
                 'headline'    => 'Cuidado de feridas e estomias com apoio técnico local',
                 'intro'       => [
                     'A Tupan Care é a operação da Tupan Saúde dedicada à promoção, representação e comercialização de soluções para cuidados de feridas e estomias.',
-                    'Como parceira local da Gentell Casex, atuamos junto a hospitais, clínicas, profissionais de saúde, distribuidores e instituições para apoiar a escolha, a padronização e a utilização adequada dos produtos.',
-                    'Nossa atuação combina acesso a soluções especializadas, proximidade regional, treinamento e suporte técnico-comercial para contribuir com melhores decisões de cuidado e melhores resultados para os pacientes.',
+                    'A Tupan Saúde e a Gentell Casex trabalham juntas desde 2023. A Gentell é global em cuidados de feridas e a Casex tem tradição em produtos para estomizados. A Tupan Care aproxima esse portfólio das instituições da região.',
+                    'Atendemos hospitais, clínicas, serviços de home care, distribuidores e profissionais de saúde, com proximidade regional, treinamento e suporte técnico-comercial.',
                 ],
                 'partnership' => [
-                    'title'      => 'Tupan Care + Gentell Casex',
-                    'paragraphs' => [
-                        'A parceria entre a Tupan Saúde e a Gentell Casex vem sendo construída desde 2023 e tem se fortalecido por meio de uma atuação conjunta no mercado de saúde.',
-                        'A Gentell é uma empresa global especializada em soluções para cuidados de feridas. A Casex possui tradição na fabricação e no desenvolvimento de produtos para pessoas estomizadas. A Tupan Care aproxima esse portfólio das instituições e dos profissionais da nossa região, com atendimento, treinamento, promoção e apoio à padronização.',
-                    ],
+                    'title'     => 'Tupan Care + Gentell Casex',
                     'highlight' => 'Mais do que disponibilizar produtos, a Tupan Care ajuda a transformar conhecimento técnico em decisões assistenciais mais seguras.',
                 ],
                 'approach' => [
@@ -391,8 +393,9 @@ return [
             ],
             'contact_form' => 'equipa-hosp',
             'page'         => [
-                'eyebrow' => 'Divisão de equipamentos',
-                'intro'   => [
+                'eyebrow'  => 'Divisão de equipamentos',
+                'headline' => 'Engenharia clínica e equipamentos com suporte técnico no Nordeste',
+                'intro'    => [
                     'A EquipaHosp reúne parceiros, equipamentos, serviços técnicos e conhecimento da Tupan Saúde para apoiar hospitais, clínicas, laboratórios e centros de diagnóstico.',
                     'Entendemos o desafio da instituição, reunimos os recursos adequados e acompanhamos a solução da avaliação da necessidade até a implantação, o uso e a evolução.',
                 ],
@@ -490,7 +493,7 @@ return [
                     'Compromisso com segurança, eficiência e continuidade operacional',
                 ],
                 'cta' => [
-                    'title'            => 'Sua instituição precisa encontrar uma solução para um desafio de saúde, tecnologia ou operação?',
+                    'title'            => 'Seus equipamentos precisam de manutenção, calibração ou reposição?',
                     'text'             => 'Fale com a equipe EquipaHosp e conte o que sua instituição precisa. Conectamos sua demanda aos parceiros e recursos mais adequados.',
                     'primary_label'    => 'Falar com um consultor',
                     'secondary_label'  => 'Falar pelo WhatsApp',

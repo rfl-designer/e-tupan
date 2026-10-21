@@ -22,10 +22,10 @@ it('renders blog and division details', function () {
     $this->get('/solucoes/cirurgica')->assertSuccessful();
 });
 
-it('renders the equipahosp division with the logo and an sr-only title', function () {
+it('renders the equipahosp division with the logo and a benefit headline', function () {
     $this->get('/solucoes/equipahosp')
         ->assertSuccessful()
-        ->assertSee('<h1 class="sr-only">EquipaHosp</h1>', false)
+        ->assertSee('Engenharia clínica e equipamentos com suporte técnico no Nordeste')
         ->assertSee('<svg', false)
         ->assertDontSee('rounded-xl p-3 text-white', false);
 });
