@@ -20,13 +20,15 @@
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">
                     {{ $title }}
                 </h2>
-                <p class="text-lg text-neutral-medium">
-                    {{ $text }}
-                </p>
+                @if($text !== '')
+                    <p class="text-lg text-neutral-medium">
+                        {{ $text }}
+                    </p>
+                @endif
                 @if($origin)
                     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                         <a href="#fale-conosco" data-cta="{{ $origin }}-contato-consultoria" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong px-6 py-2.5 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
-                            Solicitar consultoria técnica
+                            Falar com um consultor
                         </a>
                         @if($whatsappReady)
                         <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-contato-whatsapp" class="inline-flex items-center justify-center gap-2 rounded-[999px] border border-transparent bg-primary-strong px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
@@ -41,7 +43,7 @@
             <x-institutional.reveal :delay="200">
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-bg-light text-primary-strong">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                             <flux:icon name="map-pin" class="size-5" />
                         </div>
                         <div>
@@ -53,7 +55,7 @@
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-bg-light text-primary-strong">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                             <flux:icon name="phone" class="size-5" />
                         </div>
                         <div>
@@ -64,10 +66,10 @@
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-bg-light text-primary-strong">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                             <flux:icon name="envelope" class="size-5" />
                         </div>
-                        <div>
+                        <div class="min-w-0 break-words">
                             <h4 class="font-semibold text-neutral-strong">E-mail</h4>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'contato@tupan.com.br'" /></p>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['emails'][1] ?? 'comercial@tupan.com.br'" /></p>

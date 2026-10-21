@@ -38,7 +38,7 @@
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
-                        {{ $cta['primary_label'] ?? 'Solicitar contato' }}
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-treinamento" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="academic-cap" class="size-4" />
@@ -99,7 +99,7 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($page['approach'] ?? [] as $item)
                 <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="tupan-care-approach-{{ $loop->index }}">
-                    <x-institutional.card variant="feature" class="h-full">
+                    <x-institutional.card variant="feature" class="h-full" :hover-effect="false">
                         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong">
                             <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
                         </div>
@@ -123,7 +123,7 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             @foreach($page['solutions'] ?? [] as $item)
                 <x-institutional.reveal :delay="$loop->index * 100" wire:key="tupan-care-solution-{{ $loop->index }}">
-                    <x-institutional.card class="h-full">
+                    <x-institutional.card class="h-full" :hover-effect="false">
                         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark">
                             <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
                         </div>
@@ -179,7 +179,7 @@
             </div>
         </x-institutional.reveal>
 
-        <div class="grid gap-6 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($page['partners'] ?? [] as $partner)
                 <x-institutional.reveal :delay="$loop->index * 100" wire:key="tupan-care-partner-{{ $loop->index }}">
                     <x-institutional.partner-card :partner="$partner" :origin="$origin" />
@@ -198,7 +198,7 @@
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-primary-bg">{{ $cta['text'] ?? '' }}</p>
                 <div class="flex flex-col justify-center gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-cta-contato" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
-                        {{ $cta['primary_label'] ?? 'Solicitar contato' }}
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-treinamento" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         {{ $cta['secondary_label'] ?? 'Solicitar treinamento' }}

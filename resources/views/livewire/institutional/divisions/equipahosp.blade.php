@@ -34,11 +34,11 @@
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
-                        {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-consultor" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="chat-bubble-left-right" class="size-4" />
-                        {{ $cta['secondary_label'] ?? 'Falar com um consultor' }}
+                        {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
                 </div>
             </x-institutional.reveal>
@@ -79,7 +79,7 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($page['hub_items'] ?? [] as $item)
                 <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}">
-                    <x-institutional.card class="h-full">
+                    <x-institutional.card class="h-full" :hover-effect="false">
                         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong">
                             <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
                         </div>
@@ -160,10 +160,10 @@
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-primary-bg">{{ $cta['text'] ?? '' }}</p>
                 <div class="flex flex-col justify-center gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
-                        {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                        {{ $cta['secondary_label'] ?? 'Falar com um consultor' }}
+                        {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
                 </div>
             </x-institutional.reveal>

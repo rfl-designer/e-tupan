@@ -103,11 +103,11 @@
             </a>
 
             <a href="{{ route('contact') }}" class="whitespace-nowrap rounded-[999px] border border-transparent bg-primary-strong px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
-                Fale com um Consultor
+                Falar com um consultor
             </a>
         </nav>
 
-        <button type="button" aria-label="Abrir menu" aria-controls="menu-mobile" x-bind:aria-label="isOpen ? 'Fechar menu' : 'Abrir menu'" x-bind:aria-expanded="isOpen.toString()" class="relative z-50 lg:hidden" x-bind:class="useLightText ? 'text-white' : 'text-neutral-strong hover:text-primary-strong'" x-on:click="isOpen = !isOpen">
+        <button type="button" aria-label="Abrir menu" aria-controls="menu-mobile" x-bind:aria-label="isOpen ? 'Fechar menu' : 'Abrir menu'" x-bind:aria-expanded="isOpen.toString()" class="relative z-50 lg:hidden" x-bind:class="useLightText ? 'text-neutral-strong lg:text-white' : 'text-neutral-strong hover:text-primary-strong'" x-on:click="isOpen = !isOpen">
             <flux:icon x-show="!isOpen" name="bars-3" class="size-7" />
             <flux:icon x-show="isOpen" name="x-mark" class="size-7 text-neutral-strong" />
         </button>
@@ -149,7 +149,7 @@
 
         <div class="mt-4">
             <a href="{{ route('contact') }}" class="inline-flex w-full items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
-                Fale com um Consultor
+                Falar com um consultor
             </a>
         </div>
     </div>

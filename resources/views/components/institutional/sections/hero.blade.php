@@ -16,17 +16,17 @@
 
             <x-institutional.reveal :delay="160">
                 <p class="max-w-xl text-lg leading-relaxed text-neutral-medium md:text-xl">
-                    Há 16 anos, intermediamos segurança, técnica e cuidado para hospitais, laboratórios e profissionais de saúde em todo o Nordeste. Nascemos no Sertão. Construímos nossa autoridade com estudo, responsabilidade e entrega coerente.
+                    Somos uma distribuidora técnica de produtos e serviços para saúde, com sede em Recife e atuação em todo o Nordeste. Há 16 anos, intermediamos segurança, técnica e cuidado para hospitais, laboratórios e profissionais de saúde. Nascemos no Sertão. Construímos nossa autoridade com estudo, responsabilidade e entrega coerente.
                 </p>
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="240">
                 <div class="flex flex-col gap-4 sm:flex-row">
-                    <a href="#solucoes" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
-                        Conheça Nossas Soluções
+                    <a href="{{ route('contact') }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
+                        Falar com um consultor
                     </a>
-                    <a href="{{ route('about') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
-                        Nossa História
+                    <a href="#solucoes" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
+                        Conheça nossas soluções
                     </a>
                 </div>
             </x-institutional.reveal>
@@ -52,9 +52,8 @@
         <div class="relative h-[400px] w-full flex-1 lg:h-full">
             <x-institutional.reveal :delay="200" class="h-full w-full">
                 <div class="relative h-full w-full">
-                    <div class="absolute right-0 top-0 h-full w-3/4 rounded-tl-[100px] rounded-br-[40px] bg-bg-accent opacity-50"></div>
                     <div class="absolute bottom-10 left-10 h-24 w-24 rounded-full bg-secondary-light opacity-20"></div>
-                    <div class="h-full z-10 overflow-hidden rounded-[32px] border-4 border-white shadow-2xl">
+                    <div class="relative z-10 h-full overflow-hidden rounded-[32px] border-4 border-white shadow-2xl">
                         <img
                             src="{{ asset('images/institucional/hero-home.webp') }}"
                             srcset="{{ asset('images/institucional/hero-home-800.webp') }} 800w, {{ asset('images/institucional/hero-home.webp') }} 1038w"

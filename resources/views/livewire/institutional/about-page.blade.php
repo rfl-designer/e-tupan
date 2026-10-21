@@ -32,7 +32,7 @@
                         class="h-[500px] w-full rounded-[32px] object-cover shadow-2xl"
                     />
                     <div class="absolute -bottom-6 -right-6 max-w-xs rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
-                        <p class="text-lg font-semibold text-neutral-strong">"Somos uma empresa de saude feita do sal da terra."</p>
+                        <p class="text-lg font-semibold text-neutral-strong">"Somos uma empresa de saúde feita do sal da terra."</p>
                     </div>
                 </div>
             </x-institutional.reveal>
@@ -96,7 +96,7 @@
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <x-institutional.reveal :delay="100">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
+                <x-institutional.card variant="standard" class="h-full" :hover-effect="false">
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                         <flux:icon name="book-open" class="size-6" />
                     </div>
@@ -108,7 +108,7 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="200">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
+                <x-institutional.card variant="standard" class="h-full" :hover-effect="false">
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="hand-thumb-up" class="size-6" />
                     </div>
@@ -120,8 +120,8 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="300">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
-                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                <x-institutional.card variant="standard" class="h-full" :hover-effect="false">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                         <flux:icon name="heart" class="size-6" />
                     </div>
                     <h3 class="mb-3 text-xl font-semibold">Compromisso com Vidas</h3>
@@ -132,8 +132,8 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="400">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
-                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                <x-institutional.card variant="standard" class="h-full" :hover-effect="false">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="briefcase" class="size-6" />
                     </div>
                     <h3 class="mb-3 text-xl font-semibold">Parcerias com Multinacionais</h3>

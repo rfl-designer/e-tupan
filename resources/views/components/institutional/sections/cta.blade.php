@@ -17,7 +17,7 @@
             </p>
             <div class="flex flex-col justify-center gap-4 sm:flex-row">
                 <a href="#contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-white px-6 py-3 text-sm font-semibold text-neutral-strong shadow-sm transition hover:bg-primary-bg hover:shadow-md">
-                    Solicitar consultoria técnica
+                    Falar com um consultor
                 </a>
                 @if($whatsappReady)
                     <a href="{{ $whatsapp }}" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">

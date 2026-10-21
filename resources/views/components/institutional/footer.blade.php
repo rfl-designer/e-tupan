@@ -12,7 +12,7 @@
 
 <footer class="bg-bg-dark text-white pt-16 pb-8 border-t border-neutral-medium/20">
     <div class="container mx-auto max-w-7xl px-6">
-        <div class="mb-16 grid gap-12 md:grid-cols-4">
+        <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div class="col-span-1 space-y-4 md:col-span-1">
                 <div class="flex items-center gap-2">
                     <img
@@ -85,7 +85,7 @@
                     @if($hasPhone)
                     <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" class="hover:text-primary-light hover:underline" /></li>
                     @endif
-                    <li><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? $contact['emails'][1] ?? 'comercial@tupan.com.br'" class="hover:text-primary-light hover:underline" /></li>
+                    <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? $contact['emails'][1] ?? 'comercial@tupan.com.br'" class="hover:text-primary-light hover:underline" /></li>
                     <li>{{ $contact['city'] ?? 'Recife, PE' }}</li>
                     @if($hasAddress)
                         <li>{{ $contact['address'] }}</li>

@@ -337,7 +337,7 @@ return [
                 'cta' => [
                     'title'            => 'Sua instituição precisa revisar sua padronização de curativos ou soluções para estomias?',
                     'text'             => 'Fale com a Tupan Care e solicite uma conversa com nossa equipe.',
-                    'primary_label'    => 'Solicitar contato',
+                    'primary_label'    => 'Falar com um consultor',
                     'secondary_label'  => 'Solicitar treinamento',
                     'whatsapp_message' => 'Olá, gostaria de solicitar informações sobre treinamento, padronização ou soluções Gentell Casex pela Tupan Care.',
                 ],
@@ -473,8 +473,8 @@ return [
                 'cta' => [
                     'title'            => 'Sua instituição precisa encontrar uma solução para um desafio de saúde, tecnologia ou operação?',
                     'text'             => 'Fale com a equipe EquipaHosp e conte o que sua instituição precisa. Nosso hub conecta sua demanda aos parceiros e recursos mais adequados.',
-                    'primary_label'    => 'Solicitar avaliação técnica',
-                    'secondary_label'  => 'Falar com um consultor',
+                    'primary_label'    => 'Falar com um consultor',
+                    'secondary_label'  => 'Falar pelo WhatsApp',
                     'whatsapp_message' => 'Olá, gostaria de falar com a EquipaHosp sobre uma necessidade de equipamentos ou engenharia clínica.',
                 ],
             ],

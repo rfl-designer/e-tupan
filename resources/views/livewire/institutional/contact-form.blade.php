@@ -78,7 +78,7 @@
 
     <div @class(['grid gap-6 md:grid-cols-2' => $this->hasExtendedFields, 'space-y-2' => ! $this->hasExtendedFields])>
         <div class="space-y-2">
-            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">{{ $this->hasExtendedFields ? 'E-mail Corporativo' : 'E-mail Profissional' }}</label>
+            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">E-mail Corporativo</label>
             <input
                 id="{{ $fieldId('email') }}"
                 type="email"
@@ -111,7 +111,7 @@
     </div>
 
     <div class="space-y-2">
-        <label for="{{ $fieldId('topic') }}" class="text-sm font-medium text-neutral-strong">{{ $this->hasExtendedFields ? 'Tipo de Necessidade' : 'Tipo de Solicitação' }}</label>
+        <label for="{{ $fieldId('topic') }}" class="text-sm font-medium text-neutral-strong">Tipo de Necessidade</label>
         <select
             id="{{ $fieldId('topic') }}"
             wire:model="topic"
@@ -128,7 +128,7 @@
     </div>
 
     <div class="space-y-2">
-        <label for="{{ $fieldId('message') }}" class="text-sm font-medium text-neutral-strong">{{ $this->hasExtendedFields ? 'Mensagem' : 'Detalhes da Solicitação' }}</label>
+        <label for="{{ $fieldId('message') }}" class="text-sm font-medium text-neutral-strong">Mensagem</label>
         <textarea
             id="{{ $fieldId('message') }}"
             wire:model="message"
@@ -147,7 +147,7 @@
         wire:loading.attr="disabled"
         @if($origin) data-cta="{{ $origin }}-form-submit" @endif
     >
-        <span wire:loading.remove>{{ $this->hasExtendedFields ? 'Enviar solicitação' : 'Solicitar Contato' }}</span>
+        <span wire:loading.remove>Enviar solicitação</span>
         <span wire:loading>Enviando...</span>
     </button>
 </form>

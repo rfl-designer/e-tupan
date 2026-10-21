@@ -22,9 +22,9 @@
     </div>
 
     <x-institutional.section variant="light" class="pb-0">
-        <div class="relative z-20 -mt-32 grid gap-6 md:grid-cols-3">
+        <div class="relative z-20 -mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <x-institutional.reveal :delay="100">
-                <div class="h-full rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
+                <div class="h-full min-w-0 rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                         <flux:icon name="phone" class="size-6" />
                     </div>
@@ -35,18 +35,18 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="200">
-                <div class="h-full rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
+                <div class="h-full min-w-0 rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                         <flux:icon name="envelope" class="size-6" />
                     </div>
                     <h3 class="mb-2 text-xl font-semibold text-neutral-strong">E-mails</h3>
-                    <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? 'comercial@tupan.com.br'" /></p>
-                    <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][1] ?? 'rh@tupan.com.br'" /></p>
+                    <p class="break-words text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? 'comercial@tupan.com.br'" /></p>
+                    <p class="break-words text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][1] ?? 'rh@tupan.com.br'" /></p>
                 </div>
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="300">
-                <div class="h-full rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
+                <div class="h-full min-w-0 rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                         <flux:icon name="map-pin" class="size-6" />
                     </div>
@@ -59,6 +59,6 @@
     </x-institutional.section>
 
     <div class="bg-bg-light">
-        <x-institutional.sections.contact />
+        <x-institutional.sections.contact eyebrow="Formulário" title="Envie sua solicitação" text="" />
     </div>
 </div>

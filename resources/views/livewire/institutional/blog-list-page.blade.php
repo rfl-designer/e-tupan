@@ -26,10 +26,10 @@
             @foreach($posts as $index => $post)
                 <x-institutional.reveal :delay="$index * 100">
                     <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
-                        <x-institutional.card class="flex h-full flex-col overflow-hidden p-0 hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-transparent" variant="standard">
+                        <x-institutional.card class="flex h-full flex-col overflow-hidden hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-transparent" padding="none" variant="standard">
                             <div class="relative h-48 overflow-hidden">
                                 <img src="{{ $post['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $post['image']) }} 480w, {{ $post['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="{{ $post['title'] }}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                <div class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
+                                <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
                                     {{ $post['category'] }}
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                         {{ $post['read_time'] }}
                                     </div>
                                 </div>
-                                <h3 class="mb-3 line-clamp-2 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">
+                                <h3 class="mb-3 line-clamp-3 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">
                                     {{ $post['title'] }}
                                 </h3>
                                 <p class="mb-6 line-clamp-3 flex-grow text-sm text-neutral-medium">

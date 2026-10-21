@@ -11,13 +11,13 @@
     $logoAlt = count($logos) > 1 ? 'Logos ' . $name : 'Logo ' . $name;
 @endphp
 
-<x-institutional.card {{ $attributes->merge(['class' => 'flex h-full flex-col']) }}>
+<x-institutional.card :hover-effect="false" {{ $attributes->merge(['class' => 'flex h-full min-w-0 flex-col']) }}>
     <div class="mb-6 flex h-16 items-center">
         @if($logos !== [])
-            <div class="flex items-center gap-4" role="img" aria-label="{{ $logoAlt }}">
+            <div class="flex max-w-full flex-wrap items-center gap-4" role="img" aria-label="{{ $logoAlt }}">
                 @foreach($logos as $logo)
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
-                        'w-auto object-contain',
+                        'w-auto max-w-full object-contain',
                         'max-h-14 max-w-[180px]' => count($logos) === 1,
                         'max-h-10 max-w-[120px]' => count($logos) > 1,
                     ]) loading="lazy" />

@@ -22,8 +22,8 @@
             </x-institutional.reveal>
         </div>
         <x-institutional.reveal :delay="100">
-            <a href="#contato" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
-                Solicitar Consultoria
+            <a href="#contato" class="inline-flex items-center justify-center whitespace-nowrap rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
+                Falar com um consultor
             </a>
         </x-institutional.reveal>
     </div>
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="w-full flex-1">
-                            <div class="grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                            <div class="grid grid-cols-1 gap-4 rounded-2xl sm:grid-cols-2 border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                                 <div class="rounded-xl bg-white/5 p-4">
                                     <h4 class="mb-1 text-lg font-bold text-primary-light">Preventiva</h4>
                                     <p class="text-sm text-neutral-light">Antecipamos problemas. Prolongamos a vida útil dos equipamentos.</p>
