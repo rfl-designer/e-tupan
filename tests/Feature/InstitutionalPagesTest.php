@@ -144,7 +144,20 @@ it('renders the own phone and instagram of tupan care in its contact section', f
         ->assertDontSee('@tupansaude');
 });
 
-it('falls back to the central phone on equipahosp while it has no phone of its own', function () {
+it('renders the own phone and instagram of equipahosp in its contact section', function () {
+    $this->get('/solucoes/equipahosp')
+        ->assertSuccessful()
+        ->assertSeeInOrder(['Atendimento EquipaHosp', 'href="tel:+5581996488365"', '(81) 99648-8365', 'Segunda a sexta, 8h às 18h'], false)
+        ->assertDontSee('Central de atendimento')
+        ->assertSee('href="https://instagram.com/equipahosp"', false)
+        ->assertSee('@equipahosp')
+        ->assertDontSee('@tupansaude');
+});
+
+it('falls back to the central phone when a division has only its own instagram', function () {
+    $index = collect(config('institutional.divisions'))->search(fn (array $division) => $division['id'] === 'equipahosp');
+    config(["institutional.divisions.{$index}.contact" => ['instagram' => 'https://instagram.com/equipahosp']]);
+
     $this->get('/solucoes/equipahosp')
         ->assertSuccessful()
         ->assertSeeInOrder(['Central de atendimento', 'href="tel:+5581996840060"', 'Segunda a sexta, 8h às 18h'], false)

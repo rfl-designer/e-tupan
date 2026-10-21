@@ -395,6 +395,7 @@ return [
                 'description' => 'Engenharia clínica, venda, locação, manutenção, calibração e assistência técnica para equipamentos hospitalares. Conheça a EquipaHosp, operação da Tupan Saúde.',
             ],
             'contact' => [
+                'phone'     => '(81) 99648-8365',
                 'instagram' => 'https://instagram.com/equipahosp',
             ],
             'contact_form' => 'equipa-hosp',

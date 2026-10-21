@@ -597,7 +597,7 @@ Na continuação, o limite passou de 8 para 18 rodadas, e os demais critérios d
 
 Sobraram 7 das 10 rodadas da continuação. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida.
 
-O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits seguintes do ciclo (`2d741e2`, revert da rodada 11, e os de documentação) só mudam o `design-log.md`. Depois do ciclo, o `677e12b` declarou as propriedades computed do `ContactForm` para o PHPStan e testou o evento `contact-topic`, sem mudar o comportamento. Assim, o `HEAD` roda o código da rodada 10.
+O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits seguintes do ciclo (`2d741e2`, revert da rodada 11, e os de documentação) só mudam o `design-log.md`. Depois do ciclo, o `677e12b` declarou as propriedades computed do `ContactForm` para o PHPStan e testou o evento `contact-topic`, sem mudar o comportamento. Assim, até o `bed2934`, o código era o da rodada 10. O `30c0eca` e o commit seguinte acrescentaram os dados reais de contato (ver a atualização nas Pendências).
 
 ### Bloqueio relatado
 
@@ -622,7 +622,7 @@ O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits
   - prazo de resposta (`contact-page.blade.php`), no Contato.
 - Também faltam o depoimento, os números de `stats.blade.php` e as certificações. Ficam ocultos enquanto não forem preenchidos.
 
-Atualização de 2026-10-21, depois do ciclo: o telefone da central, o endereço da sede e o prazo de resposta foram preenchidos com os dados enviados pela Tupan, junto com o WhatsApp, o Instagram e o LinkedIn. A Tupan Care ganhou telefone e Instagram próprios, e a EquipaHosp ganhou Instagram próprio. O telefone da EquipaHosp veio com 8 dígitos e espera confirmação. Até lá, a página dela mostra a central. Continuam pendentes o depoimento, os números, as certificações e a Política de Privacidade.
+Atualização de 2026-10-21, depois do ciclo: o telefone da central, o endereço da sede e o prazo de resposta foram preenchidos com os dados enviados pela Tupan, junto com o WhatsApp, o Instagram e o LinkedIn. A Tupan Care e a EquipaHosp ganharam telefone e Instagram próprios. O telefone da EquipaHosp veio com 8 dígitos ("81 9648-8365") e foi confirmado como (81) 99648-8365, com o nono dígito. Continuam pendentes o depoimento, os números, as certificações e a Política de Privacidade.
 
 ### Incidente da rodada 1
 
