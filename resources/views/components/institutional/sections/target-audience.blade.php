@@ -28,7 +28,7 @@
         </x-institutional.reveal>
     </div>
 
-    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-6 lg:gap-8">
         @foreach($audiences as $index => $audience)
             @php
                 $colors = $colorMap[$audience['color']] ?? $colorMap['primary'];
@@ -39,8 +39,8 @@
                         <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl {{ $colors['bg'] }}">
                             <flux:icon name="users" class="size-6" />
                         </div>
-                        <h3 class="mb-2 text-2xl font-bold leading-snug text-neutral-strong md:min-h-[2lh]">{{ $audience['title'] }}</h3>
-                        <p class="text-neutral-medium md:min-h-[3lh]">{{ $audience['description'] }}</p>
+                        <h3 class="mb-2 text-2xl font-bold leading-snug text-neutral-strong">{{ $audience['title'] }}</h3>
+                        <p class="text-neutral-medium">{{ $audience['description'] }}</p>
 
                         <div class="mt-8 rounded-xl bg-bg-light p-6">
                             <ul class="space-y-3">

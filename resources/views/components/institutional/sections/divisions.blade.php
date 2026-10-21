@@ -3,18 +3,18 @@
     $mainDivisions = array_values(array_filter($divisions, fn ($division) => $division['id'] !== 'equipahosp'));
     $equipahosp = collect($divisions)->firstWhere('id', 'equipahosp');
     $icons = [
-        'cirurgica' => 'shield-check',
+        'cirurgica' => 'scissors',
         'farma' => 'beaker',
         'curativos' => 'heart',
-        'lab' => 'beaker',
-        'imagem' => 'building-office-2',
-        'tupan-care' => 'heart',
+        'lab' => 'eye-dropper',
+        'imagem' => 'viewfinder-circle',
+        'tupan-care' => 'hand-raised',
         'equipahosp' => 'wrench',
     ];
 @endphp
 
 <x-institutional.section id="solucoes" variant="cream">
-    <div class="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
+    <div class="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div class="max-w-2xl">
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Divisões especializadas</span>
@@ -36,7 +36,7 @@
                         <div class="absolute right-4 top-4 translate-x-2 opacity-0 transition-all motion-reduce:transition-none group-hover:translate-x-0 group-hover:opacity-100">
                             <flux:icon name="arrow-right" class="size-5 text-primary-strong" />
                         </div>
-                        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong transition-colors duration-300 group-hover:bg-primary-strong group-hover:text-white">
+                        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-bg text-primary-strong transition-colors duration-300 group-hover:bg-primary-strong group-hover:text-white">
                             <flux:icon name="{{ $icons[$division['id']] ?? 'sparkles' }}" class="size-6" />
                         </div>
                         <h3 class="mb-3 text-xl font-semibold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $division['title'] }}</h3>
@@ -45,7 +45,7 @@
                             @foreach(array_slice($division['features'], 0, 3) as $feature)
                                 <div class="flex items-center text-xs font-medium text-neutral-medium">
                                     <div class="mr-2 h-1.5 w-1.5 rounded-full bg-primary-strong"></div>
-                                    {{ $feature }}
+                                    {{ is_array($feature) ? $feature['title'] : $feature }}
                                 </div>
                             @endforeach
                         </div>

@@ -67,7 +67,7 @@
                         decoding="async"
                         class="h-[500px] w-full rounded-[32px] object-cover shadow-2xl"
                     />
-                    <div class="absolute -bottom-6 right-0 max-w-xs md:-right-6 rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
+                    <div class="absolute -bottom-6 right-4 max-w-xs lg:-right-6 rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
                         <p class="text-lg font-semibold text-neutral-strong">"Somos uma empresa de saúde feita do sal da terra."</p>
                     </div>
                 </div>

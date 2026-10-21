@@ -38,6 +38,22 @@
                         <div class="p-6">
                             <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-neutral-medium">Artigo em destaque</span>
                             <p class="text-2xl font-semibold leading-snug text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $featured['title'] }}</p>
+                            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-neutral-medium">
+                                <div class="flex items-center gap-1">
+                                    <flux:icon name="calendar" class="size-4 text-primary-strong" />
+                                    {{ $featured['date'] }}
+                                </div>
+                                @if(! empty($featured['read_time']))
+                                    <div class="flex items-center gap-1">
+                                        <flux:icon name="clock" class="size-4 text-primary-strong" />
+                                        {{ $featured['read_time'] }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="mt-4 flex items-center text-sm font-medium text-primary-strong group-hover:underline">
+                                Ler artigo
+                                <flux:icon name="arrow-right" class="ml-2 size-4" />
+                            </div>
                         </div>
                     </a>
                 </x-institutional.reveal>
@@ -53,40 +69,7 @@
         <div class="grid gap-8 md:grid-cols-2 {{ count($posts) > 1 ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }} md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             @foreach($posts as $index => $post)
                 <x-institutional.reveal :delay="$index * 100" class="{{ $index === 0 && count($posts) > 1 ? 'lg:hidden' : '' }}">
-                    <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
-                        <x-institutional.card class="flex h-full flex-col overflow-hidden hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-transparent" padding="none" variant="standard">
-                            <div class="relative h-48 overflow-hidden">
-                                <img src="{{ $post['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $post['image']) }} 480w, {{ $post['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
-                                    {{ $post['category'] }}
-                                </div>
-                            </div>
-                            <div class="flex flex-1 flex-col p-6">
-                                <div class="mb-3 flex items-center gap-4 text-xs text-neutral-medium">
-                                    <div class="flex items-center gap-1">
-                                        <flux:icon name="calendar" class="size-4 text-primary-strong" />
-                                        {{ $post['date'] }}
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <flux:icon name="clock" class="size-4 text-primary-strong" />
-                                        {{ $post['read_time'] }}
-                                    </div>
-                                </div>
-                                <h3 class="mb-3 line-clamp-3 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">
-                                    {{ $post['title'] }}
-                                </h3>
-                                <div class="mb-6 flex-grow">
-                                    <p class="line-clamp-3 text-sm text-neutral-medium">
-                                        {{ $post['excerpt'] }}
-                                    </p>
-                                </div>
-                                <div class="flex items-center text-sm font-medium text-primary-strong group-hover:underline">
-                                    Ler artigo completo
-                                    <flux:icon name="arrow-right" class="ml-2 size-4" />
-                                </div>
-                            </div>
-                        </x-institutional.card>
-                    </a>
+                    <x-institutional.article-card :post="$post" />
                 </x-institutional.reveal>
             @endforeach
         </div>
