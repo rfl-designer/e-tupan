@@ -19,7 +19,7 @@
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
                         'w-auto max-w-full object-contain',
                         'max-h-14 max-w-[180px]' => count($logos) === 1,
-                        'max-h-10 max-w-[120px]' => count($logos) > 1,
+                        'h-10 max-w-[160px]' => count($logos) > 1,
                     ]) loading="lazy" />
                 @endforeach
             </div>

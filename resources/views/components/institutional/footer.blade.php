@@ -85,7 +85,7 @@
                     @if($hasPhone)
                     <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" class="hover:text-primary-light hover:underline" /></li>
                     @endif
-                    <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? $contact['emails'][1] ?? 'comercial@tupan.com.br'" class="hover:text-primary-light hover:underline" /></li>
+                    <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'comercial@tupan.com.br'" class="hover:text-primary-light hover:underline" /></li>
                     <li>{{ $contact['city'] ?? 'Recife, PE' }}</li>
                     @if($hasAddress)
                         <li>{{ $contact['address'] }}</li>

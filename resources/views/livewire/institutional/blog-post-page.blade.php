@@ -90,7 +90,7 @@
                     </x-institutional.reveal>
 
                     <div class="mt-16 border-t border-neutral-border pt-8">
-                        <h4 class="mb-4 font-bold text-neutral-strong">Tags Relacionadas</h4>
+                        <h2 class="mb-4 font-bold text-neutral-strong">Tags Relacionadas</h2>
                         <div class="flex flex-wrap gap-2">
                             <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Saúde</span>
                             <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Conhecimento Técnico</span>
@@ -98,6 +98,18 @@
                             <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">{{ $post['category'] ?? 'Saúde' }}</span>
                         </div>
                     </div>
+                    <aside aria-labelledby="post-cta-title" class="mt-12 rounded-2xl border border-neutral-border bg-bg-light p-8">
+                        <p id="post-cta-title" class="mb-4 text-xl font-semibold text-neutral-strong">Precisa de apoio em engenharia clínica?</p>
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                            <a href="{{ route('contact') }}" data-cta="blog-post-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
+                                Falar com um consultor
+                            </a>
+                            <a href="{{ route('solutions.show', 'equipahosp') }}" data-cta="blog-post-equipahosp" class="inline-flex items-center gap-2 py-1 text-sm font-semibold text-primary-strong underline-offset-4 hover:underline">
+                                Conhecer a EquipaHosp
+                                <flux:icon name="arrow-right" class="size-4" />
+                            </a>
+                        </div>
+                    </aside>
                 </div>
 
                 <div class="lg:col-span-2"></div>
@@ -107,7 +119,7 @@
 
     <x-institutional.section variant="light" class="py-16">
         <div class="mb-8 flex items-center justify-between">
-            <h3 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h3>
+            <h2 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h2>
             <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Acessar todo o conteúdo
             </a>
@@ -119,7 +131,7 @@
                         <img src="{{ $relatedPost['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $relatedPost['image']) }} 480w, {{ $relatedPost['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ $relatedPost['title'] }}" />
                     </div>
                     <div class="mb-2 text-xs font-bold uppercase text-primary-strong">{{ $relatedPost['category'] }}</div>
-                    <h4 class="font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h4>
+                    <h3 class="font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h3>
                 </a>
             @endforeach
         </div>

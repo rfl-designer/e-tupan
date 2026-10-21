@@ -34,9 +34,11 @@
                             <h3 class="mb-3 line-clamp-3 text-lg font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">
                                 {{ $post['title'] }}
                             </h3>
-                            <p class="mb-6 line-clamp-3 flex-grow text-sm text-neutral-medium">
-                                {{ $post['excerpt'] }}
-                            </p>
+                            <div class="mb-6 flex-grow">
+                                <p class="line-clamp-3 text-sm text-neutral-medium">
+                                    {{ $post['excerpt'] }}
+                                </p>
+                            </div>
                             <div class="flex items-center text-sm font-medium text-primary-strong group-hover:underline">
                                 Ler artigo
                                 <flux:icon name="arrow-right" class="ml-2 size-4" />

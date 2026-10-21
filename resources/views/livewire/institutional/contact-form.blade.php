@@ -35,7 +35,7 @@
                 wire:model="company"
                 class="{{ $inputClass('company') }}"
                 {!! $ariaAttributes('company') !!}
-                placeholder="Hospital, Laboratório ou Clínica"
+                placeholder="Hospital, laboratório…"
             />
             @error('company')
                 <p id="{{ $fieldId('company') }}-error" class="text-xs text-secondary">{{ $message }}</p>
@@ -115,7 +115,7 @@
         <select
             id="{{ $fieldId('topic') }}"
             wire:model="topic"
-            class="{{ $inputClass('topic') }} bg-white"
+            class="{{ $inputClass('topic') }} bg-white text-sm sm:text-base"
             {!! $ariaAttributes('topic') !!}
         >
             @foreach($this->topics as $topicOption)

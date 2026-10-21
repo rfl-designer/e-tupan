@@ -86,7 +86,7 @@
             <div class="space-y-6">
                 <x-institutional.reveal :delay="200" id="solucoes-oferecidas" class="scroll-mt-32">
                     <x-institutional.card variant="standard" class="border-t-4 border-t-primary-strong" :hover-effect="false">
-                        <h4 class="mb-4 text-sm font-bold uppercase tracking-wide text-neutral-strong">Soluções oferecidas</h4>
+                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-neutral-strong">Soluções oferecidas</h3>
                         <ul class="space-y-3">
                             @foreach($division['features'] ?? [] as $feature)
                                 <li class="flex items-start gap-3 text-sm text-neutral-medium">
@@ -102,7 +102,7 @@
                     <x-institutional.card variant="standard" class="border-t-4 border-t-primary-strong" :hover-effect="false">
                         <div class="mb-4 flex items-center gap-2 text-primary-strong">
                             <flux:icon name="users" class="size-5" />
-                            <h4 class="text-sm font-bold uppercase tracking-wide">Para quem atuamos</h4>
+                            <h3 class="text-sm font-bold uppercase tracking-wide">Para quem atuamos</h3>
                         </div>
                         <div class="flex flex-wrap gap-2">
                             @foreach($division['target_audience'] ?? [] as $audience)
@@ -119,7 +119,7 @@
                     <x-institutional.card variant="standard" class="bg-neutral-strong text-white" :hover-effect="false">
                         <div class="mb-2 flex items-center gap-2 text-primary-light">
                             <flux:icon name="map-pin" class="size-5" />
-                            <h4 class="text-sm font-bold uppercase tracking-wide">Alcance</h4>
+                            <h3 class="text-sm font-bold uppercase tracking-wide">Alcance</h3>
                         </div>
                         <p class="text-sm text-neutral-light">
                                 Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.
@@ -131,7 +131,11 @@
     </div>
 </x-institutional.section>
 
-    <div class="bg-bg-cream">
-        <x-institutional.sections.contact />
-    </div>
+    <x-institutional.sections.contact
+        origin="default"
+        background="cream"
+        :eyebrow="$division['title'] ?? 'Divisão'"
+        title="Fale com a Tupan Saúde"
+        text="Nossa equipe está preparada para entender sua necessidade e indicar o caminho mais adequado para sua instituição."
+    />
 </div>

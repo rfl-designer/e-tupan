@@ -13,7 +13,7 @@
 @endphp
 
 @if($href)
-    <a href="{{ $href }}" {{ $attributes->merge(['class' => 'transition-colors hover:text-primary-strong hover:underline']) }}>{{ $value }}</a>
+    <a href="{{ $href }}" {{ $attributes->merge(['class' => 'inline-block py-1 transition-colors hover:text-primary-strong hover:underline']) }}>{{ $value }}</a>
 @else
     <span {{ $attributes->except('class') }}>{{ $value }}</span>
 @endif

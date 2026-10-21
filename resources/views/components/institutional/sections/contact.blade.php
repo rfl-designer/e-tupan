@@ -4,6 +4,8 @@
     'title' => 'Consultoria técnica para sua necessidade específica.',
     'text' => 'Nossa equipe técnica e comercial está preparada para entender sua demanda e propor a solução mais adequada. Não vendemos apenas produtos. Intermediamos segurança.',
     'whatsappMessage' => null,
+    'showChannels' => true,
+    'background' => 'white',
 ])
 
 @php
@@ -12,8 +14,8 @@
     $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make($whatsappMessage) : null;
 @endphp
 
-<x-institutional.section id="contato" variant="white">
-    <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+<x-institutional.section id="contato" :variant="$background">
+    <div @class(['grid gap-12', 'lg:grid-cols-2 lg:gap-20' => $showChannels, 'mx-auto max-w-3xl' => ! $showChannels])>
         <div class="space-y-8">
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">{{ $eyebrow }}</span>
@@ -40,6 +42,7 @@
                 @endif
             </x-institutional.reveal>
 
+            @if($showChannels)
             <x-institutional.reveal :delay="200">
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
@@ -47,7 +50,7 @@
                             <flux:icon name="map-pin" class="size-5" />
                         </div>
                         <div>
-                            <h4 class="font-semibold text-neutral-strong">Sede TUPAN</h4>
+                            <h3 class="font-semibold text-neutral-strong">Sede TUPAN</h3>
                             <p class="text-neutral-medium">{{ $contact['city'] ?? 'Recife, Pernambuco' }}</p>
                             <p class="text-neutral-medium">{{ $contact['address'] ?? '' }}</p>
                             <p class="mt-1 text-sm text-neutral-medium">{{ $contact['coverage'] ?? 'Atuação em todo o Nordeste' }}</p>
@@ -59,7 +62,7 @@
                             <flux:icon name="phone" class="size-5" />
                         </div>
                         <div>
-                            <h4 class="font-semibold text-neutral-strong">Central de Atendimento</h4>
+                            <h3 class="font-semibold text-neutral-strong">Central de Atendimento</h3>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" /></p>
                             <p class="mt-1 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h às 18h' }}</p>
                         </div>
@@ -70,13 +73,14 @@
                             <flux:icon name="envelope" class="size-5" />
                         </div>
                         <div class="min-w-0 break-words">
-                            <h4 class="font-semibold text-neutral-strong">E-mail</h4>
+                            <h3 class="font-semibold text-neutral-strong">E-mail</h3>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'contato@tupan.com.br'" /></p>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['emails'][1] ?? 'comercial@tupan.com.br'" /></p>
                         </div>
                     </div>
                 </div>
             </x-institutional.reveal>
+            @endif
         </div>
 
         <div id="fale-conosco">

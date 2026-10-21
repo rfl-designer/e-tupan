@@ -56,21 +56,21 @@
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="building-office" class="size-6 text-primary-strong" />
                             <div>
-                                <h4 class="font-bold text-neutral-strong">Sede em Recife</h4>
+                                <h3 class="font-bold text-neutral-strong">Sede em Recife</h3>
                                 <p class="text-sm text-neutral-medium">Hub logístico estratégico para todo o Nordeste</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="map" class="size-6 text-primary-strong" />
                             <div>
-                                <h4 class="font-bold text-neutral-strong">16 Anos de Atuação</h4>
+                                <h3 class="font-bold text-neutral-strong">16 Anos de Atuação</h3>
                                 <p class="text-sm text-neutral-medium">Construindo autoridade com estudo e entrega</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="sparkles" class="size-6 text-primary-strong" />
                             <div>
-                                <h4 class="font-bold text-neutral-strong">Raízes Sertanejas</h4>
+                                <h3 class="font-bold text-neutral-strong">Raízes Sertanejas</h3>
                                 <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relação</p>
                             </div>
                         </div>
@@ -144,4 +144,6 @@
             </x-institutional.reveal>
         </div>
     </x-institutional.section>
+
+    <x-institutional.sections.cta :href="route('contact')" />
 </div>

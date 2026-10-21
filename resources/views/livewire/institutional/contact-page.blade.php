@@ -22,6 +22,7 @@
     </div>
 
     <x-institutional.section variant="light" class="pb-0">
+        <h2 class="sr-only">Canais de atendimento</h2>
         <div class="relative z-20 -mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <x-institutional.reveal :delay="100">
                 <div class="h-full min-w-0 rounded-2xl border-t-4 border-primary-strong bg-white p-8 shadow-xl">
@@ -40,8 +41,9 @@
                         <flux:icon name="envelope" class="size-6" />
                     </div>
                     <h3 class="mb-2 text-xl font-semibold text-neutral-strong">E-mails</h3>
-                    <p class="break-words text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][0] ?? 'comercial@tupan.com.br'" /></p>
-                    <p class="break-words text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['page_emails'][1] ?? 'rh@tupan.com.br'" /></p>
+                    @foreach($contact['emails'] ?? [] as $email)
+                        <p class="break-words text-neutral-medium" wire:key="contact-email-{{ $loop->index }}"><x-institutional.contact-link type="email" :value="$email" /></p>
+                    @endforeach
                 </div>
             </x-institutional.reveal>
 
@@ -59,6 +61,6 @@
     </x-institutional.section>
 
     <div class="bg-bg-light">
-        <x-institutional.sections.contact eyebrow="Formulário" title="Envie sua solicitação" text="" />
+        <x-institutional.sections.contact eyebrow="Formulário" title="Envie sua solicitação" text="" :show-channels="false" />
     </div>
 </div>

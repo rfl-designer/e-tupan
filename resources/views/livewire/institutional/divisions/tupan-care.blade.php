@@ -10,19 +10,21 @@
 <div>
     <div class="relative flex min-h-[560px] items-center overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="Profissional de saúde realizando cuidado de feridas" class="h-full w-full object-cover" />
+            <img src="{{ asset('images/institucional/division-curativos.webp') }}" srcset="{{ asset('images/institucional/division-curativos-800.webp') }} 800w, {{ asset('images/institucional/division-curativos.webp') }} 1600w" sizes="100vw" fetchpriority="high" alt="" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>
 
         <div class="container relative z-10 mx-auto max-w-7xl px-6">
             <x-institutional.reveal>
-                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex items-center gap-2 text-white hover:text-primary-light">
-                    <flux:icon name="arrow-left" class="size-5" />
-                    Voltar para Soluções
-                </a>
+                <div class="mb-6">
+                    <a href="{{ route('institutional.home') }}#solucoes" class="inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
+                        <flux:icon name="arrow-left" class="size-5" />
+                        Voltar para Soluções
+                    </a>
+                </div>
 
-                <div class="mb-6 inline-flex flex-col items-start gap-2 rounded-2xl bg-white px-6 py-4 shadow-xl">
+                <div class="mb-6 flex w-fit flex-col items-start gap-2 rounded-2xl bg-white px-6 py-4 shadow-xl">
                     @if(!empty($page['logo']))
                         <h1 class="sr-only">{{ $division['title'] ?? 'Tupan Care' }}</h1>
                         <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-20 w-auto md:h-24" />

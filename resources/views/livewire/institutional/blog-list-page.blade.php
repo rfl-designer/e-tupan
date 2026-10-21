@@ -22,6 +22,7 @@
     </div>
 
     <x-institutional.section variant="light">
+        <h2 class="sr-only">Artigos</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             @foreach($posts as $index => $post)
                 <x-institutional.reveal :delay="$index * 100">
@@ -47,9 +48,11 @@
                                 <h3 class="mb-3 line-clamp-3 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">
                                     {{ $post['title'] }}
                                 </h3>
-                                <p class="mb-6 line-clamp-3 flex-grow text-sm text-neutral-medium">
-                                    {{ $post['excerpt'] }}
-                                </p>
+                                <div class="mb-6 flex-grow">
+                                    <p class="line-clamp-3 text-sm text-neutral-medium">
+                                        {{ $post['excerpt'] }}
+                                    </p>
+                                </div>
                                 <div class="flex items-center text-sm font-medium text-primary-strong group-hover:underline">
                                     Ler artigo completo
                                     <flux:icon name="arrow-right" class="ml-2 size-4" />
@@ -61,4 +64,6 @@
             @endforeach
         </div>
     </x-institutional.section>
+
+    <x-institutional.sections.cta :href="route('contact')" />
 </div>

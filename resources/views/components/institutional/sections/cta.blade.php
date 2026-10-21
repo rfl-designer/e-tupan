@@ -1,3 +1,7 @@
+@props([
+    'href' => '#contato',
+])
+
 @php
     $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
     $whatsapp = \App\Domain\Institutional\Services\WhatsappLink::make();
@@ -16,7 +20,7 @@
                 Fale com nossa equipe de consultores especializados. Entendemos que por trás de cada pedido existe um paciente esperando pelo melhor cuidado.
             </p>
             <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                <a href="#contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-white px-6 py-3 text-sm font-semibold text-neutral-strong shadow-sm transition hover:bg-primary-bg hover:shadow-md">
+                <a href="{{ $href }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-white px-6 py-3 text-sm font-semibold text-neutral-strong shadow-sm transition hover:bg-primary-bg hover:shadow-md">
                     Falar com um consultor
                 </a>
                 @if($whatsappReady)

@@ -14,11 +14,8 @@ return [
         'privacy_url' => null,
         'whatsapp'    => 'https://wa.me/',
         'emails'      => [
+            'comercial@tupan.com.br',
             'contato@tupan.com.br',
-            'comercial@tupan.com.br',
-        ],
-        'page_emails' => [
-            'comercial@tupan.com.br',
             'rh@tupan.com.br',
         ],
         'city'     => 'Recife, Pernambuco',
@@ -493,10 +490,10 @@ return [
             'content'   => <<<'HTML'
 <p>A engenharia clínica desempenha papel fundamental na gestão de tecnologias de saúde. Em um ambiente hospitalar, a falha de um equipamento pode significar riscos graves à vida. Cada ventilador em uma UTI, cada monitor em um centro cirúrgico, precisa estar funcionando quando a vida depende dele.</p>
 
-<h3>Manutenção Preventiva: Antecipar Problemas, Prolongar Vidas</h3>
+<h2>Manutenção Preventiva: Antecipar Problemas, Prolongar Vidas</h2>
 <p>Muitas instituições ainda operam sob a lógica da manutenção corretiva, agindo apenas quando o equipamento apresenta falhas. No entanto, a abordagem preventiva visa antecipar problemas, prolongando a vida útil dos ativos e garantindo disponibilidade total. Não se trata apenas de economia, mas de responsabilidade.</p>
 
-<h3>O Impacto Real na Assistência</h3>
+<h2>O Impacto Real na Assistência</h2>
 <p>Equipamentos bem calibrados não apenas consomem menos recursos. Eles garantem que exames e procedimentos não sejam suspensos por inoperância técnica. E cada procedimento adiado pode significar um diagnóstico atrasado, um tratamento postergado, uma vida em risco.</p>
 
 <p>Na TUPAN, através da EquipaHosp, entendemos que cuidar dos equipamentos é, em última instância, cuidar de vidas. Nossa equipe técnica atua em todo o Nordeste garantindo que a tecnologia trabalhe a favor da saúde.</p>
@@ -514,10 +511,10 @@ HTML,
             'content'   => <<<'HTML'
 <p>O tratamento de feridas crônicas e complexas tem passado por transformação significativa. O que antes se limitava a trocas simples de gazes, hoje envolve coberturas inteligentes capazes de interagir com o leito da lesão, controlando umidade e prevenindo infecções.</p>
 
-<h3>O Papel das Coberturas Tecnológicas</h3>
+<h2>O Papel das Coberturas Tecnológicas</h2>
 <p>A divisão AiTE traz para o mercado soluções que incluem prata nanocristalina, alginatos e espumas de poliuretano de última geração. Esses materiais não apenas protegem, mas criam o microambiente ideal para a regeneração tecidual. E com suporte consultivo de enfermeiras especialistas, o profissional de saúde tem respaldo para escolher a solução mais adequada para cada caso.</p>
 
-<h3>Devolvendo a Vida ao Paciente</h3>
+<h2>Devolvendo a Vida ao Paciente</h2>
 <p>Reduzir o tempo de cicatrização significa devolver o paciente à sua rotina mais rápido. Menos dor nas trocas, menor frequência de procedimentos, recuperação da autonomia. Quando tratamos uma ferida com tecnologia adequada, tratamos também a dignidade de quem sofre com ela.</p>
 HTML,
         ],
@@ -533,10 +530,10 @@ HTML,
             'content'   => <<<'HTML'
 <p>Em um mercado onde sobra discurso e falta verdade, como identificar um parceiro realmente qualificado? A resposta está no histórico de entrega, no conhecimento demonstrado, na coerência entre o que se diz e o que se faz.</p>
 
-<h3>Conhecimento que Se Aplica</h3>
+<h2>Conhecimento que Se Aplica</h2>
 <p>Na TUPAN, nosso fundador é farmacêutico. Nossa equipe técnica estuda, testa e valida antes de padronizar qualquer produto. Não fazemos mais do mesmo. Buscamos soluções com real qualificação técnica, de fabricantes que compartilham nosso compromisso com a qualidade.</p>
 
-<h3>Parceiros, Não Apenas Fornecedores</h3>
+<h2>Parceiros, Não Apenas Fornecedores</h2>
 <p>Queremos ser reconhecidos não como mais uma distribuidora, mas como consultores técnicos. Explicamos o porquê das escolhas, apoiamos decisões, construímos relacionamentos de longo prazo. Porque em saúde, a confiança se constrói com tempo, consistência e responsabilidade.</p>
 HTML,
         ],
