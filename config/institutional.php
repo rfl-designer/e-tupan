@@ -4,9 +4,16 @@ declare(strict_types = 1);
 
 return [
     'contact' => [
-        'phone'    => '(81) 3333-0000',
-        'whatsapp' => 'https://wa.me/',
-        'emails'   => [
+        'phone'   => '[PREENCHER: telefone da central de atendimento]',
+        'address' => '[PREENCHER: endereço completo da sede]',
+        'social'  => [
+            'instagram' => null,
+            'linkedin'  => null,
+            'facebook'  => null,
+        ],
+        'privacy_url' => null,
+        'whatsapp'    => 'https://wa.me/',
+        'emails'      => [
             'contato@tupan.com.br',
             'comercial@tupan.com.br',
         ],
@@ -77,7 +84,7 @@ return [
                 'Coordenadores de Enfermagem',
                 'Médicos Cirurgiões',
             ],
-            'image'           => 'images/institucional/division-cirurgica.png',
+            'image'           => 'images/institucional/division-cirurgica.webp',
             'differentiators' => [
                 'Pronta entrega garantida',
                 'Consultoria técnica especializada',
@@ -104,7 +111,7 @@ return [
                 'Nutricionistas Clínicos',
                 'Gestores de Suprimentos',
             ],
-            'image' => 'images/institucional/division-farma.png',
+            'image' => 'images/institucional/division-farma.webp',
         ],
         [
             'id'               => 'curativos',
@@ -125,7 +132,7 @@ return [
                 'Lojas Cirúrgicas',
                 'Home Care',
             ],
-            'image'           => 'images/institucional/division-curativos.png',
+            'image'           => 'images/institucional/division-curativos.webp',
             'differentiators' => [
                 'Equipe com enfermeira técnica',
                 'Suporte consultivo na escolha do produto',
@@ -151,7 +158,7 @@ return [
                 'Biomédicos',
                 'Responsáveis Técnicos',
             ],
-            'image'           => 'images/institucional/division-lab.png',
+            'image'           => 'images/institucional/division-lab.webp',
             'differentiators' => [
                 'Exclusividade Inbras e Fresenius',
                 'Parcerias com multinacionais',
@@ -177,7 +184,7 @@ return [
                 'Técnicos em Radiologia',
                 'Gestores de Clínicas',
             ],
-            'image'           => 'images/institucional/division-imagem.png',
+            'image'           => 'images/institucional/division-imagem.webp',
             'differentiators' => [
                 'Atuação Nacional',
                 'Produto de marca própria',
@@ -206,7 +213,7 @@ return [
                 'Serviços de home care',
                 'Enfermeiros e estomaterapeutas',
             ],
-            'image' => 'images/institucional/division-tupan-care.png',
+            'image' => 'images/institucional/division-tupan-care.webp',
             'view'  => 'livewire.institutional.divisions.tupan-care',
             'seo'   => [
                 'title'       => 'Tupan Care | Soluções em Curativos e Estomias',
@@ -313,7 +320,7 @@ return [
                             'images/parceiros/gentell.png',
                             'images/parceiros/casex.png',
                         ],
-                        'links'       => [
+                        'links' => [
                             ['label' => 'Loja Gentell', 'url' => 'https://loja.gentell.com.br/'],
                             ['label' => 'Linha para estomizados', 'url' => 'https://casex.lojaintegrada.com.br/ostomia'],
                             ['label' => 'Linha de curativos', 'url' => 'https://gentell.com.br/curativo-hidrofibra-com-prata/'],
@@ -357,7 +364,7 @@ return [
                 'Administradores Hospitalares',
                 'Coordenadores de Manutenção',
             ],
-            'image' => 'images/institucional/division-equipahosp.png',
+            'image' => 'images/institucional/division-equipahosp.webp',
             'view'  => 'livewire.institutional.divisions.equipahosp',
             'seo'   => [
                 'title'       => 'EquipaHosp | Engenharia Clínica e Equipamentos Hospitalares',
@@ -482,7 +489,7 @@ return [
             'author'    => 'Equipe Técnica EquipaHosp',
             'category'  => 'Engenharia Clínica',
             'read_time' => '5 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=1200&auto=format&fit=crop',
+            'image'     => 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format&fit=crop',
             'content'   => <<<'HTML'
 <p>A engenharia clínica desempenha papel fundamental na gestão de tecnologias de saúde. Em um ambiente hospitalar, a falha de um equipamento pode significar riscos graves à vida. Cada ventilador em uma UTI, cada monitor em um centro cirúrgico, precisa estar funcionando quando a vida depende dele.</p>
 
@@ -503,7 +510,7 @@ HTML,
             'author'    => 'Equipe Técnica AiTE',
             'category'  => 'Curativos Especiais',
             'read_time' => '4 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop',
+            'image'     => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
             'content'   => <<<'HTML'
 <p>O tratamento de feridas crônicas e complexas tem passado por transformação significativa. O que antes se limitava a trocas simples de gazes, hoje envolve coberturas inteligentes capazes de interagir com o leito da lesão, controlando umidade e prevenindo infecções.</p>
 
@@ -522,7 +529,7 @@ HTML,
             'author'    => 'TUPAN Institucional',
             'category'  => 'Institucional',
             'read_time' => '3 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+            'image'     => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
             'content'   => <<<'HTML'
 <p>Em um mercado onde sobra discurso e falta verdade, como identificar um parceiro realmente qualificado? A resposta está no histórico de entrega, no conhecimento demonstrado, na coerência entre o que se diz e o que se faz.</p>
 
@@ -582,58 +589,37 @@ HTML,
             'title'       => 'Coberturas AiTE',
             'category'    => 'Tecnologia em Cicatrização',
             'description' => 'Curativos especiais com suporte consultivo de enfermeiras especialistas.',
-            'image'       => 'https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=600&auto=format&fit=crop',
+            'image'       => 'https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=800&auto=format&fit=crop',
         ],
         [
             'id'          => 2,
             'title'       => 'Reagentes Fresenius/Inbras',
             'category'    => 'Parceria com Multinacionais',
             'description' => 'Exclusividade de fabricantes de referência mundial para laboratórios e bancos de sangue.',
-            'image'       => 'https://images.unsplash.com/photo-1579165466741-7f35a4755657?q=80&w=600&auto=format&fit=crop',
+            'image'       => 'images/institucional/division-lab-800.webp',
         ],
         [
             'id'          => 3,
             'title'       => 'Engenharia Clínica Completa',
             'category'    => 'Serviço EquipaHosp',
             'description' => 'Gestão do parque tecnológico: preventiva, corretiva, calibração e consultoria.',
-            'image'       => 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop',
+            'image'       => 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop',
         ],
         [
             'id'          => 4,
             'title'       => 'Seringas para Contraste',
             'category'    => 'Marca Própria MT',
             'description' => 'Nosso primeiro produto próprio: inovação onde o mercado precisava.',
-            'image'       => 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=600&auto=format&fit=crop',
+            'image'       => 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop',
         ],
     ],
     'testimonials' => [
         [
             'id'          => 1,
-            'content'     => 'A TUPAN não é apenas fornecedor, é parceiro técnico. A equipe entende nossa realidade, antecipa necessidades e nos apoia nas decisões de padronização.',
-            'author'      => 'Dr. Ricardo Mendes',
-            'role'        => 'Diretor Clínico',
-            'institution' => 'Hospital Santa Maria',
-        ],
-        [
-            'id'          => 2,
-            'content'     => 'Com a EquipaHosp, transformamos a gestão do nosso parque tecnológico. A manutenção preventiva reduziu custos e, mais importante, nos deu segurança operacional.',
-            'author'      => 'Mariana Costa',
-            'role'        => 'Engenheira Clínica',
-            'institution' => 'Rede Diagnóstico PE',
-        ],
-        [
-            'id'          => 3,
-            'content'     => '16 anos de parceria. A TUPAN cresceu conosco, mas manteve a mesma seriedade do início. Isso é raro e valioso.',
-            'author'      => 'Carlos Alberto',
-            'role'        => 'Gestor de Compras',
-            'institution' => 'Laboratório BioAnálise',
-        ],
-        [
-            'id'          => 4,
-            'content'     => 'A equipe de curativos AiTE conhece a prática assistencial. Não vendem produto, orientam a escolha. Faz toda a diferença no tratamento das feridas complexas.',
-            'author'      => 'Enf. Patrícia Lima',
-            'role'        => 'Enfermeira Estomaterapeuta',
-            'institution' => 'Hospital Memorial',
+            'content'     => '[PREENCHER: depoimento real autorizado]',
+            'author'      => '[PREENCHER: nome]',
+            'role'        => '[PREENCHER: cargo]',
+            'institution' => '[PREENCHER: instituição]',
         ],
     ],
 ];

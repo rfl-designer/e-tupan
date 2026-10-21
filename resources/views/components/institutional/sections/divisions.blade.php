@@ -22,7 +22,7 @@
             </x-institutional.reveal>
         </div>
         <x-institutional.reveal :delay="100">
-            <a href="#contato" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary bg-transparent px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary-bg hover:text-primary-hover">
+            <a href="#contato" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Solicitar Consultoria
             </a>
         </x-institutional.reveal>
@@ -33,28 +33,26 @@
             <x-institutional.reveal :delay="$index * 100">
                 <a href="{{ route('solutions.show', $division['id']) }}" class="group block h-full">
                     <x-institutional.card class="relative flex h-full cursor-pointer flex-col overflow-hidden border border-neutral-border bg-white">
-                        <div class="absolute right-4 top-4 translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
-                            <flux:icon name="arrow-right" class="size-5 text-primary" />
+                        <div class="absolute right-4 top-4 translate-x-2 opacity-0 transition-all motion-reduce:transition-none group-hover:translate-x-0 group-hover:opacity-100">
+                            <flux:icon name="arrow-right" class="size-5 text-primary-strong" />
                         </div>
-                        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-bg-cream text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong transition-colors duration-300 group-hover:bg-primary-strong group-hover:text-white">
                             <flux:icon name="{{ $icons[$division['id']] ?? 'sparkles' }}" class="size-6" />
                         </div>
-                        <h3 class="mb-3 text-xl font-semibold text-neutral-strong transition-colors group-hover:text-primary">{{ $division['title'] }}</h3>
+                        <h3 class="mb-3 text-xl font-semibold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $division['title'] }}</h3>
                         <p class="mb-6 flex-grow text-sm leading-relaxed text-neutral-medium">{{ $division['description'] }}</p>
                         <div class="space-y-2 border-t border-neutral-border pt-4">
                             @foreach(array_slice($division['features'], 0, 3) as $feature)
                                 <div class="flex items-center text-xs font-medium text-neutral-medium">
-                                    <div class="mr-2 h-1.5 w-1.5 rounded-full bg-primary"></div>
+                                    <div class="mr-2 h-1.5 w-1.5 rounded-full bg-primary-strong"></div>
                                     {{ $feature }}
                                 </div>
                             @endforeach
                         </div>
-                        @if(!empty($division['cta_label']))
-                            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                                {{ $division['cta_label'] }}
-                                <flux:icon name="arrow-right" class="size-4" />
-                            </span>
-                        @endif
+                        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary-strong">
+                            {{ $division['cta_label'] ?? 'Conhecer' }}
+                            <flux:icon name="arrow-right" class="size-4" />
+                        </span>
                     </x-institutional.card>
                 </a>
             </x-institutional.reveal>
@@ -80,7 +78,7 @@
                                 {{ $equipahosp['description'] }}
                             </p>
                             <div class="flex gap-4 pt-4">
-                                <a href="{{ route('solutions.show', 'equipahosp') }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover hover:shadow-md">
+                                <a href="{{ route('solutions.show', 'equipahosp') }}" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                                     {{ $equipahosp['cta_label'] ?? 'Conhecer a EquipaHosp' }}
                                 </a>
                             </div>

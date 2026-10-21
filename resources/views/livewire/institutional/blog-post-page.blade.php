@@ -1,5 +1,7 @@
 @php
     $post = $post ?? [];
+    $shareUrl = url()->current();
+    $shareTitle = (string) ($post['title'] ?? 'Artigo TUPAN');
     $related = collect(config('institutional.blog_posts'))
         ->where('id', '!=', $post['id'] ?? '')
         ->take(3)
@@ -13,12 +15,12 @@
         <div class="bg-bg-light pb-12 pt-12">
             <div class="container mx-auto max-w-4xl px-6">
                 <x-institutional.reveal>
-                    <a href="{{ route('blog.index') }}" class="mb-8 inline-flex items-center gap-2 text-neutral-medium hover:text-primary">
+                    <a href="{{ route('blog.index') }}" class="mb-8 inline-flex items-center gap-2 text-neutral-medium hover:text-primary-strong">
                         <flux:icon name="arrow-left" class="size-5" />
                         Voltar para Conhecimento
                     </a>
 
-                    <div class="mb-6 flex flex-wrap gap-4 text-sm font-medium text-primary">
+                    <div class="mb-6 flex flex-wrap gap-4 text-sm font-medium text-primary-strong">
                         <span class="rounded-full border border-primary-light bg-primary-bg px-3 py-1">
                             {{ $post['category'] ?? 'Blog' }}
                         </span>
@@ -30,15 +32,15 @@
 
                     <div class="flex flex-wrap items-center gap-6 border-b border-neutral-border pb-8 text-sm text-neutral-medium">
                         <div class="flex items-center gap-2">
-                            <flux:icon name="user" class="size-4 text-primary" />
+                            <flux:icon name="user" class="size-4 text-primary-strong" />
                             <span>{{ $post['author'] ?? '' }}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <flux:icon name="calendar" class="size-4 text-primary" />
+                            <flux:icon name="calendar" class="size-4 text-primary-strong" />
                             <span>{{ $post['date'] ?? '' }}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <flux:icon name="clock" class="size-4 text-primary" />
+                            <flux:icon name="clock" class="size-4 text-primary-strong" />
                             <span>{{ $post['read_time'] ?? '' }}</span>
                         </div>
                     </div>
@@ -49,7 +51,7 @@
         <div class="container mx-auto max-w-5xl px-6 -mt-4">
             <x-institutional.reveal :delay="100">
                 <div class="aspect-video overflow-hidden rounded-2xl shadow-xl md:aspect-[21/9]">
-                    <img src="{{ $post['image'] ?? '' }}" alt="{{ $post['title'] ?? 'Imagem do artigo' }}" class="h-full w-full object-cover" />
+                    <img src="{{ $post['image'] ?? '' }}" width="1200" height="514" decoding="async" fetchpriority="high" alt="{{ $post['title'] ?? 'Imagem do artigo' }}" class="h-full w-full object-cover" />
                 </div>
             </x-institutional.reveal>
         </div>
@@ -58,23 +60,31 @@
             <div class="grid gap-12 lg:grid-cols-12">
                 <div class="sticky top-32 hidden h-fit flex-col items-center gap-4 lg:col-span-2 lg:flex">
                     <span class="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-medium">Compartilhar</span>
-                    <button class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary hover:bg-primary hover:text-white">
-                        <flux:icon name="link" class="size-4" />
-                    </button>
-                    <button class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary hover:bg-primary hover:text-white">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
                         <flux:icon name="share" class="size-4" />
-                    </button>
-                    <button class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary hover:bg-primary hover:text-white">
-                        <flux:icon name="paper-airplane" class="size-4" />
-                    </button>
-                    <button class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary hover:bg-primary hover:text-white">
+                    </a>
+                    <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
                         <flux:icon name="chat-bubble-left" class="size-4" />
+                    </a>
+                    <button
+                        type="button"
+                        x-data="{ copied: false }"
+                        x-on:click="navigator.clipboard.writeText(@js($shareUrl)).then(() => { copied = true; setTimeout(() => copied = false, 2500); })"
+                        aria-label="Copiar link do artigo"
+                        class="relative flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-strong focus-visible:ring-offset-2"
+                    >
+                        <flux:icon name="link" class="size-4" />
+                        <span class="sr-only" role="status" aria-live="polite" x-text="copied ? 'Link copiado' : ''"></span>
+                        <span x-show="copied" x-cloak class="absolute left-full top-1/2 ml-2 -translate-y-1/2 whitespace-nowrap rounded bg-neutral-strong px-2 py-1 text-xs text-white" aria-hidden="true">Link copiado</span>
                     </button>
+                    <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                        <flux:icon name="paper-airplane" class="size-4" />
+                    </a>
                 </div>
 
                 <div class="mx-auto max-w-3xl lg:col-span-8">
                     <x-institutional.reveal :delay="200">
-                        <div class="prose prose-lg prose-neutral prose-headings:text-neutral-strong prose-headings:font-bold prose-p:text-neutral-medium prose-a:text-primary hover:prose-a:text-primary-hover prose-strong:text-neutral-strong max-w-none">
+                        <div class="article-body text-lg text-neutral-medium">
                             {!! $post['content'] ?? '' !!}
                         </div>
                     </x-institutional.reveal>
@@ -82,10 +92,10 @@
                     <div class="mt-16 border-t border-neutral-border pt-8">
                         <h4 class="mb-4 font-bold text-neutral-strong">Tags Relacionadas</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Saúde</span>
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Conhecimento Técnico</span>
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">Hospitalar</span>
-                            <span class="cursor-pointer rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium transition-colors hover:bg-bg-cream">{{ $post['category'] ?? 'Saúde' }}</span>
+                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Saúde</span>
+                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Conhecimento Técnico</span>
+                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Hospitalar</span>
+                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">{{ $post['category'] ?? 'Saúde' }}</span>
                         </div>
                     </div>
                 </div>
@@ -98,7 +108,7 @@
     <x-institutional.section variant="light" class="py-16">
         <div class="mb-8 flex items-center justify-between">
             <h3 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h3>
-            <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary bg-transparent px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary-bg hover:text-primary-hover">
+            <a href="{{ route('blog.index') }}" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Acessar todo o conteúdo
             </a>
         </div>
@@ -106,10 +116,10 @@
             @foreach($related as $relatedPost)
                 <a href="{{ route('blog.show', $relatedPost['id']) }}" class="group cursor-pointer">
                     <div class="mb-4 h-48 overflow-hidden rounded-xl">
-                        <img src="{{ $relatedPost['image'] }}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ $relatedPost['title'] }}" />
+                        <img src="{{ $relatedPost['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $relatedPost['image']) }} 480w, {{ $relatedPost['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ $relatedPost['title'] }}" />
                     </div>
-                    <div class="mb-2 text-xs font-bold uppercase text-primary">{{ $relatedPost['category'] }}</div>
-                    <h4 class="font-bold text-neutral-strong transition-colors group-hover:text-primary">{{ $relatedPost['title'] }}</h4>
+                    <div class="mb-2 text-xs font-bold uppercase text-primary-strong">{{ $relatedPost['category'] }}</div>
+                    <h4 class="font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h4>
                 </a>
             @endforeach
         </div>

@@ -1,6 +1,6 @@
 <div>
     <div class="relative overflow-hidden bg-bg-dark pb-20 pt-40 text-white">
-        <div class="absolute right-0 top-0 h-full w-1/2 rounded-l-[100px] bg-primary opacity-10"></div>
+        <div class="absolute right-0 top-0 h-full w-1/2 rounded-l-[100px] bg-primary-strong opacity-10"></div>
         <div class="absolute bottom-0 left-0 h-32 w-32 rounded-tr-full bg-secondary opacity-20"></div>
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
@@ -23,8 +23,12 @@
                 <div class="relative">
                     <div class="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-primary-bg -z-10"></div>
                     <img
-                        src="{{ asset('images/institucional/about-image.png') }}"
+                        src="{{ asset('images/institucional/about-image.webp') }}"
+                        srcset="{{ asset('images/institucional/about-image-800.webp') }} 800w, {{ asset('images/institucional/about-image.webp') }} 1600w"
+                        sizes="(min-width: 1024px) 560px, 100vw"
                         alt="Equipe Tupan"
+                        loading="lazy"
+                        decoding="async"
                         class="h-[500px] w-full rounded-[32px] object-cover shadow-2xl"
                     />
                     <div class="absolute -bottom-6 -right-6 max-w-xs rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
@@ -50,21 +54,21 @@
                 <x-institutional.reveal :delay="200">
                     <div class="mt-4 grid gap-4 sm:grid-cols-3">
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="building-office" class="size-6 text-primary" />
+                            <flux:icon name="building-office" class="size-6 text-primary-strong" />
                             <div>
                                 <h4 class="font-bold text-neutral-strong">Sede em Recife</h4>
                                 <p class="text-sm text-neutral-medium">Hub logístico estratégico para todo o Nordeste</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="map" class="size-6 text-primary" />
+                            <flux:icon name="map" class="size-6 text-primary-strong" />
                             <div>
                                 <h4 class="font-bold text-neutral-strong">16 Anos de Atuação</h4>
                                 <p class="text-sm text-neutral-medium">Construindo autoridade com estudo e entrega</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="sparkles" class="size-6 text-primary" />
+                            <flux:icon name="sparkles" class="size-6 text-primary-strong" />
                             <div>
                                 <h4 class="font-bold text-neutral-strong">Raízes Sertanejas</h4>
                                 <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relação</p>
@@ -92,8 +96,8 @@
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <x-institutional.reveal :delay="100">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary transition-colors">
-                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary">
+                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                         <flux:icon name="book-open" class="size-6" />
                     </div>
                     <h3 class="mb-3 text-xl font-semibold">Conhecimento Técnico Aplicado</h3>
@@ -104,7 +108,7 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="200">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary transition-colors">
+                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="hand-thumb-up" class="size-6" />
                     </div>
@@ -116,7 +120,7 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="300">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary transition-colors">
+                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
                         <flux:icon name="heart" class="size-6" />
                     </div>
@@ -128,7 +132,7 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="400">
-                <x-institutional.card variant="standard" class="h-full hover:border-primary transition-colors">
+                <x-institutional.card variant="standard" class="h-full hover:border-primary-strong transition-colors">
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-orange-600">
                         <flux:icon name="briefcase" class="size-6" />
                     </div>

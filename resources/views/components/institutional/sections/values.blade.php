@@ -12,10 +12,10 @@
     <div class="grid gap-8 md:grid-cols-3">
         <x-institutional.reveal :delay="100">
             <x-institutional.card variant="feature" class="h-full">
-                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary">
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="flag" class="size-6" />
                 </div>
-                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Missao</h3>
+                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Missão</h3>
                 <p class="text-neutral-medium">
                     Prover soluções técnicas em saúde com conhecimento aplicado, garantindo que cada decisão de compra seja uma decisão mais segura para o paciente, o profissional e a instituição.
                 </p>
@@ -24,10 +24,10 @@
 
         <x-institutional.reveal :delay="200">
             <x-institutional.card variant="feature" class="h-full">
-                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary">
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="eye" class="size-6" />
                 </div>
-                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Visao</h3>
+                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Visão</h3>
                 <p class="text-neutral-medium">
                     Ser referência em soluções técnicas de saúde em Pernambuco e no Nordeste, reconhecida pela autoridade construída com estudo, responsabilidade e entrega consistente.
                 </p>
@@ -36,7 +36,7 @@
 
         <x-institutional.reveal :delay="300">
             <x-institutional.card variant="feature" class="h-full">
-                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary">
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="heart" class="size-6" />
                 </div>
                 <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossos Valores</h3>

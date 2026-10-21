@@ -5,7 +5,7 @@
 <div>
     <div class="relative flex min-h-[500px] h-[60vh] items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset($division['image'] ?? '') }}" alt="{{ $division['title'] ?? 'Divisão' }}" class="h-full w-full object-cover" />
+            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="{{ $division['title'] ?? 'Divisão' }}" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>
@@ -40,32 +40,32 @@
                 <x-institutional.reveal :delay="100">
                     <div class="mt-8 rounded-2xl border border-neutral-border bg-bg-light p-8">
                         <h3 class="mb-6 flex items-center gap-2 text-xl font-semibold text-neutral-strong">
-                            <flux:icon name="shield-check" class="size-5 text-primary" />
+                            <flux:icon name="shield-check" class="size-5 text-primary-strong" />
                             Diferenciais TUPAN
                         </h3>
                         <div class="grid gap-4 sm:grid-cols-2">
                             @if(!empty($division['differentiators']))
                                 @foreach($division['differentiators'] as $diff)
                                     <div class="flex items-start gap-3">
-                                        <flux:icon name="check-circle" class="size-5 text-primary" />
+                                        <flux:icon name="check-circle" class="size-5 text-primary-strong" />
                                         <span class="text-neutral-strong">{{ $diff }}</span>
                                     </div>
                                 @endforeach
                             @else
                                 <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary" />
+                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
                                     <span class="text-neutral-strong">Conhecimento Técnico Aplicado</span>
                                 </div>
                                 <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary" />
+                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
                                     <span class="text-neutral-strong">Consultoria Especializada</span>
                                 </div>
                                 <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary" />
+                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
                                     <span class="text-neutral-strong">Logística Ágil e Segura</span>
                                 </div>
                                 <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary" />
+                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
                                     <span class="text-neutral-strong">Conformidade ANVISA</span>
                                 </div>
                             @endif

@@ -1,17 +1,18 @@
 @php
     $stats = [
         ['value' => '16', 'label' => 'Anos de Conhecimento Aplicado'],
-        ['value' => '5k+', 'label' => 'Soluções em Catálogo'],
-        ['value' => '9', 'label' => 'Estados Atendidos no Nordeste'],
-        ['value' => '24h', 'label' => 'Suporte Técnico Especializado'],
+        ['value' => '[PREENCHER: nº de soluções em catálogo]', 'label' => 'Soluções em Catálogo'],
+        ['value' => '[PREENCHER: nº de estados atendidos]', 'label' => 'Estados Atendidos no Nordeste'],
+        ['value' => '[PREENCHER: janela de suporte técnico]', 'label' => 'Suporte Técnico Especializado'],
     ];
+    $stats = array_values(array_filter($stats, fn ($stat) => ! str_starts_with($stat['value'], '[PREENCHER')));
 @endphp
 
 <x-institutional.section variant="dark" class="relative overflow-hidden">
-    <div class="absolute right-0 top-0 h-96 w-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-primary opacity-5 blur-3xl"></div>
+    <div class="absolute right-0 top-0 h-96 w-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-primary-strong opacity-5 blur-3xl"></div>
 
     <div class="relative z-10">
-        <div class="mb-16 grid gap-8 border-b border-white/10 pb-16 md:grid-cols-4">
+        <div class="mb-16 flex flex-wrap justify-center gap-12 border-b border-white/10 pb-16 md:gap-20">
             @foreach($stats as $index => $stat)
                 <x-institutional.reveal :delay="$index * 100">
                     <div class="text-center">
@@ -32,10 +33,7 @@
                         <flux:icon name="shield-check" class="size-5 text-primary-light" />
                         <span class="font-semibold text-white">ANVISA</span>
                     </div>
-                    <div class="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3">
-                        <flux:icon name="trophy" class="size-5 text-primary-light" />
-                        <span class="font-semibold text-white">ISO 9001</span>
-                    </div>
+                    {{-- [PREENCHER: certificações reais (ex.: ISO) quando confirmadas] --}}
                     <div class="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3">
                         <flux:icon name="hand-thumb-up" class="size-5 text-primary-light" />
                         <span class="font-semibold text-white">Parcerias com Multinacionais</span>

@@ -3,19 +3,19 @@
 
     $colorMap = [
         'primary' => [
-            'border' => 'border-t-primary',
-            'bg' => 'bg-primary-bg text-primary',
-            'check' => 'bg-primary text-white',
+            'border' => 'border-t-primary-strong',
+            'bg' => 'bg-primary-bg text-primary-strong',
+            'check' => 'bg-primary-strong text-white',
         ],
         'secondary' => [
-            'border' => 'border-t-secondary',
-            'bg' => 'bg-secondary-light/20 text-secondary',
-            'check' => 'bg-secondary text-white',
+            'border' => 'border-t-primary-strong',
+            'bg' => 'bg-primary-bg text-primary-strong',
+            'check' => 'bg-primary-strong text-white',
         ],
         'accent' => [
-            'border' => 'border-t-primary',
-            'bg' => 'bg-primary-bg text-primary',
-            'check' => 'bg-primary text-white',
+            'border' => 'border-t-primary-strong',
+            'bg' => 'bg-primary-bg text-primary-strong',
+            'check' => 'bg-primary-strong text-white',
         ],
     ];
 @endphp

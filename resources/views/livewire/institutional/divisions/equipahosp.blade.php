@@ -8,7 +8,7 @@
 <div>
     <div class="relative flex min-h-[560px] items-center overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset($division['image'] ?? '') }}" alt="Equipe técnica da EquipaHosp em ambiente hospitalar" class="h-full w-full object-cover" />
+            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="Equipe técnica da EquipaHosp em ambiente hospitalar" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>
@@ -33,7 +33,7 @@
                 <p class="mt-4 text-sm font-medium uppercase tracking-wider text-white/70">Uma operação Tupan Saúde</p>
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover hover:shadow-md">
+                    <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                         {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
                     </a>
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-consultor" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
@@ -80,7 +80,7 @@
             @foreach($page['hub_items'] ?? [] as $item)
                 <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}">
                     <x-institutional.card class="h-full">
-                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary">
+                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong">
                             <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
                         </div>
                         <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
@@ -103,7 +103,7 @@
                 <ul class="grid gap-3 sm:grid-cols-2">
                     @foreach($page['audience'] ?? [] as $audience)
                         <li wire:key="equipahosp-audience-{{ $loop->index }}" class="flex items-center gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-neutral-strong">
-                            <flux:icon name="check-circle" class="size-5 shrink-0 text-primary" />
+                            <flux:icon name="check-circle" class="size-5 shrink-0 text-primary-strong" />
                             {{ $audience }}
                         </li>
                     @endforeach
@@ -150,7 +150,7 @@
         </div>
     </x-institutional.section>
 
-    <section class="relative overflow-hidden bg-primary py-20">
+    <section class="relative overflow-hidden bg-primary-strong py-20">
         <div class="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10"></div>
         <div class="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-white/10"></div>
 
@@ -159,10 +159,10 @@
                 <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">{{ $cta['title'] ?? '' }}</h2>
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-primary-bg">{{ $cta['text'] ?? '' }}</p>
                 <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                    <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary-bg">
+                    <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
                         {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-secondary-hover hover:shadow-md">
+                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         {{ $cta['secondary_label'] ?? 'Falar com um consultor' }}
                     </a>
                 </div>
