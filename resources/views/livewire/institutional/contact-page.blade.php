@@ -9,7 +9,7 @@
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Fale Conosco</span>
+                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Fale conosco</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
                     Vamos conversar sobre <br />
                     <span class="text-primary-light">sua necessidade.</span>
@@ -29,9 +29,9 @@
                     <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-primary-strong">
                         <flux:icon name="phone" class="size-6" />
                     </div>
-                    <h3 class="mb-2 text-xl font-semibold text-neutral-strong">Central de Atendimento</h3>
+                    <h3 class="mb-2 text-xl font-semibold text-neutral-strong">Central de atendimento</h3>
                     <p class="text-neutral-medium"><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" /></p>
-                    <p class="mt-2 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h às 18h' }}</p>
+                    <p class="mt-2 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a sexta, 8h às 18h' }}</p>
                 </div>
             </x-institutional.reveal>
 

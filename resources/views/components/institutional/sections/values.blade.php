@@ -1,8 +1,8 @@
 <x-institutional.section id="sobre" variant="white">
     <div class="mx-auto mb-16 max-w-3xl text-center">
         <x-institutional.reveal>
-            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Nossa Essência</span>
-            <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Feita do Sal da Terra do Sertão</h2>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Nossa essência</span>
+            <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Feita do sal da terra do Sertão</h2>
             <p class="text-lg text-neutral-medium">
                 Há 16 anos, construímos nossa reputação com a mesma seriedade que aprendemos no Sertão: onde palavra vale mais que contrato e o compromisso é honrado no aperto de mão. Cada produto que entregamos pode impactar a vida de alguém. É assim que trabalhamos.
             </p>
@@ -15,7 +15,7 @@
                 <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="flag" class="size-6" />
                 </div>
-                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Missão</h3>
+                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa missão</h3>
                 <p class="text-neutral-medium">
                     Prover soluções técnicas em saúde com conhecimento aplicado, garantindo que cada decisão de compra seja uma decisão mais segura para o paciente, o profissional e a instituição.
                 </p>
@@ -27,7 +27,7 @@
                 <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="eye" class="size-6" />
                 </div>
-                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa Visão</h3>
+                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossa visão</h3>
                 <p class="text-neutral-medium">
                     Ser referência em soluções técnicas de saúde em Pernambuco e no Nordeste, reconhecida pela autoridade construída com estudo, responsabilidade e entrega consistente.
                 </p>
@@ -39,7 +39,7 @@
                 <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                     <flux:icon name="heart" class="size-6" />
                 </div>
-                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossos Valores</h3>
+                <h3 class="mb-3 text-xl font-semibold text-neutral-strong">Nossos valores</h3>
                 <p class="text-neutral-medium">
                     Confiança, sobriedade, solidez, modernidade e tradição em harmonia. Colocamos pessoas acima de números, porque saúde não é lugar para improviso.
                 </p>

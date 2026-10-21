@@ -9,9 +9,9 @@
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento Técnico</span>
+                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento técnico</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
-                    Informação Confiável <br />
+                    Informação confiável <br />
                     <span class="text-primary-light">em Saúde</span>
                 </h1>
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">

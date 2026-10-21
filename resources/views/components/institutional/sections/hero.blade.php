@@ -4,7 +4,7 @@
             <x-institutional.reveal>
                 <div class="inline-flex items-center gap-2 rounded-full border border-primary-light bg-primary-bg px-3 py-1">
                     <span class="h-2 w-2 animate-pulse rounded-full bg-primary-strong"></span>
-                    <span class="text-xs font-bold uppercase tracking-wide text-primary-strong">16 Anos de Conhecimento Técnico</span>
+                    <span class="text-xs font-bold uppercase tracking-wide text-primary-strong">16 anos de conhecimento técnico</span>
                 </div>
             </x-institutional.reveal>
 
@@ -39,7 +39,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <flux:icon name="check-circle" class="size-4 text-primary-strong" />
-                        <span>Consultoria Técnica</span>
+                        <span>Consultoria técnica</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <flux:icon name="check-circle" class="size-4 text-primary-strong" />

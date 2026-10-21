@@ -5,7 +5,7 @@
 
         <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Nossa História</span>
+                <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Nossa história</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
                     Autoridade não se declara, <br />
                     <span class="text-primary-light">se constrói.</span>
@@ -39,7 +39,7 @@
 
             <div class="space-y-8">
                 <x-institutional.reveal :delay="100">
-                    <h2 class="text-3xl font-medium text-neutral-strong">De Onde Viemos, Para Onde Vamos</h2>
+                    <h2 class="text-3xl font-medium text-neutral-strong">De onde viemos, para onde vamos</h2>
                     <p class="mt-4 text-lg leading-relaxed text-neutral-medium">
                         A TUPAN nasceu no Sertão, em uma terra onde o comércio é construído na confiança, no aperto de mão e no respeito. Nosso fundador é farmacêutico, empresário e apaixonado por conhecimento. Ao lado de profissionais técnicos e gestores, construiu uma empresa que não se contenta em fazer mais do mesmo.
                     </p>
@@ -63,14 +63,14 @@
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="map" class="size-6 text-primary-strong" />
                             <div>
-                                <h3 class="font-bold text-neutral-strong">16 Anos de Atuação</h3>
+                                <h3 class="font-bold text-neutral-strong">16 anos de atuação</h3>
                                 <p class="text-sm text-neutral-medium">Construindo autoridade com estudo e entrega</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
                             <flux:icon name="sparkles" class="size-6 text-primary-strong" />
                             <div>
-                                <h3 class="font-bold text-neutral-strong">Raízes Sertanejas</h3>
+                                <h3 class="font-bold text-neutral-strong">Raízes sertanejas</h3>
                                 <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relação</p>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
     <x-institutional.section variant="cream">
         <div class="mx-auto mb-16 max-w-3xl text-center">
             <x-institutional.reveal>
-                <h2 class="mb-4 text-3xl font-medium text-neutral-strong">O Que Nos Diferencia</h2>
+                <h2 class="mb-4 text-3xl font-medium text-neutral-strong">O que nos diferencia</h2>
                 <p class="text-neutral-medium">
                     Não entregamos apenas caixas. Entregamos conhecimento técnico aplicado, suporte consultivo e a segurança de quem entende a responsabilidade de atuar em saúde.
                 </p>
@@ -100,7 +100,7 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                         <flux:icon name="book-open" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Conhecimento Técnico Aplicado</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Conhecimento técnico aplicado</h3>
                     <p class="text-neutral-medium">
                         Nosso CEO é farmacêutico. Nossa equipe estuda, testa e valida antes de padronizar. Não fazemos mais do mesmo: buscamos produtos com real qualificação técnica.
                     </p>
@@ -112,7 +112,7 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="hand-thumb-up" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Consultoria, Não Apenas Venda</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Consultoria, não apenas venda</h3>
                     <p class="text-neutral-medium">
                         Assumimos papel de consultor, não apenas de fornecedor. Explicamos o porquê das escolhas técnicas, apoiamos decisões e construímos parcerias de longo prazo.
                     </p>
@@ -124,7 +124,7 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-bg text-primary-strong">
                         <flux:icon name="heart" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Compromisso com Vidas</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Compromisso com vidas</h3>
                     <p class="text-neutral-medium">
                         Saúde não é faturamento. É responsabilidade. Cada curativo, reagente, equipamento ou seringa precisa estar no lugar certo, na hora certa, com o suporte certo.
                     </p>
@@ -136,7 +136,7 @@
                     <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                         <flux:icon name="briefcase" class="size-6" />
                     </div>
-                    <h3 class="mb-3 text-xl font-semibold">Parcerias com Multinacionais</h3>
+                    <h3 class="mb-3 text-xl font-semibold">Parcerias com multinacionais</h3>
                     <p class="text-neutral-medium">
                         Representamos fabricantes de referência mundial, como Fresenius e Inbras. Nossa credibilidade é validada por quem exige o mais alto padrão de qualidade.
                     </p>

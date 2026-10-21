@@ -1,5 +1,7 @@
 @php
     $post = $post ?? [];
+    $ctaRoute = $post['cta_route'] ?? ['institutional.home', [], 'solucoes'];
+    $ctaHref = route($ctaRoute[0], $ctaRoute[1] ?? []) . (isset($ctaRoute[2]) ? '#' . $ctaRoute[2] : '');
     $shareUrl = url()->current();
     $shareTitle = (string) ($post['title'] ?? 'Artigo TUPAN');
     $related = collect(config('institutional.blog_posts'))
@@ -17,7 +19,7 @@
                 <x-institutional.reveal>
                     <a href="{{ route('blog.index') }}" class="mb-8 inline-flex items-center gap-2 text-neutral-medium hover:text-primary-strong">
                         <flux:icon name="arrow-left" class="size-5" />
-                        Voltar para Conhecimento
+                        Voltar para conhecimento
                     </a>
 
                     <div class="mb-6 flex flex-wrap gap-4 text-sm font-medium text-primary-strong">
@@ -26,7 +28,7 @@
                         </span>
                     </div>
 
-                    <h1 class="mb-6 text-3xl font-bold leading-tight text-neutral-strong md:text-4xl lg:text-5xl">
+                    <h1 class="mb-6 text-3xl font-medium leading-tight text-neutral-strong md:text-4xl lg:text-5xl">
                         {{ $post['title'] ?? 'Artigo' }}
                     </h1>
 
@@ -89,25 +91,24 @@
                         </div>
                     </x-institutional.reveal>
 
-                    <div class="mt-16 border-t border-neutral-border pt-8">
-                        <h2 class="mb-4 font-bold text-neutral-strong">Tags Relacionadas</h2>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Saúde</span>
-                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Conhecimento Técnico</span>
-                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">Hospitalar</span>
-                            <span class="rounded-lg bg-bg-light px-4 py-2 text-sm text-neutral-medium">{{ $post['category'] ?? 'Saúde' }}</span>
-                        </div>
-                    </div>
+                    @if(!empty($post['tags']))
+                        <p class="mt-16 border-t border-neutral-border pt-8 text-sm text-neutral-medium">
+                            <span class="font-semibold">Tags:</span>
+                            {{ implode(' · ', $post['tags']) }}
+                        </p>
+                    @endif
                     <aside aria-labelledby="post-cta-title" class="mt-12 rounded-2xl border border-neutral-border bg-bg-light p-8">
-                        <p id="post-cta-title" class="mb-4 text-xl font-semibold text-neutral-strong">Precisa de apoio em engenharia clínica?</p>
+                        <p id="post-cta-title" class="mb-4 text-xl font-semibold text-neutral-strong">{{ $post['cta_title'] ?? 'Quer um parceiro técnico para sua instituição?' }}</p>
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
                             <a href="{{ route('contact') }}" data-cta="blog-post-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                                 Falar com um consultor
                             </a>
-                            <a href="{{ route('solutions.show', 'equipahosp') }}" data-cta="blog-post-equipahosp" class="inline-flex items-center gap-2 py-1 text-sm font-semibold text-primary-strong underline-offset-4 hover:underline">
-                                Conhecer a EquipaHosp
-                                <flux:icon name="arrow-right" class="size-4" />
-                            </a>
+                            @if(!empty($ctaHref))
+                                <a href="{{ $ctaHref }}" data-cta="blog-post-{{ $post['id'] ?? 'artigo' }}-solucao" class="inline-flex items-center gap-2 py-1 text-sm font-semibold text-primary-strong underline-offset-4 hover:underline">
+                                    {{ $post['cta_link_label'] ?? 'Conheça nossas soluções' }}
+                                    <flux:icon name="arrow-right" class="size-4" />
+                                </a>
+                            @endif
                         </div>
                     </aside>
                 </div>
@@ -119,7 +120,7 @@
 
     <x-institutional.section variant="light" class="py-16">
         <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-2xl font-bold text-neutral-strong">Continue Lendo</h2>
+            <h2 class="text-2xl font-bold text-neutral-strong">Continue lendo</h2>
             <a href="{{ route('blog.index') }}" class="inline-flex w-fit items-center justify-center whitespace-nowrap rounded-[999px] border-2 border-primary-strong bg-transparent px-6 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
                 Acessar todo o conteúdo
             </a>

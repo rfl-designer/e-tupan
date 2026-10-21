@@ -3,16 +3,16 @@
 @endphp
 
 <div>
-    <div class="relative flex min-h-[500px] h-[60vh] items-center overflow-hidden">
+    <div class="relative flex min-h-[560px] items-start overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0 z-0">
             <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="{{ $division['title'] ?? 'Divisão' }}" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>
 
-        <div class="container mx-auto max-w-7xl px-6 relative z-10 pt-20">
+        <div class="container mx-auto max-w-7xl px-6 relative z-10">
             <x-institutional.reveal>
-                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex items-center gap-2 text-white hover:bg-white/10 hover:text-primary-light">
+                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
                     <flux:icon name="arrow-left" class="size-5" />
                     Voltar para soluções
                 </a>
@@ -40,7 +40,8 @@
         <div class="grid gap-12 lg:grid-cols-3">
             <div class="space-y-8 lg:col-span-2">
                 <x-institutional.reveal>
-                    <h2 class="mb-6 text-3xl font-medium text-neutral-strong">Sobre a divisão</h2>
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a divisão</span>
+                    <h2 class="mb-6 text-3xl font-medium text-neutral-strong">{{ $division['about_title'] ?? ($division['description'] ?? 'Sobre a divisão') }}</h2>
                     <p class="text-lg leading-relaxed text-neutral-medium">
                         {{ $division['full_description'] ?? '' }}
                     </p>
@@ -63,15 +64,15 @@
                             @else
                                 <div class="flex items-start gap-3">
                                     <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Conhecimento Técnico Aplicado</span>
+                                    <span class="text-neutral-strong">Conhecimento técnico aplicado</span>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Consultoria Especializada</span>
+                                    <span class="text-neutral-strong">Consultoria especializada</span>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Logística Ágil e Segura</span>
+                                    <span class="text-neutral-strong">Logística ágil e segura</span>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <flux:icon name="check-circle" class="size-5 text-primary-strong" />

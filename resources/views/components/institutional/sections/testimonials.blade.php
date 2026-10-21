@@ -9,8 +9,8 @@
 <x-institutional.section variant="cream">
     <div class="mx-auto mb-16 max-w-3xl text-center">
         <x-institutional.reveal>
-            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Parcerias de Longo Prazo</span>
-            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Quem Conhece, Confia</h2>
+            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Parcerias de longo prazo</span>
+            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Quem conhece, confia</h2>
         </x-institutional.reveal>
     </div>
 

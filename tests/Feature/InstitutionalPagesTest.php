@@ -52,7 +52,7 @@ it('sends contact email', function () {
         ->set('name', 'Maria Oliveira')
         ->set('company', 'Hospital Santa Maria')
         ->set('email', 'maria@hospital.com')
-        ->set('topic', 'Consultoria Técnica em Produtos')
+        ->set('topic', 'Consultoria técnica em produtos')
         ->set('message', 'Precisamos de suporte para nossa equipe técnica.')
         ->call('submit')
         ->assertSet('successMessage', 'Mensagem enviada. Nossa equipe entrará em contato em breve.');
@@ -60,7 +60,7 @@ it('sends contact email', function () {
     Mail::assertSent(ContactFormMail::class, function (ContactFormMail $mail) {
         return $mail->name === 'Maria Oliveira'
             && $mail->email === 'maria@hospital.com'
-            && $mail->topic === 'Consultoria Técnica em Produtos';
+            && $mail->topic === 'Consultoria técnica em produtos';
     });
 });
 
@@ -98,8 +98,8 @@ it('renders the tupan care page with its own brand, partnership and seo', functi
         ->assertSee('Uma operação Tupan Saúde')
         ->assertSee('<h1 class="sr-only">Tupan Care</h1>', false)
         ->assertSee('alt="Logo Tupan Care"', false)
-        ->assertSee('images/parceiros/tupan-care.webp', false)
-        ->assertSee('images/parceiros/gentell.webp', false)
+        ->assertSee('images/parceiros/tupan-care-v2.webp', false)
+        ->assertSee('images/parceiros/gentell-v2.webp', false)
         ->assertSee('images/parceiros/casex.webp', false)
         ->assertSee('aria-label="Logos Gentell Casex"', false)
         ->assertSee('Tupan Care + Gentell Casex')
@@ -188,6 +188,6 @@ it('rejects topics outside the configured list for the origin', function () {
 it('ignores unknown origins and falls back to the default form', function () {
     Livewire::test(ContactForm::class, ['origin' => 'desconhecida'])
         ->assertSet('origin', null)
-        ->assertSet('topic', 'Consultoria Técnica em Produtos')
+        ->assertSet('topic', 'Consultoria técnica em produtos')
         ->assertDontSee('Cidade/Estado');
 });

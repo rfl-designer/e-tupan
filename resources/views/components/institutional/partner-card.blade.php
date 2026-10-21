@@ -20,7 +20,7 @@
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
                         'w-auto max-w-full object-contain',
                         'max-h-14 max-w-[180px]' => count($logos) === 1 && $logoSize === null,
-                        'max-h-12 max-w-[180px]' => count($logos) === 1 && $logoSize === 'square',
+                        'max-h-14 max-w-[180px]' => count($logos) === 1 && $logoSize === 'square',
                         'max-h-10 max-w-[180px]' => count($logos) === 1 && $logoSize === 'compact',
                         'h-10 max-w-[160px]' => count($logos) > 1,
                     ]) loading="lazy" />
@@ -50,6 +50,13 @@
                 </li>
             @endforeach
         </ul>
+    @endif
+
+    @if(!empty($partner['internal_link']))
+        <a href="{{ $partner['internal_link']['href'] }}" data-cta="{{ $ctaPrefix }}{{ \Illuminate\Support\Str::slug($name) }}-contato" class="inline-flex items-center justify-center gap-2 self-start rounded-[999px] border-2 border-primary-strong px-5 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
+            {{ $partner['internal_link']['label'] }}
+            <flux:icon name="arrow-down" class="size-4" />
+        </a>
     @endif
 
     @if(!empty($partner['url']))

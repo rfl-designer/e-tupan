@@ -54,7 +54,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Divisões Especializadas</h5>
+                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Divisões especializadas</h5>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     @foreach($divisions as $division)
                         <li>
@@ -69,10 +69,10 @@
             <div>
                 <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Institucional</h5>
                 <ul class="space-y-3 text-sm text-neutral-light">
-                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Quem Somos</a></li>
-                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa História</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="transition-colors hover:text-primary-light">Conhecimento Técnico</a></li>
-                    <li><a href="{{ route('contact') }}" class="transition-colors hover:text-primary-light">Trabalhe Conosco</a></li>
+                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Quem somos</a></li>
+                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa história</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="transition-colors hover:text-primary-light">Conhecimento técnico</a></li>
+                    <li><a href="{{ route('contact') }}" class="transition-colors hover:text-primary-light">Trabalhe conosco</a></li>
                     @if(! empty($contact['privacy_url']))
                         <li><a href="{{ $contact['privacy_url'] }}" class="transition-colors hover:text-primary-light">Política de Privacidade</a></li>
                     @endif
@@ -80,7 +80,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Fale Conosco</h5>
+                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Fale conosco</h5>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     @if($hasPhone)
                     <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" class="hover:text-primary-light hover:underline" /></li>

@@ -20,17 +20,17 @@ return [
         ],
         'city'     => 'Recife, Pernambuco',
         'coverage' => 'Atuação em todo o Nordeste',
-        'hours'    => 'Segunda a Sexta, 8h às 18h',
+        'hours'    => 'Segunda a sexta, 8h às 18h',
     ],
     'contact_forms' => [
         'default' => [
             'subject' => null,
             'topics'  => [
-                'Consultoria Técnica em Produtos',
-                'Engenharia Clínica (EquipaHosp)',
-                'Cotação para Licitação',
-                'Parceria Comercial',
-                'Outros Assuntos',
+                'Consultoria técnica em produtos',
+                'Engenharia clínica (EquipaHosp)',
+                'Cotação para licitação',
+                'Parceria comercial',
+                'Outros assuntos',
             ],
         ],
         'equipa-hosp' => [
@@ -65,21 +65,22 @@ return [
         [
             'id'               => 'cirurgica',
             'title'            => 'Loja Cirúrgica',
-            'subtitle'         => 'Conhecimento técnico para procedimentos seguros',
+            'subtitle'         => 'Instrumental cirúrgico, descartáveis hospitalares e equipamentos de centro cirúrgico para hospitais e clínicas cirúrgicas, com pronta entrega no Nordeste.',
+            'about_title'      => 'Materiais cirúrgicos com respaldo técnico',
             'description'      => 'Materiais cirúrgicos com respaldo técnico e consultoria especializada.',
             'full_description' => 'Nossa divisão cirúrgica vai além do fornecimento de materiais. Entendemos que cada instrumento, cada descartável, pode impactar diretamente o resultado de um procedimento e a segurança do paciente. Atuamos com um portfólio tecnicamente qualificado, desde instrumentais de precisão até descartáveis de alto giro, sempre com pronta entrega para não comprometer o fluxo hospitalar. Não vendemos apenas produtos. Intermediamos segurança.',
             'icon'             => 'stethoscope',
             'features'         => [
-                'Instrumental Cirúrgico Qualificado',
-                'Descartáveis Hospitalares',
-                'Equipamentos de Centro Cirúrgico',
-                'Material de Proteção Certificado',
+                'Instrumental cirúrgico qualificado',
+                'Descartáveis hospitalares',
+                'Equipamentos de centro cirúrgico',
+                'Material de proteção certificado',
             ],
             'target_audience' => [
                 'Hospitais',
-                'Clínicas Cirúrgicas',
-                'Coordenadores de Enfermagem',
-                'Médicos Cirurgiões',
+                'Clínicas cirúrgicas',
+                'Coordenadores de enfermagem',
+                'Médicos cirurgiões',
             ],
             'image'           => 'images/institucional/division-cirurgica.webp',
             'differentiators' => [
@@ -92,42 +93,44 @@ return [
         [
             'id'               => 'farma',
             'title'            => 'Medicamentos & Nutrição',
-            'subtitle'         => 'Logística controlada, responsabilidade garantida',
+            'subtitle'         => 'Medicamentos hospitalares, nutrição clínica e insumos farmacêuticos para farmácias hospitalares e gestores de suprimentos, com logística de cadeia fria.',
+            'about_title'      => 'Fármacos e nutrição com logística controlada',
             'description'      => 'Distribuição de fármacos e nutrição clínica com rastreabilidade total.',
             'full_description' => 'Através da Tupan Farma, atuamos como elo vital entre a indústria farmacêutica e as instituições de saúde. Entendemos que medicamentos e produtos nutricionais exigem cuidado absoluto em toda a cadeia. Nossa logística controlada garante a integridade de cada produto, desde a demanda hospitalar básica até necessidades específicas de nutrição clínica. Com 16 anos de experiência, construímos processos que honram a responsabilidade de lidar com o que sustenta vidas.',
             'icon'             => 'pill',
             'features'         => [
-                'Medicamentos Hospitalares',
-                'Nutrição Clínica Especializada',
-                'Insumos Farmacêuticos',
-                'Logística com Cadeia Fria',
+                'Medicamentos hospitalares',
+                'Nutrição clínica especializada',
+                'Insumos farmacêuticos',
+                'Logística com cadeia fria',
             ],
             'target_audience' => [
-                'Farmácias Hospitalares',
+                'Farmácias hospitalares',
                 'Farmacêuticos',
-                'Nutricionistas Clínicos',
-                'Gestores de Suprimentos',
+                'Nutricionistas clínicos',
+                'Gestores de suprimentos',
             ],
             'image' => 'images/institucional/division-farma.webp',
         ],
         [
             'id'               => 'curativos',
             'title'            => 'Curativos Especiais',
-            'subtitle'         => 'Tecnologia avançada com suporte técnico consultivo',
+            'subtitle'         => 'Coberturas de última geração, tratamento de feridas crônicas e insumos para estomaterapia para enfermeiros estomaterapeutas, hospitais e home care.',
+            'about_title'      => 'Cuidado avançado de feridas com suporte consultivo',
             'description'      => 'Soluções de cicatrização com acompanhamento especializado.',
             'full_description' => 'A divisão AiTE é dedicada ao cuidado avançado de feridas. Não oferecemos apenas coberturas: oferecemos tecnologia, conhecimento e suporte consultivo. Trabalhamos com enfermeiras especialistas que entendem a prática assistencial e podem orientar sobre o produto mais adequado para cada caso. Nossas soluções aceleram a cicatrização e devolvem qualidade de vida ao paciente. Porque reduzir o tempo de tratamento é, em última instância, devolver a pessoa à sua rotina.',
             'icon'             => 'bandage',
             'features'         => [
-                'Coberturas de Última Geração',
-                'Tratamento de Feridas Crônicas',
-                'Tecnologia de Cicatrização Avançada',
-                'Insumos para Estomaterapia',
+                'Coberturas de última geração',
+                'Tratamento de feridas crônicas',
+                'Tecnologia de cicatrização avançada',
+                'Insumos para estomaterapia',
             ],
             'target_audience' => [
-                'Enfermeiros Estomaterapeutas',
+                'Enfermeiros estomaterapeutas',
                 'Hospitais',
-                'Lojas Cirúrgicas',
-                'Home Care',
+                'Lojas cirúrgicas',
+                'Home care',
             ],
             'image'           => 'images/institucional/division-curativos.webp',
             'differentiators' => [
@@ -139,21 +142,22 @@ return [
         [
             'id'               => 'lab',
             'title'            => 'Laboratório e Hemoterapia',
-            'subtitle'         => 'Parceria com fabricantes de referência mundial',
+            'subtitle'         => 'Reagentes químicos, insumos para banco de sangue e consumíveis para coleta para laboratórios de análises clínicas e bancos de sangue.',
+            'about_title'      => 'Diagnóstico preciso e hemoterapia segura',
             'description'      => 'Reagentes, insumos e equipamentos para diagnóstico preciso.',
             'full_description' => 'Fornecemos a base para diagnósticos precisos e hemoterapia segura. Atendemos laboratórios de análises clínicas e bancos de sangue em todo o Nordeste com exclusividade de fabricantes relevantes como Inbras e Fresenius. Entendemos a criticidade do que fazemos: um reagente ou bolsa de sangue não pode faltar, não pode falhar. Com 16 anos de experiência e parcerias sólidas com multinacionais, garantimos que o resultado final chegue com segurança ao paciente.',
             'icon'             => 'microscope',
             'features'         => [
-                'Reagentes Químicos Certificados',
-                'Insumos para Banco de Sangue',
-                'Automação Laboratorial',
-                'Consumíveis para Coleta',
+                'Reagentes químicos certificados',
+                'Insumos para banco de sangue',
+                'Automação laboratorial',
+                'Consumíveis para coleta',
             ],
             'target_audience' => [
-                'Laboratórios de Análises Clínicas',
-                'Bancos de Sangue',
+                'Laboratórios de análises clínicas',
+                'Bancos de sangue',
                 'Biomédicos',
-                'Responsáveis Técnicos',
+                'Responsáveis técnicos',
             ],
             'image'           => 'images/institucional/division-lab.webp',
             'differentiators' => [
@@ -165,25 +169,26 @@ return [
         [
             'id'               => 'imagem',
             'title'            => 'Diagnóstico por Imagem',
-            'subtitle'         => 'Atuação nacional com produto próprio',
+            'subtitle'         => 'Contrastes radiológicos, filmes para impressão e seringas para contraste de marca própria para clínicas de diagnóstico por imagem e hospitais.',
+            'about_title'      => 'Imagem diagnóstica com atuação nacional',
             'description'      => 'Filmes, contrastes e acessórios para imagem diagnóstica.',
             'full_description' => 'Nossa divisão MT ultrapassa fronteiras regionais, atendendo empresas de diagnóstico por imagem em todo o Brasil. Trabalhamos com filmes, contrastes e acessórios que garantem a melhor resolução para laudos médicos assertivos. Desenvolvemos inclusive nosso primeiro produto de marca própria: seringas para inserção de contraste. É a prova de que não nos contentamos em fazer mais do mesmo, mas buscamos preencher lacunas de mercado com qualidade técnica superior.',
             'icon'             => 'scan',
             'features'         => [
-                'Contrastes Radiológicos',
-                'Filmes para Impressão',
-                'Seringas para Contraste (Marca Própria)',
-                'Acessórios para Exames de Imagem',
+                'Contrastes radiológicos',
+                'Filmes para impressão',
+                'Seringas para contraste (marca própria)',
+                'Acessórios para exames de imagem',
             ],
             'target_audience' => [
-                'Clínicas de Diagnóstico por Imagem',
+                'Clínicas de diagnóstico por imagem',
                 'Hospitais',
-                'Técnicos em Radiologia',
-                'Gestores de Clínicas',
+                'Técnicos em radiologia',
+                'Gestores de clínicas',
             ],
             'image'           => 'images/institucional/division-imagem.webp',
             'differentiators' => [
-                'Atuação Nacional',
+                'Atuação nacional',
                 'Produto de marca própria',
                 'Parcerias com grandes marcas',
                 'Logística especializada',
@@ -218,7 +223,7 @@ return [
             ],
             'contact_form' => 'tupan-care',
             'page'         => [
-                'logo'        => 'images/parceiros/tupan-care.webp',
+                'logo'        => 'images/parceiros/tupan-care-v2.webp',
                 'endorsement' => 'Uma operação Tupan Saúde',
                 'intro'       => [
                     'A Tupan Care é a operação da Tupan Saúde dedicada à promoção, representação e comercialização de soluções para cuidados de feridas e estomias.',
@@ -302,12 +307,13 @@ return [
                 ],
                 'partners' => [
                     [
-                        'name'        => 'Tupan Care',
-                        'role'        => 'Operação local e atendimento',
-                        'description' => 'Atendimento comercial, padronização, treinamento e apoio técnico próximos às instituições e aos profissionais da região.',
-                        'url'         => null,
-                        'logo'        => 'images/parceiros/tupan-care.webp',
-                        'logo_size'   => 'square',
+                        'name'          => 'Tupan Care',
+                        'role'          => 'Operação local e atendimento',
+                        'description'   => 'Atendimento comercial, padronização, treinamento e apoio técnico próximos às instituições e aos profissionais da região.',
+                        'url'           => null,
+                        'logo'          => 'images/parceiros/tupan-care-v2.webp',
+                        'logo_size'     => 'square',
+                        'internal_link' => ['label' => 'Fale com a Tupan Care', 'href' => '#fale-conosco'],
                     ],
                     [
                         'name'        => 'Gentell Casex',
@@ -315,7 +321,7 @@ return [
                         'description' => 'A Gentell Casex reúne soluções para cuidados de feridas e estomias, com produtos, conhecimento e suporte voltados à melhoria do cuidado e da qualidade de vida dos pacientes.',
                         'url'         => 'https://gentell.com.br/',
                         'logo'        => [
-                            'images/parceiros/gentell.webp',
+                            'images/parceiros/gentell-v2.webp',
                             'images/parceiros/casex.webp',
                         ],
                         'links' => [
@@ -352,16 +358,16 @@ return [
             'full_description' => 'A EquipaHosp é o hub de soluções em saúde da Tupan Saúde. Reunimos parceiros, tecnologias, produtos, serviços e conhecimento técnico para apoiar hospitais, clínicas, laboratórios, centros de diagnóstico e demais instituições de saúde.',
             'icon'             => 'wrench',
             'features'         => [
-                'Engenharia Clínica',
-                'Venda e Locação de Equipamentos',
-                'Manutenção, Calibração e Assistência Técnica',
-                'Consultoria e Projetos em Saúde',
+                'Engenharia clínica',
+                'Venda e locação de equipamentos',
+                'Manutenção, calibração e assistência técnica',
+                'Consultoria e projetos em saúde',
             ],
             'target_audience' => [
                 'Hospitais',
-                'Engenheiros Clínicos',
-                'Administradores Hospitalares',
-                'Coordenadores de Manutenção',
+                'Engenheiros clínicos',
+                'Administradores hospitalares',
+                'Coordenadores de manutenção',
             ],
             'image' => 'images/institucional/division-equipahosp.webp',
             'view'  => 'livewire.institutional.divisions.equipahosp',
@@ -371,7 +377,7 @@ return [
             ],
             'contact_form' => 'equipa-hosp',
             'page'         => [
-                'eyebrow' => 'Hub de Soluções em Saúde',
+                'eyebrow' => 'Hub de soluções em saúde',
                 'intro'   => [
                     'A EquipaHosp é o hub de soluções em saúde da Tupan Saúde. Reunimos parceiros, tecnologias, produtos, serviços e conhecimento técnico para apoiar hospitais, clínicas, laboratórios, centros de diagnóstico e demais instituições de saúde.',
                     'Mais do que uma empresa de engenharia clínica ou assistência técnica, a EquipaHosp atua como uma plataforma de conexão entre as necessidades das instituições e soluções especializadas em equipamentos, tecnologia, gestão, suporte, locação, manutenção e operação em saúde.',
@@ -482,61 +488,73 @@ return [
     ],
     'blog_posts' => [
         [
-            'id'        => 'engenharia-clinica-seguranca',
-            'title'     => 'A Engenharia Clínica Como Pilar da Segurança do Paciente',
-            'excerpt'   => 'Saúde não é lugar para improviso. Entenda como a gestão do parque tecnológico impacta diretamente nos resultados assistenciais e na segurança operacional.',
-            'date'      => '12 Fev, 2024',
-            'author'    => 'Equipe Técnica EquipaHosp',
-            'category'  => 'Engenharia Clínica',
-            'read_time' => '5 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format&fit=crop',
-            'content'   => <<<'HTML'
+            'id'             => 'engenharia-clinica-seguranca',
+            'title'          => 'A engenharia clínica como pilar da segurança do paciente',
+            'excerpt'        => 'Saúde não é lugar para improviso. Entenda como a gestão do parque tecnológico impacta diretamente nos resultados assistenciais e na segurança operacional.',
+            'date'           => '12 Fev, 2024',
+            'author'         => 'Equipe técnica EquipaHosp',
+            'category'       => 'Engenharia clínica',
+            'cta_title'      => 'Precisa de apoio em engenharia clínica?',
+            'cta_link_label' => 'Conhecer a EquipaHosp',
+            'cta_route'      => ['solutions.show', 'equipahosp'],
+            'tags'           => ['Saúde', 'Engenharia clínica', 'Hospitalar'],
+            'read_time'      => '5 min de leitura',
+            'image'          => 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format&fit=crop',
+            'content'        => <<<'HTML'
 <p>A engenharia clínica desempenha papel fundamental na gestão de tecnologias de saúde. Em um ambiente hospitalar, a falha de um equipamento pode significar riscos graves à vida. Cada ventilador em uma UTI, cada monitor em um centro cirúrgico, precisa estar funcionando quando a vida depende dele.</p>
 
-<h2>Manutenção Preventiva: Antecipar Problemas, Prolongar Vidas</h2>
+<h2>Manutenção preventiva: antecipar problemas, prolongar vidas</h2>
 <p>Muitas instituições ainda operam sob a lógica da manutenção corretiva, agindo apenas quando o equipamento apresenta falhas. No entanto, a abordagem preventiva visa antecipar problemas, prolongando a vida útil dos ativos e garantindo disponibilidade total. Não se trata apenas de economia, mas de responsabilidade.</p>
 
-<h2>O Impacto Real na Assistência</h2>
+<h2>O impacto real na assistência</h2>
 <p>Equipamentos bem calibrados não apenas consomem menos recursos. Eles garantem que exames e procedimentos não sejam suspensos por inoperância técnica. E cada procedimento adiado pode significar um diagnóstico atrasado, um tratamento postergado, uma vida em risco.</p>
 
 <p>Na TUPAN, através da EquipaHosp, entendemos que cuidar dos equipamentos é, em última instância, cuidar de vidas. Nossa equipe técnica atua em todo o Nordeste garantindo que a tecnologia trabalhe a favor da saúde.</p>
 HTML,
         ],
         [
-            'id'        => 'inovacao-tratamento-feridas',
-            'title'     => 'Tecnologia em Curativos: Quando a Ciência Acelera a Cicatrização',
-            'excerpt'   => 'Conheça como os avanços em coberturas especiais estão transformando o tratamento de feridas crônicas e devolvendo qualidade de vida aos pacientes.',
-            'date'      => '05 Mar, 2024',
-            'author'    => 'Equipe Técnica AiTE',
-            'category'  => 'Curativos Especiais',
-            'read_time' => '4 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
-            'content'   => <<<'HTML'
+            'id'             => 'inovacao-tratamento-feridas',
+            'title'          => 'Tecnologia em curativos: quando a ciência acelera a cicatrização',
+            'excerpt'        => 'Conheça como os avanços em coberturas especiais estão transformando o tratamento de feridas crônicas e devolvendo qualidade de vida aos pacientes.',
+            'date'           => '05 Mar, 2024',
+            'author'         => 'Equipe técnica AiTE',
+            'category'       => 'Curativos Especiais',
+            'cta_title'      => 'Precisa padronizar curativos na sua instituição?',
+            'cta_link_label' => 'Conhecer a Tupan Care',
+            'cta_route'      => ['solutions.show', 'tupan-care'],
+            'tags'           => ['Saúde', 'Curativos', 'Cicatrização'],
+            'read_time'      => '4 min de leitura',
+            'image'          => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
+            'content'        => <<<'HTML'
 <p>O tratamento de feridas crônicas e complexas tem passado por transformação significativa. O que antes se limitava a trocas simples de gazes, hoje envolve coberturas inteligentes capazes de interagir com o leito da lesão, controlando umidade e prevenindo infecções.</p>
 
-<h2>O Papel das Coberturas Tecnológicas</h2>
+<h2>O papel das coberturas tecnológicas</h2>
 <p>A divisão AiTE traz para o mercado soluções que incluem prata nanocristalina, alginatos e espumas de poliuretano de última geração. Esses materiais não apenas protegem, mas criam o microambiente ideal para a regeneração tecidual. E com suporte consultivo de enfermeiras especialistas, o profissional de saúde tem respaldo para escolher a solução mais adequada para cada caso.</p>
 
-<h2>Devolvendo a Vida ao Paciente</h2>
+<h2>Devolvendo a vida ao paciente</h2>
 <p>Reduzir o tempo de cicatrização significa devolver o paciente à sua rotina mais rápido. Menos dor nas trocas, menor frequência de procedimentos, recuperação da autonomia. Quando tratamos uma ferida com tecnologia adequada, tratamos também a dignidade de quem sofre com ela.</p>
 HTML,
         ],
         [
-            'id'        => 'autoridade-conhecimento-saude',
-            'title'     => 'Autoridade Não Se Declara, Se Constrói',
-            'excerpt'   => 'Como a busca por conhecimento técnico aplicado diferencia fornecedores de parceiros estratégicos no mercado de saúde.',
-            'date'      => '20 Jan, 2024',
-            'author'    => 'TUPAN Institucional',
-            'category'  => 'Institucional',
-            'read_time' => '3 min de leitura',
-            'image'     => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
-            'content'   => <<<'HTML'
+            'id'             => 'autoridade-conhecimento-saude',
+            'title'          => 'Autoridade não se declara, se constrói',
+            'excerpt'        => 'Como a busca por conhecimento técnico aplicado diferencia fornecedores de parceiros estratégicos no mercado de saúde.',
+            'date'           => '20 Jan, 2024',
+            'author'         => 'TUPAN Institucional',
+            'category'       => 'Institucional',
+            'cta_title'      => 'Quer um parceiro técnico para sua instituição?',
+            'cta_link_label' => 'Conheça nossas soluções',
+            'cta_route'      => ['institutional.home', [], 'solucoes'],
+            'tags'           => ['Saúde', 'Institucional', 'Parceria técnica'],
+            'read_time'      => '3 min de leitura',
+            'image'          => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+            'content'        => <<<'HTML'
 <p>Em um mercado onde sobra discurso e falta verdade, como identificar um parceiro realmente qualificado? A resposta está no histórico de entrega, no conhecimento demonstrado, na coerência entre o que se diz e o que se faz.</p>
 
-<h2>Conhecimento que Se Aplica</h2>
+<h2>Conhecimento que se aplica</h2>
 <p>Na TUPAN, nosso fundador é farmacêutico. Nossa equipe técnica estuda, testa e valida antes de padronizar qualquer produto. Não fazemos mais do mesmo. Buscamos soluções com real qualificação técnica, de fabricantes que compartilham nosso compromisso com a qualidade.</p>
 
-<h2>Parceiros, Não Apenas Fornecedores</h2>
+<h2>Parceiros, não apenas fornecedores</h2>
 <p>Queremos ser reconhecidos não como mais uma distribuidora, mas como consultores técnicos. Explicamos o porquê das escolhas, apoiamos decisões, construímos relacionamentos de longo prazo. Porque em saúde, a confiança se constrói com tempo, consistência e responsabilidade.</p>
 HTML,
         ],
@@ -544,27 +562,27 @@ HTML,
     'target_audience' => [
         [
             'id'          => 'b2b',
-            'title'       => 'Instituições de Saúde',
+            'title'       => 'Instituições de saúde',
             'description' => 'Parceria técnica para decisões mais seguras em ambientes críticos.',
             'profiles'    => [
-                'Hospitais e Clínicas',
-                'Laboratórios de Análises',
-                'Bancos de Sangue',
-                'Centros de Diagnóstico por Imagem',
-                'Distribuidores Regionais',
+                'Hospitais e clínicas',
+                'Laboratórios de análises',
+                'Bancos de sangue',
+                'Centros de diagnóstico por imagem',
+                'Distribuidores regionais',
             ],
             'icon'  => 'building-2',
             'color' => 'primary',
         ],
         [
             'id'          => 'b2p',
-            'title'       => 'Profissionais de Saúde',
+            'title'       => 'Profissionais de saúde',
             'description' => 'Suporte consultivo para quem está na linha de frente do cuidado.',
             'profiles'    => [
-                'Enfermeiros e Coordenadores de Enfermagem',
-                'Biomédicos e Analistas Clínicos',
-                'Engenheiros Clínicos',
-                'Farmacêuticos Hospitalares',
+                'Enfermeiros e coordenadores de enfermagem',
+                'Biomédicos e analistas clínicos',
+                'Engenheiros clínicos',
+                'Farmacêuticos hospitalares',
                 'Estomatoterapeutas',
             ],
             'icon'  => 'briefcase',
@@ -572,12 +590,12 @@ HTML,
         ],
         [
             'id'          => 'b2c',
-            'title'       => 'Home Care e Cuidado Domiciliar',
+            'title'       => 'Home care e cuidado domiciliar',
             'description' => 'Acesso a produtos profissionais com orientação técnica.',
             'profiles'    => [
-                'Cuidadores Profissionais',
-                'Familiares de Pacientes',
-                'Pacientes em Tratamento Domiciliar',
+                'Cuidadores profissionais',
+                'Familiares de pacientes',
+                'Pacientes em tratamento domiciliar',
             ],
             'icon'  => 'users',
             'color' => 'accent',
@@ -587,28 +605,28 @@ HTML,
         [
             'id'          => 1,
             'title'       => 'Coberturas AiTE',
-            'category'    => 'Tecnologia em Cicatrização',
+            'category'    => 'Tecnologia em cicatrização',
             'description' => 'Curativos especiais com suporte consultivo de enfermeiras especialistas.',
             'image'       => 'https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=800&auto=format&fit=crop',
         ],
         [
             'id'          => 2,
             'title'       => 'Reagentes Fresenius/Inbras',
-            'category'    => 'Parceria com Multinacionais',
+            'category'    => 'Parceria com multinacionais',
             'description' => 'Exclusividade de fabricantes de referência mundial para laboratórios e bancos de sangue.',
             'image'       => 'images/institucional/division-lab-800.webp',
         ],
         [
             'id'          => 3,
-            'title'       => 'Engenharia Clínica Completa',
+            'title'       => 'Engenharia clínica completa',
             'category'    => 'Serviço EquipaHosp',
             'description' => 'Gestão do parque tecnológico: preventiva, corretiva, calibração e consultoria.',
             'image'       => 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop',
         ],
         [
             'id'          => 4,
-            'title'       => 'Seringas para Contraste',
-            'category'    => 'Marca Própria MT',
+            'title'       => 'Seringas para contraste',
+            'category'    => 'Marca própria MT',
             'description' => 'Nosso primeiro produto próprio: inovação onde o mercado precisava.',
             'image'       => 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop',
         ],

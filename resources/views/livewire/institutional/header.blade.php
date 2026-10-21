@@ -42,7 +42,7 @@
                 class="whitespace-nowrap text-sm font-medium transition-colors"
                 x-bind:class="useLightText ? 'text-white hover:text-primary-light' : 'text-neutral-strong hover:text-primary-strong'"
             >
-                Quem Somos
+                Quem somos
             </a>
 
             <div class="group static flex h-full items-center">
@@ -59,7 +59,7 @@
                     <div class="container mx-auto max-w-7xl px-6 py-12">
                         <div class="grid grid-cols-4 gap-8">
                             <div class="col-span-1">
-                                <h6 class="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-medium">Nossas Divisões Especializadas</h6>
+                                <h6 class="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-medium">Nossas divisões especializadas</h6>
                                 <p class="mb-6 text-sm text-neutral-medium">
                                     Conhecimento técnico aplicado em cada segmento. Do laboratório ao centro cirúrgico, intermediamos segurança, técnica e cuidado.
                                 </p>
@@ -123,7 +123,7 @@
             Início
         </a>
         <a href="{{ route('about') }}" class="border-b border-neutral-light/20 py-3 text-lg font-medium text-neutral-strong hover:text-primary-strong">
-            Quem Somos
+            Quem somos
         </a>
 
 	            <div class="border-b border-neutral-light/20">

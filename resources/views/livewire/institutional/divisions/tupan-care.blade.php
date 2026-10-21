@@ -18,12 +18,10 @@
 
         <div class="container relative z-10 mx-auto max-w-7xl px-6">
             <x-institutional.reveal>
-                <div class="mb-6">
-                    <a href="{{ route('institutional.home') }}#solucoes" class="inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
-                        <flux:icon name="arrow-left" class="size-5" />
-                        Voltar para Soluções
-                    </a>
-                </div>
+                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
+                    <flux:icon name="arrow-left" class="size-5" />
+                    Voltar para soluções
+                </a>
 
                 <div class="mb-6 flex w-fit flex-col items-start gap-2 rounded-2xl bg-white px-6 py-4 shadow-xl">
                     @if(!empty($page['logo']))

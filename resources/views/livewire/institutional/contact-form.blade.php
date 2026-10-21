@@ -14,7 +14,7 @@
 
     <div class="grid gap-6 md:grid-cols-2">
         <div class="space-y-2">
-            <label for="{{ $fieldId('name') }}" class="text-sm font-medium text-neutral-strong">Nome Completo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
+            <label for="{{ $fieldId('name') }}" class="text-sm font-medium text-neutral-strong">Nome completo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
             <input
                 id="{{ $fieldId('name') }}"
                 type="text"
@@ -79,7 +79,7 @@
 
     <div @class(['grid gap-6 md:grid-cols-2' => $this->hasExtendedFields, 'space-y-2' => ! $this->hasExtendedFields])>
         <div class="space-y-2">
-            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">E-mail Corporativo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
+            <label for="{{ $fieldId('email') }}" class="text-sm font-medium text-neutral-strong">E-mail corporativo <span aria-hidden="true" class="text-secondary">*</span><span class="sr-only">(obrigatório)</span></label>
             <input
                 id="{{ $fieldId('email') }}"
                 type="email"
@@ -113,7 +113,7 @@
     </div>
 
     <div class="space-y-2">
-        <label for="{{ $fieldId('topic') }}" class="text-sm font-medium text-neutral-strong">Tipo de Necessidade</label>
+        <label for="{{ $fieldId('topic') }}" class="text-sm font-medium text-neutral-strong">Tipo de necessidade</label>
         <select
             id="{{ $fieldId('topic') }}"
             wire:model="topic"

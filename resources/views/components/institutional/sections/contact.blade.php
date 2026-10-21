@@ -1,6 +1,6 @@
 @props([
     'origin' => null,
-    'eyebrow' => 'Fale Conosco',
+    'eyebrow' => 'Fale conosco',
     'title' => 'Consultoria técnica para sua necessidade específica.',
     'text' => 'Nossa equipe técnica e comercial está preparada para entender sua demanda e propor a solução mais adequada. Não vendemos apenas produtos. Intermediamos segurança.',
     'whatsappMessage' => null,
@@ -27,17 +27,12 @@
                         {{ $text }}
                     </p>
                 @endif
-                @if($origin)
+                @if($origin && $whatsappReady)
                     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                        <a href="#fale-conosco" data-cta="{{ $origin }}-contato-consultoria" class="inline-flex items-center justify-center rounded-[999px] border-2 border-primary-strong px-6 py-2.5 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
-                            Falar com um consultor
-                        </a>
-                        @if($whatsappReady)
                         <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-contato-whatsapp" class="inline-flex items-center justify-center gap-2 rounded-[999px] border border-transparent bg-primary-strong px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                             <flux:icon name="chat-bubble-left-right" class="size-4" />
                             Falar pelo WhatsApp
                         </a>
-                        @endif
                     </div>
                 @endif
             </x-institutional.reveal>
@@ -62,9 +57,9 @@
                             <flux:icon name="phone" class="size-5" />
                         </div>
                         <div>
-                            <h3 class="font-semibold text-neutral-strong">Central de Atendimento</h3>
+                            <h3 class="font-semibold text-neutral-strong">Central de atendimento</h3>
                             <p class="text-neutral-medium"><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" /></p>
-                            <p class="mt-1 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a Sexta, 8h às 18h' }}</p>
+                            <p class="mt-1 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a sexta, 8h às 18h' }}</p>
                         </div>
                     </div>
 

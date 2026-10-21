@@ -16,13 +16,13 @@
 
         <div class="container relative z-10 mx-auto max-w-7xl px-6">
             <x-institutional.reveal>
-                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex items-center gap-2 text-white hover:text-primary-light">
+                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
                     <flux:icon name="arrow-left" class="size-5" />
-                    Voltar para Soluções
+                    Voltar para soluções
                 </a>
 
                 <div class="mb-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Hub de Soluções em Saúde' }}</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Hub de soluções em saúde' }}</span>
                 </div>
 
                 <h1 class="sr-only">{{ $division['title'] ?? 'EquipaHosp' }}</h1>

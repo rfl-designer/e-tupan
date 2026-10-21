@@ -39,10 +39,10 @@
                         <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl {{ $colors['bg'] }}">
                             <flux:icon name="users" class="size-6" />
                         </div>
-                        <h3 class="mb-2 text-2xl font-bold text-neutral-strong">{{ $audience['title'] }}</h3>
-                        <p class="text-neutral-medium">{{ $audience['description'] }}</p>
+                        <h3 class="mb-2 text-2xl font-bold leading-snug text-neutral-strong md:min-h-[2lh]">{{ $audience['title'] }}</h3>
+                        <p class="text-neutral-medium md:min-h-[3lh]">{{ $audience['description'] }}</p>
 
-                        <div class="mt-auto mt-8 rounded-xl bg-bg-light p-6">
+                        <div class="mt-8 rounded-xl bg-bg-light p-6">
                             <ul class="space-y-3">
                                 @foreach($audience['profiles'] as $profile)
                                     <li class="flex min-w-0 items-center gap-3 break-words font-medium text-neutral-strong">

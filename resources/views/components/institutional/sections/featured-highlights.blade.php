@@ -6,7 +6,7 @@
     <div class="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row">
         <x-institutional.reveal>
             <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Soluções em Destaque</span>
-            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Tecnologia com Respaldo Técnico</h2>
+            <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Tecnologia com respaldo técnico</h2>
         </x-institutional.reveal>
         <x-institutional.reveal :delay="100">
             <a href="{{ route('contact') }}" class="inline-flex items-center rounded-[999px] px-3 py-2 text-primary-strong transition-colors hover:bg-primary-bg">

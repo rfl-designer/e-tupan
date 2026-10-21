@@ -17,8 +17,8 @@
     <div class="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
         <div class="max-w-2xl">
             <x-institutional.reveal>
-                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Divisões Especializadas</span>
-                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Conhecimento Técnico em Cada Segmento</h2>
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Divisões especializadas</span>
+                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Conhecimento técnico em cada segmento</h2>
             </x-institutional.reveal>
         </div>
         <x-institutional.reveal :delay="100">
@@ -69,7 +69,7 @@
                         <div class="flex-1 space-y-6">
                             <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
                                 <flux:icon name="wrench" class="size-4 text-secondary-light" />
-                                <span class="text-xs font-bold uppercase tracking-wide text-white">Hub de Soluções em Saúde</span>
+                                <span class="text-xs font-bold uppercase tracking-wide text-white">Hub de soluções em saúde</span>
                             </div>
                             <h3 class="text-3xl font-medium text-white lg:text-4xl">
                                 <span class="text-primary-light">EquipaHosp</span>
