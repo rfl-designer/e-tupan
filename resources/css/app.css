@@ -29,6 +29,8 @@
     --color-primary-hover: #077a5e;
     --color-primary-active: #066b52;
     --color-primary-dark: #066b52;
+    --color-primary-strong: #067a5f;
+    --color-primary-strong-hover: #055c47;
     --color-secondary: #d33f49;
     --color-secondary-light: #e7979d;
     --color-secondary-hover: #b8353e;
@@ -105,3 +107,45 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+/* Foco visivel e movimento reduzido (site institucional) */
+body.institutional :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary-strong);
+    outline-offset: 2px;
+}
+
+body.institutional :where(.bg-neutral-strong, .bg-bg-dark, .bg-primary-strong, .bg-black) :where(a, button, input, select, textarea):focus-visible {
+    outline-color: #ffffff;
+}
+
+.article-body h2 {
+    @apply mt-10 mb-4 text-2xl font-semibold text-neutral-strong;
+}
+
+.article-body h3 {
+    @apply mt-10 mb-4 text-2xl font-semibold text-neutral-strong;
+}
+
+.article-body p {
+    @apply mb-6 leading-relaxed;
+}
+
+.article-body ul {
+    @apply mb-6 list-disc space-y-2 pl-6;
+}
+
+.article-body a {
+    @apply text-primary-strong underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.institutional *,
+    body.institutional *::before,
+    body.institutional *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+        scroll-behavior: auto !important;
+    }
+}

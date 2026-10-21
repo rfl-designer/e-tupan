@@ -6,6 +6,13 @@ namespace App\Domain\Institutional\Services;
 
 class WhatsappLink
 {
+    public static function isAvailable(): bool
+    {
+        $baseUrl = (string) config('institutional.contact.whatsapp', '');
+
+        return (bool) preg_match('~wa\.me/\d{8,}~', $baseUrl);
+    }
+
     public static function make(?string $message = null): string
     {
         $baseUrl = (string) config('institutional.contact.whatsapp', 'https://wa.me/');

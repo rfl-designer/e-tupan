@@ -6,10 +6,14 @@ namespace App\Domain\Institutional\Livewire;
 
 use App\Domain\Institutional\Actions\SendContactEmailAction;
 use Illuminate\Contracts\View\View;
-use Illuminate\Validation\Rule;
-use Livewire\Attributes\{Computed, Locked};
+use Illuminate\Validation\{Rule, ValidationException};
+use Livewire\Attributes\{Computed, Locked, On};
 use Livewire\Component;
 
+/**
+ * @property-read array<int, string> $topics
+ * @property-read bool $hasExtendedFields
+ */
 class ContactForm extends Component
 {
     #[Locked]
@@ -40,6 +44,14 @@ class ContactForm extends Component
             : null;
 
         $this->topic = $this->topics[0] ?? '';
+    }
+
+    #[On('contact-topic')]
+    public function selectTopic(string $topic): void
+    {
+        if (in_array($topic, $this->topics, true)) {
+            $this->topic = $topic;
+        }
     }
 
     /**
@@ -91,7 +103,13 @@ class ContactForm extends Component
 
     public function submit(): void
     {
-        $payload = $this->validate();
+        try {
+            $payload = $this->validate();
+        } catch (ValidationException $exception) {
+            $this->js("setTimeout(() => \$wire.\$el.querySelector('[aria-invalid=\"true\"]')?.focus(), 50)");
+
+            throw $exception;
+        }
 
         app(SendContactEmailAction::class)->execute([
             ...$payload,

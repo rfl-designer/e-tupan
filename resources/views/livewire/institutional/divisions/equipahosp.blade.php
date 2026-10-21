@@ -2,26 +2,27 @@
     $page = $division['page'] ?? [];
     $cta = $page['cta'] ?? [];
     $origin = $division['contact_form'] ?? 'equipa-hosp';
-    $whatsappUrl = \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null);
+    $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
+    $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make($cta['whatsapp_message'] ?? null) : null;
 @endphp
 
 <div>
     <div class="relative flex min-h-[560px] items-center overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset($division['image'] ?? '') }}" alt="Equipe técnica da EquipaHosp em ambiente hospitalar" class="h-full w-full object-cover" />
+            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="Equipe técnica da EquipaHosp em ambiente hospitalar" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>
 
         <div class="container relative z-10 mx-auto max-w-7xl px-6">
             <x-institutional.reveal>
-                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex items-center gap-2 text-white hover:text-primary-light">
+                <a href="{{ route('institutional.home') }}#solucoes" class="mb-6 inline-flex w-fit items-center gap-2 text-white hover:text-primary-light">
                     <flux:icon name="arrow-left" class="size-5" />
-                    Voltar para Soluções
+                    Voltar para soluções
                 </a>
 
                 <div class="mb-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Hub de Soluções em Saúde' }}</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Divisão de equipamentos' }}</span>
                 </div>
 
                 <h1 class="sr-only">{{ $division['title'] ?? 'EquipaHosp' }}</h1>
@@ -33,13 +34,15 @@
                 <p class="mt-4 text-sm font-medium uppercase tracking-wider text-white/70">Uma operação Tupan Saúde</p>
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover hover:shadow-md">
-                        {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
+                    <a href="#fale-conosco" data-cta="{{ $origin }}-hero-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
+                    @if($whatsappReady)
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-hero-consultor" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="chat-bubble-left-right" class="size-4" />
-                        {{ $cta['secondary_label'] ?? 'Falar com um consultor' }}
+                        {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
+                    @endif
                 </div>
             </x-institutional.reveal>
         </div>
@@ -49,7 +52,7 @@
         <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <x-institutional.reveal class="lg:col-span-3">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a EquipaHosp</span>
-                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">O hub de soluções em saúde da Tupan Saúde</h2>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Da avaliação à manutenção do seu parque tecnológico</h2>
                 <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
                     @foreach($page['intro'] ?? [] as $paragraph)
                         <p wire:key="equipahosp-intro-{{ $loop->index }}">{{ $paragraph }}</p>
@@ -72,19 +75,31 @@
         <x-institutional.reveal>
             <div class="mb-12 max-w-2xl">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Soluções</span>
-                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">O que o hub conecta</h2>
+                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">O que a EquipaHosp oferece</h2>
             </div>
         </x-institutional.reveal>
 
+        @php
+            $hubItems = $page['hub_items'] ?? [];
+            $hubCount = count($hubItems);
+        @endphp
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            @foreach($page['hub_items'] ?? [] as $item)
-                <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}">
-                    <x-institutional.card class="h-full">
-                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary">
-                            <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
+            @foreach($hubItems as $item)
+                @php
+                    $spansMd = $loop->last && $hubCount % 2 === 1;
+                    $spansLg = $loop->last && $hubCount % 3 === 1;
+                @endphp
+                <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}" class="{{ $spansMd ? 'md:col-span-2' : '' }} {{ $spansLg ? 'lg:col-span-3' : ($spansMd ? 'lg:col-span-1' : '') }}">
+                    <x-institutional.card variant="feature" class="h-full" :hover-effect="false">
+                        <div @class(['flex flex-col', 'lg:flex-row lg:items-start lg:gap-6' => $spansLg])>
+                            <div @class(['mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark', 'lg:mb-0' => $spansLg])>
+                                <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
+                            </div>
+                            <div @class(['lg:max-w-3xl' => $spansLg])>
+                                <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
+                                <p class="text-base leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
+                            </div>
                         </div>
-                        <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
-                        <p class="text-sm leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
                     </x-institutional.card>
                 </x-institutional.reveal>
             @endforeach
@@ -102,8 +117,8 @@
             <x-institutional.reveal :delay="100" class="lg:col-span-2">
                 <ul class="grid gap-3 sm:grid-cols-2">
                     @foreach($page['audience'] ?? [] as $audience)
-                        <li wire:key="equipahosp-audience-{{ $loop->index }}" class="flex items-center gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-neutral-strong">
-                            <flux:icon name="check-circle" class="size-5 shrink-0 text-primary" />
+                        <li wire:key="equipahosp-audience-{{ $loop->index }}" class="flex items-start gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-base text-neutral-strong">
+                            <flux:icon name="check-circle" class="mt-0.5 size-5 shrink-0 text-primary-strong" />
                             {{ $audience }}
                         </li>
                     @endforeach
@@ -117,7 +132,7 @@
             <div class="mb-12 max-w-2xl">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Parceiros</span>
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">Parceiros e soluções conectadas</h2>
-                <p class="text-lg text-neutral-medium">Cada parceiro integra o hub com uma função específica para atender às necessidades das instituições.</p>
+                <p class="text-lg text-neutral-medium">Cada parceiro entra com uma função específica para atender às necessidades das instituições.</p>
             </div>
         </x-institutional.reveal>
 
@@ -150,7 +165,7 @@
         </div>
     </x-institutional.section>
 
-    <section class="relative overflow-hidden bg-primary py-20">
+    <section class="relative overflow-hidden bg-primary-strong py-20">
         <div class="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10"></div>
         <div class="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-white/10"></div>
 
@@ -159,12 +174,14 @@
                 <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">{{ $cta['title'] ?? '' }}</h2>
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-primary-bg">{{ $cta['text'] ?? '' }}</p>
                 <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                    <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary-bg">
-                        {{ $cta['primary_label'] ?? 'Solicitar avaliação técnica' }}
+                    <a href="#fale-conosco" data-cta="{{ $origin }}-cta-avaliacao-tecnica" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
+                        {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-secondary-hover hover:shadow-md">
-                        {{ $cta['secondary_label'] ?? 'Falar com um consultor' }}
+                    @if($whatsappReady)
+                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="{{ $origin }}-cta-consultor" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        {{ $cta['secondary_label'] ?? 'Falar pelo WhatsApp' }}
                     </a>
+                    @endif
                 </div>
             </x-institutional.reveal>
         </div>
@@ -173,10 +190,11 @@
     <div class="bg-bg-cream">
         <x-institutional.sections.contact
             :origin="$origin"
-            eyebrow="EquipaHosp"
-            title="Fale com a Tupan Saúde"
-            text="Nossa equipe está preparada para entender sua necessidade e indicar o caminho mais adequado para sua instituição."
+            eyebrow="EquipaHosp · Uma operação Tupan Saúde"
+            title="Fale com a equipe EquipaHosp"
+            text="Conte o que sua instituição precisa em equipamentos, manutenção ou engenharia clínica."
             :whatsapp-message="$cta['whatsapp_message'] ?? null"
+            :division="$division"
         />
     </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-BR">
     <head>
         @include('partials.head')
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
         @endif
     </head>
     <body
-        class="min-h-screen bg-bg-light text-neutral-strong antialiased selection:bg-primary-bg selection:text-primary-dark font-sans"
+        class="institutional min-h-screen bg-bg-light text-neutral-strong antialiased selection:bg-primary-bg selection:text-primary-dark font-sans"
         style="--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;"
     >
         <div class="flex min-h-screen flex-col">
