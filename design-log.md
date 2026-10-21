@@ -549,6 +549,8 @@ Problemas apontados pelo Juiz:
 
 ## Resumo final
 
+Cobre as rodadas 0 a 11, incluindo a continuação (rodadas 9 a 11).
+
 ### Evolução das notas
 
 | Rodada | Commit | Nota final | Δ | Mínimo | Decisão |
@@ -562,27 +564,63 @@ Problemas apontados pelo Juiz:
 | 6 | `159ca5b` | 8,45 | +0,05 | 8,0 | mantida |
 | 7 | `bd0ec8d` | 8,55 | +0,10 | 8,0 | mantida |
 | 8 | `2a1ec2f` | 8,72 | +0,17 | 8,5 | mantida |
+| 9 | `11c9f91` | 8,68 | -0,05 | 8,0 | revertida (`2945944`) |
+| 10 | `bfd4f1f` | 8,72 | +0,00 | 8,5 | mantida |
+| 11 | `f242823` | 8,47 | -0,25 | 6,0 | revertida (`2d741e2`) |
+
+O Δ é calculado contra a última rodada mantida. As médias exatas das rodadas 8 a 11 são 8,725, 8,675, 8,725 e 8,475. Os commits mostram 8,72, 8,68, 8,72 e 8,47, e o Juiz da rodada 10 escreveu 8,73.
 
 Notas por critério:
 
-| Critério | Peso | R0 | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Clareza da proposta de valor | 20% | 7 | 7 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 |
-| Textos | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 |
-| Hierarquia visual e tipografia | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 |
-| Consistência | 15% | 6 | 6,5 | 7,5 | 8 | 8 | 8 | 8 | 8 | 8,5 |
-| Micro interações | 10% | 6,5 | 7,5 | 7,5 | 7,5 | 8 | 8 | 8,5 | 9 | 9 |
-| Responsividade | 10% | 6,5 | 6 | 7,5 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 |
-| Acessibilidade | 10% | 4,5 | 7 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 | 9 |
-| Performance percebida | 5% | 5 | 8,5 | 8,5 | 8,5 | 9 | 9 | 9 | 9 | 9 |
+| Critério | Peso | R0 | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9 | R10 | R11 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Clareza da proposta de valor | 20% | 7 | 7 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 | 9 | 9 | 9 |
+| Textos | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Hierarquia visual e tipografia | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Consistência | 15% | 6 | 6,5 | 7,5 | 8 | 8 | 8 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Micro interações | 10% | 6,5 | 7,5 | 7,5 | 7,5 | 8 | 8 | 8,5 | 9 | 9 | 9 | 9 | 9 |
+| Responsividade | 10% | 6,5 | 6 | 7,5 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 | 8 | 8,5 | 6 |
+| Acessibilidade | 10% | 4,5 | 7 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 | 9 | 9 | 9 | 9 |
+| Performance percebida | 5% | 5 | 8,5 | 8,5 | 8,5 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 |
+
+As rodadas 9 e 11 foram revertidas. As colunas R9 e R11 mostram a nota do estado que foi desfeito.
 
 A rodada 1 aparece com a nota re-medida (6,95). O commit `4885e9b` continua com a mensagem "nota 7,33", que não foi reescrita.
 
 ### Motivo da parada
 
-O ciclo parou no limite de 8 rodadas. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida: a rodada 8 fechou em 8,72, com mínimo de 8,5. Nenhuma rodada baixou a nota, então não houve revert, e o critério de 3 rodadas seguidas sem subir não disparou. Não há bloqueio formal.
+Na continuação, o limite passou de 8 para 18 rodadas, e os demais critérios de parada continuaram valendo. O ciclo parou na rodada 11 pelo critério de bloqueio, nota sem subir em 3 rodadas seguidas:
 
-O ganho por rodada caiu de +0,75 (rodada 2) para algo entre +0,05 e +0,17 nas rodadas 6 a 8. Os 5 problemas que o Juiz apontou na rodada 8 ficaram sem tratamento e estão listados na seção da rodada 8: cards rasos e textos de CTA no template de divisão, ícones repetidos e fundo cinza na grade de divisões da home, anatomia diferente do card de artigo entre home, `/blog` e post, e ajustes de 768px (card de citação da Sobre, CTA das divisões em 390, grade de público).
+- a rodada 9 caiu para 8,68 e foi revertida;
+- a rodada 10 empatou com a 8 (8,72) e foi mantida;
+- a rodada 11 caiu para 8,47 e foi revertida.
+
+Sobraram 7 das 10 rodadas da continuação. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida.
+
+O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. O `HEAD` (`2d741e2`, revert da rodada 11) tem o mesmo código; só o `design-log.md` muda.
+
+### Bloqueio relatado
+
+- Com as notas da rodada 10, chegar a 9,0 exige +0,275 na média. Um caminho é levar os quatro critérios em 8,5 (textos, hierarquia, consistência e responsividade) a 9 na mesma rodada, sem que nenhum outro caia.
+- As rodadas 9 a 11 trataram quase tudo o que o Juiz apontou. A rodada 10 resolveu os 5 problemas da rodada 8, mas o Juiz achou outros do mesmo porte, e nenhum critério mudou de patamar.
+- As duas quedas vieram de uma regressão de responsividade criada ao corrigir outro problema:
+  - Na rodada 9, a grade de público ficou espremida em 768px. O Iterador captura só 390 e 1440px.
+  - Na rodada 11, a barra "Compartilhar" do post, com os rótulos novos e sem `flex-wrap`, cortou o texto e o card de CTA à direita em 390px. O report automático marcou overflow-x "não" no blog-post 390 nas capturas do Iterador e do Juiz, então o corte só aparecia na imagem.
+- A rodada 11 resolveu os 5 problemas da rodada 10: a forma decorativa dos heros abaixo de lg, a fusão das seções da Tupan Care, os heros de solução padronizados, a escala dos H2 com o texto de público da divisão, o autocomplete do formulário e os rótulos de compartilhar. Esse trabalho está em `f242823` e pode ser reaplicado com a correção da barra que o Juiz descreveu: `min-w-0` na coluna do artigo e os botões em `flex-wrap` ou em grade de 4 colunas.
+
+### Pendências
+
+- Os 5 problemas que o Juiz apontou na rodada 10, o estado mantido, estão listados na seção "Rodada 10".
+- A rodada 11 apontou mais 4 problemas, avaliados sobre o estado revertido, na seção "Rodada 11":
+  - o nome da Cerne repetido no partner-card;
+  - duas seções brancas seguidas na Tupan Care;
+  - o H1 do template de divisão, que é só o nome;
+  - o formulário do Contato abaixo da segunda tela em 390.
+- Dados reais com `[PREENCHER]`, visíveis no site:
+  - telefone da central (`config/institutional.php`), na home, no Contato e nas 3 páginas de solução;
+  - endereço da sede (`config/institutional.php`), na home e nas 3 páginas de solução;
+  - prazo de resposta (`contact-page.blade.php`), no Contato.
+- Também faltam o depoimento, os números de `stats.blade.php` e as certificações. Ficam ocultos enquanto não forem preenchidos.
 
 ### Incidente da rodada 1
 
@@ -590,7 +628,7 @@ Dois runs do ciclo rodaram ao mesmo tempo sobre a mesma árvore. O commit `4885e
 
 ### Verificação final
 
-`npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). Screenshots finais: `shots/round-8`.
+No `HEAD` (`2d741e2`): `npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). Screenshots do estado final: `shots/round-10`.
 
 ## Continuação: rodadas 9 a 18
 
