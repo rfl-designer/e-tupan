@@ -23,11 +23,13 @@
                     Voltar para soluções
                 </a>
 
-                <div class="mb-6 flex w-fit flex-col items-start gap-2 rounded-2xl bg-white px-5 py-4 shadow-xl">
+                <div class="mb-6 flex items-center gap-4">
                     @if(!empty($page['logo']))
-                        <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-auto w-40" />
+                        <div class="w-fit max-w-[160px] shrink-0 rounded-2xl bg-white p-3 shadow-xl">
+                            <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" width="136" height="66" class="h-auto max-h-[96px] w-[136px] object-contain" />
+                        </div>
                     @endif
-                    <span class="text-xs font-semibold uppercase tracking-wider text-neutral-medium">{{ $page['endorsement'] ?? 'Uma operação Tupan Saúde' }}</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-white/70">{{ $page['endorsement'] ?? 'Uma operação Tupan Saúde' }}</span>
                 </div>
 
                 <h1 class="mb-4 max-w-3xl text-4xl font-medium text-white lg:text-5xl">{{ $page['headline'] ?? ($division['title'] ?? 'Tupan Care') }}</h1>
@@ -37,7 +39,7 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-hero-treinamento" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $whatsappUrl }}" x-data x-on:click="$dispatch('contact-topic', { topic: 'Treinamento' })" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-hero-treinamento" class="inline-flex items-center justify-center gap-2 rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         <flux:icon name="academic-cap" class="size-4" />
                         {{ $cta['secondary_label'] ?? 'Solicitar treinamento' }}
                     </a>
@@ -50,7 +52,7 @@
         <div class="max-w-3xl">
             <x-institutional.reveal>
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a Tupan Care</span>
-                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Cuidado de feridas e estomias com proximidade e conhecimento técnico</h2>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Representação local da Gentell Casex no Nordeste</h2>
                 <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
                     @foreach($page['intro'] ?? [] as $paragraph)
                         <p wire:key="tupan-care-intro-{{ $loop->index }}">{{ $paragraph }}</p>
@@ -197,7 +199,7 @@
                     <a href="#fale-conosco" data-cta="{{ $origin }}-cta-contato" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
                         {{ $cta['primary_label'] ?? 'Falar com um consultor' }}
                     </a>
-                    <a href="{{ $whatsappUrl }}" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-cta-treinamento" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $whatsappUrl }}" x-data x-on:click="$dispatch('contact-topic', { topic: 'Treinamento' })" @if($whatsappReady) target="_blank" rel="noopener" @endif data-cta="{{ $origin }}-cta-treinamento" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         {{ $cta['secondary_label'] ?? 'Solicitar treinamento' }}
                     </a>
                 </div>

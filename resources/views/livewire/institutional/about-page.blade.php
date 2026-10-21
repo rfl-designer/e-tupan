@@ -3,10 +3,10 @@
         <div class="absolute right-0 top-0 h-full w-1/2 rounded-l-[100px] bg-primary-strong opacity-10"></div>
         <div class="absolute bottom-0 left-0 h-32 w-32 rounded-tr-full bg-secondary opacity-20"></div>
 
-        <div class="container mx-auto max-w-7xl px-6 relative z-10">
+        <div class="container relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
             <x-institutional.reveal>
                 <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Nossa história</span>
-                <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
+                <h1 class="mb-6 text-4xl font-medium md:text-5xl">
                     Autoridade não se declara, <br />
                     <span class="text-primary-light">se constrói.</span>
                 </h1>
@@ -23,6 +23,16 @@
                     </a>
                 </div>
             </x-institutional.reveal>
+
+            <x-institutional.reveal :delay="150" class="hidden lg:block">
+                <img
+                    src="{{ asset('images/institucional/about-image-800.webp') }}"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    class="h-[420px] w-full rounded-[32px] object-cover shadow-2xl"
+                />
+            </x-institutional.reveal>
         </div>
     </div>
 
@@ -35,12 +45,12 @@
                         src="{{ asset('images/institucional/about-image.webp') }}"
                         srcset="{{ asset('images/institucional/about-image-800.webp') }} 800w, {{ asset('images/institucional/about-image.webp') }} 1600w"
                         sizes="(min-width: 1024px) 560px, 100vw"
-                        alt="Equipe Tupan"
+                        alt="Farmacêutico de jaleco no Sertão ao pôr do sol, segurando uma caixa da Tupan"
                         loading="lazy"
                         decoding="async"
                         class="h-[500px] w-full rounded-[32px] object-cover shadow-2xl"
                     />
-                    <div class="absolute -bottom-6 -right-6 max-w-xs rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
+                    <div class="absolute -bottom-6 right-0 max-w-xs md:-right-6 rounded-2xl border-l-4 border-secondary bg-white p-6 shadow-xl">
                         <p class="text-lg font-semibold text-neutral-strong">"Somos uma empresa de saúde feita do sal da terra."</p>
                     </div>
                 </div>

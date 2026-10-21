@@ -54,7 +54,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Divisões especializadas</h5>
+                <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Divisões especializadas</p>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     @foreach($divisions as $division)
                         <li>
@@ -67,7 +67,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Institucional</h5>
+                <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Institucional</p>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Quem somos</a></li>
                     <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa história</a></li>
@@ -80,7 +80,7 @@
             </div>
 
             <div>
-                <h5 class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Fale conosco</h5>
+                <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Fale conosco</p>
                 <ul class="space-y-3 text-sm text-neutral-light">
                     @if($hasPhone)
                     <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" class="hover:text-primary-light hover:underline" /></li>

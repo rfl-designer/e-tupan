@@ -18,19 +18,17 @@
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
                         'w-auto object-contain object-left',
                         'h-14 max-w-[160px]' => count($logos) === 1,
-                        'max-h-12 max-w-[140px]' => count($logos) > 1,
+                        'h-8 max-w-[140px]' => count($logos) > 1,
                     ]) loading="lazy" />
                 @endforeach
             </div>
         @else
-            <h3 class="text-xl font-semibold text-neutral-strong">{{ $name }}</h3>
+            <p class="text-xl font-semibold text-neutral-strong" aria-hidden="true">{{ $name }}</p>
         @endif
     </div>
 
     <span class="mb-2 text-xs font-bold uppercase tracking-wide text-primary-strong">{{ $partner['role'] ?? '' }}</span>
-    @if($logos !== [])
-        <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $name }}</h3>
-    @endif
+    <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $name }}</h3>
     <p class="mb-6 flex-grow text-sm leading-relaxed text-neutral-medium">{{ $partner['description'] ?? '' }}</p>
 
     @if(!empty($partner['links']))

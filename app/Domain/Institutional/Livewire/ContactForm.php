@@ -7,7 +7,7 @@ namespace App\Domain\Institutional\Livewire;
 use App\Domain\Institutional\Actions\SendContactEmailAction;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\{Rule, ValidationException};
-use Livewire\Attributes\{Computed, Locked};
+use Livewire\Attributes\{Computed, Locked, On};
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -40,6 +40,14 @@ class ContactForm extends Component
             : null;
 
         $this->topic = $this->topics[0] ?? '';
+    }
+
+    #[On('contact-topic')]
+    public function selectTopic(string $topic): void
+    {
+        if (in_array($topic, $this->topics, true)) {
+            $this->topic = $topic;
+        }
     }
 
     /**

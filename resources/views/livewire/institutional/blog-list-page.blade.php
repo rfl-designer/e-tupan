@@ -7,10 +7,10 @@
         <div class="absolute right-0 top-0 h-full w-1/2 rounded-l-[100px] bg-primary-strong opacity-10"></div>
         <div class="absolute bottom-0 left-0 h-32 w-32 rounded-tr-full bg-secondary opacity-20"></div>
 
-        <div class="container mx-auto max-w-7xl px-6 relative z-10">
+        <div class="container relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
             <x-institutional.reveal>
                 <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento técnico</span>
-                <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
+                <h1 class="mb-6 text-4xl font-medium md:text-5xl">
                     Informação confiável <br />
                     <span class="text-primary-light">em saúde</span>
                 </h1>
@@ -24,6 +24,24 @@
                     </a>
                 </div>
             </x-institutional.reveal>
+
+            @if(! empty($posts[0]))
+                @php($featured = $posts[0])
+                <x-institutional.reveal :delay="150" class="hidden lg:block">
+                    <a href="{{ route('blog.show', $featured['id']) }}" data-cta="blog-hero-destaque" class="group block overflow-hidden rounded-[32px] bg-white shadow-2xl">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="{{ $featured['image'] }}" width="800" height="224" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100" />
+                            <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
+                                {{ $featured['category'] }}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-neutral-medium">Artigo em destaque</span>
+                            <p class="text-2xl font-semibold leading-snug text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $featured['title'] }}</p>
+                        </div>
+                    </a>
+                </x-institutional.reveal>
+            @endif
         </div>
     </div>
 

@@ -223,7 +223,7 @@ return [
             ],
             'contact_form' => 'tupan-care',
             'page'         => [
-                'logo'        => 'images/parceiros/tupan-care-v2.webp',
+                'logo'        => 'images/parceiros/tupan-care-wordmark.webp',
                 'endorsement' => 'Uma operação Tupan Saúde',
                 'headline'    => 'Cuidado de feridas e estomias com apoio técnico local',
                 'intro'       => [
@@ -321,7 +321,7 @@ return [
                         'description' => 'A Gentell Casex reúne soluções para cuidados de feridas e estomias, com produtos, conhecimento e suporte voltados à melhoria do cuidado e da qualidade de vida dos pacientes.',
                         'url'         => 'https://gentell.com.br/',
                         'logo'        => [
-                            'images/parceiros/gentell-v3.webp',
+                            'images/parceiros/gentell-v4.webp',
                             'images/parceiros/casex.webp',
                         ],
                         'links' => [
@@ -377,9 +377,9 @@ return [
             ],
             'contact_form' => 'equipa-hosp',
             'page'         => [
-                'eyebrow' => 'Engenharia clínica e tecnologia hospitalar',
+                'eyebrow' => 'Divisão de equipamentos',
                 'intro'   => [
-                    'A EquipaHosp é a operação da Tupan Saúde para engenharia clínica e tecnologia hospitalar. Reunimos parceiros, equipamentos, serviços técnicos e conhecimento para apoiar hospitais, clínicas, laboratórios e centros de diagnóstico.',
+                    'A EquipaHosp reúne parceiros, equipamentos, serviços técnicos e conhecimento da Tupan Saúde para apoiar hospitais, clínicas, laboratórios e centros de diagnóstico.',
                     'Entendemos o desafio da instituição, reunimos os recursos adequados e acompanhamos a solução da avaliação da necessidade até a implantação, o uso e a evolução.',
                 ],
                 'highlight' => 'Conectamos pessoas, tecnologias e parceiros em favor de operações de saúde mais eficientes, seguras e sustentáveis.',
@@ -490,7 +490,7 @@ return [
             'id'             => 'engenharia-clinica-seguranca',
             'title'          => 'A engenharia clínica como pilar da segurança do paciente',
             'excerpt'        => 'Saúde não é lugar para improviso. Entenda como a gestão do parque tecnológico impacta diretamente nos resultados assistenciais e na segurança operacional.',
-            'date'           => '12 Fev, 2024',
+            'date'           => '12 fev. 2024',
             'author'         => 'Equipe técnica EquipaHosp',
             'category'       => 'Engenharia clínica',
             'cta_title'      => 'Precisa de apoio em engenharia clínica?',
@@ -498,6 +498,7 @@ return [
             'cta_route'      => ['solutions.show', 'equipahosp'],
             'tags'           => ['Saúde', 'Engenharia clínica', 'Hospitalar'],
             'read_time'      => '5 min de leitura',
+            'image_alt'      => 'Equipe técnica operando equipamentos em laboratório',
             'image'          => 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format&fit=crop',
             'content'        => <<<'HTML'
 <p>A engenharia clínica desempenha papel fundamental na gestão de tecnologias de saúde. Em um ambiente hospitalar, a falha de um equipamento pode significar riscos graves à vida. Cada ventilador em uma UTI, cada monitor em um centro cirúrgico, precisa estar funcionando quando a vida depende dele.</p>
@@ -515,7 +516,7 @@ HTML,
             'id'             => 'inovacao-tratamento-feridas',
             'title'          => 'Tecnologia em curativos: quando a ciência acelera a cicatrização',
             'excerpt'        => 'Conheça como os avanços em coberturas especiais estão transformando o tratamento de feridas crônicas e devolvendo qualidade de vida aos pacientes.',
-            'date'           => '05 Mar, 2024',
+            'date'           => '05 mar. 2024',
             'author'         => 'Equipe técnica AiTE',
             'category'       => 'Curativos Especiais',
             'cta_title'      => 'Precisa padronizar curativos na sua instituição?',
@@ -523,6 +524,7 @@ HTML,
             'cta_route'      => ['solutions.show', 'tupan-care'],
             'tags'           => ['Saúde', 'Curativos', 'Cicatrização'],
             'read_time'      => '4 min de leitura',
+            'image_alt'      => 'Equipe cirúrgica reunida sob o foco do centro cirúrgico',
             'image'          => 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
             'content'        => <<<'HTML'
 <p>O tratamento de feridas crônicas e complexas tem passado por transformação significativa. O que antes se limitava a trocas simples de gazes, hoje envolve coberturas inteligentes capazes de interagir com o leito da lesão, controlando umidade e prevenindo infecções.</p>
@@ -538,7 +540,7 @@ HTML,
             'id'             => 'autoridade-conhecimento-saude',
             'title'          => 'Autoridade não se declara, se constrói',
             'excerpt'        => 'Como a busca por conhecimento técnico aplicado diferencia fornecedores de parceiros estratégicos no mercado de saúde.',
-            'date'           => '20 Jan, 2024',
+            'date'           => '20 jan. 2024',
             'author'         => 'TUPAN Institucional',
             'category'       => 'Institucional',
             'cta_title'      => 'Quer um parceiro técnico para sua instituição?',
@@ -546,6 +548,7 @@ HTML,
             'cta_route'      => ['institutional.home', [], 'solucoes'],
             'tags'           => ['Saúde', 'Institucional', 'Parceria técnica'],
             'read_time'      => '3 min de leitura',
+            'image_alt'      => 'Armazém com prateleiras de suprimentos',
             'image'          => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
             'content'        => <<<'HTML'
 <p>Em um mercado onde sobra discurso e falta verdade, como identificar um parceiro realmente qualificado? A resposta está no histórico de entrega, no conhecimento demonstrado, na coerência entre o que se diz e o que se faz.</p>

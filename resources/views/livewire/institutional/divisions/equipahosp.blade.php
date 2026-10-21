@@ -22,7 +22,7 @@
                 </a>
 
                 <div class="mb-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Engenharia clínica e tecnologia hospitalar' }}</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Divisão de equipamentos' }}</span>
                 </div>
 
                 <h1 class="sr-only">{{ $division['title'] ?? 'EquipaHosp' }}</h1>
@@ -52,7 +52,7 @@
         <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <x-institutional.reveal class="lg:col-span-3">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a EquipaHosp</span>
-                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Engenharia clínica e tecnologia hospitalar da Tupan Saúde</h2>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Da avaliação à manutenção do seu parque tecnológico</h2>
                 <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
                     @foreach($page['intro'] ?? [] as $paragraph)
                         <p wire:key="equipahosp-intro-{{ $loop->index }}">{{ $paragraph }}</p>

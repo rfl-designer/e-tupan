@@ -53,7 +53,7 @@
         <div class="container mx-auto max-w-5xl px-6 -mt-4">
             <x-institutional.reveal :delay="100">
                 <div class="aspect-video overflow-hidden rounded-2xl shadow-xl md:aspect-[21/9]">
-                    <img src="{{ $post['image'] ?? '' }}" width="1200" height="514" decoding="async" fetchpriority="high" alt="Equipe técnica operando equipamentos em laboratório" class="h-full w-full object-cover" />
+                    <img src="{{ $post['image'] ?? '' }}" width="1200" height="514" decoding="async" fetchpriority="high" alt="{{ $post['image_alt'] ?? '' }}" class="h-full w-full object-cover" />
                 </div>
             </x-institutional.reveal>
         </div>
