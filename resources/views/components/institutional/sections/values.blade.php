@@ -4,7 +4,7 @@
             <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Nossa essência</span>
             <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Feita do sal da terra do Sertão</h2>
             <p class="text-lg text-neutral-medium">
-                Há 16 anos, construímos nossa reputação com a mesma seriedade que aprendemos no Sertão: onde palavra vale mais que contrato e o compromisso é honrado no aperto de mão. Cada produto que entregamos pode impactar a vida de alguém. É assim que trabalhamos.
+                Crescemos em uma região onde o compromisso se resolve olhando nos olhos. Esse jeito de trabalhar orienta cada produto e cada serviço que entregamos, porque do outro lado sempre há alguém que depende de uma decisão bem feita.
             </p>
         </x-institutional.reveal>
     </div>

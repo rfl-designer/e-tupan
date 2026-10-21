@@ -53,7 +53,7 @@
         <div class="container mx-auto max-w-5xl px-6 -mt-4">
             <x-institutional.reveal :delay="100">
                 <div class="aspect-video overflow-hidden rounded-2xl shadow-xl md:aspect-[21/9]">
-                    <img src="{{ $post['image'] ?? '' }}" width="1200" height="514" decoding="async" fetchpriority="high" alt="{{ $post['title'] ?? 'Imagem do artigo' }}" class="h-full w-full object-cover" />
+                    <img src="{{ $post['image'] ?? '' }}" width="1200" height="514" decoding="async" fetchpriority="high" alt="Equipe técnica operando equipamentos em laboratório" class="h-full w-full object-cover" />
                 </div>
             </x-institutional.reveal>
         </div>
@@ -111,6 +111,30 @@
                             @endif
                         </div>
                     </aside>
+
+                    <div class="mt-8 flex items-center gap-3 border-t border-neutral-border pt-6 lg:hidden">
+                        <span class="mr-1 text-xs font-bold uppercase tracking-wider text-neutral-medium">Compartilhar</span>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="share" class="size-5" />
+                        </a>
+                        <a href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="chat-bubble-left" class="size-5" />
+                        </a>
+                        <button
+                            type="button"
+                            x-data="{ copied: false }"
+                            x-on:click="navigator.clipboard.writeText(@js($shareUrl)).then(() => { copied = true; setTimeout(() => copied = false, 2500); })"
+                            aria-label="Copiar link do artigo"
+                            class="relative flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-strong focus-visible:ring-offset-2"
+                        >
+                            <flux:icon name="link" class="size-5" />
+                            <span class="sr-only" role="status" aria-live="polite" x-text="copied ? 'Link copiado' : ''"></span>
+                            <span x-show="copied" x-cloak class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-neutral-strong px-2 py-1 text-xs text-white" aria-hidden="true">Link copiado</span>
+                        </button>
+                        <a href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}" aria-label="Compartilhar por e-mail" class="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-border text-neutral-medium transition-colors hover:border-primary-strong hover:bg-primary-strong hover:text-white">
+                            <flux:icon name="paper-airplane" class="size-5" />
+                        </a>
+                    </div>
                 </div>
 
                 <div class="lg:col-span-2"></div>
@@ -125,14 +149,27 @@
                 Acessar todo o conteúdo
             </a>
         </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+        <div @class([
+            'grid gap-8 md:grid-cols-2',
+            'lg:grid-cols-3' => $related->count() > 2,
+        ])>
             @foreach($related as $relatedPost)
-                <a href="{{ route('blog.show', $relatedPost['id']) }}" class="group cursor-pointer">
-                    <div class="mb-4 h-48 overflow-hidden rounded-xl">
-                        <img src="{{ $relatedPost['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $relatedPost['image']) }} 480w, {{ $relatedPost['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ $relatedPost['title'] }}" />
-                    </div>
-                    <div class="mb-2 text-xs font-bold uppercase text-primary-strong">{{ $relatedPost['category'] }}</div>
-                    <h3 class="font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h3>
+                <a href="{{ route('blog.show', $relatedPost['id']) }}" class="group block h-full">
+                    <x-institutional.card class="flex h-full flex-col overflow-hidden border-transparent hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)]" padding="none" variant="standard">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="{{ $relatedPost['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $relatedPost['image']) }} 480w, {{ $relatedPost['image'] }} 800w" sizes="(min-width: 1024px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <div class="mb-3 flex items-center gap-4 text-xs text-neutral-medium">
+                                <span class="font-bold uppercase text-primary-strong">{{ $relatedPost['category'] }}</span>
+                                <div class="flex items-center gap-1">
+                                    <flux:icon name="calendar" class="size-4 text-primary-strong" />
+                                    {{ $relatedPost['date'] }}
+                                </div>
+                            </div>
+                            <h3 class="line-clamp-3 text-xl font-bold text-neutral-strong transition-colors group-hover:text-primary-strong">{{ $relatedPost['title'] }}</h3>
+                        </div>
+                    </x-institutional.card>
                 </a>
             @endforeach
         </div>

@@ -5,7 +5,7 @@
 <div>
     <div class="relative flex min-h-[560px] items-start overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="{{ $division['title'] ?? 'Divisão' }}" class="h-full w-full object-cover" />
+            <img src="{{ asset($division['image'] ?? '') }}" srcset="{{ asset(str_replace('.webp', '-800.webp', $division['image'] ?? '')) }} 800w, {{ asset($division['image'] ?? '') }} 1600w" sizes="100vw" fetchpriority="high" alt="" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-neutral-strong/80 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-strong via-transparent to-transparent"></div>
         </div>

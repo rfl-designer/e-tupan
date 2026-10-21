@@ -98,7 +98,7 @@
                                     <p class="text-sm text-neutral-light">Precisão conforme normas técnicas e regulatórias.</p>
                                 </div>
                                 <div class="rounded-xl bg-white/5 p-4">
-                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Eng. Clínica</h4>
+                                    <h4 class="mb-1 text-lg font-bold text-primary-light">Engenharia clínica</h4>
                                     <p class="text-sm text-neutral-light">Gestão completa do parque tecnológico hospitalar.</p>
                                 </div>
                             </div>

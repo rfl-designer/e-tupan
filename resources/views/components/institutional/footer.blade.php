@@ -95,7 +95,7 @@
         </div>
 
         <div class="flex flex-col items-center justify-between gap-4 border-t border-neutral-medium/20 pt-8 text-xs text-neutral-light md:flex-row">
-            <p>&copy; {{ date('Y') }} TUPAN - Produtos para Sua Saúde. Todos os direitos reservados.</p>
+            <p>&copy; {{ date('Y') }} TUPAN - Produtos para sua saúde. Todos os direitos reservados.</p>
             <p>Conhecimento técnico aplicado há 16 anos.</p>
         </div>
     </div>

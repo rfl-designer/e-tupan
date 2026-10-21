@@ -13,6 +13,15 @@
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">
                     Há 16 anos, nascemos no Sertão com uma certeza: saúde não é lugar para improviso. Construímos nossa reputação com a mesma seriedade que aprendemos onde palavra vale mais que contrato.
                 </p>
+
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <a href="{{ route('contact') }}" data-cta="sobre-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
+                        Falar com um consultor
+                    </a>
+                    <a href="{{ route('institutional.home') }}#solucoes" data-cta="sobre-hero-solucoes" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        Conheça nossas soluções
+                    </a>
+                </div>
             </x-institutional.reveal>
         </div>
     </div>

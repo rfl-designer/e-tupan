@@ -12,11 +12,17 @@
                 <span class="mb-4 block text-xs font-bold uppercase tracking-wider text-primary-light">Conhecimento técnico</span>
                 <h1 class="mb-6 text-4xl font-medium md:text-5xl lg:text-6xl">
                     Informação confiável <br />
-                    <span class="text-primary-light">em Saúde</span>
+                    <span class="text-primary-light">em saúde</span>
                 </h1>
                 <p class="max-w-2xl text-xl leading-relaxed text-neutral-light">
                     Conteúdo técnico e atualizado sobre inovações em saúde, boas práticas e tecnologias que impactam o cuidado ao paciente. Em um mundo onde sobra discurso e falta verdade, oferecemos informação confiável.
                 </p>
+
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <a href="{{ route('contact') }}" data-cta="blog-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
+                        Falar com um consultor
+                    </a>
+                </div>
             </x-institutional.reveal>
         </div>
     </div>
@@ -29,7 +35,7 @@
                     <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
                         <x-institutional.card class="flex h-full flex-col overflow-hidden hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-transparent" padding="none" variant="standard">
                             <div class="relative h-48 overflow-hidden">
-                                <img src="{{ $post['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $post['image']) }} 480w, {{ $post['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="{{ $post['title'] }}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <img src="{{ $post['image'] }}" srcset="{{ preg_replace('/w=\d+/', 'w=480', $post['image']) }} 480w, {{ $post['image'] }} 800w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" width="800" height="192" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                 <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
                                     {{ $post['category'] }}
                                 </div>

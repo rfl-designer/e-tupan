@@ -5,37 +5,32 @@
 
 @php
     $name = $partner['name'] ?? '';
-    $initials = collect(preg_split('/\s+/', $name))->filter()->take(2)->map(fn (string $word): string => mb_substr($word, 0, 1))->implode('');
     $ctaPrefix = $origin ? $origin . '-parceiro-' : 'parceiro-';
     $logos = array_values(array_filter((array) ($partner['logo'] ?? [])));
-    $logoSize = $partner['logo_size'] ?? null;
     $logoAlt = count($logos) > 1 ? 'Logos ' . $name : 'Logo ' . $name;
 @endphp
 
 <x-institutional.card :hover-effect="false" {{ $attributes->merge(['class' => 'flex h-full min-w-0 flex-col']) }}>
-    <div class="mb-6 flex h-16 items-center">
+    <div class="mb-6 flex h-14 items-center justify-start">
         @if($logos !== [])
-            <div class="flex max-w-full flex-wrap items-center gap-4" role="img" aria-label="{{ $logoAlt }}">
+            <div class="flex h-14 max-w-full items-center gap-4" role="img" aria-label="{{ $logoAlt }}">
                 @foreach($logos as $logo)
                     <img src="{{ asset($logo) }}" alt="" wire:key="partner-logo-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}" @class([
-                        'w-auto max-w-full object-contain',
-                        'max-h-14 max-w-[180px]' => count($logos) === 1 && $logoSize === null,
-                        'max-h-14 max-w-[180px]' => count($logos) === 1 && $logoSize === 'square',
-                        'max-h-10 max-w-[180px]' => count($logos) === 1 && $logoSize === 'compact',
-                        'h-10 max-w-[160px]' => count($logos) > 1,
+                        'w-auto object-contain object-left',
+                        'h-14 max-w-[160px]' => count($logos) === 1,
+                        'max-h-12 max-w-[140px]' => count($logos) > 1,
                     ]) loading="lazy" />
                 @endforeach
             </div>
         @else
-            <div class="flex items-center gap-3" role="img" aria-label="{{ $name }}">
-                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-bg-cream text-sm font-bold uppercase text-primary-strong">{{ $initials }}</span>
-                <span class="text-lg font-semibold text-neutral-strong">{{ $name }}</span>
-            </div>
+            <h3 class="text-xl font-semibold text-neutral-strong">{{ $name }}</h3>
         @endif
     </div>
 
     <span class="mb-2 text-xs font-bold uppercase tracking-wide text-primary-strong">{{ $partner['role'] ?? '' }}</span>
-    <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $name }}</h3>
+    @if($logos !== [])
+        <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $name }}</h3>
+    @endif
     <p class="mb-6 flex-grow text-sm leading-relaxed text-neutral-medium">{{ $partner['description'] ?? '' }}</p>
 
     @if(!empty($partner['links']))
@@ -53,9 +48,11 @@
     @endif
 
     @if(!empty($partner['internal_link']))
-        <a href="{{ $partner['internal_link']['href'] }}" data-cta="{{ $ctaPrefix }}{{ \Illuminate\Support\Str::slug($name) }}-contato" class="inline-flex items-center justify-center gap-2 self-start rounded-[999px] border-2 border-primary-strong px-5 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
+        <a href="{{ $partner['internal_link']['href'] }}" data-cta="{{ $ctaPrefix }}{{ \Illuminate\Support\Str::slug($name) }}-{{ $partner['internal_link']['cta'] ?? 'contato' }}" class="inline-flex items-center justify-center gap-2 self-start rounded-[999px] border-2 border-primary-strong px-5 py-2 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg hover:text-primary-strong-hover">
             {{ $partner['internal_link']['label'] }}
-            <flux:icon name="arrow-down" class="size-4" />
+            @if(($partner['internal_link']['icon'] ?? 'arrow-down') !== null)
+                <flux:icon name="{{ $partner['internal_link']['icon'] ?? 'arrow-down' }}" class="size-4" />
+            @endif
         </a>
     @endif
 

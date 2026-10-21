@@ -23,19 +23,15 @@
                     Voltar para soluções
                 </a>
 
-                <div class="mb-6 flex w-fit flex-col items-start gap-2 rounded-2xl bg-white px-6 py-4 shadow-xl">
+                <div class="mb-6 flex w-fit flex-col items-start gap-2 rounded-2xl bg-white px-5 py-4 shadow-xl">
                     @if(!empty($page['logo']))
-                        <h1 class="sr-only">{{ $division['title'] ?? 'Tupan Care' }}</h1>
-                        <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-20 w-auto md:h-24" />
-                    @else
-                        <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
-                            <span class="text-primary-strong">TUPAN</span> <span class="font-medium text-secondary">Care</span>
-                        </h1>
+                        <img src="{{ asset($page['logo']) }}" alt="Logo Tupan Care" class="h-auto w-40" />
                     @endif
                     <span class="text-xs font-semibold uppercase tracking-wider text-neutral-medium">{{ $page['endorsement'] ?? 'Uma operação Tupan Saúde' }}</span>
                 </div>
 
-                <p class="max-w-3xl text-xl leading-relaxed text-neutral-light md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
+                <h1 class="mb-4 max-w-3xl text-4xl font-medium text-white lg:text-5xl">{{ $page['headline'] ?? ($division['title'] ?? 'Tupan Care') }}</h1>
+                <p class="max-w-3xl text-xl leading-relaxed text-neutral-100 md:text-2xl">{{ $division['subtitle'] ?? '' }}</p>
 
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="#fale-conosco" data-cta="{{ $origin }}-hero-contato" class="inline-flex items-center justify-center rounded-[999px] border border-transparent bg-primary-strong px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">

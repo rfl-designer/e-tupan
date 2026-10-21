@@ -225,6 +225,7 @@ return [
             'page'         => [
                 'logo'        => 'images/parceiros/tupan-care-v2.webp',
                 'endorsement' => 'Uma operação Tupan Saúde',
+                'headline'    => 'Cuidado de feridas e estomias com apoio técnico local',
                 'intro'       => [
                     'A Tupan Care é a operação da Tupan Saúde dedicada à promoção, representação e comercialização de soluções para cuidados de feridas e estomias.',
                     'Como parceira local da Gentell Casex, atuamos junto a hospitais, clínicas, profissionais de saúde, distribuidores e instituições para apoiar a escolha, a padronização e a utilização adequada dos produtos.',
@@ -311,8 +312,7 @@ return [
                         'role'          => 'Operação local e atendimento',
                         'description'   => 'Atendimento comercial, padronização, treinamento e apoio técnico próximos às instituições e aos profissionais da região.',
                         'url'           => null,
-                        'logo'          => 'images/parceiros/tupan-care-v2.webp',
-                        'logo_size'     => 'square',
+                        'logo'          => 'images/parceiros/tupan-care-wordmark.webp',
                         'internal_link' => ['label' => 'Fale com a Tupan Care', 'href' => '#fale-conosco'],
                     ],
                     [
@@ -321,7 +321,7 @@ return [
                         'description' => 'A Gentell Casex reúne soluções para cuidados de feridas e estomias, com produtos, conhecimento e suporte voltados à melhoria do cuidado e da qualidade de vida dos pacientes.',
                         'url'         => 'https://gentell.com.br/',
                         'logo'        => [
-                            'images/parceiros/gentell-v2.webp',
+                            'images/parceiros/gentell-v3.webp',
                             'images/parceiros/casex.webp',
                         ],
                         'links' => [
@@ -331,12 +331,12 @@ return [
                         ],
                     ],
                     [
-                        'name'        => 'Tupan Saúde',
-                        'role'        => 'Grupo responsável pela operação',
-                        'description' => 'A Tupan Care integra o ecossistema Tupan Saúde, com experiência técnica e presença regional.',
-                        'url'         => 'https://tupansaude.com.br',
-                        'logo'        => 'images/parceiros/logo-tupan.webp',
-                        'logo_size'   => 'compact',
+                        'name'          => 'Tupan Saúde',
+                        'role'          => 'Grupo responsável pela operação',
+                        'description'   => 'A Tupan Care integra o ecossistema Tupan Saúde, com experiência técnica e presença regional.',
+                        'url'           => null,
+                        'logo'          => 'images/parceiros/logo-tupan.webp',
+                        'internal_link' => ['label' => 'Conhecer o grupo', 'href' => '/sobre', 'icon' => null, 'cta' => 'grupo'],
                     ],
                 ],
                 'cta' => [
@@ -351,11 +351,11 @@ return [
         [
             'id'               => 'equipahosp',
             'title'            => 'EquipaHosp',
-            'subtitle'         => 'Um hub de soluções, tecnologias, produtos e serviços para tornar as operações de saúde mais eficientes e seguras.',
+            'subtitle'         => 'Engenharia clínica, venda e locação de equipamentos, manutenção e calibração para hospitais, clínicas e laboratórios do Nordeste.',
             'description'      => 'Engenharia clínica, equipamentos e suporte técnico para aumentar a segurança e a disponibilidade da operação de saúde.',
             'menu_description' => 'Engenharia Clínica, Equipamentos e Operações Técnicas',
             'cta_label'        => 'Conhecer a EquipaHosp',
-            'full_description' => 'A EquipaHosp é o hub de soluções em saúde da Tupan Saúde. Reunimos parceiros, tecnologias, produtos, serviços e conhecimento técnico para apoiar hospitais, clínicas, laboratórios, centros de diagnóstico e demais instituições de saúde.',
+            'full_description' => 'A EquipaHosp é a operação da Tupan Saúde para engenharia clínica e tecnologia hospitalar. Reunimos parceiros, equipamentos, serviços técnicos e conhecimento para apoiar hospitais, clínicas, laboratórios e centros de diagnóstico.',
             'icon'             => 'wrench',
             'features'         => [
                 'Engenharia clínica',
@@ -377,13 +377,12 @@ return [
             ],
             'contact_form' => 'equipa-hosp',
             'page'         => [
-                'eyebrow' => 'Hub de soluções em saúde',
+                'eyebrow' => 'Engenharia clínica e tecnologia hospitalar',
                 'intro'   => [
-                    'A EquipaHosp é o hub de soluções em saúde da Tupan Saúde. Reunimos parceiros, tecnologias, produtos, serviços e conhecimento técnico para apoiar hospitais, clínicas, laboratórios, centros de diagnóstico e demais instituições de saúde.',
-                    'Mais do que uma empresa de engenharia clínica ou assistência técnica, a EquipaHosp atua como uma plataforma de conexão entre as necessidades das instituições e soluções especializadas em equipamentos, tecnologia, gestão, suporte, locação, manutenção e operação em saúde.',
-                    'Nosso papel é entender o desafio, reunir os recursos adequados e apoiar a instituição desde a avaliação da necessidade até a implantação, utilização, acompanhamento e evolução da solução.',
+                    'A EquipaHosp é a operação da Tupan Saúde para engenharia clínica e tecnologia hospitalar. Reunimos parceiros, equipamentos, serviços técnicos e conhecimento para apoiar hospitais, clínicas, laboratórios e centros de diagnóstico.',
+                    'Entendemos o desafio da instituição, reunimos os recursos adequados e acompanhamos a solução da avaliação da necessidade até a implantação, o uso e a evolução.',
                 ],
-                'highlight' => 'Um hub para conectar pessoas, tecnologias e parceiros em favor de operações de saúde mais eficientes, seguras e sustentáveis.',
+                'highlight' => 'Conectamos pessoas, tecnologias e parceiros em favor de operações de saúde mais eficientes, seguras e sustentáveis.',
                 'hub_items' => [
                     [
                         'title'       => 'Soluções em engenharia clínica',
@@ -458,12 +457,12 @@ return [
                         'logo'        => null,
                     ],
                     [
-                        'name'        => 'Tupan Saúde',
-                        'role'        => 'Grupo e operação regional',
-                        'description' => 'A EquipaHosp integra o ecossistema Tupan Saúde, aproveitando a experiência técnica, a atuação regional e a rede de soluções do grupo.',
-                        'url'         => 'https://tupansaude.com.br',
-                        'logo'        => 'images/parceiros/logo-tupan.webp',
-                        'logo_size'   => 'compact',
+                        'name'          => 'Tupan Saúde',
+                        'role'          => 'Grupo e operação regional',
+                        'description'   => 'A EquipaHosp integra o ecossistema Tupan Saúde, aproveitando a experiência técnica, a atuação regional e a rede de soluções do grupo.',
+                        'url'           => null,
+                        'logo'          => 'images/parceiros/logo-tupan.webp',
+                        'internal_link' => ['label' => 'Conhecer o grupo', 'href' => '/sobre', 'icon' => null, 'cta' => 'grupo'],
                     ],
                 ],
                 'reasons' => [
@@ -478,7 +477,7 @@ return [
                 ],
                 'cta' => [
                     'title'            => 'Sua instituição precisa encontrar uma solução para um desafio de saúde, tecnologia ou operação?',
-                    'text'             => 'Fale com a equipe EquipaHosp e conte o que sua instituição precisa. Nosso hub conecta sua demanda aos parceiros e recursos mais adequados.',
+                    'text'             => 'Fale com a equipe EquipaHosp e conte o que sua instituição precisa. Conectamos sua demanda aos parceiros e recursos mais adequados.',
                     'primary_label'    => 'Falar com um consultor',
                     'secondary_label'  => 'Falar pelo WhatsApp',
                     'whatsapp_message' => 'Olá, gostaria de falar com a EquipaHosp sobre uma necessidade de equipamentos ou engenharia clínica.',

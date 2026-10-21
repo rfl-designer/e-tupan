@@ -1,6 +1,6 @@
 @php
-    $focusClass = 'transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-strong focus-visible:ring-offset-2 focus-visible:border-primary-strong';
-    $inputClass = fn (string $field): string => 'h-12 w-full rounded-lg border px-4 ' . $focusClass . ($errors->has($field) ? ' border-secondary' : ' border-[#7b8da3]');
+    $focusClass = fn (string $field): string => 'transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' . ($errors->has($field) ? 'focus-visible:ring-secondary focus-visible:border-secondary' : 'focus-visible:ring-primary-strong focus-visible:border-primary-strong');
+    $inputClass = fn (string $field): string => 'h-12 w-full rounded-lg border px-4 ' . $focusClass($field) . ($errors->has($field) ? ' border-secondary' : ' border-[#7b8da3]');
     $ariaAttributes = fn (string $field): string => $errors->has($field) ? 'aria-invalid="true" aria-describedby="' . 'contact-' . ($origin ?? 'default') . '-' . $field . '-error"' : '';
     $fieldId = fn (string $field): string => 'contact-' . ($origin ?? 'default') . '-' . $field;
 @endphp
@@ -117,7 +117,7 @@
         <select
             id="{{ $fieldId('topic') }}"
             wire:model="topic"
-            class="{{ $inputClass('topic') }} bg-white text-sm sm:text-base"
+            class="{{ $inputClass('topic') }} bg-white text-base"
             {!! $ariaAttributes('topic') !!}
         >
             @foreach($this->topics as $topicOption)
@@ -134,7 +134,7 @@
         <textarea
             id="{{ $fieldId('message') }}"
             wire:model="message"
-            class="h-32 w-full resize-none rounded-lg border p-4 {{ $focusClass }} {{ $errors->has('message') ? 'border-secondary' : 'border-[#7b8da3]' }}"
+            class="h-32 w-full resize-none rounded-lg border p-4 {{ $focusClass('message') }} {{ $errors->has('message') ? 'border-secondary' : 'border-[#7b8da3]' }}"
             {!! $ariaAttributes('message') !!}
                 aria-required="true"
             placeholder="Descreva sua necessidade para direcionarmos ao consultor adequado"

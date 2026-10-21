@@ -21,7 +21,7 @@
                 <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
                     <x-institutional.card class="flex h-full flex-col overflow-hidden" padding="none" variant="standard">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="{{ $post['image'] }}" alt="{{ $post['title'] }}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <img src="{{ $post['image'] }}" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                             <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
                                 {{ $post['category'] }}
                             </div>

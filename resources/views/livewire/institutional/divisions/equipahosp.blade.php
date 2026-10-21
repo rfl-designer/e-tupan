@@ -22,7 +22,7 @@
                 </a>
 
                 <div class="mb-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Hub de soluções em saúde' }}</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-light">{{ $page['eyebrow'] ?? 'Engenharia clínica e tecnologia hospitalar' }}</span>
                 </div>
 
                 <h1 class="sr-only">{{ $division['title'] ?? 'EquipaHosp' }}</h1>
@@ -52,7 +52,7 @@
         <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <x-institutional.reveal class="lg:col-span-3">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a EquipaHosp</span>
-                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">O hub de soluções em saúde da Tupan Saúde</h2>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong md:text-4xl">Engenharia clínica e tecnologia hospitalar da Tupan Saúde</h2>
                 <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
                     @foreach($page['intro'] ?? [] as $paragraph)
                         <p wire:key="equipahosp-intro-{{ $loop->index }}">{{ $paragraph }}</p>
@@ -75,19 +75,31 @@
         <x-institutional.reveal>
             <div class="mb-12 max-w-2xl">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Soluções</span>
-                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">O que o hub conecta</h2>
+                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">O que a EquipaHosp oferece</h2>
             </div>
         </x-institutional.reveal>
 
+        @php
+            $hubItems = $page['hub_items'] ?? [];
+            $hubCount = count($hubItems);
+        @endphp
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            @foreach($page['hub_items'] ?? [] as $item)
-                <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}">
+            @foreach($hubItems as $item)
+                @php
+                    $spansMd = $loop->last && $hubCount % 2 === 1;
+                    $spansLg = $loop->last && $hubCount % 3 === 1;
+                @endphp
+                <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}" class="{{ $spansMd ? 'md:col-span-2' : '' }} {{ $spansLg ? 'lg:col-span-3' : ($spansMd ? 'lg:col-span-1' : '') }}">
                     <x-institutional.card class="h-full" :hover-effect="false">
-                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong">
-                            <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
+                        <div @class(['flex flex-col', 'lg:flex-row lg:items-start lg:gap-6' => $spansLg])>
+                            <div @class(['mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong', 'lg:mb-0' => $spansLg])>
+                                <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
+                            </div>
+                            <div @class(['lg:max-w-3xl' => $spansLg])>
+                                <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
+                                <p class="text-sm leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
+                            </div>
                         </div>
-                        <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
-                        <p class="text-sm leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
                     </x-institutional.card>
                 </x-institutional.reveal>
             @endforeach
@@ -120,7 +132,7 @@
             <div class="mb-12 max-w-2xl">
                 <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Parceiros</span>
                 <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">Parceiros e soluções conectadas</h2>
-                <p class="text-lg text-neutral-medium">Cada parceiro integra o hub com uma função específica para atender às necessidades das instituições.</p>
+                <p class="text-lg text-neutral-medium">Cada parceiro entra com uma função específica para atender às necessidades das instituições.</p>
             </div>
         </x-institutional.reveal>
 
