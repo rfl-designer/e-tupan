@@ -547,3 +547,47 @@ Problemas apontados pelo Juiz:
 5. `resources/views/livewire/institutional/about-page.blade.php — card de citação ('absolute -bottom-6 right-0 md:-right-6'); components/institutional/sections/divisions.blade.php — cabeçalho 'flex flex-col items-end'; components/institutional/sections/target-audience.blade.php — grade de cards` [responsividade]: Em 768, o card de citação da Sobre encosta na borda direita do viewport, com a sombra cortada (sobre-768-full-01.jpg, y≈1490-1590). Em 390, o botão 'Falar com um consultor' da seção de divisões fica alinhado à direita, solto sob o título (home-390-full-02.jpg). Em 768, 'Para quem trabalhamos' fica em 2+1 com grandes vazios verticais entre título, descrição e lista (home-768-full-03.jpg).
    - Mudança esperada: Na Sobre, aplicar o deslocamento negativo só em lg (right-4 lg:-right-6) para manter 16px ou mais de gutter em 390 e 768. No cabeçalho das divisões, usar items-start md:items-end para que o CTA alinhe à esquerda no mobile. Em target-audience, usar md:grid-cols-3 com gap-6 a partir de 768, ou empilhar em 1 coluna até lg. Remover alturas mínimas fixas do título e da descrição para não sobrar espaço vazio. Verificável: em 768 nenhum card toca a borda do viewport, e não há card órfão em linha própria.
 
+## Resumo final
+
+### Evolução das notas
+
+| Rodada | Commit | Nota final | Δ | Mínimo | Decisão |
+|---|---|---|---|---|---|
+| 0 (base) | `818a081` | 6,10 | | 4,5 | base |
+| 1 | `4885e9b` | 6,95 (re-medida) | +0,85 | 6,0 | mantida |
+| 2 | `5d0cd94` | 7,70 | +0,75 | 7,5 | mantida |
+| 3 | `0c71e81` | 8,03 | +0,33 | 7,5 | mantida |
+| 4 | `92bdc74` | 8,25 | +0,22 | 8,0 | mantida |
+| 5 | `d038504` | 8,40 | +0,15 | 8,0 | mantida |
+| 6 | `159ca5b` | 8,45 | +0,05 | 8,0 | mantida |
+| 7 | `bd0ec8d` | 8,55 | +0,10 | 8,0 | mantida |
+| 8 | `2a1ec2f` | 8,72 | +0,17 | 8,5 | mantida |
+
+Notas por critério:
+
+| Critério | Peso | R0 | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Clareza da proposta de valor | 20% | 7 | 7 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 |
+| Textos | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Hierarquia visual e tipografia | 15% | 6 | 7 | 7,5 | 8 | 8 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Consistência | 15% | 6 | 6,5 | 7,5 | 8 | 8 | 8 | 8 | 8 | 8,5 |
+| Micro interações | 10% | 6,5 | 7,5 | 7,5 | 7,5 | 8 | 8 | 8,5 | 9 | 9 |
+| Responsividade | 10% | 6,5 | 6 | 7,5 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 8,5 |
+| Acessibilidade | 10% | 4,5 | 7 | 8 | 8,5 | 8,5 | 8,5 | 8,5 | 9 | 9 |
+| Performance percebida | 5% | 5 | 8,5 | 8,5 | 8,5 | 9 | 9 | 9 | 9 | 9 |
+
+A rodada 1 aparece com a nota re-medida (6,95). O commit `4885e9b` continua com a mensagem "nota 7,33", que não foi reescrita.
+
+### Motivo da parada
+
+O ciclo parou no limite de 8 rodadas. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida: a rodada 8 fechou em 8,72, com mínimo de 8,5. Nenhuma rodada baixou a nota, então não houve revert, e o critério de 3 rodadas seguidas sem subir não disparou. Não há bloqueio formal.
+
+O ganho por rodada caiu de +0,75 (rodada 2) para algo entre +0,05 e +0,17 nas rodadas 6 a 8. Os 5 problemas que o Juiz apontou na rodada 8 ficaram sem tratamento e estão listados na seção da rodada 8: cards rasos e textos de CTA no template de divisão, ícones repetidos e fundo cinza na grade de divisões da home, anatomia diferente do card de artigo entre home, `/blog` e post, e ajustes de 768px (card de citação da Sobre, CTA das divisões em 390, grade de público).
+
+### Incidente da rodada 1
+
+Dois runs do ciclo rodaram ao mesmo tempo sobre a mesma árvore. O commit `4885e9b` reúne as mudanças dos dois Iteradores, mais de 5 na mesma rodada. A nota 7,33 saiu de uma captura feita enquanto o segundo Iterador ainda editava. A rodada foi medida de novo sobre o estado commitado e deu 6,95, com mínimo de 6,0 em responsividade. Foi mantida porque ficou acima da base (6,10; uma avaliação independente da base deu 6,05). A rodada 2 partiu da re-medição. Os detalhes estão em "Rodada 1: correção do registro".
+
+### Verificação final
+
+`npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). Screenshots finais: `shots/round-8`.
