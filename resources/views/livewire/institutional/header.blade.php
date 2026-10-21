@@ -99,7 +99,7 @@
                 class="whitespace-nowrap text-sm font-medium transition-colors"
                 x-bind:class="useLightText ? 'text-white hover:text-primary-light' : 'text-neutral-strong hover:text-primary-strong'"
             >
-                Conhecimento
+                Blog
             </a>
 
             <a href="{{ route('contact') }}" class="whitespace-nowrap rounded-[999px] border border-transparent bg-primary-strong px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-strong-hover hover:shadow-md">
@@ -144,7 +144,7 @@
 	        </div>
 
         <a href="{{ route('blog.index') }}" class="border-b border-neutral-light/20 py-3 text-lg font-medium text-neutral-strong hover:text-primary-strong">
-            Conhecimento
+            Blog
         </a>
 
         <div class="mt-4">

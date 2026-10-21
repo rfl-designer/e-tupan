@@ -32,10 +32,10 @@
     <p class="mb-6 flex-grow text-sm leading-relaxed text-neutral-medium">{{ $partner['description'] ?? '' }}</p>
 
     @if(!empty($partner['links']))
-        <ul class="mb-6 space-y-2 border-t border-neutral-border pt-4">
+        <ul class="mb-6 border-t border-neutral-border pt-4">
             @foreach($partner['links'] as $link)
                 <li wire:key="partner-link-{{ \Illuminate\Support\Str::slug($name) }}-{{ $loop->index }}">
-                    <a href="{{ $link['url'] }}" target="_blank" rel="noopener noreferrer" data-cta="{{ $ctaPrefix }}{{ \Illuminate\Support\Str::slug($link['label']) }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-medium transition-colors hover:text-primary-strong">
+                    <a href="{{ $link['url'] }}" target="_blank" rel="noopener noreferrer" data-cta="{{ $ctaPrefix }}{{ \Illuminate\Support\Str::slug($link['label']) }}" class="inline-flex items-center gap-1.5 py-1 text-sm font-medium text-neutral-medium transition-colors hover:text-primary-strong">
                         <flux:icon name="arrow-top-right-on-square" class="size-4" />
                         {{ $link['label'] }}
                         <span class="sr-only">(abre em nova aba)</span>

@@ -30,7 +30,7 @@
                 <x-institutional.reveal :delay="150" class="hidden lg:block">
                     <a href="{{ route('blog.show', $featured['id']) }}" data-cta="blog-hero-destaque" class="group block overflow-hidden rounded-[32px] bg-white shadow-2xl">
                         <div class="relative h-56 overflow-hidden">
-                            <img src="{{ $featured['image'] }}" width="800" height="224" loading="lazy" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100" />
+                            <img src="{{ $featured['image'] }}" width="800" height="224" fetchpriority="high" decoding="async" alt="" class="h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100" />
                             <div class="absolute left-4 top-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-strong">
                                 {{ $featured['category'] }}
                             </div>
@@ -46,10 +46,13 @@
     </div>
 
     <x-institutional.section variant="light">
-        <h2 class="sr-only">Artigos</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+        <h2 class="mb-8 text-3xl font-medium text-neutral-strong lg:hidden">Artigos</h2>
+        @if(count($posts) > 1)
+            <h2 class="mb-8 hidden text-3xl font-medium text-neutral-strong lg:block">Mais artigos</h2>
+        @endif
+        <div class="grid gap-8 md:grid-cols-2 {{ count($posts) > 1 ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }} md:[&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             @foreach($posts as $index => $post)
-                <x-institutional.reveal :delay="$index * 100">
+                <x-institutional.reveal :delay="$index * 100" class="{{ $index === 0 && count($posts) > 1 ? 'lg:hidden' : '' }}">
                     <a href="{{ route('blog.show', $post['id']) }}" class="group block h-full">
                         <x-institutional.card class="flex h-full flex-col overflow-hidden hover:shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-transparent" padding="none" variant="standard">
                             <div class="relative h-48 overflow-hidden">

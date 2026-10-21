@@ -55,10 +55,10 @@
 
             <div>
                 <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Divisões especializadas</p>
-                <ul class="space-y-3 text-sm text-neutral-light">
+                <ul class="text-sm text-neutral-light">
                     @foreach($divisions as $division)
                         <li>
-                            <a href="{{ route('solutions.show', $division['id']) }}" class="transition-colors hover:text-primary-light">
+                            <a href="{{ route('solutions.show', $division['id']) }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">
                                 {{ $division['title'] }}
                             </a>
                         </li>
@@ -68,27 +68,27 @@
 
             <div>
                 <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Institucional</p>
-                <ul class="space-y-3 text-sm text-neutral-light">
-                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Quem somos</a></li>
-                    <li><a href="{{ route('about') }}" class="transition-colors hover:text-primary-light">Nossa história</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="transition-colors hover:text-primary-light">Conhecimento técnico</a></li>
-                    <li><a href="{{ route('contact') }}" class="transition-colors hover:text-primary-light">Trabalhe conosco</a></li>
+                <ul class="text-sm text-neutral-light">
+                    <li><a href="{{ route('about') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Quem somos</a></li>
+                    <li><a href="{{ route('about') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Nossa história</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Conhecimento técnico</a></li>
+                    <li><a href="{{ route('contact') }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Trabalhe conosco</a></li>
                     @if(! empty($contact['privacy_url']))
-                        <li><a href="{{ $contact['privacy_url'] }}" class="transition-colors hover:text-primary-light">Política de Privacidade</a></li>
+                        <li><a href="{{ $contact['privacy_url'] }}" class="inline-block py-1.5 transition-colors hover:text-primary-light">Política de Privacidade</a></li>
                     @endif
                 </ul>
             </div>
 
             <div>
                 <p class="mb-6 text-sm font-bold uppercase tracking-wider text-neutral-light">Fale conosco</p>
-                <ul class="space-y-3 text-sm text-neutral-light">
+                <ul class="text-sm text-neutral-light">
                     @if($hasPhone)
-                    <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" class="hover:text-primary-light hover:underline" /></li>
+                    <li><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" on-dark /></li>
                     @endif
-                    <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'comercial@tupan.com.br'" class="hover:text-primary-light hover:underline" /></li>
-                    <li>{{ $contact['city'] ?? 'Recife, PE' }}</li>
+                    <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'comercial@tupan.com.br'" on-dark /></li>
+                    <li class="py-1.5">{{ $contact['city'] ?? 'Recife, PE' }}</li>
                     @if($hasAddress)
-                        <li>{{ $contact['address'] }}</li>
+                        <li class="py-1.5">{{ $contact['address'] }}</li>
                     @endif
                 </ul>
             </div>

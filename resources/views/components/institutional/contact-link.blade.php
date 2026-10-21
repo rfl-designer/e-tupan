@@ -1,6 +1,7 @@
 @props([
     'type' => 'email',
     'value' => '',
+    'onDark' => false,
 ])
 
 @php
@@ -12,8 +13,14 @@
     };
 @endphp
 
+@php
+    $tone = $onDark
+        ? 'text-primary-light decoration-primary-light/50 hover:decoration-primary-light'
+        : 'text-primary-strong decoration-primary-strong/40 hover:decoration-primary-strong';
+@endphp
+
 @if($href)
-    <a href="{{ $href }}" {{ $attributes->merge(['class' => 'inline-block py-1 transition-colors hover:text-primary-strong hover:underline']) }}>{{ $value }}</a>
+    <a href="{{ $href }}" {{ $attributes->merge(['class' => "inline-block py-1 underline underline-offset-4 transition-colors {$tone}"]) }}>{{ $value }}</a>
 @else
     <span {{ $attributes->except('class') }}>{{ $value }}</span>
 @endif

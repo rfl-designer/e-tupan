@@ -36,107 +36,132 @@
         </div>
     </div>
 
+    @php
+        $sentences = preg_split('/(?<=[.!?])\s+/', trim($division['full_description'] ?? ''), -1, PREG_SPLIT_NO_EMPTY) ?: [];
+        $totalWords = str_word_count(implode(' ', $sentences), 0, 'àáâãçéêíóôõúÀÁÂÃÇÉÊÍÓÔÕÚ');
+        $aboutParagraphs = [];
+        $currentParagraph = [];
+        $currentWords = 0;
+        foreach ($sentences as $sentence) {
+            $currentParagraph[] = $sentence;
+            $currentWords += count(preg_split('/\s+/', $sentence));
+            if (count($aboutParagraphs) === 0 && $currentWords >= $totalWords / 2) {
+                $aboutParagraphs[] = implode(' ', $currentParagraph);
+                $currentParagraph = [];
+            }
+        }
+        if ($currentParagraph !== []) {
+            $aboutParagraphs[] = implode(' ', $currentParagraph);
+        }
+        $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
+        $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make() : null;
+        $divisionId = $division['id'] ?? 'divisao';
+        $divisionTitle = $division['title'] ?? 'Divisão';
+    @endphp
+
+    <x-institutional.section variant="white">
+        <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
+            <x-institutional.reveal class="lg:col-span-3">
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a divisão</span>
+                <h2 class="mb-6 text-3xl font-medium text-neutral-strong">{{ $division['about_title'] ?? ($division['description'] ?? 'Sobre a divisão') }}</h2>
+                <div class="space-y-5 text-lg leading-relaxed text-neutral-medium">
+                    @foreach($aboutParagraphs as $paragraph)
+                        <p wire:key="division-about-{{ $loop->index }}">{{ $paragraph }}</p>
+                    @endforeach
+                </div>
+            </x-institutional.reveal>
+
+            <x-institutional.reveal :delay="100" class="lg:col-span-2">
+                <div class="rounded-2xl border border-neutral-border bg-bg-light p-8">
+                    <h3 class="mb-6 flex items-center gap-2 text-xl font-semibold text-neutral-strong">
+                        <flux:icon name="shield-check" class="size-5 text-primary-strong" />
+                        Diferenciais TUPAN
+                    </h3>
+                    <ul class="space-y-4">
+                        @foreach(($division['differentiators'] ?? []) ?: ['Conhecimento técnico aplicado', 'Consultoria especializada', 'Logística ágil e segura', 'Conformidade ANVISA'] as $diff)
+                            <li wire:key="division-diff-{{ $loop->index }}" class="flex items-start gap-3">
+                                <flux:icon name="check-circle" class="size-5 shrink-0 text-primary-strong" />
+                                <span class="text-neutral-strong">{{ $diff }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </x-institutional.reveal>
+        </div>
+    </x-institutional.section>
+
+    <x-institutional.section id="solucoes-oferecidas" variant="light" class="scroll-mt-32">
+        <x-institutional.reveal>
+            <div class="mb-12 max-w-2xl">
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Soluções</span>
+                <h2 class="text-3xl font-medium text-neutral-strong md:text-4xl">Soluções oferecidas</h2>
+            </div>
+        </x-institutional.reveal>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            @foreach($division['features'] ?? [] as $feature)
+                <x-institutional.reveal :delay="($loop->index % 4) * 100" wire:key="division-feature-{{ $loop->index }}">
+                    <x-institutional.card variant="feature" class="h-full" :hover-effect="false">
+                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark">
+                            <flux:icon name="check-badge" class="size-6" />
+                        </div>
+                        <h3 class="text-base font-semibold text-neutral-strong">{{ $feature }}</h3>
+                    </x-institutional.card>
+                </x-institutional.reveal>
+            @endforeach
+        </div>
+    </x-institutional.section>
+
     <x-institutional.section variant="white">
         <div class="grid gap-12 lg:grid-cols-3">
-            <div class="space-y-8 lg:col-span-2">
-                <x-institutional.reveal>
-                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Sobre a divisão</span>
-                    <h2 class="mb-6 text-3xl font-medium text-neutral-strong">{{ $division['about_title'] ?? ($division['description'] ?? 'Sobre a divisão') }}</h2>
-                    <p class="text-lg leading-relaxed text-neutral-medium">
-                        {{ $division['full_description'] ?? '' }}
-                    </p>
-                </x-institutional.reveal>
-
-                <x-institutional.reveal :delay="100">
-                    <div class="mt-8 rounded-2xl border border-neutral-border bg-bg-light p-8">
-                        <h3 class="mb-6 flex items-center gap-2 text-xl font-semibold text-neutral-strong">
-                            <flux:icon name="shield-check" class="size-5 text-primary-strong" />
-                            Diferenciais TUPAN
-                        </h3>
-                        <div class="grid gap-4 sm:grid-cols-2">
-                            @if(!empty($division['differentiators']))
-                                @foreach($division['differentiators'] as $diff)
-                                    <div class="flex items-start gap-3">
-                                        <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                        <span class="text-neutral-strong">{{ $diff }}</span>
-                                    </div>
-                                @endforeach
-                            @else
-                                <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Conhecimento técnico aplicado</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Consultoria especializada</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Logística ágil e segura</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <flux:icon name="check-circle" class="size-5 text-primary-strong" />
-                                    <span class="text-neutral-strong">Conformidade ANVISA</span>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </x-institutional.reveal>
-            </div>
-
-            <div class="space-y-6">
-                <x-institutional.reveal :delay="200" id="solucoes-oferecidas" class="scroll-mt-32">
-                    <x-institutional.card variant="standard" class="border-t-4 border-t-primary-strong" :hover-effect="false">
-                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wide text-neutral-strong">Soluções oferecidas</h3>
-                        <ul class="space-y-3">
-                            @foreach($division['features'] ?? [] as $feature)
-                                <li class="flex items-start gap-3 text-sm text-neutral-medium">
-                                    <flux:icon name="check-circle" class="size-5 shrink-0 text-primary-strong" />
-                                    {{ $feature }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </x-institutional.card>
-                </x-institutional.reveal>
-
-                <x-institutional.reveal :delay="300">
-                    <x-institutional.card variant="standard" class="border-t-4 border-t-primary-strong" :hover-effect="false">
-                        <div class="mb-4 flex items-center gap-2 text-primary-strong">
-                            <flux:icon name="users" class="size-5" />
-                            <h3 class="text-sm font-bold uppercase tracking-wide">Para quem atuamos</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            @foreach($division['target_audience'] ?? [] as $audience)
-                                <span class="rounded-full bg-primary-bg px-3 py-1.5 text-xs font-medium text-primary-strong">
-                                    {{ $audience }}
-                                </span>
-                            @endforeach
-                        </div>
-                    </x-institutional.card>
-                </x-institutional.reveal>
-
+            <x-institutional.reveal>
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.5px] text-neutral-medium">Público</span>
+                <h2 class="mb-4 text-3xl font-medium text-neutral-strong md:text-4xl">Para quem atuamos</h2>
                 @if(($division['id'] ?? '') === 'imagem')
-                    <x-institutional.reveal :delay="400">
-                    <x-institutional.card variant="standard" class="bg-neutral-strong text-white" :hover-effect="false">
-                        <div class="mb-2 flex items-center gap-2 text-primary-light">
-                            <flux:icon name="map-pin" class="size-5" />
-                            <h3 class="text-sm font-bold uppercase tracking-wide">Alcance</h3>
-                        </div>
-                        <p class="text-sm text-neutral-light">
-                                Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.
-                        </p>
-                    </x-institutional.card>
-                </x-institutional.reveal>
-            @endif
+                    <p class="text-lg text-neutral-medium">Atuação em nível nacional (Brasil), fornecendo para empresas de diagnóstico de todos os portes.</p>
+                @endif
+            </x-institutional.reveal>
+
+            <x-institutional.reveal :delay="100" class="lg:col-span-2">
+                <ul class="grid gap-3 sm:grid-cols-2">
+                    @foreach($division['target_audience'] ?? [] as $audience)
+                        <li wire:key="division-audience-{{ $loop->index }}" class="flex items-start gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-base text-neutral-strong">
+                            <flux:icon name="check-circle" class="mt-0.5 size-5 shrink-0 text-primary-strong" />
+                            {{ $audience }}
+                        </li>
+                    @endforeach
+                </ul>
+            </x-institutional.reveal>
         </div>
-    </div>
-</x-institutional.section>
+    </x-institutional.section>
+
+    <section class="relative overflow-hidden bg-primary-strong py-20">
+        <div class="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10"></div>
+        <div class="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-white/10"></div>
+
+        <div class="container relative z-10 mx-auto max-w-4xl px-6 text-center">
+            <x-institutional.reveal>
+                <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">{{ $divisionTitle }}</h2>
+                <p class="mx-auto mb-10 max-w-2xl text-lg text-white">{{ $division['description'] ?? '' }}</p>
+                <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                    <a href="#fale-conosco" data-cta="divisao-{{ $divisionId }}-cta-contato" class="inline-flex items-center justify-center rounded-[999px] bg-white px-6 py-3 text-sm font-semibold text-primary-strong transition hover:bg-primary-bg">
+                        Falar com um consultor
+                    </a>
+                    @if($whatsappReady)
+                        <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" data-cta="divisao-{{ $divisionId }}-cta-whatsapp" class="inline-flex items-center justify-center rounded-[999px] border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                            Falar pelo WhatsApp
+                        </a>
+                    @endif
+                </div>
+            </x-institutional.reveal>
+        </div>
+    </section>
 
     <x-institutional.sections.contact
         origin="default"
         background="cream"
-        :eyebrow="$division['title'] ?? 'Divisão'"
-        title="Fale com a Tupan Saúde"
-        text="Nossa equipe está preparada para entender sua necessidade e indicar o caminho mais adequado para sua instituição."
+        :eyebrow="$divisionTitle"
+        :title="'Fale com a equipe '.$divisionTitle"
+        :text="'Conte o que sua instituição precisa em '.$divisionTitle.' e indicamos o caminho mais adequado.'"
     />
 </div>

@@ -24,20 +24,37 @@
                 </div>
             </x-institutional.reveal>
 
-            <x-institutional.reveal :delay="150" class="hidden lg:block">
-                <img
-                    src="{{ asset('images/institucional/about-image-800.webp') }}"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    class="h-[420px] w-full rounded-[32px] object-cover shadow-2xl"
-                />
+            <x-institutional.reveal :delay="150">
+                <h2 class="sr-only">A TUPAN em números</h2>
+                <ul class="space-y-4 rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl">
+                    <li class="flex items-start gap-4 rounded-2xl bg-white/5 p-5">
+                        <flux:icon name="building-office" class="size-7 shrink-0 text-primary-light" />
+                        <div>
+                            <p class="text-xl font-semibold text-white">Sede em Recife</p>
+                            <p class="mt-1 text-base text-neutral-light">Hub logístico estratégico para todo o Nordeste</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4 rounded-2xl bg-white/5 p-5">
+                        <flux:icon name="map" class="size-7 shrink-0 text-primary-light" />
+                        <div>
+                            <p class="text-xl font-semibold text-white">16 anos de atuação</p>
+                            <p class="mt-1 text-base text-neutral-light">Construindo autoridade com estudo e entrega</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4 rounded-2xl bg-white/5 p-5">
+                        <flux:icon name="sparkles" class="size-7 shrink-0 text-primary-light" />
+                        <div>
+                            <p class="text-xl font-semibold text-white">Raízes sertanejas</p>
+                            <p class="mt-1 text-base text-neutral-light">Seriedade e compromisso em cada relação</p>
+                        </div>
+                    </li>
+                </ul>
             </x-institutional.reveal>
         </div>
     </div>
 
     <x-institutional.section variant="white">
-        <div class="grid items-center gap-16 lg:grid-cols-2">
+        <div class="grid items-start gap-16 lg:grid-cols-2">
             <x-institutional.reveal>
                 <div class="relative">
                     <div class="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-primary-bg -z-10"></div>
@@ -68,32 +85,6 @@
                     <p class="mt-4 text-lg leading-relaxed text-neutral-medium">
                         Mais do que vender, intermediamos segurança, técnica e cuidado. Queremos ser referência não apenas em produtos, mas em informação confiável, em um mundo onde sobra discurso e falta verdade.
                     </p>
-                </x-institutional.reveal>
-
-                <x-institutional.reveal :delay="200">
-                    <div class="mt-4 grid gap-4 sm:grid-cols-3">
-                        <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="building-office" class="size-6 text-primary-strong" />
-                            <div>
-                                <h3 class="font-bold text-neutral-strong">Sede em Recife</h3>
-                                <p class="text-sm text-neutral-medium">Hub logístico estratégico para todo o Nordeste</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="map" class="size-6 text-primary-strong" />
-                            <div>
-                                <h3 class="font-bold text-neutral-strong">16 anos de atuação</h3>
-                                <p class="text-sm text-neutral-medium">Construindo autoridade com estudo e entrega</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 rounded-xl bg-bg-light p-4">
-                            <flux:icon name="sparkles" class="size-6 text-primary-strong" />
-                            <div>
-                                <h3 class="font-bold text-neutral-strong">Raízes sertanejas</h3>
-                                <p class="text-sm text-neutral-medium">Seriedade e compromisso em cada relação</p>
-                            </div>
-                        </div>
-                    </div>
                 </x-institutional.reveal>
             </div>
         </div>

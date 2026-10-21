@@ -9,7 +9,7 @@
         'standard' => 'bg-white border border-neutral-border shadow-[0_2px_8px_rgba(28,37,65,0.08)]',
         'elevated' => 'bg-white shadow-[0_4px_16px_rgba(28,37,65,0.12)] border-none',
         'accent' => 'bg-primary-bg border border-primary-light',
-        'feature' => 'bg-white border-l-4 border-primary-strong rounded-[12px] shadow-sm',
+        'feature' => 'bg-white border-t-4 border-primary-strong rounded-[12px] shadow-sm',
         'stats' => 'bg-primary-strong text-white',
         'dark' => 'bg-neutral-strong text-white',
     ];

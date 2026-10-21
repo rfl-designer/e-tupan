@@ -90,14 +90,14 @@
                     $spansLg = $loop->last && $hubCount % 3 === 1;
                 @endphp
                 <x-institutional.reveal :delay="($loop->index % 3) * 100" wire:key="equipahosp-hub-{{ $loop->index }}" class="{{ $spansMd ? 'md:col-span-2' : '' }} {{ $spansLg ? 'lg:col-span-3' : ($spansMd ? 'lg:col-span-1' : '') }}">
-                    <x-institutional.card class="h-full" :hover-effect="false">
+                    <x-institutional.card variant="feature" class="h-full" :hover-effect="false">
                         <div @class(['flex flex-col', 'lg:flex-row lg:items-start lg:gap-6' => $spansLg])>
-                            <div @class(['mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-cream text-primary-strong', 'lg:mb-0' => $spansLg])>
+                            <div @class(['mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-bg text-primary-dark', 'lg:mb-0' => $spansLg])>
                                 <flux:icon name="{{ $item['icon'] ?? 'sparkles' }}" class="size-6" />
                             </div>
                             <div @class(['lg:max-w-3xl' => $spansLg])>
                                 <h3 class="mb-3 text-lg font-semibold text-neutral-strong">{{ $item['title'] }}</h3>
-                                <p class="text-sm leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
+                                <p class="text-base leading-relaxed text-neutral-medium">{{ $item['description'] }}</p>
                             </div>
                         </div>
                     </x-institutional.card>
@@ -117,8 +117,8 @@
             <x-institutional.reveal :delay="100" class="lg:col-span-2">
                 <ul class="grid gap-3 sm:grid-cols-2">
                     @foreach($page['audience'] ?? [] as $audience)
-                        <li wire:key="equipahosp-audience-{{ $loop->index }}" class="flex items-center gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-neutral-strong">
-                            <flux:icon name="check-circle" class="size-5 shrink-0 text-primary-strong" />
+                        <li wire:key="equipahosp-audience-{{ $loop->index }}" class="flex items-start gap-3 rounded-xl border border-neutral-border bg-bg-light px-4 py-3 text-base text-neutral-strong">
+                            <flux:icon name="check-circle" class="mt-0.5 size-5 shrink-0 text-primary-strong" />
                             {{ $audience }}
                         </li>
                     @endforeach
@@ -190,9 +190,9 @@
     <div class="bg-bg-cream">
         <x-institutional.sections.contact
             :origin="$origin"
-            eyebrow="EquipaHosp"
-            title="Fale com a Tupan Saúde"
-            text="Nossa equipe está preparada para entender sua necessidade e indicar o caminho mais adequado para sua instituição."
+            eyebrow="EquipaHosp · Uma operação Tupan Saúde"
+            title="Fale com a equipe EquipaHosp"
+            text="Conte o que sua instituição precisa em equipamentos, manutenção ou engenharia clínica."
             :whatsapp-message="$cta['whatsapp_message'] ?? null"
         />
     </div>

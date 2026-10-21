@@ -9,14 +9,14 @@
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="80">
-                <h1 class="text-4xl font-medium leading-[1.1] text-neutral-strong md:text-5xl lg:text-[56px]">
-                    Mais que produtos. <span class="text-primary-strong">Soluções técnicas</span> para quem cuida de vidas.
+                <h1 class="text-3xl font-medium leading-[1.15] text-neutral-strong md:text-4xl lg:text-[40px]">
+                    <span class="text-primary-strong">Distribuição técnica em saúde</span> para hospitais, laboratórios e profissionais do Nordeste
                 </h1>
             </x-institutional.reveal>
 
             <x-institutional.reveal :delay="160">
                 <p class="max-w-xl text-lg leading-relaxed text-neutral-medium md:text-xl">
-                    Distribuidora técnica de produtos e serviços para hospitais, laboratórios e profissionais de saúde. Sede em Recife, atuação em todo o Nordeste há 16 anos.
+                    Produtos, equipamentos e consultoria com respaldo técnico. Sede em Recife, 16 anos de atuação.
                 </p>
             </x-institutional.reveal>
 
@@ -65,8 +65,8 @@
                             class="h-full w-full object-cover"
                         />
                         <div class="absolute bottom-6 left-6 right-6 rounded-xl border-l-4 border-primary-strong bg-white/95 p-4 shadow-lg backdrop-blur-sm">
-                            <p class="text-sm font-medium text-neutral-strong">"Autoridade não se declara, se constrói."</p>
-                            <p class="mt-1 text-xs uppercase tracking-wider text-neutral-medium">Manifesto TUPAN</p>
+                            <p class="text-sm font-medium text-neutral-strong">7 divisões especializadas</p>
+                            <p class="mt-1 text-xs uppercase tracking-wider text-neutral-medium">Atuação em todo o Nordeste</p>
                         </div>
                     </div>
                 </div>

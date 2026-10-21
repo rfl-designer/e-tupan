@@ -19,7 +19,7 @@
                 <x-institutional.reveal>
                     <a href="{{ route('blog.index') }}" class="mb-8 inline-flex items-center gap-2 text-neutral-medium hover:text-primary-strong">
                         <flux:icon name="arrow-left" class="size-5" />
-                        Voltar para conhecimento
+                        Voltar para o blog
                     </a>
 
                     <div class="mb-6 flex flex-wrap gap-4 text-sm font-medium text-primary-strong">
