@@ -597,15 +597,15 @@ Na continuação, o limite passou de 8 para 18 rodadas, e os demais critérios d
 
 Sobraram 7 das 10 rodadas da continuação. A meta (nota ≥ 9,0 sem critério abaixo de 8, em 2 rodadas seguidas) não foi atingida.
 
-O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. O `HEAD` (`2d741e2`, revert da rodada 11) tem o mesmo código; só o `design-log.md` muda.
+O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits seguintes (`2d741e2`, revert da rodada 11, e os de documentação) só mudam o `design-log.md`, então o `HEAD` tem o código da rodada 10.
 
 ### Bloqueio relatado
 
 - Com as notas da rodada 10, chegar a 9,0 exige +0,275 na média. Um caminho é levar os quatro critérios em 8,5 (textos, hierarquia, consistência e responsividade) a 9 na mesma rodada, sem que nenhum outro caia.
 - As rodadas 9 a 11 trataram quase tudo o que o Juiz apontou. A rodada 10 resolveu os 5 problemas da rodada 8, mas o Juiz achou outros do mesmo porte, e nenhum critério mudou de patamar.
-- As duas quedas vieram de uma regressão de responsividade criada ao corrigir outro problema:
-  - Na rodada 9, a grade de público ficou espremida em 768px. O Iterador captura só 390 e 1440px.
-  - Na rodada 11, a barra "Compartilhar" do post, com os rótulos novos e sem `flex-wrap`, cortou o texto e o card de CTA à direita em 390px. O report automático marcou overflow-x "não" no blog-post 390 nas capturas do Iterador e do Juiz, então o corte só aparecia na imagem.
+- As duas quedas vieram de regressões de responsividade:
+  - Na rodada 9, a correção da grade de público (parte do problema 5 da rodada 8, de responsividade) passou a grade a 3 colunas em 768px e a deixou espremida, pior que antes. O Iterador captura só 390 e 1440px.
+  - Na rodada 11, a regressão veio da correção de outro problema, os rótulos de compartilhar (acessibilidade). A barra "Compartilhar" do post, com os rótulos novos e sem `flex-wrap`, cortou o texto e o card de CTA à direita em 390px. O report automático marcou overflow-x "não" no blog-post 390 nas capturas do Iterador e do Juiz, então o corte só aparecia na imagem.
 - A rodada 11 resolveu os 5 problemas da rodada 10: a forma decorativa dos heros abaixo de lg, a fusão das seções da Tupan Care, os heros de solução padronizados, a escala dos H2 com o texto de público da divisão, o autocomplete do formulário e os rótulos de compartilhar. Esse trabalho está em `f242823` e pode ser reaplicado com a correção da barra que o Juiz descreveu: `min-w-0` na coluna do artigo e os botões em `flex-wrap` ou em grade de 4 colunas.
 
 ### Pendências
@@ -617,8 +617,8 @@ O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. O `HEAD` (
   - o H1 do template de divisão, que é só o nome;
   - o formulário do Contato abaixo da segunda tela em 390.
 - Dados reais com `[PREENCHER]`, visíveis no site:
-  - telefone da central (`config/institutional.php`), na home, no Contato e nas 3 páginas de solução;
-  - endereço da sede (`config/institutional.php`), na home e nas 3 páginas de solução;
+  - telefone da central (`config/institutional.php`), na home, duas vezes no Contato e nas 7 páginas de solução (Tupan Care, EquipaHosp e as 5 divisões do template de divisão);
+  - endereço da sede (`config/institutional.php`), na home e nas 7 páginas de solução;
   - prazo de resposta (`contact-page.blade.php`), no Contato.
 - Também faltam o depoimento, os números de `stats.blade.php` e as certificações. Ficam ocultos enquanto não forem preenchidos.
 
@@ -628,7 +628,7 @@ Dois runs do ciclo rodaram ao mesmo tempo sobre a mesma árvore. O commit `4885e
 
 ### Verificação final
 
-No `HEAD` (`2d741e2`): `npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). Screenshots do estado final: `shots/round-10`.
+Sobre o código da rodada 10, o mesmo do `HEAD`: `npm run build` ok. Testes do ciclo (`tests/Feature/InstitutionalPagesTest.php` e `tests/Feature/Storefront`): 336 passed (708 assertions). No servidor local, os `[PREENCHER]` renderizados batem com a lista de pendências acima. Screenshots do estado final: `shots/round-10`.
 
 ## Continuação: rodadas 9 a 18
 
