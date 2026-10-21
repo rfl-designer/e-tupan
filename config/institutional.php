@@ -4,15 +4,16 @@ declare(strict_types = 1);
 
 return [
     'contact' => [
-        'phone'   => '[PREENCHER: telefone da central de atendimento]',
-        'address' => '[PREENCHER: endereço completo da sede]',
-        'social'  => [
-            'instagram' => null,
-            'linkedin'  => null,
+        'phone'       => '(81) 99684-0060',
+        'address'     => 'Estrada dos Remédios, 2123 (Galeria Beatriz Barbosa), Madalena',
+        'postal_code' => '50720-715',
+        'social'      => [
+            'instagram' => 'https://www.instagram.com/tupansaude/',
+            'linkedin'  => 'https://www.linkedin.com/company/tupansaude/',
             'facebook'  => null,
         ],
         'privacy_url' => null,
-        'whatsapp'    => 'https://wa.me/',
+        'whatsapp'    => 'https://wa.me/5581996840060',
         'emails'      => [
             'comercial@tupan.com.br',
             'contato@tupan.com.br',
@@ -233,6 +234,10 @@ return [
                 'title'       => 'Tupan Care | Soluções em Curativos e Estomias',
                 'description' => 'A Tupan Care representa a Gentell Casex com vendas locais, padronização de produtos, treinamentos e apoio técnico para instituições e profissionais de saúde.',
             ],
+            'contact' => [
+                'phone'     => '(81) 99871-7695',
+                'instagram' => 'https://instagram.com/tupancare',
+            ],
             'contact_form' => 'tupan-care',
             'page'         => [
                 'logo'        => 'images/parceiros/tupan-care-wordmark.webp',
@@ -388,6 +393,9 @@ return [
             'seo'   => [
                 'title'       => 'EquipaHosp | Engenharia Clínica e Equipamentos Hospitalares',
                 'description' => 'Engenharia clínica, venda, locação, manutenção, calibração e assistência técnica para equipamentos hospitalares. Conheça a EquipaHosp, operação da Tupan Saúde.',
+            ],
+            'contact' => [
+                'instagram' => 'https://instagram.com/equipahosp',
             ],
             'contact_form' => 'equipa-hosp',
             'page'         => [

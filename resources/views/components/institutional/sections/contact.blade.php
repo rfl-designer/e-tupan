@@ -6,10 +6,16 @@
     'whatsappMessage' => null,
     'showChannels' => true,
     'background' => 'white',
+    'division' => null,
 ])
 
 @php
     $contact = config('institutional.contact');
+    $divisionContact = $division['contact'] ?? [];
+    $phone = $divisionContact['phone'] ?? ($contact['phone'] ?? '');
+    $phoneLabel = isset($divisionContact['phone']) ? 'Atendimento '.$division['title'] : 'Central de atendimento';
+    $instagram = $divisionContact['instagram'] ?? ($contact['social']['instagram'] ?? null);
+    $instagramHandle = $instagram ? '@'.trim((string) parse_url($instagram, PHP_URL_PATH), '/') : null;
     $whatsappReady = \App\Domain\Institutional\Services\WhatsappLink::isAvailable();
     $whatsappUrl = $whatsappReady ? \App\Domain\Institutional\Services\WhatsappLink::make($whatsappMessage) : null;
 @endphp
@@ -47,7 +53,7 @@
                         <div>
                             <h3 class="font-semibold text-neutral-strong">Sede TUPAN</h3>
                             <p class="text-neutral-medium">{{ $contact['city'] ?? 'Recife, Pernambuco' }}</p>
-                            <p class="text-neutral-medium">{{ $contact['address'] ?? '' }}</p>
+                            <p class="text-neutral-medium">{{ $contact['address'] ?? '' }}@if(! empty($contact['postal_code'])), <span class="whitespace-nowrap">CEP {{ $contact['postal_code'] }}</span>@endif</p>
                             <p class="mt-1 text-sm text-neutral-medium">{{ $contact['coverage'] ?? 'Atuação em todo o Nordeste' }}</p>
                         </div>
                     </div>
@@ -57,8 +63,8 @@
                             <flux:icon name="phone" class="size-5" />
                         </div>
                         <div>
-                            <h3 class="font-semibold text-neutral-strong">Central de atendimento</h3>
-                            <p class="text-neutral-medium"><x-institutional.contact-link type="phone" :value="$contact['phone'] ?? ''" /></p>
+                            <h3 class="font-semibold text-neutral-strong">{{ $phoneLabel }}</h3>
+                            <p class="text-neutral-medium"><x-institutional.contact-link type="phone" :value="$phone" /></p>
                             <p class="mt-1 text-sm text-neutral-medium">{{ $contact['hours'] ?? 'Segunda a sexta, 8h às 18h' }}</p>
                         </div>
                     </div>
@@ -73,6 +79,22 @@
                             <p class="text-neutral-medium"><x-institutional.contact-link type="email" :value="$contact['emails'][1] ?? 'comercial@tupan.com.br'" /></p>
                         </div>
                     </div>
+
+                    @if($instagram)
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary-strong">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                                <path d="M16 11.37a4 4 0 1 1-7.87 1.13 4 4 0 0 1 7.87-1.13z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div class="min-w-0 break-words">
+                            <h3 class="font-semibold text-neutral-strong">Instagram</h3>
+                            <p class="text-neutral-medium"><a href="{{ $instagram }}" target="_blank" rel="noopener noreferrer" class="inline-block py-1 text-primary-strong underline decoration-primary-strong/40 underline-offset-4 transition-colors hover:decoration-primary-strong">{{ $instagramHandle }}</a></p>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </x-institutional.reveal>
             @endif

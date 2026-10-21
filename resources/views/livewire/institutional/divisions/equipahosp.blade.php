@@ -194,6 +194,7 @@
             title="Fale com a equipe EquipaHosp"
             text="Conte o que sua instituição precisa em equipamentos, manutenção ou engenharia clínica."
             :whatsapp-message="$cta['whatsapp_message'] ?? null"
+            :division="$division"
         />
     </div>
 </div>

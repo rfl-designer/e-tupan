@@ -622,6 +622,8 @@ O estado final é o da rodada 10 (`bfd4f1f`): nota 8,72, mínimo 8,5. Os commits
   - prazo de resposta (`contact-page.blade.php`), no Contato.
 - Também faltam o depoimento, os números de `stats.blade.php` e as certificações. Ficam ocultos enquanto não forem preenchidos.
 
+Atualização de 2026-10-21, depois do ciclo: o telefone da central, o endereço da sede e o prazo de resposta foram preenchidos com os dados enviados pela Tupan, junto com o WhatsApp, o Instagram e o LinkedIn. A Tupan Care ganhou telefone e Instagram próprios, e a EquipaHosp ganhou Instagram próprio. O telefone da EquipaHosp veio com 8 dígitos e espera confirmação. Até lá, a página dela mostra a central. Continuam pendentes o depoimento, os números, as certificações e a Política de Privacidade.
+
 ### Incidente da rodada 1
 
 Dois runs do ciclo rodaram ao mesmo tempo sobre a mesma árvore. O commit `4885e9b` reúne as mudanças dos dois Iteradores, mais de 5 na mesma rodada. A nota 7,33 saiu de uma captura feita enquanto o segundo Iterador ainda editava. A rodada foi medida de novo sobre o estado commitado e deu 6,95, com mínimo de 6,0 em responsividade. Foi mantida porque ficou acima da base (6,10; uma avaliação independente da base deu 6,05). A rodada 2 partiu da re-medição. Os detalhes estão em "Rodada 1: correção do registro".

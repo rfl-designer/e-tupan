@@ -214,6 +214,7 @@
             title="Fale com a equipe Tupan Care"
             text="Conte o que sua instituição precisa em curativos, estomias ou treinamento."
             :whatsapp-message="$cta['whatsapp_message'] ?? null"
+            :division="$division"
         />
     </div>
 </div>

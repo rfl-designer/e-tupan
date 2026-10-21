@@ -88,7 +88,7 @@
                     <li class="min-w-0 break-all"><x-institutional.contact-link type="email" :value="$contact['emails'][0] ?? 'comercial@tupan.com.br'" on-dark /></li>
                     <li class="py-1.5">{{ $contact['city'] ?? 'Recife, PE' }}</li>
                     @if($hasAddress)
-                        <li class="py-1.5">{{ $contact['address'] }}</li>
+                        <li class="py-1.5">{{ $contact['address'] }}@if(! empty($contact['postal_code'])), <span class="whitespace-nowrap">CEP {{ $contact['postal_code'] }}</span>@endif</li>
                     @endif
                 </ul>
             </div>

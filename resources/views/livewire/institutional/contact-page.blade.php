@@ -32,6 +32,6 @@
     </x-institutional.section>
 
     <div class="bg-bg-light">
-        <x-institutional.sections.contact eyebrow="Formulário" title="Envie sua solicitação" text="Respondemos em até [PREENCHER: prazo de resposta]. Seus dados são usados só para retornar esta solicitação." :show-channels="false" />
+        <x-institutional.sections.contact eyebrow="Formulário" title="Envie sua solicitação" text="Respondemos em até 2 dias. Seus dados são usados só para retornar esta solicitação." :show-channels="false" />
     </div>
 </div>

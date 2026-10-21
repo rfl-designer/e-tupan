@@ -174,5 +174,6 @@
         :eyebrow="$divisionTitle"
         :title="'Fale com a equipe '.$divisionTitle"
         :text="! empty($division['need_area']) ? 'Conte o que sua instituição precisa em '.$division['need_area'].' e indicamos o caminho mais adequado.' : 'Conte o que sua instituição precisa e indicamos o caminho mais adequado.'"
+        :division="$division"
     />
 </div>

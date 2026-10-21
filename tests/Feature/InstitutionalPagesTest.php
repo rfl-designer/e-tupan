@@ -117,11 +117,74 @@ it('renders the tupan care page with its own brand, partnership and seo', functi
 });
 
 it('hides the whatsapp links on the special pages while no number is configured', function (string $path) {
+    config(['institutional.contact.whatsapp' => 'https://wa.me/']);
+
     $this->get($path)
         ->assertSuccessful()
         ->assertDontSee('https://wa.me/?', false)
         ->assertSee('href="#fale-conosco"', false);
 })->with(['/solucoes/tupan-care', '/solucoes/equipahosp']);
+
+it('renders the central phone, address and instagram in the contact section', function (string $path) {
+    $this->get($path)
+        ->assertSuccessful()
+        ->assertSeeInOrder(['Central de atendimento', 'href="tel:+5581996840060"', 'Segunda a sexta, 8h às 18h'], false)
+        ->assertSeeTextInOrder(['Sede TUPAN', 'Estrada dos Remédios, 2123 (Galeria Beatriz Barbosa), Madalena, CEP 50720-715', 'Atuação em todo o Nordeste'])
+        ->assertSee('href="https://www.instagram.com/tupansaude/" target="_blank"', false)
+        ->assertSee('@tupansaude');
+})->with(['/', '/solucoes/cirurgica']);
+
+it('renders the own phone and instagram of tupan care in its contact section', function () {
+    $this->get('/solucoes/tupan-care')
+        ->assertSuccessful()
+        ->assertSee('Atendimento Tupan Care')
+        ->assertSee('href="tel:+5581998717695"', false)
+        ->assertSee('href="https://instagram.com/tupancare"', false)
+        ->assertSee('@tupancare')
+        ->assertDontSee('@tupansaude');
+});
+
+it('falls back to the central phone on equipahosp while it has no phone of its own', function () {
+    $this->get('/solucoes/equipahosp')
+        ->assertSuccessful()
+        ->assertSeeInOrder(['Central de atendimento', 'href="tel:+5581996840060"', 'Segunda a sexta, 8h às 18h'], false)
+        ->assertDontSee('Atendimento EquipaHosp')
+        ->assertSee('href="https://instagram.com/equipahosp"', false)
+        ->assertSee('@equipahosp')
+        ->assertDontSee('@tupansaude');
+});
+
+it('shows the phone, address and social links in the footer', function () {
+    $this->get('/sobre')
+        ->assertSuccessful()
+        ->assertSee('href="tel:+5581996840060"', false)
+        ->assertSeeText('Estrada dos Remédios, 2123 (Galeria Beatriz Barbosa), Madalena, CEP 50720-715')
+        ->assertSee('href="https://www.instagram.com/tupansaude/"', false)
+        ->assertSee('href="https://www.linkedin.com/company/tupansaude/"', false)
+        ->assertDontSee('aria-label="Facebook"', false);
+});
+
+it('links the whatsapp buttons to the central number', function () {
+    $this->get('/solucoes/cirurgica')
+        ->assertSuccessful()
+        ->assertSee('href="https://wa.me/5581996840060', false)
+        ->assertSee('Falar pelo WhatsApp');
+});
+
+it('does not show fill-in placeholders on the public pages', function (string $path) {
+    $this->get($path)
+        ->assertSuccessful()
+        ->assertDontSee('[PREENCHER');
+})->with([
+    '/',
+    '/sobre',
+    '/contato',
+    '/blog',
+    '/blog/engenharia-clinica-seguranca',
+    '/solucoes/cirurgica',
+    '/solucoes/tupan-care',
+    '/solucoes/equipahosp',
+]);
 
 it('redirects the legacy tupan care slug permanently', function () {
     $this->get('/solucoes/proprios')->assertMovedPermanently()->assertRedirect('/solucoes/tupan-care');
